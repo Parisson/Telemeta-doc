@@ -82,7 +82,7 @@ contain at least 70 and at most 150 words. It should be written using the
 In social sciences like anthropology or linguistic, researchers have to work on multiple type of multimedia documents like photos, videos, sound recordings or databases. The need to easily access, visualize and annotate such materials can be problematic given their diverse formats, sources and given their chronological nature.
 This particular concern gets together some laboratories\footnote{the Research Center on Ethnomusicology (CREM), the Musical Acoustics Laboratory (LAM, UMR 7190) and the sound archives of the Mediterranean House of Human Sciences (MMHS)} involved in research on Ethnomusicoly from  the french National Center on Scientific Research (CNRS).
 
-Given those considerations, since 2007, the CREM laboratory and Parisson, a company specialized in the management of audio database, have been developing \emph{Telemeta}, a innovative, collaborative and interdisciplinary web-based multimedia platform that fits the professional requirements from both sound archivists and researchers in ethnomusicology. Since 2008, a first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, \url{http://archives.crem-cnrs.fr}}.
+Given those considerations, since 2007, the CREM laboratory and Parisson, a company specialized in the management of audio databases, have been developing \emph{Telemeta}, an innovative, collaborative and interdisciplinary open web-based multimedia platform that fits the professional requirements from both sound archivists and researchers in ethnomusicology. Since 2008, a first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, \url{http://archives.crem-cnrs.fr}}.
 
 %With the help and expertise of Parisson, a company specialized in the management of audio database, a first prototype of this web-based multimedia platform, named \emph{Telemeta} has been online since 2008 and enable to access sound archives of the CREM laboratory and their associated documentations \cite{telemetaCREM}.%\footnote{Archives sonores du CNRS, Musée de l'Homme, \url{http://archives.crem-cnrs.fr}}
 
@@ -114,10 +114,14 @@ Telemeta is dedicated to professionals who wants to easily organize, backup, arc
 Regarding web aspects, the main features of \emph{Telemeta} are :
 \begin{itemize}
 \item \emph{Pure HTML} web user interface including high level \emph{search engine}
-\item \emph{User management} with individual desk, lists, profiles and
-  rights
+\item Smart \emph{workflow management} with contextual user lists, profiles and rights
+  % \item RSS and JSON feed generators
+  % \item XML serialized backup
 \item Strong SQL or Oracle backend
+\item MVC architecture 
 \end{itemize}
+
+  
 
 Beside database management, the audio support is mainly provided through an external component : TimeSide which is described in Section~\ref{sec:Timeside}
 
@@ -128,14 +132,17 @@ Dynamically handling metadata in a collaborative manner enable to optimize the c
 The compatibility with other systems is facilitated by the integration of the metadata standards protocols \emph{Dublin Core} and \emph{OAI-PMH} \cite{DublinCore,OAI-PMH}.
 
 Metadata provide two different kinds of information about the audio item : contextual information and annotations.
+
 \paragraph{Contextual Information}
-Regarding ethnomusicology, contextual information could be geographic and cultural, musical. It could also store archives related information and include related materials in any multimedia format.  
+Regarding ethnomusicology, contextual information could be geographic, cultural and musical. It could also store archives related information and include related materials in any multimedia format.  
 \paragraph{Annotation and segmentation}
 Metadata also consist in temporal information such as \emph{time-coded makers} with comments and \emph{segmentation} according to ontology relevant for ethnomusicology (e.g. speech versus singing voice segment, chorus, ...)
 It should be notice that those annotations and segmentation can be done either by an human expert or by some audio processing automatic analysis (see Section~\ref{sec:Timeside}).
 
+
 \section{TimeSide}\label{sec:Timeside}
-One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}, that offers audio player integration ``on the fly'' and advanced audio signal processing analysis capabilities.
+One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}, that offers audio player integration together with audio signal processing analysis capabilities.
+ 
 Figure~\ref{fig:TimeSide_Archi} illustrates the overall architecture of \emph{TimeSide}.
 
 \begin{figure}[htbp]
@@ -147,15 +154,15 @@ Figure~\ref{fig:TimeSide_Archi} illustrates the overall architecture of \emph{Ti
 
 \subsection{Audio management}
 TimeSide provides the following main features :
-  \begin{itemize}
-  \item \emph{Secure archiving, editing and publishing of audio files} over
-    internet.
-  \item Smart \emph{audio player} with enhance visualization (waveform, spectrogram)
-  \item \emph{Multi-format support} : FLAC, OGG, MP3, WAV and more (through Gstreamer)
- % \item \emph{Playlist management} for all users with CSV data export
-  \item "On the fly" \emph{audio analyzing, transcoding and metadata
+\begin{itemize}
+\item \emph{Secure archiving, editing and publishing of audio files} over
+  internet.
+\item Smart \emph{audio player} with enhance visualization (waveform, spectrogram)
+\item \emph{Multi-format support} : read all available audio and video formats  through Gstreamer, transcoding with smart streaming and caching methods% (FLAC, OGG, MP3, WAV and WebM)
+  % \item \emph{Playlist management} for all users with CSV data export
+\item "On the fly" \emph{audio analyzing, transcoding and metadata
     embedding} based on an easy plugin architecture
-  \end{itemize}
+\end{itemize}
 
 \subsection{Audio features extraction}
 TimeSide incorporates some state-of-the-art audio feature extraction libraries such as Aubio, Yaafe and Vamp plugins \cite{brossierPhD,yaafe_ISMIR2010,vamp-plugins}.
