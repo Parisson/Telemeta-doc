@@ -83,7 +83,7 @@ contain at least 70 and at most 150 words. It should be written using the
 In social sciences like anthropology or linguistic, researchers have to work on multiple type of multimedia documents like photos, videos, sound recordings or databases. The need to easily access, visualize and annotate such materials can be problematic given their diverse formats, sources and given their chronological nature.
 This particular concern gets together some laboratories\footnote{the Research Center on Ethnomusicology (CREM), the Musical Acoustics Laboratory (LAM, UMR 7190) and the sound archives of the Mediterranean House of Human Sciences (MMHS)} involved in research on Ethnomusicoly from  the french National Center on Scientific Research (CNRS).
 
-Given those considerations, since 2007, the CREM laboratory and Parisson, a company specialized in the management of audio database, have been developing \emph{Telemeta}, a innovative, collaborative and interdisciplinary web-based multimedia platform that fits the professional requirements from both sound archivists and researchers in ethnomusicology. Since 2008, a first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, \url{http://archives.crem-cnrs.fr}}.
+Given those considerations, since 2007, the CREM laboratory and Parisson, a company specialized in the management of audio databases, have been developing \emph{Telemeta}, an innovative, collaborative and interdisciplinary open web-based multimedia platform that fits the professional requirements from both sound archivists and researchers in ethnomusicology. Since 2008, a first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, \url{http://archives.crem-cnrs.fr}}.
 
 %With the help and expertise of Parisson, a company specialized in the management of audio database, a first prototype of this web-based multimedia platform, named \emph{Telemeta} has been online since 2008 and enable to access sound archives of the CREM laboratory and their associated documentations \cite{telemetaCREM}.%\footnote{Archives sonores du CNRS, Musée de l'Homme, \url{http://archives.crem-cnrs.fr}}
 
@@ -122,27 +122,23 @@ The main features of \emph{Telemeta} are :
 \begin{itemize}
 \item Web platform :
   \begin{itemize}
-  \item \emph{Pure HTML} web user interface including dynamical forms and
-    smart workflows
+  \item \emph{Pure HTML} web user interface including dynamical forms
   \item High level \emph{search engine}
-  \item \emph{User management} with individual desk, lists, profiles and
-    rights
-  \item RSS feed generators
-  \item XML serialized backup
-  \item Strong SQL or Oracle backend
+  \item Smart \emph{workflow management} with contextual user lists, profiles and rights
   \item \emph{Multi-language support} (now english and french, german and
     spanish in development)
+  \item RSS and JSON feed generators
+  \item XML serialized backup
+  \item Strong SQL or Oracle backend
+  \item MVC architecture 
   \end{itemize}
-\item Audio support :
+\item Media support :
   \begin{itemize}
-  \item \emph{Secure archiving, editing and publishing of audio files} over
-    internet.
   \item Smart dynamical and skinnable \emph{audio player}
 % (thanks to TimeSide  and ​SoundManager2)
-  \item \emph{Multi-format support} : FLAC, OGG, MP3, WAV and more
+  \item \emph{Multi-format support} : read all available audio and video formats  
   \item \emph{Playlist management} for all users with CSV data export
-  \item "On the fly" \emph{audio analyzing, transcoding and metadata
-    embedding} based on an easy plugin architecture
+  \item On the fly \emph{audio transcoding, analyzing, visualizing and metadata embedding} based on an easy plugin architecture (see Section~\ref{sec:Timeside})
   \end{itemize}
 \item Metadata :   
   \begin{itemize}
@@ -178,7 +174,6 @@ Annotation information provides additional comments or analysis done by some exp
 It should be notice that those annotations can be done either by an human expert or by some audio processing automatic analysis (see Section~\ref{sec:Timeside}).
 
 
-
 \section{TimeSide}\label{sec:Timeside}
 
 \begin{figure}[htbp]
@@ -189,6 +184,8 @@ It should be notice that those annotations can be done either by an human expert
 \subsection{Audio management}
 Gstreamer, web player
 with enhance visualization (waveform, spectrogram)
+transcoding with smart streaming and caching methods (FLAC, OGG, MP3, WAV and WebM)
+
 \subsection{Audio features extraction}
 Include reference audio feature tools : Aubio + Yaafe + Vamp
 \cite{yaafe_ISMIR2010,brossierPhD}
