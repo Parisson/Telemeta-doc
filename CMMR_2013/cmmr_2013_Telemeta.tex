@@ -47,12 +47,12 @@
 % their surnames. This ensures that the names appear correctly in
 % the running heads and the author index.
 %
-\author{Thomas Fillon\inst{1,2} \and Guillaume Pellerin\inst{1}
+\author{Thomas Fillon\inst{1,2} \and Guillaume Pellerin\inst{1} \and Paul Brossier\inst{1}
  \and Jos{\'e}phine Simonnot\inst{3} 
 \thanks{This work was partially done inside the DIADEMS project funded by the national french agency ANR (CONTINT)}
 }
 %
-\authorrunning{Thomas Fillon \and Guillaume Pellerin \and Jos{\'e}phine Simonnot}
+\authorrunning{Thomas Fillon \and Guillaume Pellerin \and Paul Brossier \and Jos{\'e}phine Simonnot}
 % (feature abused for this document to repeat the title also on left hand pages)
 
 % the affiliations are given next; don't give your e-mail address
@@ -107,6 +107,7 @@ Telemeta is dedicated to professionals who wants to easily organize, backup, arc
 \emph{Telemeta} architecture is flexible and can easily be adapted to particular database organization of a given sound archives. 
 
 Regarding web aspects, the main features of \emph{Telemeta} are :
+\vspace{-0.1cm}
 \begin{itemize}
 \item \emph{Pure HTML} web user interface including high level \emph{search engine}
 \item Smart \emph{workflow management} with contextual user lists, profiles and rights
@@ -140,7 +141,7 @@ One specificity of the Telemeta architecture is to rely on an external component
   \caption{TimeSide architecture (see \url{https://code.google.com/p/timeside/})}\label{fig:TimeSide_Archi}
 \end{figure}
 
-
+\vspace{-0.4cm}
 \subsection{Audio management}
 TimeSide provides the following main features :
 \begin{itemize}
@@ -154,7 +155,7 @@ TimeSide provides the following main features :
 \end{itemize}
 \vspace{-0.4cm}
 \subsection{Audio features extraction}
-TimeSide incorporates some state-of-the-art audio feature extraction libraries such as Aubio, Yaafe and Vamp plugins \cite{brossierPhD,yaafe_ISMIR2010,vamp-plugins}.
+TimeSide incorporates some state-of-the-art audio feature extraction libraries such as \href{http://aubio.org}{Aubio}, \href{http://yaafe.sourceforge.net}{Yaafe} and \href{http://www.vamp-plugins.org}{Vamp plugins} \cite{brossierPhD,yaafe_ISMIR2010,vamp-plugins}.
 This feature extraction capability enable to automatically analyzes every sound items in a given collection and display the results as a support to ethnomusicological studies.
 Further works on that subject driven by the DIADEMS project will incorporate advance Music Information Retrieval methods to provide automatic annotation, segmentation and similarity analysis.
 
