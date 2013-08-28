@@ -80,21 +80,21 @@ CREM, LESC, UMR CNRS 7186\\ MAE, Université Paris Ouest Nanterre La Défense,
 
 
 \begin{abstract}
-\emph{Telemeta} is an open-source audio web Content Management System (CMS) dedicated to digital sound archives secure storing, indexing and publishing. The demonstration aims at presenting the features offered by this platform in the context of \emph{ethnomusicological} research. It focuses on the enhance and collaborative user-experience in accessing the audio items and associated metadata and on the possibility for the expert user to further enrich those metadata. \emph{Telemeta} also provides integrated audio signal processing tools for automatic analysis of the sound items.
+\emph{Telemeta} is an open-source audio web Content Management System (CMS) dedicated to digital sound archives secure storing, indexing and publishing. The demonstration presents the features of this platform in the context of \emph{ethnomusicological} research. It focuses on the enhance and collaborative user-experience in accessing audio items and their associated metadata and on the possibility for the expert user to further enrich those metadata. \emph{Telemeta} also provides integrated audio signal processing tools for automatic analysis of sound items.
 \keywords{Sound archives, Metadata, Ethnomusicology, Database, Audio labelling, Web platform}
 \end{abstract}
 
 
 \section{Introduction}
 
-In social sciences like anthropology or linguistic, researchers have to work on multiple type of multimedia documents like photos, videos, sound recordings or databases. The need to easily access, visualize and annotate such materials can be problematic given their diverse formats, sources and given their chronological nature.
-This particular concern gets together some laboratories\footnote{The Research Center on Ethnomusicology (CREM), the Musical Acoustics Laboratory (LAM, UMR 7190) and the sound archives of the Mediterranean House of Human Sciences (MMHS)} involved in research on Ethnomusicoly from  the french National Center on Scientific Research (CNRS).
+In social sciences like anthropology and linguistics, researchers have to work on multiple types of multimedia documents such as photos, videos, sound recordings or databases. The need to easily access, visualize and annotate such materials can be problematic given their diverse formats, sources and given their chronological nature.
+With this in mind, some laboratories\footnote{The Research Center on Ethnomusicology (CREM), the Musical Acoustics Laboratory (LAM, UMR 7190) and the sound archives of the Mediterranean House of Human Sciences (MMHS)} involved in ethnomusicological research have been working together on that issue.
 
-Given those considerations, since 2007, the CREM laboratory and Parisson, a company specialized in the management of audio databases, have been developing \emph{Telemeta}, an innovative, collaborative and interdisciplinary open web-based multimedia platform that fits the professional requirements from both sound archivists and researchers in ethnomusicology. Since 2008, a first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, \url{http://archives.crem-cnrs.fr}}.
+The CREM laboratory and Parisson, a company specialized in the management of audio databases, have been developing an innovative, collaborative and interdisciplinary open-source web-based multimedia platform since 2007. This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists and researchers in ethnomusicology. The first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, \url{http://archives.crem-cnrs.fr}} since 2008.
 
 \section{Telemeta}\label{sec:Telemeta}\vspace{-0.2cm}
 \subsection{Web audio content management features and architecture}
-Telemeta\footnote{\url{http://telemeta.org}} is a free and open source\footnote{Telemeta code is available under the \href{http://cecill.info/licences/Licence_CeCILL_V2-en.html}{CeCILL Free Software License Agreement}} web audio content management system which introduces useful and secure methods to backup, index, transcode, analyse and publish any digitalized audio file with its metadata. 
+Telemeta\footnote{\url{http://telemeta.org}} is a free and open source\footnote{Telemeta code is available under the \href{http://cecill.info/licences/Licence_CeCILL_V2-en.html}{CeCILL Free Software License Agreement}} web audio content management system which introduces efficient and secure methods for back-uping, indexing, transcoding, analysing and publishing any digitalized audio file with its metadata. 
 
 An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}
 \begin{figure}[htbp]
@@ -103,10 +103,10 @@ An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Te
   \caption{Screenshot excerpt of the \emph{Telemeta} web interface}\label{fig:Telemeta}
 \end{figure}
 
-Telemeta is dedicated to professionals who wants to easily organize, backup, archive and publish documented sound collections of audio files, CDs, digitalized vinyls and magnetic tapes over a strong database, in accordance with open web standards. 
+Telemeta is ideal for professionals who wants to easily organize, backup, archive and publish documented sound collections of audio files, CDs, digitalized vinyls and magnetic tapes over a strong database, in accordance with open web standards. 
 \emph{Telemeta} architecture is flexible and can easily be adapted to particular database organization of a given sound archives. 
 
-Regarding web aspects, the main features of \emph{Telemeta} are:
+The main features of \emph{Telemeta} are:
 \vspace{-0.1cm}
 \begin{itemize}
 \item \emph{Pure HTML} web user interface including high level \emph{search engine}
@@ -120,16 +120,16 @@ Beside database management, the audio support is mainly provided through an exte
 
 \subsection{Metadata}\label{sec:metadata}
 In addition to the audio data, an efficient and dynamic management of the associated metadata is also required. %Consulting metadata provide both an exhaustive access to valuable information about the source of the data and to the related work of peer researchers. 
-Dynamically handling metadata in a collaborative manner enable to optimize the continuous process of knowledge gathering and enrichment of the materials in the database.  
+Dynamically handling metadata in a collaborative manner optimises the continuous process of knowledge gathering and enrichment of the materials in the database.  
 %One of the major challenge is thus the standardization of audio and metadata formats with the aim of long-term preservation and usage of the different materials.
 The compatibility with other systems is facilitated by the integration of the metadata standards protocols \emph{Dublin Core} and \emph{OAI-PMH} (Open Archives Initiative Protocol for Metadata Harvesting) \cite{DublinCore,OAI-PMH}.
 \vspace{-0.2cm}
 %Metadata provide two different kinds of information about the audio item: contextual information and annotations.
 \paragraph{Contextual Information}
-Regarding ethnomusicology, contextual information could be geographic, cultural and musical. It could also store archives related information and include related materials in any multimedia format. \vspace{-0.2cm}
-\paragraph{Annotation and segmentation}
-Metadata also consist in temporal information such as \emph{time-coded makers} with comments and \emph{segmentation} according to ontology relevant for ethnomusicology (e.g. speech versus singing voice segment, chorus, ...).
-It should be notice that those annotations and segmentation can be done either by a human expert or by some audio processing automatic analysis (see Section~\ref{sec:Timeside}).
+In ethnomusicology, contextual information could be geographic, cultural and musical. It could also store archive related information and include related materials in any multimedia format. \vspace{-0.2cm}
+\paragraph{Annotations and segmentation}
+Metadata also consist in temporal information such as a list of \emph{time-coded markers} associated with annotations and a list of of \emph{time-segments} associated with labels. The ontology for those labels is relevant for ethnomusicology (e.g. speech versus singing voice segment, chorus, ...).
+It should be noted that annotations and segmentation can be done either by a human expert or by some automatic signal processing analysis (see Section~\ref{sec:Timeside}).
 
 
 \section{TimeSide}\label{sec:Timeside}\vspace{-0.2cm}
@@ -147,8 +147,8 @@ TimeSide provides the following main features:
 \begin{itemize}
 \item \emph{Secure archiving, editing and publishing of audio files} over
   internet.
-\item Smart \emph{audio player} with enhance visualization (waveform, spectrogram)
-\item \emph{Multi-format support}: read all available audio and video formats  through Gstreamer, transcoding with smart streaming and caching methods% (FLAC, OGG, MP3, WAV and WebM)
+\item Smart \emph{audio player} with enhanced visualisation (waveform, spectrogram)
+\item \emph{Multi-format support}: reads all available audio and video formats  through Gstreamer, transcoding with smart streaming and caching methods% (FLAC, OGG, MP3, WAV and WebM)
   % \item \emph{Playlist management} for all users with CSV data export
 \item "On the fly" \emph{audio analyzing, transcoding and metadata
     embedding} based on an easy plugin architecture
@@ -156,16 +156,17 @@ TimeSide provides the following main features:
 \vspace{-0.4cm}
 \subsection{Audio features extraction}
 TimeSide incorporates some state-of-the-art audio feature extraction libraries such as \href{http://aubio.org}{Aubio}, \href{http://yaafe.sourceforge.net}{Yaafe} and \href{http://www.vamp-plugins.org}{Vamp plugins} \cite{brossierPhD,yaafe_ISMIR2010,vamp-plugins}.
-This feature extraction capability enable to automatically analyzes every sound items in a given collection and display the results as a support to ethnomusicological studies.
-Further works on that subject driven by the DIADEMS project will incorporate advance Music Information Retrieval methods to provide automatic annotation, segmentation and similarity analysis.
+Given the extracted features, every sound item in a given collection can be automatically analyze. The results of this analysis can be displayed as a support to ethnomusicological studies.
+Further works lead by the DIADEMS project will incorporate advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
 \vspace{-0.2cm}
-\section{Conclusion - Purpose of the demonstration}\vspace{-0.2cm}
-The demonstration aims at presenting the features offered by \emph{Telemeta} as detailed in Section~\ref{sec:Telemeta} in the context of ethnomusicological sound archives \cite{telemetaCREM}. It focuses on the enhance and collaborative user-experience in accessing the audio items and associated metadata and on the possibility for the expert user to further enrich those metadata.
+\section{Conclusion - Purpose of the demonstration}\vspace{-0.1cm}
+The demonstration presents the features offered by \emph{Telemeta} as detailed in Section~\ref{sec:Telemeta} in the context of ethnomusicological sound archiving \cite{telemetaCREM}. It focuses on the enhance and collaborative user-experience when accessing audio items and their associated metadata, and on the possibility for the expert user to further enrich those metadata.
 Another goal of this demonstration is to present the integrated audio analysis tools described in Section~\ref{sec:Timeside}.
 
 \vspace{-0.3cm}
 \section*{Acknowledgments} \vspace{-0.2cm}
-The authors would like to thank all the people that have been involved in \emph{Telemeta} specification and development or have provide appreciated thoughts. Since 2007, the project has been also partially funded thanks to the french National Center on Scientific Research (CNRS), the french ministry of culture and communication, the TGE Adonis consortium and the french Research Center on Ethnomusicology CREM.
+The authors would like to thank all the people that have been involved in \emph{Telemeta} specification and development or have provide useful input and feedback. 
+The project has been partially funded by the French National Centre for Scientific Research (CNRS), the French Ministry of Culture and Communication, the TGE Adonis Consortium, and the Centre of Research in Ethnomusicology (CREM).
 
 \vspace{-0.3cm}
 \bibliographystyle{splncs03}
