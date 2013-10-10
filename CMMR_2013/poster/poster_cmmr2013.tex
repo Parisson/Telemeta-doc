@@ -209,14 +209,13 @@ It should be noted that annotations and segmentation can be done either by a hum
 % ------- Colonne droite -----------
 % ==================================
 \begin{column}[T]{.49\linewidth}
-  \begin{block}{TimeSide}
-One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}, that offers audio player integration together with audio signal processing analysis capabilities.
+  \begin{block}{TimeSide : open web audio processing framework}
+One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}, that offers audio player integration together with low and high level audio signal processing capabilities.
  \fcolorbox{telemetaRed}{yellow!40}{%
    \begin{minipage}{0.8\linewidth}\small
      \vskip1ex
      \begin{itemize}\bf
-     \item \url{https://github.com/yomguy/TimeSide}
-     \item \url{https://code.google.com/p/timeside/}
+     \item \url{http://www.timeside.org}
      \end{itemize}
      \vskip1ex
    \end{minipage}
@@ -227,15 +226,17 @@ One specificity of the Telemeta architecture is to rely on an external component
   \includegraphics[width=0.4\paperwidth]{../img/timeside_schema.pdf}
   \caption{TimeSide architecture}
 \end{figure}
-\textbf{Audio management}\\
-TimeSide provides the following main features:
+
+\textbf{Goals}\\
+
 \begin{itemize}
-\item \emph{Secure archiving, editing and publishing of audio files} over
-  internet.
-\item Smart \emph{audio player} with enhanced visualisation (waveform, spectrogram)
-\item \emph{Multi-format support}: reads all available audio and video formats  through Gstreamer, transcoding with smart streaming and caching methods
-\item "On the fly" \emph{audio analyzing, transcoding and metadata
-    embedding} based on an easy plugin architecture
+\item do asynchronous and fast audio processing with Python,
+\item \emph{decode} ANY audio or video format into numpy arrays thanks to Gstreamer,
+\item \emph{analyze} audio content with some external audio feature extraction libraries,
+\item \emph{organize}, \emph{serialize} and \emph{save} analysis metadata through various formats,
+\item \emph{draw} various fancy waveforms, spectrograms and other cool graphers,
+\item \emph{transcode} audio data in various media formats and stream them through web apps,
+\item \emph{playback}, \emph{index}, \emph{tag} and \emph{interact} on demand with a smart high-level HTML5 extensible player,
 \end{itemize}
 
 \textbf{Audio features extraction}\\
