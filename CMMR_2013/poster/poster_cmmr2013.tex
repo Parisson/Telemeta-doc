@@ -27,6 +27,8 @@
 %\usepackage{hyperref}
 \usepackage{multicol}
 \usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
 
 % Display a grid to help align images
@@ -35,7 +37,16 @@
 %We will get the normal bibliography style (number or text instead of icon) by including the following code
 \setbeamertemplate{bibliography item}[text]
 
-
+% listings settings
+\definecolor{lstComments}{rgb}{0,0.6,0}
+\definecolor{lstBkgrd}{rgb}{1,1,0.8}
+\lstset{%
+  language=Python, % the language of the code
+  frame=single,  % adds a frame around the code
+  commentstyle=\color{lstComments},% comment style
+  backgroundcolor=\color{lstBkgrd},   % choose the background color
+  basicstyle=\scriptsize        % the size of the fonts that are used for the code
+}
 \title[TELEMETA, audio web CMS for ethnomusicological sound archives]{TELEMETA, audio web Content Management System \\for ethnomusicological sound archives}
 
 \author[Fillon, Pellerin, Brossier, Simonnot]{Thomas Fillon \inst{1,2}, Guillaume Pellerin\inst{1}, Paul Brossier\inst{1}, Jos{\'e}phine Simonnot\inst{3}}
@@ -52,14 +63,14 @@
 21 Allée de l'Université - 92023 Nanterre, France\\
 %Thanks
 \vskip1ex
- {\small \textcolor{red}{\emph{This work was partially done inside the DIADEMS project funded by the national french agency ANR (CONTINT)}}}
+ {\small \textcolor{red}{\emph{This work was partially done inside the DIADEMS project\\ funded by the French National Research Agency ANR (CONTINT)}}}
 }
 
 \date[03/09/2013]{03 septembre 2013}
 %\usebackgroundtemplate{\centering \includegraphics[width=\paperwidth]{../presentation/piano_wallpaper_red.png}}
 \begin{document}
 %\maketitle
-\begin{frame}{}%\pgfsetfillopacity{0.9}
+\begin{frame}[containsverbatim]{}%\pgfsetfillopacity{0.9}
 % ==================================
 % --------- Résumé -----------------
 % ==================================
@@ -186,12 +197,40 @@ TimeSide provides the following main features:
 \end{itemize}
 
 \textbf{Audio features extraction}\\
-TimeSide incorporates some state-of-the-art audio feature extraction libraries such as \href{http://aubio.org}{Aubio}, \href{http://yaafe.sourceforge.net}{Yaafe} and \href{http://www.vamp-plugins.org}{Vamp plugins} \cite{brossierPhD,yaafe_ISMIR2010,vamp-plugins}.
+TimeSide incorporates some state-of-the-art audio feature extraction libraries such as:
+
+  \begin{itemize}
+  \item Aubio: \url{http://aubio.org} \cite{brossierPhD}
+
+  \item Yaafe: \url{http://yaafe.sourceforge.net} \cite{yaafe_ISMIR2010}
+  \item Vamp plugins: \url{http://www.vamp-plugins.org} \cite{vamp-plugins}
+    \end{itemize}
+
+
 Given the extracted features, every sound item in a given collection can be automatically analyze. The results of this analysis can be displayed as a support to ethnomusicological studies.
 Further works lead by the DIADEMS project will incorporate advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
   \end{block}
   \begin{block}{Examples}\small
     
+    \begin{minipage}[t]{0.6\linewidth}
+      \begin{lstlisting}
+import timeside
+
+# Setup the Processors
+decoder = timeside.decoder.FileDecoder('sweep.wav')
+analyzer = timeside.analyzer.Level()
+grapher = timeside.grapher.Waveform()
+encoder = timeside.encoder.VorbisEncoder('sweep.ogg')
+
+# Run the pipe
+(decoder | analyzer | grapher | encoder).run()
+analyzer.results()
+
+# Render the graph
+grapher.render(output='image.png')
+\end{lstlisting}
+\end{minipage}
+
   \end{block}
 \begin{block}{Références}\tiny
 \bibliographystyle{../splncs03}
