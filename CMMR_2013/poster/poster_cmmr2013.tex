@@ -45,7 +45,9 @@
   frame=single,  % adds a frame around the code
   commentstyle=\color{lstComments},% comment style
   backgroundcolor=\color{lstBkgrd},   % choose the background color
-  basicstyle=\scriptsize        % the size of the fonts that are used for the code
+  basicstyle=\scriptsize,       % the size of the fonts that are used for the code
+  keywordstyle=\color{blue},      % keyword style
+  showstringspaces=false,          % underline spaces within strings only
 }
 \title[TELEMETA, audio web CMS for ethnomusicological sound archives]{TELEMETA, audio web Content Management System \\for ethnomusicological sound archives}
 
@@ -101,11 +103,9 @@
       { Contact : \href{mailto:guillaume@parisson.com}{guillaume@parisson.com} }
      \end{center}
  \end{minipage}
+\textbf{KEYWORDS : Sound archives, Metadata, Ethnomusicology, Database, Audio labelling, Web platform}
    \end{block}
- \begin{block}{Keyword}\small% bloc à virer ? est-ce utile ?
-\textbf{Sound archives, Metadata, Ethnomusicology, Database, Audio labelling, Web platform}
- \end{block}
-
+ 
 % ==================================
 % --------- Corps -----------------
 % ==================================
@@ -211,24 +211,43 @@ Given the extracted features, every sound item in a given collection can be auto
 Further works lead by the DIADEMS project will incorporate advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
   \end{block}
   \begin{block}{Examples}\small
-    
-    \begin{minipage}[t]{0.6\linewidth}
+    \begin{minipage}{0.62\linewidth}
       \begin{lstlisting}
-import timeside
+>>> import timeside
 
-# Setup the Processors
-decoder = timeside.decoder.FileDecoder('sweep.wav')
-analyzer = timeside.analyzer.Level()
-grapher = timeside.grapher.Waveform()
-encoder = timeside.encoder.VorbisEncoder('sweep.ogg')
+>>> # Define some processors:
+>>> decoder = timeside.decoder.FileDecoder('sweep.wav')
+>>> analyzer = timeside.analyzer.Level()
+>>> grapher = timeside.grapher.Spectrogram()
+>>> encoder = timeside.encoder.VorbisEncoder('sweep.ogg')
 
-# Run the pipe
-(decoder | analyzer | grapher | encoder).run()
-analyzer.results()
+>>> # Then, the magic pipeline:
+>>> (decoder | analyzer | grapher | encoder).run()
 
-# Render the graph
-grapher.render(output='image.png')
+>>> # Get the results:
+>>> grapher.render(output='image.png')
+>>> for key in analyzer.results.keys():
+        print '%s in %s : %s'% (analyzer.results[key].name,
+                                analyzer.results[key].unit,
+                                analyzer.results[key].data)
 \end{lstlisting}
+\end{minipage}
+\begin{minipage}{0.32\linewidth}
+  \begin{center}
+    \textbf{Results}
+    \begin{figure}
+      \centering
+      \includegraphics{img/image2.png}
+    \end{figure}
+ \end{center} 
+\begin{lstlisting}
+
+ Level Analyzer Max:[-6.021] 
+ Level Analyzer RMS:[-9.856]
+
+\end{lstlisting}
+
+
 \end{minipage}
 
   \end{block}
