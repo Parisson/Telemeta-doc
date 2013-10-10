@@ -110,12 +110,12 @@
 % --------- Corps -----------------
 % ==================================
   \begin{columns}[t]
-
+\footnotesize
 % ==================================
 % --------- Colonne gauche ---------
 % ==================================
  \begin{column}[T]{.49\linewidth}
-    \begin{block}{Introduction}\small
+    \begin{block}{Introduction}
     
       \begin{itemize}
       \item In social sciences like anthropology and linguistics,
@@ -139,15 +139,45 @@
 
     \end{block}
 
-\begin{block}{Web audio content management features and architecture}\small
+\begin{block}{Web audio content management features and architecture}
+  \begin{itemize}
+  \item \emph{Telemeta} is a free and open source ({\scriptsize CeCILL
+      Free Software License Agreement}) web audio content management
+    system which introduces efficient and secure methods for
+    back-uping, indexing, transcoding, analysing and publishing any
+    digitalized audio file with its metadata.
+  \item Telemeta is ideal for
+    professionals who wants to easily organize, backup, archive and
+    publish documented sound collections of audio files, CDs,
+    digitalized vinyls and magnetic tapes over a strong database, in
+    accordance with open web standards.
+  \item \emph{Telemeta} architecture
+    is flexible and can easily be adapted to particular database
+    organization of a given sound archives.
+  \end{itemize}
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\paperwidth]{../img/telemeta.png}
-  \caption{Screenshot excerpt of the \emph{Telemeta} web interface}\label{fig:Telemeta}
+  \caption{Screenshot excerpt of the \emph{Telemeta} web interface}
 \end{figure}
 
+
+
+The main features of \emph{Telemeta} are:
+\vspace{-0.1cm}
+\begin{itemize}
+\item \emph{Pure HTML} web user interface including high level \emph{search engine}
+\item Smart \emph{workflow management} with contextual user lists, profiles and rights
+  % \item RSS and JSON feed generators
+  % \item XML serialized backup
+\item Strong Structured Query Language (SQL) or Oracle backend
+\item Model-View-Controller (MVC) architecture 
+\end{itemize}
+Beside database management, the audio support is mainly provided through an external component, \emph{TimeSide}.
+
 \end{block}
-\begin{block}{Metadata}\small
+\begin{block}{Metadata}
   \begin{itemize}
   \item In addition to the audio data, an efficient and dynamic
     management of the associated metadata is also required.
@@ -178,7 +208,7 @@ It should be noted that annotations and segmentation can be done either by a hum
 % ------- Colonne droite -----------
 % ==================================
 \begin{column}[T]{.49\linewidth}
-  \begin{block}{TimeSide}\small
+  \begin{block}{TimeSide}
 One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}, that offers audio player integration together with audio signal processing analysis capabilities.
     \begin{figure}[htbp]
   \centering
@@ -210,7 +240,7 @@ TimeSide incorporates some state-of-the-art audio feature extraction libraries s
 Given the extracted features, every sound item in a given collection can be automatically analyze. The results of this analysis can be displayed as a support to ethnomusicological studies.
 Further works lead by the DIADEMS project will incorporate advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
   \end{block}
-  \begin{block}{Examples}\small
+  \begin{block}{Examples}
     \begin{minipage}{0.62\linewidth}
       \begin{lstlisting}
 >>> import timeside
