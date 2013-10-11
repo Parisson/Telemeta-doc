@@ -36,7 +36,7 @@
 
 %We will get the normal bibliography style (number or text instead of icon) by including the following code
 \setbeamertemplate{bibliography item}[text]
-
+\setbeamerfont{caption}{size=\footnotesize}
 % listings settings
 \definecolor{lstComments}{rgb}{0,0.6,0}
 \definecolor{lstBkgrd}{rgb}{1,1,0.8}
@@ -97,13 +97,13 @@
       \begin{center}
         \includegraphics[scale=0.9]{img/logo_telemeta_1-1.pdf}
     
-        \colorbox{yellow!50}{\large \textbf{\url{http://telemeta.org/}}}
+        \hspace{-3cm}\colorbox{yellow!50}{\Large \textbf{\url{http://telemeta.org/}}}
       \vskip1ex
       \colorbox{yellow!50}
       { Contact : \href{mailto:guillaume@parisson.com}{guillaume@parisson.com} }
      \end{center}
  \end{minipage}
-\textbf{KEYWORDS : Sound archives, Metadata, Ethnomusicology, Database, Audio labelling, Web platform}
+ \colorbox{red!20}{\textbf{KEYWORDS : Sound archives, Metadata, Ethnomusicology, Database, Audio labelling, Web platform}}
    \end{block}
  
 % ==================================
@@ -116,7 +116,7 @@
 % ==================================
  \begin{column}[T]{.49\linewidth}
     \begin{block}{Introduction}
-    
+    \textbf{Needs}\\
       \begin{itemize}
       \item In social sciences like anthropology and linguistics,
         researchers have to work on multiple types of multimedia
@@ -126,7 +126,8 @@
         such materials can be problematic given their diverse formats,
         sources and given their chronological nature.
       \end{itemize}
-\textbf{Telemeta}\\
+
+\textbf{The \emph{Telemeta} project}\\
 \begin{itemize}
 \item The CREM laboratory and Parisson have been developing an innovative,
   collaborative and interdisciplinary open-source web-based multimedia
@@ -134,9 +135,11 @@
 \item Goal : fit the professional requirements from both sound archivists and
   researchers in ethnomusicology.
 \item First prototype online since 2008 : \emph{Archives sonores du CNRS, Musée de
-    l'Homme}:  \colorbox{yellow!50}
-      {\normalsize \bf $\to$ \hskip4ex \url{http://archives.crem-cnrs.fr}}
+    l'Homme}: 
 \end{itemize}
+\begin{center}
+  \colorbox{yellow!50} {\normalsize \hskip3ex \bf \url{http://archives.crem-cnrs.fr} \hskip3ex }
+\end{center}
 
     \end{block}
 
@@ -211,15 +214,10 @@ It should be noted that annotations and segmentation can be done either by a hum
 \begin{column}[T]{.49\linewidth}
   \begin{block}{TimeSide : open web audio processing framework}
 One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}, that offers audio player integration together with low and high level audio signal processing capabilities.
- \fcolorbox{telemetaRed}{yellow!40}{%
-   \begin{minipage}{0.8\linewidth}\small
-     \vskip1ex
-     \begin{itemize}\bf
-     \item \url{https://github.com/yomguy/TimeSide/}
-     \end{itemize}
-     \vskip1ex
-   \end{minipage}
-}
+
+\begin{center}
+  \colorbox{yellow!50}{\bf \hskip3ex \url{https://github.com/yomguy/TimeSide/} \hskip3ex  }
+\end{center}
 
     \begin{figure}[htbp]
   \centering
@@ -243,47 +241,57 @@ One specificity of the Telemeta architecture is to rely on an external component
 TimeSide incorporates some state-of-the-art audio feature extraction libraries such as:
 
   \begin{itemize}
-  \item Aubio: \url{http://aubio.org} \cite{brossierPhD}
-
-  \item Yaafe: \url{http://yaafe.sourceforge.net} \cite{yaafe_ISMIR2010}
-  \item Vamp plugins: \url{http://www.vamp-plugins.org} \cite{vamp-plugins}
+  \item \textbf{Aubio:
+      \colorbox{yellow!50}{\hskip1ex  \url{http://aubio.org} \hskip1ex }}
+    \cite{brossierPhD}
+  \item \textbf{Yaafe:
+       \colorbox{yellow!50}{\hskip1ex \url{http://yaafe.sourceforge.net}\hskip1ex }}
+    \cite{yaafe_ISMIR2010}
+  \item \textbf{Vamp plugins:  
+      \colorbox{yellow!50}{\hskip1ex \url{http://www.vamp-plugins.org}\hskip1ex }} 
+    \cite{vamp-plugins}
     \end{itemize}
 
 
 Given the extracted features, every sound item in a given collection can be automatically analyze. The results of this analysis can be displayed as a support to ethnomusicological studies.
 Further works lead by the DIADEMS project will incorporate advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
-  \end{block}
-  \begin{block}{Examples}
-    \begin{minipage}{0.62\linewidth}
+\end{block}
+\begin{block}{Code Example (Python)}
+\vskip1ex
+    \begin{minipage}{0.6\linewidth}
       \begin{lstlisting}
 
->>> import timeside
+import timeside
 
->>> # Define some processors:
->>> decoder = timeside.decoder.FileDecoder('sweep.wav')
->>> analyzer = timeside.analyzer.Level()
->>> grapher = timeside.grapher.Spectrogram()
->>> encoder = timeside.encoder.VorbisEncoder('sweep.ogg')
+# Define some processors:
+decoder = timeside.decoder.FileDecoder('sweep.wav')
+analyzer = timeside.analyzer.Level()
+grapher = timeside.grapher.Spectrogram()
+encoder = timeside.encoder.VorbisEncoder('sweep.ogg')
 
->>> # Then, the magic pipeline:
->>> (decoder | analyzer | grapher | encoder).run()
+# Then, the magic pipeline:
+(decoder | analyzer | grapher | encoder).run()
 
->>> # Get the results:
->>> grapher.render(output='image.png')
->>> for key in analyzer.results.keys():
-        print '%s in %s : %s'% (analyzer.results[key].name,
-                                analyzer.results[key].unit,
-                                analyzer.results[key].data)
+# Get the results:
+grapher.render(output='image.png')
+for key in analyzer.results.keys():
+    print '%s in %s : %s'% (analyzer.results[key].name,
+                            analyzer.results[key].unit,
+                            analyzer.results[key].data)
+
 \end{lstlisting}
 \end{minipage}
+\hskip2ex
 \begin{minipage}{0.32\linewidth}
   \begin{center}
     \textbf{Results}
     \begin{figure}
       \centering
       \includegraphics{img/spectrogram.png}
+      \caption{Spectrogram (sweep signal)}
     \end{figure}
  \end{center} 
+\vskip5ex
 \begin{lstlisting}
 
  Level Analyzer Max:[-6.021] 
