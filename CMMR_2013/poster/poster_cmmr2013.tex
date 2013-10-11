@@ -134,7 +134,7 @@
   platform since 2007.
 \item Goal : fit the professional requirements from both sound archivists and
   researchers in ethnomusicology.
-\item First prototype online since 2008 : \emph{Archives sonores du CNRS, Musée de
+\item Official Platform online since 2011 : \emph{Archives sonores du CNRS, Musée de
     l'Homme}: 
 \end{itemize}
 \begin{center}
@@ -148,15 +148,15 @@
   \item \emph{Telemeta} is a free and open source ({\scriptsize CeCILL
       Free Software License Agreement}) web audio content management
     system which introduces efficient and secure methods for
-    back-uping, indexing, transcoding, analysing and publishing any
+    \alert{backuping}, \alert{indexing}, \alert{transcoding}, \alert{analysing} and \alert{publishing} any
     digitalized audio file with its metadata.
-  \item Telemeta is ideal for
-    professionals who wants to easily organize, backup, archive and
+  \item \emph{Telemeta} is ideal for
+    professional collaborators who wants to easily organize, backup, archive and
     publish documented sound collections of audio files, CDs,
-    digitalized vinyls and magnetic tapes over a strong database, in
-    accordance with open web standards.
+    digitalized vinyls and magnetic tapes over a strong database in
+    accordance with \alert{open web standards}.
   \item \emph{Telemeta} architecture
-    is flexible and can easily be adapted to particular database
+    is \alert{flexible} and can easily be adapted to particular database
     organization of a given sound archives.
   \end{itemize}
 
@@ -171,25 +171,26 @@
 The main features of \emph{Telemeta} are:
 \vspace{-0.1cm}
 \begin{itemize}
-\item \emph{Pure HTML} web user interface including high level \emph{search engine}
-\item Smart \emph{workflow management} with contextual user lists, profiles and rights
+\item \alert{Pure HTML} web user interface including high level \alert{search engine}
+\item \alert{Smart workflow management} with contextual user lists, profiles and rights
   % \item RSS and JSON feed generators
   % \item XML serialized backup
-\item Strong Structured Query Language (SQL) or Oracle backend
-\item Model-View-Controller (MVC) architecture 
+\item Model-View-Controller (\alert{MVC}) architecture 
+\item Strong Structured Query Language (\alert{SQL}) or Oracle backend
+
 \end{itemize}
 Beside database management, the audio support is mainly provided through an external component, \emph{TimeSide}.
 
 \end{block}
 \begin{block}{Metadata}
   \begin{itemize}
-  \item In addition to the audio data, an efficient and dynamic
-    management of the associated metadata is also required.
-  \item Dynamically handling metadata in a collaborative manner optimises
+  \item In addition to the audio data, an efficient and \alert{dynamic
+    management} of the associated metadata is also required.
+  \item Dynamically handling metadata in a \alert{collaborative} manner optimises
     the continuous process of knowledge gathering and enrichment of
     the materials in the database.
-  \item Compatibility : integration of the metadata standards protocols \emph{Dublin Core}
-    and \emph{OAI-PMH} (Open Archives Initiative Protocol for Metadata
+  \item Interoperability : integration of the metadata standards protocols \alert{Dublin Core}
+    and \alert{OAI-PMH} (Open Archives Initiative Protocol for Metadata
     Harvesting) \cite{DublinCore,OAI-PMH}.
   \end{itemize}
 
@@ -199,8 +200,8 @@ In ethnomusicology, contextual information could be geographic, cultural and mus
 \textbf{Annotations and segmentation}\\
 Metadata also consist in temporal information such as:
 \begin{itemize}
-\item a list of \emph{time-coded markers} associated with annotations
-\item a list of of \emph{time-segments} associated with labels.
+\item a list of \alert{time-coded markers} associated with annotations
+\item a list of of \alert{time-segments} associated with labels.
 \end{itemize}
 The ontology for those labels is relevant for ethnomusicology (e.g. speech versus singing voice segment, chorus, ...).
 It should be noted that annotations and segmentation can be done either by a human expert or by some automatic signal processing analysis.
@@ -213,7 +214,7 @@ It should be noted that annotations and segmentation can be done either by a hum
 % ==================================
 \begin{column}[T]{.49\linewidth}
   \begin{block}{TimeSide : open web audio processing framework}
-One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}, that offers audio player integration together with low and high level audio signal processing capabilities.
+One specificity of the \emph{Telemeta} architecture is to rely on an external component, \emph{TimeSide}, that offers audio player integration together with low and high level audio signal processing capabilities.
 
 \begin{center}
   \colorbox{yellow!50}{\bf \hskip3ex \url{https://github.com/yomguy/TimeSide/} \hskip3ex  }
@@ -228,13 +229,13 @@ One specificity of the Telemeta architecture is to rely on an external component
 \textbf{Goals}\\
 
 \begin{itemize}
-\item do asynchronous and fast audio processing with Python,
-\item \emph{decode} ANY audio or video format into numpy arrays thanks to Gstreamer,
-\item \emph{analyze} audio content with some external audio feature extraction libraries,
-\item \emph{organize}, \emph{serialize} and \emph{save} analysis metadata through various formats,
-\item \emph{draw} various fancy waveforms, spectrograms and other cool graphers,
-\item \emph{transcode} audio data in various media formats and stream them through web apps,
-\item \emph{playback}, \emph{index}, \emph{tag} and \emph{interact} on demand with a smart high-level HTML5 extensible player,
+\item \alert{Do} asynchronous and fast audio processing with Python.
+\item \alert{Decode} ANY audio or video format into numpy arrays thanks to Gstreamer.
+\item \alert{Analyze} audio content with some external audio feature extraction libraries.
+\item \alert{Organize}, \alert{serialize} and \alert{save} analysis metadata through various formats.
+\item \alert{Draw} various fancy waveforms, spectrograms and other cool graphers.
+\item \alert{Transcode} audio data in various media formats and stream them through web apps.
+\item \alert{Playback}, \alert{index}, \alert{tag} and \alert{interact} on demand with a smart high-level HTML5 extensible player.
 \end{itemize}
 
 \textbf{Audio features extraction}\\
@@ -254,7 +255,7 @@ TimeSide incorporates some state-of-the-art audio feature extraction libraries s
 
 
 Given the extracted features, every sound item in a given collection can be automatically analyze. The results of this analysis can be displayed as a support to ethnomusicological studies.
-Further works lead by the DIADEMS project will incorporate advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
+Further works lead by the DIADEMS project will incorporate advance Music Information Retrieval methods in order to provide \alert{automatic annotation}, \alert{segmentation} and \alert{similarity} analysis.
 \end{block}
 \begin{block}{Code Example (Python)}
 \vskip1ex
