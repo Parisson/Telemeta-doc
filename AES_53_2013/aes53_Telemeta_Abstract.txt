@@ -1,0 +1,19 @@
+
+Title
+-----
+
+"Telemeta : open web audio platform for sound archives in the use case of ethnomusicology"
+
+
+Abstract
+--------
+
+Telemeta is a fully-operational open-source audio web platform dedicated to digital sound archives secure storing, indexing and publishing. 
+The demonstration presents the features of this platform in the context of ethnomusicological research.
+It focuses on the enhance and collaborative user-experience in accessing audio items and their associated metadata and on the possibility for the expert users to further enrich those metadata.
+
+Telemeta architecture relies on an external open-source component, TimeSide, that offers audio player integration together with decoding and encoding for most of the audio and video formats though Gstreamer.
+
+In order to provide automatic annotation, segmentation and musicological analysis, TimeSide also provides "on-the-fly" audio analyzis by wrapping several state-of-the-art audio features extraction library.
+
+
