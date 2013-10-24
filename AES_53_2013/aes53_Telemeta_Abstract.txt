@@ -4,6 +4,10 @@ Title
 
 "Telemeta : open web audio platform for sound archives in the use case of ethnomusicology"
 
+Authors
+-------
+Thomas Fillon, Guillaume Pellerin, Paul Brossier and Joséphine Simonnot
+
 
 Abstract
 --------
@@ -14,6 +18,6 @@ It focuses on the enhance and collaborative user-experience in accessing audio i
 
 Telemeta architecture relies on an external open-source component, TimeSide, that offers audio player integration together with decoding and encoding for most of the audio and video formats through Gstreamer.
 
-In order to provide automatic annotation, segmentation and musicological analysis, TimeSide also provides "on-the-fly" audio analysis and additionally wrapping several state-of-the-art audio features extraction library.
+In order to provide automatic annotation, segmentation and musicological analysis, TimeSide also provides "on-the-fly" audio analysis and additionally wraps several state-of-the-art audio features extraction library.
 
 
