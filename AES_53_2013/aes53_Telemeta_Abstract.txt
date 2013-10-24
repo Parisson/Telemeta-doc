@@ -14,6 +14,6 @@ It focuses on the enhance and collaborative user-experience in accessing audio i
 
 Telemeta architecture relies on an external open-source component, TimeSide, that offers audio player integration together with decoding and encoding for most of the audio and video formats though Gstreamer.
 
-In order to provide automatic annotation, segmentation and musicological analysis, TimeSide also provides "on-the-fly" audio analyzis by wrapping several state-of-the-art audio features extraction library.
+In order to provide automatic annotation, segmentation and musicological analysis, TimeSide also provides "on-the-fly" audio analysis and additionally wrapping several state-of-the-art audio features extraction library.
 
 
