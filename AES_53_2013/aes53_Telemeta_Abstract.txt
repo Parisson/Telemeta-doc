@@ -14,6 +14,6 @@ Abstract
 
 Telemeta is a fully-operational open-source web audio platform dedicated to digital sound archives secure storing, indexing and publishing. It focuses on the enhance and collaborative user-experience in accessing audio items and their associated metadata and on the possibility for the expert users to further enrich those metadata.
 
-Telemeta architecture relies on TimeSide, an open audio processing framework written in Python which provides a smart embeddable HTML audio player together with decoding, encoding and streaming methods for various formats. TimeSide also includes a set of audio analysis plugins and additionally wraps several state-of-the-art audio features extraction libraries to provide automatic annotation, segmentation and musicological analysis.
+Telemeta architecture relies on TimeSide, an open audio processing framework written in Python which provides a smart embeddable HTML audio player together with decoding, encoding and streaming methods for various formats. TimeSide also includes a set of audio analysis plugins and additionally wraps several audio features extraction libraries to provide automatic annotation, segmentation and musicological analysis.
 
 The demonstration presents the features of this platform in the context of ethnomusicological research.
