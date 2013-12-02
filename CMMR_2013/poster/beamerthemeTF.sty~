@@ -1,0 +1,157 @@
+% this style was created by Philippe Dreuw and Thomas Deselaers
+\ProvidesPackage{beamerthemeTF} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{colorsTF}
+\selectcolormodel{cmyk}
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{veryLightBlue}{rgb}{0.95,0.9,0.95}     % 
+\definecolor{lightBlue}{rgb}{0.8,0.8,1}     % dark blue
+\definecolor{darkBlue}{rgb}{0,0,0.7}     % dark blue
+\definecolor{textBG}{rgb}{0.95,0.95,1}     % dark blue
+
+
+\setbeamercolor{headline}{fg=black,bg=white}
+\setbeamercolor{footline}{fg=black, bg=white}
+\setbeamerfont{footline}{size=\large,series=\sf}
+\setbeamercolor{separation line}{bg=black}
+\setbeamercolor{title in headline}{fg=black, bg=}
+\setbeamercolor{author in headline}{fg=black, bg=}
+\setbeamercolor{institute in headline}{fg=black, bg=}
+
+\setbeamercolor{framesubtitle}{fg=ta3orange, bg=veryLightBlue}
+\setbeamercolor{author in head/foot}{fg=black, bg=white}
+\setbeamercolor{title in head/foot}{fg=black, bg=white}
+
+\setbeamercolor*{normal text}{fg=black, bg=veryLightBlue}
+
+\setbeamercolor*{block body}{bg=white,fg=black}
+\setbeamercolor*{block title}{bg=telemetaRed,fg=white}
+\setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamercolor{upper separation line head}{fg=red}
+
+\setbeamercolor*{example body}{fg=ta3aluminium,bg=white}
+\setbeamercolor*{example text}{fg=ta3aluminium,bg=white}
+\setbeamercolor*{example title}{bg=taorange,fg=ta2gray}
+
+\setbeamercolor{alerted text}{fg=red, bg=white}
+\setbeamercolor*{alerted body}{fg=ta3aluminium,bg=white}
+
+%\setbeamercolor{example text}{fg=taorange}
+\setbeamercolor{structure}{fg=ta3skyblue}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=true,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{headline}{  
+  \leavevmode
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{.02\paperwidth}
+      \end{column}
+      \begin{column}{.07\paperwidth}
+        \begin{center}
+          \includegraphics[width=1.2\linewidth]{img/logo_CREM.png}\\
+          % \hspace{1cm}
+          \includegraphics[width=1.2\linewidth]{img/logo_LESC.png}
+        \end{center}
+        \vskip1ex
+      \end{column}
+      \begin{column}{.675\paperwidth}
+        \vskip4ex \raggedleft
+
+        \usebeamercolor{title in
+          headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in
+          headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in
+          headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+      \end{column}
+      \begin{column}{.25\paperwidth}
+        \vskip1cm
+        \begin{center}
+          \includegraphics[width=.65\linewidth]{img/parisson_logo_FINALE_com.pdf}\\
+          \vspace{2.5cm}
+          \includegraphics[width=.6\linewidth]{img/upmc.png}
+        \end{center}
+        \vskip1.5cm
+      \end{column}
+      \begin{column}{.03\paperwidth}
+      \end{column}
+    \end{columns}
+  \end{beamercolorbox}
+   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%  \setbeamertemplate{headline}{  
+%    \leavevmode
+%    \begin{beamercolorbox}[sep=0.5cm,wd=.8\paperwidth]{headline}
+%      \usebeamercolor{title in headline}{\raggedleft\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+%      \usebeamercolor{author in headline}{\raggedleft\color{fg}\large{\insertauthor}\\[1ex]}
+%      \usebeamercolor{institute in headline}{\raggedleft\color{fg}\large{\insertinstitute}\\[1ex]}     
+%    \end{beamercolorbox}%
+%    \begin{beamercolorbox}[wd=.2\paperwidth]{logo in headline}
+%      \centering
+%      \LARGE{LOGO}
+%    \end{beamercolorbox}  
+
+
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+
+ \begin{beamercolorbox}[wd=\paperwidth]{CMMR 2013 footer}
+   \begin{center}
+     \includegraphics[width=0.5\paperwidth]{img/CMMR2013banner.png}
+   \end{center}
+
+ \end{beamercolorbox}
+
+%   \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+%     \rule{0pt}{2pt}
+%   \end{beamercolorbox}
+%    \vskip1ex
+%   \leavevmode%
+%   \begin{beamercolorbox}[ht=5ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+%    %\includegraphics[width=5.5cm]{img/CMMR2013footer.png} \hskip2cm%
+% {\large \textbf{10th International Symposium on Computer Music Multidisciplinary Research (CMMR) Sound, Music and Motion , \hspace{1cm}   Marseilles , \hspace{1cm} 15-18 October 2013}}
+
+%     \vskip1ex
+%   \end{beamercolorbox}
+
+%   \vskip0pt%
+%   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+%     \rule{0pt}{2pt}\begin{picture}(0,0) \put(0,0){\includegraphics[width=\paperwidth]{img/CMMR2013footer_alpha.png}}\end{picture}
+%  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+

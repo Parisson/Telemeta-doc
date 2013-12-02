@@ -1,0 +1,254 @@
+%\NeedsTeXFormat{LaTeX2e}
+    
+    \usepackage[pdftex]{graphicx}
+    \usepackage{graphicx}
+	\usepackage{subfigure}
+    \usepackage[body={17cm, 24cm}]{geometry}
+                                             % Geometry package for easy page margin
+                                             % setup
+    %\usepackage{epsfig}
+    \usepackage{rotating}                    % Sideways of figures & tables
+    %\usepackage[sectionbib]{natbib}          % Cross-reference package (Natural BiB)
+    %\usepackage{chapterbib}                  % Put References at the end of each chapter
+                                             % Do not put 'sectionbib' option here.
+                                             % Sectionbib option in 'natbib' will do.
+    %\usepackage{fancyhdr}                    % Fancy Header and Footer
+    %\usepackage{setspace}                    % Line spacing
+    %\doublespacing
+    %\usepackage{txfonts}                     % Public Times New Roman text & math font
+%     \usepackage{times}
+	\usepackage[utf8]{inputenc}
+    \usepackage[]{fontenc}
+    \usepackage[usenames,dvipsnames]{color}
+    \usepackage{latexsym}
+	\usepackage{amsthm,amssymb,amsfonts}
+    \usepackage{makeidx,xspace}
+    \usepackage{newlfont}
+    \usepackage{url}
+    \urlstyle{footnotesize}
+	\usepackage{colortbl}
+    \usepackage[centertags]{amsmath}
+    %%% Fancy Header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Fancy Header Style Options
+%     \pagestyle{fancy}                       % Sets fancy header and footer
+%     \fancyfoot{}                            % Delete current footer settings
+%     \renewcommand{\chaptermark}[1]{         % Lower Case Chapter marker style
+%       \markboth{\chaptername\ \thechapter.\ #1}{}} %
+%     \renewcommand{\sectionmark}[1]{        % Lower case Section marker style
+%       \markright{\thesection.\ #1}}         %
+%     \fancyhead[LE,RO]{\bfseries\thepage}    % Page number (boldface) in left on even
+%                                             % pages and right on odd pages
+%     \fancyhead[RE]{\bfseries\leftmark}      % Chapter in the right on even pages
+%     \fancyhead[LO]{\bfseries\rightmark}     % Section in the left on odd pages
+%     \renewcommand{\headrulewidth}{0.3pt}    % Width of head rule
+    
+    \usepackage{amsmath}             % AMS Math
+	\usepackage{texments}
+	\usepackage{latexsym}
+	\usepackage{newlfont}
+	\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+    %\usepackage[pdftex]{color}
+
+% PDF Link colors
+\definecolor{refcolor}{rgb}{0,0,0.4}    % Color for the reference links
+\definecolor{anchorcolor}{rgb}{0,0,0}   % Color for anchor text
+\definecolor{citecolor}{rgb}{0,0.4,0.4} % Color for bibligraphical citations
+\definecolor{urlcolor}{rgb}{0,0,0.4}   % Color for linked URLs
+\definecolor{filecolor}{rgb}{0.75,0,0}  % Color for URLs which open local files
+\definecolor{menucolor}{rgb}{0.75,0,0}  % Color for Acrobat menu items
+\definecolor{pagecolor}{rgb}{0.75,0,0}  % Color for links to other pages
+
+\usepackage[pdftex,bookmarksopen,bookmarksnumbered,colorlinks,hyperindex,pagebackref,breaklinks,
+pdftitle={Telemeta : un projet web libre de gestion d'archives audio-visuelles},
+pdfauthor={Guillaume Pellerin},
+pdfsubject={Article draft for the JAES},
+pdfkeywords={acoustics, modal analysis, vented box, directivity},
+hyperfigures=true,          % provide links to figures
+hyperindex=true,           % provide links from index to pages (broken?)
+pagebackref=true,           % provide links to pages where bib is cited from
+backref=true,               % provide links to sec where bib is cited from
+colorlinks=true,            %***
+linkcolor=refcolor,         %
+anchorcolor=anchorcolor,    %
+citecolor=citecolor,        % Colors are defined above;
+filecolor=filecolor,        % change them there
+menucolor=menucolor,        %
+pagecolor=pagecolor,        %
+urlcolor=urlcolor,          %***
+bookmarksopen=true,        % whether to open bookmarks window on open
+pdfpagemode=UseOutlines,    % show the bookmarks in outline form
+pdfstartview=FitB,          % default window sizing
+pdfview=FitB]{hyperref}     % default view after clicking a link
+
+%\usepackage[bookmarksopen,bookmarksnumbered,colorlinks,hyperindex,pagebackref,breaklinks]{hyperref}
+%\usepackage[bookmarksopen,colorlinks,pagebackref,linktocpage]{hyperref}
+%\usepackage[monochrome]{color}
+%\definecolor{links}{rgb}{0.9,0.0104,0.7716} % BlueViolet
+%\def\LinkColor{links}
+%\definecolor{anchors}{rgb}{0.5812,0.0665,0.0659} % IndianRed  
+%\def\AnchorColor{anchors}
+
+
+%\usepackage{xthesis} %DAL Thesis Style
+%\usepackage{xtocinc} %Include Table of Contents as the first entry in TOC
+%                     Faculty of Grad Studies insists on this!?
+%\usepackage[active]{srcltx}  %SRC Specials for DVI search
+
+\renewcommand{\labelitemi}{--}
+\newcommand\address[1]{}
+\newcommand\netaddress[1]{}
+\usepackage{shortvrb}
+\MakeShortVerb{\|}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\Lopt}[1]{\textsf{#1}}
+\newcommand{\babel}{\textsf{babel}}
+\makeatletter
+
+\selectlanguage{french}
+
+\renewcommand{\maketitle}{
+\begin{titlepage}
+\begin{center}
+\vspace{8cm}
+\@title
+\vspace{0.5cm}
+\@author
+\vspace{3cm}
+\pgfimage[width=10cm]{img/logo}
+\\
+\end{center}
+\end{titlepage}
+}
+
+%\newif\ifpdf
+%\ifx\pdfoutput\undefined
+%\pdffalse % we are not running PDFLaTeX
+%\else
+%\pdfoutput=1 % we are running PDFLaTeX
+%\pdftrue \fi
+%
+%\ifpdf
+
+%\else
+%\usepackage{graphicx}
+%\fi
+
+\renewcommand{\labelitemi}{--}
+
+%================================================================== 
+% GRAPHICS
+\graphicspath{{img/}}
+
+%\setcounter{chapter}{0}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{5}
+
+\renewcommand{\floatpagefraction}{.9} 
+\renewcommand{\textfraction}{.1}
+
+% Different font in captions
+\newcommand{\captionfonts}{\small}
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+%\ifpdf
+\DeclareGraphicsExtensions{.jpg,.png,.tif,.tiff,.pdf}
+%\else
+%\DeclareGraphicsExtensions{.eps, .jpg}
+%\fi
+
+% compress the PDF as much as possible
+%\pdfcompresslevel=9
+
+%MATHS===============================================================
+\newcommand{\A}{{\cal A}}
+\newcommand{\h}{{\cal H}}
+\newcommand{\s}{{\cal S}}
+\newcommand{\W}{{\cal W}}
+\newcommand{\BH}{\mathbf B(\cal H)}
+\newcommand{\KH}{\cal  K(\cal H)}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\Complex}{\mathbb C}
+\newcommand{\Field}{\mathbb F}
+\newcommand{\RPlus}{[0,\infty)}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\essnorm}[1]{\norm{#1}_{\text{\rm\normalshape ess}}}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\seq}[1]{\left<#1\right>}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\RE}{\operatorname{Re}}
+\newcommand{\IM}{\operatorname{Im}}
+\newcommand{\Poly}{{\cal{P}}(E)}
+\newcommand{\EssD}{{\cal{D}}}
+\newcommand{\Dp}[2]{\frac{\partial #1}{\partial #2}}
+
+
+\newcommand{\boxeqn}[1]{%
+    \[\fbox{%
+        \addtolength{\textwidth}{-2\fboxsep}%
+        \addtolength{\textwidth}{-2\fboxrule}%
+        \begin{minipage}{\textwidth}%
+        #1%
+        \end{minipage}%
+      }\]%
+  }
+
+%THEOREMS==============================================================
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+% Modif appel de citations biblio : on tolere la cesure
+% """""""""""""""""""""""""""""""""""""""""""""""""""""
+\makeatletter
+\def\@citex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+   \let\@citea\@empty
+   \@cite{\@for\@citeb:=#2\do
+     {\@citea\def\@citea{,\penalty\@m\ }%
+      \def\@tempa##1##2\@nil{\edef\@citeb{\if##1\space##2\else##1##2\fi}}%
+      \expandafter\@tempa\@citeb\@nil
+      \@ifundefined{b@\@citeb}{{\reset@font\bf ?}\@warning
+        {Citation `\@citeb' on page \thepage \space undefined}}%
+%     \hbox{\csname b@\@citeb\endcsname}}}{#1}}
+      {\csname b@\@citeb\endcsname}}}{#1}}
+\makeatother
+% """""""""""""""""""""""""""""""""""""""""""""""""""""
+
+\usepackage{url}
+\urlstyle{footnotesize}
+\columnsep 1cm
+\definecolor{rouge}{rgb}{0.7,0.1,0.1}
+
+\newcommand{\chref}[2]{
+    \href{#1}{\color{rouge}\underline{#2}}
+}
+\newcommand{\dchref}[1]{
+    \href{#1}{\color{rouge}\underline{#1}}
+}
+\newcommand{\curl}[1]{
+    \color{rouge}\underline{\url{#1}}
+}

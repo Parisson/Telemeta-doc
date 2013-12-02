@@ -1,0 +1,431 @@
+\documentclass[a4paper,11pt,french]{article}
+\usepackage[francais]{babel}
+\usepackage{pdf_article_profile}
+
+\author{Auteurs : \\
+\vspace{0.5cm}
+Guillaume Pellerin : directeur R$\&$D, Parisson SARL\\
+Joséphine Simonnot : ingénieur de recherche CNRS, CREM\\}
+
+
+\title{
+\huge{\bf{Telemeta : un système libre de gestion d'archives musicales orienté web}}\\
+\rule{15cm}{0.5mm}\\
+\vspace{0.5cm}
+\large{article pour la Revue Francophone d'Informatique Musicale}\\
+version 0.8 - \today \\
+\vspace{0.5cm}
+}
+
+
+\begin{document}
+
+\renewcommand{\labelitemi}{$\bullet$}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section*{Résumé}
+
+
+\section{Introduction}
+
+Telemeta est une solution libre d'archivage et d'indexation audio basée sur une interface de type web. Elle offre des fonctions avancées d'édition, d'indexation, de transcodage, de publication et de sauvegarde d'archives audio et de leurs méta-données. Il donne accès aux ressources distantes publiées ou privatisés issues de collections numérisées (fichiers, CD audio, vinyl ou bandes magnétiques) par l'intermédiaire d'un simple navigateur ou d'une application dédiée en accord avec les standards du web.\\
+
+\subsection{Historique}
+
+Initié en 2007 lorsque le besoin en système d'archivage pérenne du CREM et les développements en cours de Parisson se sont rencontrés, le projet Telemeta a proposé plusieurs objectifs :\\
+
+\begin{itemize}
+\item valoriser le fonds d'archives en faisant converger les archives sonores numérisées et leurs méta-données vers une plateforme de type web, \\
+\item concevoir et produire un une application orientée recherche pour la gestion collaborative des archives, \\
+\item définir le processus de migration de la base de données du CREM mais aussi de l'importation des fichiers numériques existants. \\
+\end{itemize}
+
+L'assistance à la maîtrise ouvrage fournie par Parisson pour la conception puis le développement de l'application a permis de livrer en 2009 un prototype logiciel qui a trouvé un écho favorable dans la communauté de chercheurs et des développeurs. En juin 2011, après une phase d'optimisation, Parisson a opéré la migration et l'importation finale de la base de données structurée du CREM (méta-données, ontologies géographiques ou thésaurus d'instruments) et des fichiers numérisés. Depuis, les chercheurs et les documentalistes participent de manière collaborative à l'amélioration de l'indexation de plus 35000 archives.\\
+
+Le code du logiciel "Telemeta" dans sa version 1.0 est désormais publié et les archives du CREM disponibles (\url{http://archives.crem-cnrs.fr}). \\
+
+Chronologie:
+
+\begin{itemize}
+ \item 2007 : rencontre du CREM avec Parisson et le LAM, contour des besoins mutuels,  soutiens du projet Anthroponet
+ \item 2008 : définition du cahier des charges, choix du framework, modélisation, migrateur 4D $>$ MySQL
+ \item 2009 : prototypage (v0.5), recherche de partenaires
+ \item 2010 : corrections, développement agile (v0.9), soutien du TGE Adonis
+ \item 2011 : migration définitive, v1.0 déployée sur serveur, mise en production
+\end{itemize}
+
+
+\begin{figure}[htp]
+    \centering
+    \pgfimage[width=15cm]{img/shots/index}
+    \caption{Page d'accueil de Telemeta}
+    \label{index1}
+\end{figure}
+
+
+
+\subsection{Objectifs}
+
+D'un point de vue fonctionnel:
+
+\begin{itemize}
+ \item  Pérenniser les archives audionumériques (logiciels et formats)
+ \item Valoriser le patrimoine culturel par la consultation légale
+ \item Faciliter et optimiser la transmission des méta-données par l'intermédiaire de protocoles et de standards ouverts
+ \item Augmenter les capacités de recherche et de travail collaboratif (saisie en ligne, géo-localisation, web sémantique, interopérabilité, statistiques)
+ \item Définir une ergonomie d'indexation et de publication collaborative, i.e. aussi un principe de flux de travail dans un contexte de sauvegarde pérenne d'oeuvres audio-visuelles.
+\end{itemize}
+
+D'un point de vue technique:
+
+\begin{itemize}
+ \item architecture "<fluide"> : streaming, SOD
+ \item langage objet, déploiement
+ \item standards (W3C, open source, ressources JavaScript, HTML5)
+\end{itemize}
+
+\subsection{Partenariats}
+
+Les partenaires participants au projet:
+
+\begin{itemize}
+ \item CREM : Centre de Recherche en Ethnomusicologie du Laboratoire d'Ethnologie et de Sociologie Comparée (LESC), UMR 7186
+ \item LAM : équipe Lutheries, Acoustique et Musique de l'Institut Jean le Rond d'Alembert (IJLRA), UMR 7190
+ \item MAE : Médiathèque Eric-de-Dampierre de la MAE, Nanterre
+ \item MNHN : Museum National d'Histoire Naturelle
+ \item IRI : Institut de Recherche et d'Innovation
+ \item MuCEM : Musée des Civilisations de l'Europe de la Méditerranée
+ \item MMSH : Phonothèque de la Maison Méditerranéenne des Sciences de l'Homme
+ \item TGE Adonis : Très Grand Equipement pour les sciences humaines et sociales du CNRS
+\end{itemize}
+
+
+example : CREM
+
+\subsection{Fonctionnalités}
+
+Liste des fonctionnalités principales :
+
+\begin{itemize}
+\item Edition, archivage pérenne sécurisé, indexation collaborative sur la base d'une application web
+\item Interface utilisateur conforme aux standards ouverts du web 
+\item Moteur de recherche par mots clés ou par critères (géographques, ethniques, etc...) 
+\item Lecteur audio avancé dynamique et paramétrable. Tous formats audio et video supportés. 
+\item Moteur d'analyse et de visualisation audio basée sur une structure de modules paramétrables 
+\item Transcodage vers les formats FLAC, OGG, MP3 et WAV avec encapsulation des métadonnées à la volée 
+\item Gestion complète des droits et profils utilisateurs 
+\item Gestion de listes de lecture personnelles avec export CSV 
+\item Indexation temporelle à la volée (marqueurs textuels sur le lecteur web audio) 
+\item Base de données relationnelle (type MySQL) 
+\item Service d'accès aux données par le protocole OAI-PMH (moissonnage) 
+\item Compatibilité DublinCore 
+\item Geo-navigateur pour la géolocalisation audio (Google Maps) 
+\item Flux RSS dynamique des dernières modifications 
+\item Sauvegarde sérialisée des aarchives et de leurs métadonnées aux formats WAV + XML 
+\item Flux RSS dynamique des dernières modifications 
+\item Traduction complète anglais / français (détection automatique et/ou contrainte manuelle) 
+\end{itemize}
+
+Telemeta incorpore ainsi un ensemble de fonctions spécifiques au travail des archives temporelles comme la musique ou la voix parlée / chantée, l'interface ayant été pensée par et pour les chercheurs. Les services de transposition des méta-données au format DublinCore à travers le protocole OAI-PMH permet de proposer l'ensemble des méta-données aux services de moissonnage institutionels tels que Isidore créé par le TGE Adonis pour les sciences humaines (http://www.rechercheisidore.fr). 
+
+\subsection{Licence}
+
+Telemeta est publié selon les termes de la licence libre CeCILL \footnote{\dchref{http://www.cecill.info}} conforme au droit français et publiée par le CNRS, l'INRIA et le CEA.
+
+
+
+\section{Technologies et philosophie}
+
+
+\subsection{Les fondamentaux du logiciel libre}
+
+Pérenniser les ressources informatiques, copies à grandes échelles, réutilisation des innovations
+
+Dynamiser le développement (partage, communautés internationales)
+
+Limiter les coûts de déploiement à grande échelle
+
+sécurité
+
+
+
+\subsection{Standards et normes}
+
+Contraintes
+
+\subsubsection{Web, navigateurs}
+
+    \begin{itemize}
+     \item HTML5 : langage hypertextuel avec balises $<$audio$>$ $<$video$>$
+     \item CSS : feuilles de styles
+     \item JavaScript : langage côté navigateur (interfaces et lecteur dynamique)
+    \end{itemize}
+
+\subsubsection{Audio}
+
+Alors que l'application est capable de décoder tous les formats audio-visuels connus grâce à la librairie GStreamer \footnote{\url{http://gstreamer.freedesktop.org}}, nous avons fait le choix de certains formats d'export pour l'encodage audio. Alors que, par défaut, la lecture en ligne s'effectue en streaming au format MP3 ou OGG Vorbis selon la disponibilité du navigateur, certains voudront télécharger un fichier FLAC compressé sans pertes encapsulant les méta-données DublinCore ou encore au format d'origine comme le WAV.
+
+\subsubsection{Métadonnées}
+
+    \begin{itemize}
+	 \item \chref{http://dublincore.org/}{DublinCore} (OAI-PMH)
+     \item \chref{http://fr.wikipedia.org/wiki/Structured_Query_Language}{SQL} : base de données
+     \item \chref{http://www.w3.org/TR/owl-features/}{OWL} : Web Ontology Language
+    \end{itemize}
+
+
+\subsection{Briques principales}
+
+Telemeta utilise de nombreuses briques logicielles libres, éprouvées et conformes aux standards de la programmation scientique:
+
+\begin{itemize}
+\item Linux : noyau serveur conseillé
+\item Apache : serveur web frontal (+ module WSGI)
+\item Python : langage interprété orienté objet
+\item Django : framework web pour Python
+\item MySQL : base de données relationnelle 
+\item Scipy / Numpy : modules d'analyse mathématique en Python
+\item TimeSide \footnote{\url{http://code.google.com/p/timeside}} : traitement des signaux audio, lecteur audio web dynamique
+\end{itemize}
+
+
+\section{Architecture serveur}
+
+ coté serveur
+
+L'architecture de Telemeta
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=15cm]{img/architecture_fr}
+  \end{center}
+
+\subsection{Modèle de données}
+
+Modèle de données du CREM
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=15cm]{img/data_model2}
+  \end{center}
+
+\subsection{Droits d'accès}
+
+Droits d'accès
+\begin{itemize}
+ \item \textbf{Utilisateurs} : profils, droits, gestion des mots de passe
+ \item \textbf{Groupes} : administrateur, documentaliste, chercheur, membre, anonyme
+ \item \textbf{Droits} : ajouter, supprimer ou modifier les objets selon les règles
+ \item Pour tous les utilisateurs : \textbf{listes de lecture} personnelle, ajout de \textbf{marqueurs temporels}
+ \item \textbf{Droits particuliers} pour la lecture audio (date glissante de 50 ans, paramètre ``public access'')
+\end{itemize}
+
+Détail des droits des groupes
+\begin{itemize}
+ \item \textbf{Anonyme} : parcours du site, lecture selon les autorisations de chaque objet
+ \item \textbf{Membre} : ajout de listes de lectures personnelles, ajout de marqueurs
+ \item \textbf{Chercheur} : ajout et edition des fiches documentaires
+ \item \textbf{Documentaliste} : suppression d'objets, tous droits sur la base de données (hors utilisateurs), lecture audio de tous les items
+ \item \textbf{Administrateur} : ajouter des utilisateurs
+\end{itemize}
+\vspace{5mm}
++ droits spéciaux au cas par cas :
+\begin{itemize}
+ \item Lecture audio de tous les items
+ \item Téléchargement de tous les items
+\end{itemize}
+
+\subsection{Traitement audio}
+
+TimeSide : web audio components
+
+\begin{figure}[htp]
+    \centering
+    \pgfimage[width=15cm]{img/timeside_schema}
+    \caption{Schéma fonctionnel de la librairie TimeSide}
+    \label{index1}
+\end{figure}
+
+
+Pour l'analyse, le transcodage et la lecture des signaux, le projet connexe TimeSide a été créé par Parisson et d'autres développeurs externes. Cette librairie est dotée d'une architecture de processeurs de signaux temporels donnant accès à un ensemble de modules de calculs. Ces modules -  écrits entièrement en Python grâce aux fonctions avancées du projet de calcul scientifique Numpy - font référence à une API simple et publiée. L'accès aux flux audio, aux flux de méta-données et aux ressources de calcul est définie par une API simple et publiée. Une couche graphique dynamique - écrite en AJAX / CSS / Javascipt y est également disponible pour la lecture et l'interfaçage du navigateur, côté client, pour l'affichage des résultats d'analyse et d'autres fonctions avancées comme l'indexation temporelle. La liste des modules diponibles peut petre agrémentée aisément de sorte que les plateformes externes, comme Telemeta, disposent automatiquement des nouveaux outils publiés. A ce jour, TimeSide est utisé par Telemeta pour calculer les images (formes d'onde, spectrogramme, etc), les propriétés acoustiques et informatique globales et moyennées des média sonores, le décodage et l'encodage des flux audio. Pour plus d'informations : \href{http://code.google.com/p/timeside/}{http://code.google.com/p/timeside/} \\
+
+
+\subsection{Moissonnage et sauvegarde}
+
+Moissonnage et sauvegarde
+
+\begin{itemize}
+\item mapping Dublin Core
+\item serveur OAI-PMH intégré
+\item flux RSS (revisions)
+\item sauvegarde sérialisée : XML + WAV
+\item upload accumulatif
+\end{itemize}
+
+\subsection{Installation}
+
+voir INSTALL.rst
+
+
+\section{Interface web}
+
+côté client
+
+\subsection{Espace utilisateur}
+
+
+\begin{figure}[htp]
+    \centering
+    \pgfimage[width=15cm]{img/shots/home1}
+    \caption{Espace de travail personnel : listes de lectures, suivi des dernières modifications}
+    \label{index1}
+\end{figure}
+
+
+\subsection{Edition}
+
+formulaires générés automatiquement selon le modèle de données
+
+\subsection{Moteur de recherche}
+
+par mot clés
+
+avancée
+
+
+\begin{figure}[htp]
+    \centering
+    \pgfimage[width=15cm]{img/shots/search1}
+    \caption{Exemple de requête de recherche avancée avec complétion dynamique des termes géographiques}
+    \label{search1}
+\end{figure}
+
+
+\subsection{Lecture et analyse audio}
+
+formats standards orientés web
+
+TimeSide UI : lecteur audio dynamique
+\begin{itemize}
+\item Lecture audio
+\item Affichage audio
+\item Indexation temporelle
+\item Portabilité
+\item Principes du modèle de développement
+\item \chref{http://code.google.com/p/timeside/wiki/UiGuide}{code.google.com/p/timeside/wiki/UiGuide}
+\end{itemize}
+
+
+\begin{figure}[htp]
+    \centering
+    \pgfimage[width=15cm]{img/shots/player_mark}
+    \caption{Exemple d'un item en cours de lecture avec affichage dynamique des contenus des marqueurs}
+    \label{item1}
+\end{figure}
+
+\subsection{Media associés}
+
+
+\subsection{Administration}
+
+\begin{itemize}
+\item Collections, Items
+\item Enumérations ou thésaurus
+\item Ontologie éthnographique
+\item Ontologie instrumentale
+\item Compositions
+\item Mots clés
+\item Marqueurs temporels
+\end{itemize}
+
+\begin{figure}[htp]
+    \centering
+    \pgfimage[width=15cm]{img/shots/admin2}
+    \caption{Page d'accueil de l'administration générale du site}
+    \label{item1}
+\end{figure}
+
+
+
+\section{Développement}
+
+\subsection{Contexte}
+
+
+Plateforme de développement : \chref{http://telemeta.org}{telemeta.org}
+
+Présentation, installation, documentation, Blog, tickets, bugs, Mailing list, Wiki
+
+utilisation de \chref{http://git-scm.org}{Git} (versionnement décentralisé) \\
+
+dépôts : vcs.parisson.com, github, vous !
+
+  \begin{verbatim}
+	git clone http://vcs.parisson.com/git/telemeta.git
+  \end{verbatim}
+
+
+
+\subsection{Modélisation}
+
+Voir \chref{telemeta/models/}{http://github.com/yomguy/Telemeta.git/telemeta/models/}
+
+\subsection{Controlleurs}
+
+Voir web/ et url.py
+
+\subsection{Vues}
+
+Voir templates/telemeta\_default/
+
+
+\subsection{Feuille de route}
+
+Objectifs pour Telemeta 1.x:
+
+\begin{itemize}
+ \item Compatibilté HTML5 totale du lecteur audio
+ \item Accès spéciaux par adresses IP
+ \item Intégration et MAJ des \textbf{ontologies} (langues, géographie)
+\end{itemize}
+\vspace{0.3cm}
+
+Objectifs pour Telemeta 2.x:
+\begin{itemize}
+ \item \textbf{Modèle générique} de données
+ \item \textbf{Fonctions d'analyse} augmentée (reconnaissance, recoupement statistique) : ANR CONTINT 2011 \textbf{DIADEMS} et ANR CORPUS 2011 \textbf{DicA2Ref}
+ \item \textbf{Déploiement mutualisé} (CNRS IN2P3)
+ \item Définition d'une \textbf{API}
+\end{itemize}
+
+
+\section{Conclusion et perspectives}
+
+\begin{itemize}
+ \item Technologie et ergonomie prometteuse pour la \textbf{sauvegarde et la valorisation} du patrimoine musical
+ \item \textbf{Déploiement} et \textbf{pérennité} optimisés avec les briques open source
+ \item \textbf{Intégration souple} de données métiers hétérogènes (sciences humaines et sciences informatiques)
+ \item \textbf{Plateforme collaborative} à un niveau international
+ \item Exemple au CREM du 18/05 au 25/06 : plus de \textbf{450} fiches en moyenne éditées par semaines !
+ \item Plateforme de \textbf{développement} ouverte
+\end{itemize}
+
+
+\newpage
+
+ \begin{center}
+   \vspace{-0.2cm}
+    \pgfimage[width=3cm]{img/logo_telemeta_800}\\
+    \dchref{http://telemeta.org}\\
+  \vspace{1cm}
+   Telemeta 1.3 ``Bell''\\
+   \chref{http://pypi.python.org/packages/source/T/Telemeta/Telemeta-1.3.tar.gz}{http://pypi.python.org/packages/source/T/Telemeta/Telemeta-1.3.tar.gz}\\
+    \vspace{10mm}
+    \tiny{Ce document est mise à disposition selon un \chref{http://creativecommons.org/licenses/by-nc-sa/2.0/fr/}{contrat Creative Commons}}
+  \end{center}
+
+
+
+\end{document}

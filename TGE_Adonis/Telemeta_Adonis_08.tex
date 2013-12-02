@@ -1,0 +1,303 @@
+\documentclass[mathserif]{beamer}
+
+% FOR BEAMER SLIDES
+%\usepackage{palatino}
+%\usepackage{helvet}
+%\usepackage{eulervm}
+\usepackage{mathpazo}
+%\documentclass[sans,mathserif]{beamer}
+%\usepackage{kerkis}
+%\usepackage{kmath}
+\usepackage{beamerthemeCambridgeUS}
+%\usepackage{beamerthemeBoadilla}
+%\usepackage{beamerthemeDarmstadt}
+%\usepackage{beamerthemeGoettingen}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{colortbl}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage{newlfont}
+\usepackage{url}
+\urlstyle{footnotesize}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\columnsep 1cm
+\title{\textbf{Projet Telemeta}}
+\author{CREM, MMSH, LAM, Anthroponet, Parisson}
+\institute{TGE ADONIS}
+\date{\today\ - v0.3.2}
+
+\begin{document}
+\frame{\titlepage}
+
+
+\section[Plan]{}
+\frame{\tableofcontents}
+
+\section{Introduction}
+
+\subsection{Les systèmes d'archivage}
+
+\frame{\frametitle{L'archivage classique sur supports physiques}
+Supports typiques : cylindres de cires, bandes magnétiques analogiques, disques vinyles, DAT, CD, etc...
+
+\begin{columns}[c]
+
+\column{6cm}
+\begin{itemize}
+ \item Buts :
+    \begin{itemize}
+    \item Conformité à l'oeuvre originale
+    \item Reproductibilité
+    \item Accessibilité
+    \end{itemize}
+ \item Problèmes :
+    \begin{itemize}
+    \item Fragilité : rayures, fissures, changement de phase du matériau, syndrôme du vinaigre,...
+    \item Nécessité d'appareils de lecture specifiques
+    \item Pérennité
+    \end{itemize}
+\end{itemize}
+\column{6cm}
+\framebox{\pgfimage[width=5cm]{img/CD-Moisi2}}
+\framebox{\pgfimage[width=5cm]{img/CD-Moisi}}
+\end{columns}
+
+}
+
+\frame{\frametitle{L'archivage sur disque dur}
+\begin{itemize}
+ \item Avantages :
+    \begin{itemize}
+    \item Information magnétique
+    \item Confinement et compacité
+    \item Vitesse et capacité d'accès (lecture et écriture)
+    \item $\Rightarrow$ Valorisation
+    \end{itemize}
+ \item Inconvénients :
+    \begin{itemize}
+    \item Maintenance (recopie)
+    \end{itemize}
+\end{itemize}
+\begin{center}
+\pgfimage[width=5cm]{img/HDMAXTOR}
+\end{center}
+}
+
+
+\subsection{Exemple : Le fond d'archives du CREM}
+\frame{\frametitle{Le fond d'archives du CREM}
+Un fond ethnomusicologique unique :
+\begin{itemize}
+ \item 4291 collections (inédit et édité)
+ \item Actuellement 22101 fiches documentaires comportant 50 champs en moyenne (60000 environ à terme)
+ \item 3250 heures de sons inédits soit 4 To environ + montages et copies diverses
+ \item 3500 heures de sons édités soit 4,5 To environ
+ \item 300 heures environ de video ($\approx$ 4 To)
+\end{itemize}
+\vspace{0.5cm}
+Besoins en numérisation, en traitement documentaire (reste 65\% du fond à effectuer) et en \textbf{valorisation} ! \\
+}
+
+\frame{\frametitle{La base de données (logiciel 4D)}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=8.5cm]{img/ethnomus4D}
+   \end{center}
+}
+
+
+\subsection{Objectifs du projet Telemeta}
+\frame{\frametitle{Objectifs du projet Telemeta}
+\begin{itemize}
+ \item Pérenniser les archives audionumériques
+ \item Valoriser le patrimoine culturel par la consultation légale
+ \item optimiser la transmission des méta-données
+ \item Augmenter les capacités de recherche (web sémantique, interopérabilité, croisement de données)
+ \item Définir un systématisme de sauvegarde des oeuvres audiovisuelles
+\end{itemize}
+\vspace{3mm}
+\begin{center}
+$\Rightarrow$ Demande de financement de TGE Adonis
+\end{center}
+\begin{center}
+\begin{columns}[c]
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2cm]{img/logo_telemeta_sat}\end{center}
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/Logo-CREM-La.jpg}
+\end{center}\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/titreMMSH2}\end{center}
+\column{2cm}
+\begin{center}
+\pgfimage[width=1.5cm]{img/LAMlogonew03}\end{center}
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/parisson_logo_200}\end{center}
+\end{columns}
+\end{center}
+}
+
+
+\section{Moyens}
+\frame{\tableofcontents[currentsection]}
+
+\subsection{Technologies}
+\frame{\frametitle{Les technologies utilisées par Telemeta}
+Open Source :
+\begin{itemize}
+  \item Licence CeCILL
+  \item Pérennise les ressources
+  \item Dynamise le développement (partage, communautés internationales)
+  \item Limiter les coûts à grande échelle
+\end{itemize}
+
+Briques :
+\begin{itemize}
+ \item Python : langage\\
+    \url{http://python.org}
+ \item Django : framework \\
+    \url{http://djangoproject.com}
+ \item MySQL : base de données relationnelle\\
+    \url{http://mysql.com}
+ \item Linux, OSX, Windows : système multi-plateforme
+\end{itemize}
+}
+
+\subsection{Standards}
+\frame{\frametitle{Les standards et normes utilisés par Telemeta}
+\begin{itemize}
+ \item Web :
+    \begin{itemize}
+     \item HTML : langage hypertextuel
+     \item CSS : styles
+     \item SQL : base de données
+    \end{itemize}
+ \item Audio :
+    \begin{itemize}
+    \item WAV : archivage audio brut
+    \item MP3, MP4 : compression avec pertes, largement utilisé, encapsulation partielle
+    \item OGG Vorbis : compression avec pertes, open source, encapsulation totale
+    \item FLAC : compression sans pertes, multi-pistes, open source, encapsulation totale
+    \end{itemize}
+ \item Métadonnées :
+    \begin{itemize}
+     \item XML (W3C)
+     \item DublinCore (OAI-PMH)
+     \item exports SQL
+     \item (OWL : Web Ontology Language)
+    \end{itemize}
+\end{itemize}
+}
+
+\subsection{Développement}
+\frame{\frametitle{Plateforme communautaire de développement}
+\begin{center}
+\vspace{-0.2cm}
+\url{http://svn.parisson.org/telemeta/}
+   \framebox{\pgfimage[width=10cm]{img/telemeta_trac01}}
+\end{center}
+}
+
+\subsection{Architecture}
+\frame{\frametitle{L'architecture de Telemeta}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=11cm]{img/architecture_fr}
+  \end{center}
+}
+
+
+\section{Développements}
+\frame{\tableofcontents[currentsection]}
+
+\subsection{Version 0.3.1}
+
+\frame{\frametitle{Modèle de données du CREM}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=12cm]{img/data_model2}
+  \end{center}
+}
+
+\frame{\frametitle{La base de données du CREM intégrée à Telemeta}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=11cm]{img/crem_telemeta_01}
+  \end{center}
+}
+
+
+\subsection{Démonstration}
+\frame{\tableofcontents[currentsubsection]}
+
+
+\subsection{Besoins}
+\frame{\tableofcontents[currentsubsection]}
+\frame{\frametitle{Atteindre une version 1.0 de production}
+Elements à programmer et/ou consolider
+\begin{itemize}
+ \item Intégration du workflow
+ \item Thésaurus thématiques, ontologies de recherche
+ \item Sauvegarde externe
+ \item Compléter la vue DublinCore (moissonneuses)
+ \item Marqueurs temporels, lecture dynamique avec pièces attachées
+ \item Données issues de l'analyse du signal (transitoires, voisins fréquentiels,...)
+ \item Specifications pour les composants
+ \item Fonctions de test
+\end{itemize}
+}
+
+
+\frame{\frametitle{En route pour 0.4 (edition)}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=9.5cm]{img/maquette_v0.4_item_edit}
+  \end{center}
+}
+
+
+\frame{\frametitle{Partenariats}
+Partenaires participants :
+\begin{itemize}
+ \item Centre de Recherche en Ethnomusicologie (CREM) du Laboratoire d'Ethnologie et de Sociologie Comparée (LESC), UMR 7186
+ \item Médiathèque Eric-de-Dampierre de la MAE, Nanterre
+ \item Equipe Lutheries, Acoustique et Musique (LAM) de l'Institut Jean le Rond d'Alembert (IJLRA), UMR 7190
+ \item Phonothèque de la Maison Méditerranéenne des Sciences de l'Homme (MMSH)
+\end{itemize}
+Partenaires potentiels :
+\begin{itemize}
+  \item Museum National d'Histoire Naturelle (MNHN)
+  \item Bibliothèque Nationale de France (BNF)
+  \item Musée des Civilisations de l'Europe de la Méditerranée (MuCEM)
+  \item Institut de Recherche et d'Innovation (IRI)
+  \item Queen Mary University (Londres)
+\end{itemize}
+}
+
+
+\section{Conclusion et perspectives}
+\frame{\frametitle{Conclusion et perspectives}
+\begin{itemize}
+ \item Technologie prometteuse pour la sauvegarde et la valorisation du patrimoine
+ \item Système intégrant des données issues des sciences humaines et des sciences informatiques
+ \item Déploiement facilité grâce à l'open source
+ \item Plateforme de développement
+ \item Système de composants facilitant l'intégration de nouvelles fonctions
+ \item Nécessite un financement pour le développement et le déploiement des ressources à un niveau national et international
+\end{itemize}
+}
+
+\frame{\frametitle{Merci !}
+ \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=9cm]{img/maquette_v0.4_item_view}
+  \end{center}
+}
+
+
+\end{document}

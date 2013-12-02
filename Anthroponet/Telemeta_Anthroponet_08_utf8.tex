@@ -1,0 +1,328 @@
+\documentclass[mathserif]{beamer}
+
+% FOR BEAMER SLIDES
+%\usepackage{palatino}
+%\usepackage{helvet}
+%\usepackage{eulervm}
+\usepackage{mathpazo}
+%\documentclass[sans,mathserif]{beamer}
+%\usepackage{kerkis}
+%\usepackage{kmath}
+\usepackage{beamerthemeCambridgeUS}
+%\usepackage{beamerthemeBoadilla}
+%\usepackage{beamerthemeDarmstadt}
+%\usepackage{beamerthemeGoettingen}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{colortbl}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage{newlfont}
+\usepackage{url}
+\urlstyle{footnotesize}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\columnsep 1cm
+\columnsep 1cm
+\definecolor{rouge}{rgb}{0.7,0.1,0.1}
+\newcommand{\chref}[2]{
+    \href{#1}{\color{rouge}\underline{#2}}
+}
+\newcommand{\dchref}[1]{
+    \href{#1}{\color{rouge}\underline{#1}}
+}
+\newcommand{\curl}[1]{
+    \color{rouge}\underline{\url{#1}}
+}
+\title{\textbf{Projet Telemeta}}
+\author{Anthroponet, CREM, MNHN, LAM, Parisson}
+\institute{Guillaume Pellerin (Parisson SARL) \\
+            Joséphine Simonnot (CREM)}
+\date{\today\ - v0.3.4}
+
+\begin{document}
+\frame{\titlepage}
+
+
+\section[Plan]{}
+\frame{\tableofcontents}
+
+\section{Introduction}
+
+\subsection{Le fond d'archives du CREM}
+\frame{\frametitle{Le fond d'archives du CREM}
+Un fond ethnomusicologique unique :
+\begin{itemize}
+ \item 4291 collections (inédit et édité)
+ \item Actuellement 22101 fiches documentaires comportant 50 champs en moyenne (60000 environ à terme)
+ \item 3250 heures de sons inédits soit 4 To environ + montages et copies diverses
+ \item 3500 heures de sons édités soit 4,5 To environ
+ \item 300 heures environ de video ($\approx$ 4 To)
+\end{itemize}
+\vspace{0.5cm}
+Besoins en numérisation, en traitement documentaire (reste 65\% du fond à effectuer) et en \textbf{valorisation} ! \\
+}
+
+
+\frame{\frametitle{Modèle de données du CREM}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=12cm]{img/data_model2}
+  \end{center}
+}
+
+
+\subsection{Vers la numérisation}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{L'archivage classique sur supports physiques}
+Supports typiques : cylindres de cires, bandes magnétiques analogiques, disques vinyles, DAT, CD, etc...
+
+\begin{columns}[c]
+
+\column{6cm}
+\begin{itemize}
+ \item Buts :
+    \begin{itemize}
+    \item Conformité à l'oeuvre originale
+    \item Reproductibilité
+    \item Accessibilité
+    \end{itemize}
+ \item Problèmes :
+    \begin{itemize}
+    \item Fragilité : rayures, fissures, changement de phase du matériau, syndrôme du vinaigre,...
+    \item Nécessité d'appareils de lecture specifiques
+    \item Pérennité
+    \end{itemize}
+\end{itemize}
+\column{6cm}
+\framebox{\pgfimage[width=5cm]{img/CD-Moisi2}}
+\framebox{\pgfimage[width=5cm]{img/CD-Moisi}}
+\end{columns}
+
+}
+
+\frame{\frametitle{L'archivage sur disque dur}
+\begin{itemize}
+ \item Avantages :
+    \begin{itemize}
+    \item Information magnétique
+    \item Confinement et compacité
+    \item Vitesse et capacité d'accès (lecture et écriture)
+    \item $\Rightarrow$ Valorisation
+    \end{itemize}
+ \item Inconvénients :
+    \begin{itemize}
+    \item Maintenance (recopie)
+    \end{itemize}
+\end{itemize}
+\begin{center}
+\pgfimage[width=5cm]{img/HDMAXTOR}
+\end{center}
+}
+
+
+\section{Objectifs du projet Telemeta}
+\frame{\tableofcontents[currentsection]}
+
+\frame{\frametitle{Objectifs du projet Telemeta}
+\begin{itemize}
+ \item Pérenniser les archives audionumériques (logiciels et formats)
+ \item Valoriser le patrimoine culturel par la consultation légale
+ \item Optimiser la transmission des méta-données (OAI-PMH)
+ \item Augmenter les capacités de Recherche (web sémantique, interopérabilité, croisement de données)
+ \item Définir un systématisme de sauvegarde et de publication des oeuvres audiovisuelles
+\end{itemize}
+\vspace{3mm}
+\begin{center}
+$\Rightarrow$ Demande de financement à TGE Adonis (AAP 2009)\\
+$\Rightarrow$ Demande de financement à l'ANR (AAP 2009)
+\end{center}
+\begin{center}
+\begin{columns}[c]
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2cm]{img/logo_telemeta_sat}\end{center}
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/Logo-CREM-La.jpg}
+\end{center}\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/titreMMSH2}\end{center}
+\column{2cm}
+\begin{center}
+\pgfimage[width=1.5cm]{img/LAMlogonew03}\end{center}
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/parisson_logo_200}\end{center}
+\end{columns}
+\end{center}
+}
+
+
+\section{Technologies}
+\frame{\tableofcontents[currentsection]}
+
+\frame{\frametitle{Telemeta : un projet libre et ouvert}
+\textbf{Les fondamentaux du logiciel libre :}
+\begin{itemize}
+  \item Pérenniser les ressources informatiques
+  \item Dynamiser le développement (partage, communautés internationales)
+  \item Limiter les coûts de déploiement à grande échelle
+\end{itemize}
+\vspace{3mm}
+\textbf{Briques 100\% 0pen Source :}
+\begin{itemize}
+ \item \chref{http://python.org}{Python} : langage \\
+ \item \chref{http://djangoproject.com}{Django} : framework \\
+ \item \chref{http://mysql.com}{MySQL} : base de données relationnelle \\
+ \item \chref{http://linux.com}{Linux} : noyau serveur \\
+ \item \chref{http://scipy.org}{Scipy}, \chref{http://www.ar.media.kyoto-u.ac.jp/members/david/softwares/audiolab/}{Audiolab} : traitement des signaux audio
+ \item \chref{http://www.cecill.info}{CeCILL} : licence libre conforme au droit français
+\end{itemize}
+}
+
+\frame{\frametitle{Les standards et normes utilisés par Telemeta}
+\begin{itemize}
+ \item Web :
+    \begin{itemize}
+     \item \chref{http://www.w3schools.com/html/}{HTML} : langage hypertextuel
+     \item \chref{http://www.w3.org/Style/CSS/}{CSS} : styles
+     \item \chref{http://fr.wikipedia.org/wiki/Structured_Query_Language}{SQL} : base de données
+    \end{itemize}
+ \item Audio :
+    \begin{itemize}
+    \item \chref{http://fr.wikipedia.org/wiki/WAVEform_audio_format}{WAV} : archivage audio brut
+    \item \chref{http://fr.wikipedia.org/wiki/MP3}{MP3, MP4} : compression avec pertes, largement utilisé, encapsulation partielle
+    \item \chref{http://www.vorbis.com}{OGG Vorbis} : compression avec pertes, open source, encapsulation totale
+    \item \chref{http://fr.wikipedia.org/wiki/FLAC}{FLAC} : compression sans pertes, multi-pistes, open source, encapsulation totale
+    \end{itemize}
+ \item Métadonnées :
+    \begin{itemize}
+     \item \chref{http://en.wikipedia.org/wiki/XML}{XML} (W3C)
+     \item \chref{http://dublincore.org/}{DublinCore} (OAI-PMH)
+     \item \chref{http://mysql.com}{SQL}
+     \item \chref{http://www.w3.org/TR/owl-features/}{OWL} : Web Ontology Language
+    \end{itemize}
+\end{itemize}
+}
+
+\frame{\frametitle{Plateforme communautaire de développement}
+\begin{center}
+\vspace{-0.2cm}
+\dchref{http://telemeta.org}
+   \framebox{\pgfimage[width=10cm]{img/telemeta_trac01}}
+\end{center}
+}
+
+% \subsection{Architecture}
+% \frame{\frametitle{L'architecture de Telemeta}
+%   \begin{center}
+%    \vspace{-0.2cm}
+%    \pgfimage[width=11cm]{img/architecture_fr}
+%   \end{center}
+% }
+
+
+\section{Développement}
+\frame{\tableofcontents[currentsection]}
+
+\subsection{Version 0.3.2}
+
+\frame{\frametitle{La base de données du CREM intégrée à Telemeta}
+\begin{center}
+
+\dchref{http://crem.parisson.com}
+\end{center}
+  \begin{center}
+   \vspace{-0.3cm}
+   \pgfimage[width=11cm]{img/crem_telemeta-0.3.2}
+  \end{center}
+}
+
+
+% \subsection{Démonstration}
+% \frame{\tableofcontents[currentsubsection]}
+
+
+\subsection{Besoins}
+\frame{\frametitle{Objectifs pour une version 1.0 de production}
+Elements à programmer et/ou consolider pour la version 1.0 de production
+\begin{itemize}
+ \item Intégration du \textbf{\textit{workflow}} (gestion de publication)
+ \item \textbf{Thésaurus} thématiques, \textbf{ontologies} de recherche
+ \item \textbf{Sauvegarde} externe (audio + meta-données)
+ \item Compléter la vue \textbf{DublinCore} (moissonnage par méta-portails)
+ \item \textbf{Marqueurs} temporels, lecture dynamique avec pièces attachées (texte, images)
+ \item \textbf{Analyse des signaux audio} (niveaux, transitoires, voisins fréquentiels,...)
+ \item \textbf{Specifications} et \textbf{documentation} pour les composants (API)
+ \item Fonctions de test
+\end{itemize}
+}
+
+
+\frame{\frametitle{En route pour 0.4 (edition)}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=9.5cm]{img/maquette_v0.4_item_edit}
+  \end{center}
+}
+
+
+\frame{\frametitle{En route pour 0.4 (vue item)}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=9.5cm]{img/maquette_v0.4_item_view}
+  \end{center}
+}
+
+
+
+\frame{\frametitle{Partenariats}
+Partenaires participants :
+\begin{itemize}
+ \item Centre de Recherche en Ethnomusicologie (\textbf{CREM}) du Laboratoire d'Ethnologie et de Sociologie Comparée (\textbf{LESC}), UMR 7186
+ \item Equipe Lutheries, Acoustique et Musique (\textbf{LAM}) de l'Institut Jean le Rond d'Alembert (\textbf{IJLRA}), UMR 7190
+ \item Médiathèque Eric-de-Dampierre de la \textbf{MAE}, Nanterre
+ \item Museum National d'Histoire Naturelle (\textbf{MNHN})
+ \item Musée des Civilisations de l'Europe de la Méditerranée (\textbf{MuCEM})
+ \item Phonothèque de la Maison Méditerranéenne des Sciences de l'Homme (\textbf{MMSH})
+\end{itemize}
+Partenaires potentiels :
+\begin{itemize}
+  \item Bibliothèque Nationale de France (\textbf{BNF})
+  \item Institut National de l'Audiovisuel (\textbf{INA})
+  \item Institut de Recherche et d'Innovation (\textbf{IRI})
+  \item Queen Mary University (\textbf{QMU}, Londres)
+\end{itemize}
+}
+
+
+\section{Conclusion et perspectives}
+\frame{\frametitle{Conclusion et perspectives}
+\begin{itemize}
+ \item Technologie prometteuse pour la \textbf{sauvegarde et la valorisation} du patrimoine audio
+ \item \textbf{Déploiement} et \textbf{pérennité} optimisés grâce à l'\textbf{Open Source}
+ \item \textbf{Intégration souple} de données ``métiers'' hétérogènes (sciences humaines et sciences informatiques)
+ \item Plateforme de \textbf{développement} ouverte
+ \item Système de \textbf{composants} facilitant l'intégration de nouvelles fonctions et l'export des fonctions vers d'autres logiciels.
+ \item Nécessite un \textbf{financement} pour le développement et le déploiement des ressources à un niveau national et international
+\end{itemize}
+}
+
+\frame{\frametitle{Merci !}
+ \begin{center}
+   \vspace{-0.2cm}
+    \pgfimage[width=3cm]{img/logo_telemeta_sat}\\
+    \dchref{http://telemeta.org}\\
+    \vspace{10mm}
+    \pgfimage[width=3.5cm]{img/parisson_logo_200}\\
+    \dchref{http://parisson.com}\\
+    \vspace{10mm}
+    \pgfimage[width=1cm]{img/88x31.png}\\
+    Ce document est mise à disposition sous un \chref{http://creativecommons.org/licenses/by-nc-sa/2.0/fr/}{contrat Creative Commons}.
+  \end{center}
+}
+
+
+\end{document}
