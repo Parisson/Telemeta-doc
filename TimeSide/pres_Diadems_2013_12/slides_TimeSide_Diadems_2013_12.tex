@@ -27,7 +27,7 @@
 \usepackage{wrapfig}
 \usepackage{listings}
 \usepackage{xcolor}
-
+\usepackage{multimedia} % For playing sound
 % Define hyperlinks color
 \definecolor{links}{HTML}{2A1B81}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links}
@@ -157,7 +157,7 @@
       \begin{itemize}
       \item Waveform \texttt{[waveform\_simple]}
       \item WaveformCentroid \texttt{[waveform\_centroid]}
-      \item WaveformTransparent \texttt{[waveform\_transparent]}
+      \item \alert{WaveformTransparent} \texttt{[waveform\_transparent]}
       \item WaveformContourBlack \texttt{[waveform\_contour\_black]}
       \item WaveformContourWhite \texttt{[waveform\_contour\_white]}
       \item SpectrogramLog \texttt{[spectrogram\_log]}
@@ -267,12 +267,15 @@ import timeside
 
 # Define some processors:
 decoder = timeside.decoder.FileDecoder('sweep.wav')
+
 analyzer = timeside.analyzer.Level()
+irit4hz = timeside.analyzer.IRITSpeech4Hz()
+
 grapher = timeside.grapher.Spectrogram()
 encoder = timeside.encoder.VorbisEncoder('sweep.ogg')
 
 # Then, the magic pipeline:
-(decoder | analyzer | grapher | encoder).run()
+(decoder | analyzer | irit4hz | grapher | encoder).run()
 
 # Get the results:
 grapher.render(output='image.png')
@@ -300,14 +303,19 @@ for key in analyzer.results.keys():
  \end{minipage}
   \end{block}
 \end{frame}
+
 \begin{frame}
-  TODO
-  \begin{itemize}
-  \item exemple de code plus complet avec display
-  \item test\_IRIT.py
-  \item exemple CMMR
-  \item liste des analyseurs / encodeurs, grapheurs ...
-  \end{itemize}
+\frametitle{Détecteur de parole IRIT (4Hz modulation)}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{img/irit_speech4hz}\\
+\href{sounds/CNRSMH_I_2013_202_001_06.mp3}{Son}
+\end{center}
+\end{frame}
+\begin{frame}\frametitle{Aubio Pitch + Aubio Beat}
+  \begin{center}
+\includegraphics[width=1.1\linewidth]{img/aubio_pitch_beat.png}\\
+\href{sounds/CNRSMH_E_1985_001_001_001_04.mp3}{Son}
+\end{center}
 \end{frame}
 \end{document}
 %%% Local Variables: 
