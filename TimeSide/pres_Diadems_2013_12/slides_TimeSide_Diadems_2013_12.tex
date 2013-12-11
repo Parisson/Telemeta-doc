@@ -83,7 +83,7 @@
 \end{frame}
 
 \begin{frame}
- \frametitle{TimeSide - Goals}\scriptsize
+ \frametitle{TimeSide - Objectifs}\scriptsize
 % ==================================
 % --------- Résumé -----------------
 % ==================================
@@ -108,13 +108,13 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{TimeSide engine architecture}
+  \frametitle{Architecture du moteur TimeSide}
   \begin{center}
     \includegraphics[width=\textwidth]{img/timeside_schema.png}
   \end{center}
 \end{frame}
 \begin{frame}\tiny
-  \frametitle{Processors}
+  \frametitle{Processeurs}
   \begin{minipage}{0.45\linewidth}
 
    \begin{block}{IDecoder}
@@ -187,6 +187,7 @@
     \item Amélioration de la sérialisation des resultats (xml, json,
       yaml, \alert{numpy}, \alert{hdf5})
     \item  Ajout de fonctionnalités et \emph{Réusinage} de code en prévision de l'intégration de méthodes d'analyse automatique
+    \item Notion d'analyseur " \emph{parent} "
     \end{itemize}
     
   \end{block}
@@ -194,7 +195,7 @@
 
 \begin{frame}{Extraction de descripteurs audio}
   
- \begin{block}{Audio features extraction}
+ \begin{block}{Extraction de descripteurs audio}
 TimeSide incorpore des bibliothèques d'extraction de descripteurs audio de référence :
 \vspace{-0.1cm}
 \begin{itemize} \tiny
@@ -213,10 +214,10 @@ $\longrightarrow$ Intégration des premiers analyseurs ``DIADEMS'' : Détecteurs
 \end{block}
 \begin{block}{}
   Formalisation de différents types de résultats :
-      \begin{itemize}
-      \item time\_mode : global, event, segment, framewise
-      \item data\_mode : value, label
-      \end{itemize}
+  \begin{itemize}
+  \item time\_mode : \texttt{global, event, segment, framewise}
+  \item data\_mode : \texttt{value, label}
+  \end{itemize}
 \end{block}
 \end{frame}
 
@@ -259,18 +260,22 @@ $ python tests/run_all_tests
 \end{frame}
 
 \begin{frame}[fragile]
-  \begin{block}{Code Example (Python)}
+  \begin{block}{Exemple de code (Python)}
     \vskip1ex
      \begin{minipage}{0.6\linewidth}
        \begin{lstlisting}
 import timeside
 
 # Define some processors:
+
+# Decoder
 decoder = timeside.decoder.FileDecoder('sweep.wav')
 
+# Analyzers
 analyzer = timeside.analyzer.Level()
 irit4hz = timeside.analyzer.IRITSpeech4Hz()
 
+# Grapher and Encoder
 grapher = timeside.grapher.Spectrogram()
 encoder = timeside.encoder.VorbisEncoder('sweep.ogg')
 
@@ -297,8 +302,8 @@ for key in analyzer.results.keys():
       \end{center} 
       \vskip5ex
       \begin{lstlisting}
-        Level Analyzer Max:[-6.021] 
-        Level Analyzer RMS:[-9.856]
+Level Analyzer Max:[-6.021] 
+Level Analyzer RMS:[-9.856]
       \end{lstlisting}
  \end{minipage}
   \end{block}
@@ -308,13 +313,13 @@ for key in analyzer.results.keys():
 \frametitle{Détecteur de parole IRIT (4Hz modulation)}
 \begin{center}
 \includegraphics[width=0.8\linewidth]{img/irit_speech4hz}\\
-\href{sounds/CNRSMH_I_2013_202_001_06.mp3}{Son}
+\href{sounds/CNRSMH_I_2013_202_001_06.mp3}{CNRSMH\_I\_2013\_202\_001\_06}
 \end{center}
 \end{frame}
 \begin{frame}\frametitle{Aubio Pitch + Aubio Beat}
   \begin{center}
 \includegraphics[width=1.1\linewidth]{img/aubio_pitch_beat.png}\\
-\href{sounds/CNRSMH_E_1985_001_001_001_04.mp3}{Son}
+\href{sounds/CNRSMH_E_1985_001_001_001_04.mp3}{CNRSMH\_E\_1985\_001\_001\_001\_04}
 \end{center}
 \end{frame}
 \end{document}
