@@ -1,0 +1,167 @@
+\documentclass[final, hyperref, table]{beamer}
+\mode<presentation>
+
+
+ %\usepackage[english]{babel} % "babel.sty"
+% \usepackage{french}                  % "french.sty"
+%  \usepackage{franglais}               % "franglais.sty" (a defaut)
+  \usepackage{times}			% ajout times le 30 mai 2003
+ 
+%% --------------------------------------------------------------
+%% CODAGE DE POLICES ?
+%% Si votre moteur Latex est francise, il est conseille
+%% d'utiliser le codage de police T1 pour faciliter la césure,
+%% si vous disposez de ces polices (DC/EC)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%\usepackage{enumitem}
+%\setlist{nosep}
+
+
+%% ==============================================================
+%\usepackage{graphicx}
+\usepackage{amsmath,amsfonts}
+%\usepackage[table]{xcolor}
+\usepackage{subfigure}
+\usepackage{fancybox}
+%\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usetheme{Boadilla}
+%\usetheme{JuanLesPins}
+\setbeamercovered{transparent}
+
+%gets rid of bottom navigation bars
+\setbeamertemplate{footline}[page number]{}
+
+%gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%\usecolortheme{beaver}
+% telemeta red
+\definecolor{telemetaRed}{rgb}{0.41568, 0.01176, 0.02745}	% #6A0307
+\usecolortheme[named=telemetaRed]{structure} 
+\setbeamercolor{structure}{fg=telemetaRed, bg=white}
+% Display a grid to help align images
+%\beamertemplategridbackground[1cm]
+
+%We will get the normal bibliography style (number or text instead of icon) by including the following code
+\setbeamertemplate{bibliography item}[text]
+\setbeamerfont{block title}{size=\footnotesize}
+\setbeamerfont{caption}{size=\footnotesize}
+% listings settings
+\definecolor{lstComments}{rgb}{0,0.6,0}
+\definecolor{lstBkgrd}{rgb}{1,1,0.8}
+\lstset{%
+  language=Python, % the language of the code
+  frame=single,  % adds a frame around the code
+  commentstyle=\color{lstComments},% comment style
+  backgroundcolor=\color{lstBkgrd},   % choose the background color
+  basicstyle=\scriptsize,       % the size of the fonts that are used for the code
+  keywordstyle=\color{blue},      % keyword style
+  showstringspaces=false,          % underline spaces within strings only
+}
+\title[TELEMETA, audio web CMS for Ethnomusicological archives]{\includegraphics[width=5cm]{logo_telemeta_alpha_black.png}\\Open web audio platform for sound archives in the use case of ethnomusicology}
+
+\author[Fillon, Pellerin, Brossier, Simonnot]{Thomas Fillon \inst{1,2}, Guillaume Pellerin\inst{1}, Paul Brossier\inst{1}, Jos{\'e}phine Simonnot\inst{3}}
+
+
+\institute[Parisson]{\tiny
+  \inst{1}%
+  Parisson, Paris, France\\
+  \inst{2}%
+  LAM, Institut Jean Le Rond d'Alembert, UPMC Univ. Paris 06, UMR CNRS 7190, Paris, France\\
+ \inst{3}%
+  CREM, LESC, UMR CNRS 7186, MAE, Université Paris Ouest Nanterre La Défense, Nanterre, France\\
+%Thanks
+\vskip1ex
+ {\tiny \textcolor{red}{\emph{This work was partially done inside the DIADEMS project\\ funded by the French National Research Agency ANR (CONTINT)}}}
+ \begin{center}
+\hfill
+   \raisebox{-4ex}{\includegraphics[width=0.1\linewidth]{../poster/img/logo_CREM.png}} \hfill
+  \includegraphics[width=0.15\linewidth]{../poster/img/logo_LESC.png}\hfill
+   \includegraphics[width=.3\linewidth]{../poster/img/parisson_logo_FINALE_com.pdf}\hfill
+   \includegraphics[width=.18\linewidth]{../poster/img/upmc.png}\hfill
+ \end{center}
+
+}
+        
+
+\begin{document}
+%\begin{frame}
+%  \maketitle
+%\end{frame}
+
+\begin{frame}\tiny
+\frametitle{\includegraphics[width=0.3\linewidth]{logo_telemeta_alpha_black.png} \hspace{.4\linewidth}  \includegraphics[width=.3\linewidth]{../poster/img/parisson_logo_FINALE_com.pdf}}
+\framesubtitle{{\underline{DEMO SESSION}}: \textbf{Telemeta, \emph{Open web audio platform for sound archives}\\\hspace{2.7cm}\emph{in the use case of ethnomusicology}}}
+% ==================================
+% --------- Résumé -----------------
+% ==================================
+\begin{columns}
+
+% ----------------- Colonne de gauche -----------------
+\column[t]{5.5cm}
+
+\begin{block}{The project {\tiny(started in 2007)}}
+  \begin{itemize}
+  \item The CREM laboratory and Parisson are developing an innovative,
+    collaborative and interdisciplinary open-source web-based multimedia platform dedicated to \alert{sound archivists} and \alert{researchers in ethnomusicology}.
+  \item The platform is fully operational since 2011 : \colorbox{yellow!50} { \hskip3ex \bf \url{http://archives.crem-cnrs.fr} \hskip3ex }
+  \end{itemize}
+\end{block}
+\vspace{-0.2cm}
+ \begin{block}{TimeSide :  {\tiny Open web audio processing framework}}
+One specificity of the \emph{Telemeta} architecture is to rely on an external component, \emph{TimeSide}
+\vspace{-0.25cm}
+\begin{center}
+  \colorbox{yellow!50}{\bf \hskip3ex \url{https://github.com/yomguy/TimeSide/} \hskip3ex  }
+\end{center}
+\vspace{-0.3cm}
+%\textbf{Goals}\\
+\begin{itemize}
+\item Decoding, encoding (Gstreamer)
+\item Asynchronous and fast audio processing (Python)
+\item Feature extraction (Aubio, Yaafe, Vamp plugins)
+\item Web audio player integration (HTML5), data and metadata serialization and fancy display
+\end{itemize}
+\end{block}
+
+
+% ----------------- Colonne de droite -----------------
+\column[t]{5.5cm}
+\begin{block}{The platform}
+  \begin{itemize}
+  \item \emph{Telemeta} is a collaborative \alert{open-source audio web Content
+      Management System} (CMS) dedicated to \alert{digital sound archives} and metadata publishing with index and database management
+     \alert{Annotations and segmentations} (by human or automatic).
+  \item \emph{Telemeta} also provides integrated \alert{audio signal
+      processing tools} for automatic analysis of sound items through an external component, \emph{TimeSide}.
+  \end{itemize}
+\vspace{-0.5cm}
+    \begin{center}
+      \colorbox{yellow!50}{\textbf{\url{http://telemeta.org/}}}
+    \end{center}
+  \end{block}
+ 
+  \begin{block}{Demo Session \#2}
+    \begin{itemize}
+       \item Live demonstration of the \emph{Telemeta} web platform with
+      the CNRS ethnomusicological sound archives
+    \item Live demonstration \emph{Timeside} audio processing
+      framework (Python)
+    \end{itemize}
+  \end{block}
+
+\end{columns}
+\end{frame}
+
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
