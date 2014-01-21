@@ -110,39 +110,41 @@
 \begin{block}{The project {\tiny(started in 2007)}}
   \begin{itemize}
   \item The CREM laboratory and Parisson are developing an innovative,
-    collaborative and interdisciplinary open-source web-based multimedia platform \emph{originally} dedicated to \alert{sound archivists} and \alert{researchers in ethnomusicology}.
+    collaborative and interdisciplinary \alert{open-source web based multimedia platform} dedicated to \alert{sound archivists} and \alert{researchers in ethnomusicology}.
   \item The platform is fully operational since 2011 : \colorbox{yellow!50} { \hskip3ex \bf \url{http://archives.crem-cnrs.fr} \hskip3ex }
   \end{itemize}
 \end{block}
 \vspace{-0.2cm}
- \begin{block}{TimeSide :  {\tiny Open web audio processing framework}}
-One specificity of the \emph{Telemeta} architecture is to rely on an external component, \emph{TimeSide}
-\vspace{-0.25cm}
+ \begin{block}{The framework}
+TimeSide is an open web audio processing framework written in Python which is used to build the engine of Telemeta. 
+%\textbf{Goals}\\
+\begin{itemize}
+    \item Easy plugin architecture (full Python)
+    \item Asynchronous and fast audio processing
+    \item Feature extraction (Aubio, Yaafe, Vamp plugins)
+    \item Smart, fancy and dynamical HTML5 web audio player
+\end{itemize}
+\vspace{-0.5cm}
 \begin{center}
   \colorbox{yellow!50}{\bf \hskip3ex \url{https://github.com/yomguy/TimeSide/} \hskip3ex  }
 \end{center}
-\vspace{-0.3cm}
-%\textbf{Goals}\\
-\begin{itemize}
-\item Decoding, encoding (Gstreamer)
-\item Asynchronous and fast audio processing (Python)
-\item Feature extraction (Aubio, Yaafe, Vamp plugins)
-\item Web audio player integration (HTML5), data and metadata serialization and fancy display
-\end{itemize}
+
 \end{block}
 
 
 % ----------------- Colonne de droite -----------------
 \column[t]{5.7cm}
-\begin{block}{The platform}
-  \begin{itemize}
-  \item \emph{Telemeta} is a collaborative \alert{open-source audio web Content
-      Management System} (CMS) \emph{originally} dedicated to \alert{digital sound archives} and metadata publishing with index and database management
-     \alert{Annotations and segmentations} (by human or automatic).
-  \item \emph{Telemeta} also provides integrated \alert{audio signal
-      processing tools} for automatic analysis of sound items through an external component, \emph{TimeSide}.
-  \end{itemize}
-\vspace{-0.5cm}
+  \begin{block}{The platform (features)}
+    \begin{itemize}
+        \item Pure HTML5 web user interface including dynamical forms and smart workflows
+        \item On the fly audio analyzing, transcoding and metadata embedding
+        \item Social editing with semantic ontologies, smart workflows, realtime tools, human or automatic annotations and segmentations
+        \item User management with individual desk, playlists, profiles and access rights
+        \item High level geo-located search engine
+        \item DublinCore, OAI-PMH, RSS, XML and JSON data providers
+        \item Multi-language support (now english and french)
+    \end{itemize}
+  \vspace{-0.5cm}
     \begin{center}
       \colorbox{yellow!50}{\textbf{\url{http://telemeta.org/}}}
     \end{center}
@@ -152,7 +154,7 @@ One specificity of the \emph{Telemeta} architecture is to rely on an external co
     \begin{itemize}
        \item Live demonstration of the \emph{Telemeta} web platform with
       the CNRS \alert{ethnomusicological sound archives}
-    \item Live demonstration \emph{Timeside} audio processing framework (Python)
+       \item Live demonstration of \emph{Timeside}, the audio processing framework (Python)
     \end{itemize}
   \end{block}
 
