@@ -83,7 +83,7 @@
 \end{frame}
 
 \begin{frame}
- \frametitle{TimeSide}\scriptsize
+ \frametitle{TimeSide}\footnotesize %scriptsize
 % ==================================
 % --------- Résumé -----------------
 % ==================================
@@ -92,18 +92,18 @@
   \item Python 2.7 
   \item Intégration de librairies d'extraction de descripteurs audio : Aubio, Yaafe, Vamp (expérimental)
   
-  \item Instalation par paquet Debian
+  \item Installation par paquet Debian
   \item Documentation :  \url{http://files.parisson.com/timeside/doc/} + doctest
   \item Amélioration du code des grapheurs
-  \item Amélioration du décodeurs : support de segment d'audio, mise en mémoire de l'audio pour le rejouer \emph{hors-ligne}
-  \item Amélioration du code des analyseurs
+  \item Amélioration du code et des fonctionnalités des décodeurs : support de segment d'audio, mise en mémoire de l'audio pour le rejouer \emph{hors-ligne}
+  \item Amélioration du code et des fonctionnalités des analyseurs
     \begin{itemize}\footnotesize
-      \item Mise en place d'un conteneur pour stocker et sérialiser (hdf5, yaml, json, xml) les résultats des analyses et les annotations
-      \item Support de différents modes temporels et de types de résulats
+      \item Mise en place d'un conteneur pour stocker et sérialiser (\emph{hdf5, yaml, json, xml}) les résultats des analyses et les annotations
+      \item Support de différents modes temporels et différents types de résultats
       \item Ajout de la notion d'analyseurs \emph{Parents}
       \item Ajout de méthodes pour générer les graphiques automatiquement (via \emph{matplotlib})
     \end{itemize}
-  \item Mise en place d'un outil en ligne de command : \texttt{timeside-launch}
+  \item Mise en place d'un outil en ligne de commande : \texttt{timeside-launch}
   \item Décodeur + Encodeur \emph{live} 
   \end{itemize}
 
@@ -125,13 +125,13 @@
   \end{block}
   \begin{block}{Perspectives}
     \begin{itemize}
-    \item Mise en place d'un architecture permettant une plus grande complexité des algos (partage de ressources, forward-backward, modèles d'apprentissage, ...)
-    \item Ajout de quelques outils :
+    \item Mise en place d'une architecture permettant une plus grande complexité des algorithmes (partage de ressources, forward-backward, modèles d'apprentissage, ...)
+    \item Ajout de quelques outils d'analyse (Parisson) :
       \begin{itemize}
       \item Détection de percussions,
-      \item séparation de sources aveugles : percussion / mélodie
+      \item Séparation de sources aveugles : percussion / mélodie
       \item Estimation du tempo, estimation des temps
-      \item nouvelles représentation Temps-Fréquences 
+      \item Nouvelles représentation Temps-Fréquences 
       \end{itemize}
 
     \end{itemize}
@@ -139,28 +139,27 @@
   \end{block}
 \end{frame}
 \begin{frame}
-\frametitle{Communications - collaboration}
+\frametitle{Communications - Collaborations}
 \begin{block}{Conférences - Démonstration de Telemeta-Timeside}
   \begin{itemize}
-  \item Computer Music Multidisciplinary Research - CMMR 2013 - Marseilles
-  \item Audio Engineering Society AES-53, Semantic Audio, 2014 - Londres 
+  \item Conférence \emph{Computer Music Multidisciplinary Research} - CMMR 2013 - Marseilles
+  \item Conférence \emph{Audio Engineering Society} AES-53, "Semantic Audio", 2014 - Londres 
   \end{itemize}
 \end{block}
-\begin{block}{Contact - Collaboration extérieure}
+\begin{block}{Contact - Collaborations extérieures}
   \begin{itemize}
   \item IRCAM : Projet Wave, \emph{Web Audio Visualisation/Edition} : \url{http://wave.ircam.fr/}
   \item Londres : Queen Mary University, BBC R\&D
-  \item Barcelone : UPF, projet CompMusic, \emph{Computational models for the discovery of the World’s Music}
-  \item Bio-acoustique : Univ. Toulon Sud, Hervé Glotin ; MNHM, Jérôme Sueur, projet SABIOD
+  \item Barcelone : UPF :  Projet CompMusic, \emph{Computational models for the discovery of the World’s Music}
+  \item Bioacoustique : Univ. Toulon Sud (Hervé Glotin), MNHM (Jérôme Sueur), LAM (Olivier Adam) :  Projet SABIOD
   \end{itemize}
 \end{block}
 \end{frame}
 
-
 \begin{frame}
 \frametitle{Telemeta}
     \begin{flushleft}
-    \includegraphics[width=0.2\textwidth]{img/logo_telemeta_1-1.pdf}\\
+    \includegraphics[width=0.2\textwidth]{img/logo_telemeta_1-1.pdf} \hfill
     \colorbox{yellow!50}{\textbf{\url{http://telemeta.org/}}}
   \end{flushleft}
   \begin{block}{Développement en cours}
@@ -168,15 +167,20 @@
     \item Annotation par segments
     \item Importation d'annotations externes (Elan, transcriber)
     \item Zoom en temps
-    \item Support de Web Audio API, HTML5
-    \item Visualisation des analyses et segmentation issues de Timeside 
+    \item Lecteur :
+      \begin{itemize}
+      \item Support de Web Audio API, HTML5
+      \item Synchronisation lecteur - annotation - analyses
+      \end{itemize}
+    \item Visualisation des analyses et segmentations issues de Timeside 
     \end{itemize}
   \end{block}
   \begin{block}{Perspectives}
     \begin{itemize}
-    \item Externaliser une partie de outils web de telemeta dans Timeside
+    \item Extraire une partie des outils web de Telemeta vers Timeside
     \item Zoom en fréquence
     \item Annotation Temps-Fréquence
+    \item Utilisation de \emph{Pyannote} (Hervé bredin, LIMSI)
     \end{itemize}
   \end{block}
 \end{frame}
