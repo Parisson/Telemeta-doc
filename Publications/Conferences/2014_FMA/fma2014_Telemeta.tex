@@ -105,7 +105,6 @@ Institut Jean Le Rond d'Alembert, \\
 
 % Telemeta architecture relies on \emph{TimeSide}, an open audio processing framework written in Python which provides decoding,  encoding and streaming methods for various formats together with a smart embeddable HTML audio player. TimeSide also includes a set of audio analysis plugins and additionally wraps several audio features extraction libraries to provide automatic annotation, segmentation and musicological analysis.
 
-% The demonstration presents the features of this platform in the context of ethnomusicological research.
 % \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -118,9 +117,13 @@ This platform, \emph{Telemeta} is designed to fit the professional requirements 
 
 Recently, an open-source audio analysis framework, \emph{Timeside}, has been developed to bring automatic music analysis capabilities to the web platform.
 
- \section{Telemeta}\label{sec:Telemeta}
+ \section{The Telemeta platform}\label{sec:Telemeta}
  \subsection{Web audio content management features and architecture}
- Telemeta\footnote{http://telemeta.org} is a free and open source\footnote{Telemeta code is available under the CeCILL Free Software License Agreement \texttt{http://cecill.info/licences/Licence\_CeCILL\_V2-en.html}} web audio platform which introduces efficient and secure methods for back-uping, indexing, transcoding, analysing and publishing any digitalized audio file with its metadata. 
+The primary purpose of Telemeta was to provided ethnomusicological community with a platform to access, preserve and distribute audio research materials together with their associated metadata, as these data provide key information on the context and significance of the recording.
+
+ Telemeta\footnote{http://telemeta.org} is a free and open source\footnote{Telemeta code is available under the CeCILL Free Software License Agreement \texttt{http://cecill.info/licences/Licence\_CeCILL\_V2-en.html}} web audio platform which introduces efficient and secure methods for back-uping, indexing, transcoding, analyzing, publishing and visualizing any digitized audio or video file with its metadata.
+
+The time-based nature of such audio-visual materials and some associated metadata as annotations raises issues of access and visualization. Easy access to these data, as you listen to the recording, represents a significant improvement.
 
  An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}
  \begin{figure}
@@ -145,9 +148,9 @@ The main features of \emph{Telemeta} are:
 Beside database management, the audio support is mainly provided through an external component, TimeSide, which is described in Section~\ref{sec:Timeside}.
 
 \subsection{Metadata}\label{sec:metadata}
-In addition to the audio data, an efficient and dynamic management of the associated metadata is also required. %Consulting metadata provide both an exhaustive access to valuable information about the source of the data and to the related work of peer researchers. 
+In addition to the audio data, an efficient and dynamic management of the associated metadata is also required. Consulting metadata provide both an exhaustive access to valuable information about the source of the data and to the related work of peer researchers. 
 Dynamically handling metadata in a collaborative manner optimises the continuous process of knowledge gathering and enrichment of the materials in the database.  
-%One of the major challenge is thus the standardization of audio and metadata formats with the aim of long-term preservation and usage of the different materials.
+One of the major challenge is thus the standardization of audio and metadata formats with the aim of long-term preservation and usage of the different materials.
 The compatibility with other systems is facilitated by the integration of the metadata standards protocols \emph{Dublin Core} and \emph{OAI-PMH} (Open Archives Initiative Protocol for Metadata Harvesting) \cite{DublinCore,OAI-PMH}.
 
 Metadata provide two different kinds of information about the audio item: contextual information and annotations.
@@ -160,9 +163,10 @@ In ethnomusicology, contextual information could be geographic, cultural and mus
 Metadata also consist in temporal information such as a list of \emph{time-coded markers} associated with annotations and a list of of \emph{time-segments} associated with labels. The ontology for those labels is relevant for ethnomusicology (e.g. speech versus singing voice segment, chorus, ...).
 It should be noted that annotations and segmentation can be done either by a human expert or by some automatic signal processing analysis (see Section~\ref{sec:Timeside}).
 
-\section{TimeSide}\label{sec:Timeside}
+\section{TimeSide, an audio analysis framework}\label{sec:Timeside}
 One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}\footnote{\url{https://github.com/yomguy/TimeSide}}, that offers audio player web integration together with audio signal processing analysis capabilities. 
 
+\emph{TimeSide} is an audio analysis and visualization framework based on both python and javascript languages to provide state-of-the-art signal processing and machine learning algorithms together with web audio capabilities for display and streaming.
 % Figure~\ref{fig:TimeSide_Archi} illustrates the overall architecture of \emph{TimeSide}.
 
 % \begin{figure}[htbp]
@@ -185,18 +189,21 @@ TimeSide provides the following main features:
 \end{itemize}
 
 \subsection{Audio features extraction}
-TimeSide incorporates some state-of-the-art audio feature extraction libraries such as Aubio\footnote{\url{http://aubio.org/}}, Yaafe\footnote{\url{http://yaafe.sourceforge.net}} and Vamp plugins\footnote{ \url{http://www.vamp-plugins.org}} \cite{brossierPhD,yaafe_ISMIR2010,vamp-plugins}.
+In order to provide Music Information Retrieval analysis methods to be implemented over a large corpus for ethnomusicological studies, TimeSide incorporates some state-of-the-art audio feature extraction libraries such as Aubio\footnote{\url{http://aubio.org/}}, Yaafe\footnote{\url{http://yaafe.sourceforge.net}} and Vamp plugins\footnote{ \url{http://www.vamp-plugins.org}} \cite{brossierPhD,yaafe_ISMIR2010,vamp-plugins}.
+
+As a open-source framework and given its architecture and the flexibility provided by Python, the implementation of any audio and music analysis algorithm can be consider and makes it a very convenient framework.
+
 Given the extracted features, every sound item in a given collection can be automatically analyze. The results of this analysis can be stored in a scientific file format (\emph{Numpy}, \emph{HDF5}) and serialized to the web browser through commons markup languages (\emph{xml}, \emph{json}, \emph{yaml}).
 
 
 \subsection{Automatic Analysis}
-Further works lead by the DIADEMS project will incorporate advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
+Ongoing works lead by the DIADEMS project consist in implementing advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
 
 \section{Conclusion}
 
-Conclusion
+The Telemeta open-source framework provide a unique and common platform to provide researchers in musicology a tools to efficiently distribute, share and work on their research materials. Furthermore, this platform is offered automatic music analysis capabilities through an external component, TimeSide that provide the computational analysis engine.
 
-Further work on the user interface will provide time and frequency zooming capabilities together with time-segment base annotations.
+Further works on the user interface will enhance the visualization experience with time and frequency zooming capabilities and will thus improve the accuracy and the quality of time-segment base annotations.
 
 
 
