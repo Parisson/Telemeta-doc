@@ -23,7 +23,7 @@
 
 
 % first the title is needed
-\title{Telemeta : open web audio platform for sound archives in the use case of ethnomusicology}
+\title{Open web audio platform for ethnomusicological sound archives management and automatic analysis}
 
 % a short form should be given in case it is too long for the running head
 %\shorttitle{Telemeta : open web audio platform for sound archives}
@@ -113,20 +113,22 @@ Institut Jean Le Rond d'Alembert, \\
  % In social sciences like anthropology and linguistics, researchers have to work on multiple types of multimedia documents such as photos, videos, sound recordings or databases. The need to easily access, visualize and annotate such materials can be problematic given their diverse formats, sources and given their chronological nature.
   %With this in mind, some laboratories\footnote{The Research Center on Ethnomusicology (CREM), the Musical Acoustics Laboratory (LAM, UMR 7190) and the sound archives of the Mediterranean House of Human Sciences (MMHS)} involved in ethnomusicological research have been working together on that issue.
 
-  In the context of ethnomusicological research, the Research Center on Ethnomusicology 
-(CREM) and Parisson, a company specialized in the management of audio databases, have been developing an innovative, collaborative and interdisciplinary open-source web-based multimedia platform since 2007. This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists and researchers in ethnomusicology. The first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, http://archives.crem-cnrs.fr} since 2008.
+  In the context of ethnomusicological research, the Research Center on Ethnomusicology (CREM) and Parisson, a company specialized in the management of audio databases, have been developing an innovative, collaborative and interdisciplinary open-source web-based multimedia platform since 2007. 
+This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists and researchers in ethnomusicology. The first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, http://archives.crem-cnrs.fr} since 2008 and is now fully operational and used on a daily basis for ethnomusicological studies.
+
+Recently, an open-source audio analysis framework, \emph{Timeside}, has been developed to bring automatic music analysis capabilities to the web platform.
 
  \section{Telemeta}\label{sec:Telemeta}
  \subsection{Web audio content management features and architecture}
  Telemeta\footnote{http://telemeta.org} is a free and open source\footnote{Telemeta code is available under the CeCILL Free Software License Agreement \texttt{http://cecill.info/licences/Licence\_CeCILL\_V2-en.html}} web audio platform which introduces efficient and secure methods for back-uping, indexing, transcoding, analysing and publishing any digitalized audio file with its metadata. 
 
-% An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=0.95\linewidth]{img/telemeta.png}
-%   \caption[1]{Screenshot excerpt of the \emph{Telemeta} web interface}
-%    \label{fig:Telemeta}
-% \end{figure}
+ An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}
+ \begin{figure}
+   \centering
+   \includegraphics[width=0.95\linewidth]{img/telemeta.png}
+   \caption[1]{Screenshot excerpt of the \emph{Telemeta} web interface}
+    \label{fig:Telemeta}
+ \end{figure}
 
 Telemeta is ideal for professionals who wants to easily organize, backup, archive and publish documented sound collections of audio files, CDs, digitalized vinyls and magnetic tapes over a strong database, in accordance with open web standards. 
 \emph{Telemeta} architecture is flexible and can easily be adapted to particular database organization of a given sound archives. 
@@ -135,8 +137,8 @@ The main features of \emph{Telemeta} are:
 \begin{itemize}
 \item \emph{Pure HTML} web user interface including high level \emph{search engine}
 \item Smart \emph{workflow management} with contextual user lists, profiles and rights
-  % \item RSS and JSON feed generators
-  % \item XML serialized backup
+\item RSS and JSON feed generators
+\item XML serialized backup
 \item Strong Structured Query Language (SQL) or Oracle backend
 \item Model-View-Controller (MVC) architecture 
 \end{itemize}
@@ -185,13 +187,21 @@ TimeSide provides the following main features:
 \subsection{Audio features extraction}
 TimeSide incorporates some state-of-the-art audio feature extraction libraries such as Aubio\footnote{\url{http://aubio.org/}}, Yaafe\footnote{\url{http://yaafe.sourceforge.net}} and Vamp plugins\footnote{ \url{http://www.vamp-plugins.org}} \cite{brossierPhD,yaafe_ISMIR2010,vamp-plugins}.
 Given the extracted features, every sound item in a given collection can be automatically analyze. The results of this analysis can be stored in a scientific file format (\emph{Numpy}, \emph{HDF5}) and serialized to the web browser through commons markup languages (\emph{xml}, \emph{json}, \emph{yaml}).
+
+
+\subsection{Automatic Analysis}
 Further works lead by the DIADEMS project will incorporate advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
 
-\section{Conclusion - Purpose of the demonstration}\vspace{-0.1cm}
-The demonstration presents the features offered by \emph{Telemeta} as detailed in Section~\ref{sec:Telemeta} in the context of ethnomusicological sound archiving.%\cite{telemetaCREM} 
-It focuses on the enhanced and collaborative user-experience when accessing audio items and their associated metadata, and on the possibility for the expert user to further enrich those metadata.
-Another goal of this demonstration is to present the integrated audio analysis tools described in Section~\ref{sec:Timeside}.
-\vspace{-0.2cm}
+\section{Conclusion}
+
+Conclusion
+
+Further work on the user interface will provide time and frequency zooming capabilities together with time-segment base annotations.
+
+
+
+\pagebreak
+
 \section*{Acknowledgments} 
 {\small The authors would like to thank all the people that have been involved in \emph{Telemeta} specification and development or have provide useful input and feedback. 
 The project has been partially funded by the French National Centre for Scientific Research (CNRS), the French Ministry of Culture and Communication, the TGE Adonis Consortium, and the Centre of Research in Ethnomusicology (CREM).}
