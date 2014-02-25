@@ -115,6 +115,8 @@ Institut Jean Le Rond d'Alembert, \\
   In the context of ethnomusicological research, the Research Center on Ethnomusicology (CREM) and Parisson, a company specialized in the management of audio databases, have been developing an innovative, collaborative and interdisciplinary open-source web-based multimedia platform since 2007. 
 This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists and researchers in ethnomusicology. The first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, http://archives.crem-cnrs.fr} since 2008 and is now fully operational and used on a daily basis for ethnomusicological studies.
 
+The positive impact of this platform on ethnomusicological research has been describe in several publications \cite{Simmonot_IASA_2011, Julien_IASA_2011, Simonnot_ICTM_2014}.
+
 Recently, an open-source audio analysis framework, \emph{Timeside}, has been developed to bring automatic music analysis capabilities to the web platform.
 
  \section{The Telemeta platform}\label{sec:Telemeta}
@@ -196,12 +198,17 @@ As a open-source framework and given its architecture and the flexibility provid
 Given the extracted features, every sound item in a given collection can be automatically analyze. The results of this analysis can be stored in a scientific file format (\emph{Numpy}, \emph{HDF5}) and serialized to the web browser through commons markup languages (\emph{xml}, \emph{json}, \emph{yaml}).
 
 
-\subsection{Automatic Analysis}
-Ongoing works lead by the DIADEMS project consist in implementing advance Music Information Retrieval methods in order to provide automatic annotation, segmentation and similarity analysis.
+\subsection{Automatic Analysis of ethnomusicological sound archives}
+Ongoing works lead by the DIADEMS project consist in implementing advanced classification, indexation, segmentation and  similarity analysis methods dedicated to ethnomusicological sound archives.
+
+Besides music analysis, such automatic tools also deal with speech and noises classification and segmentation to enable a full annotation of the audio materials.
+
+In the context of this project, both researchers from Ethnomusicological, Speech and Music Information Retrieval communities are working together to specified the tasks to be addressed by automatic analysis tools.
+
 
 \section{Conclusion}
 
-The Telemeta open-source framework provide a unique and common platform to provide researchers in musicology a tools to efficiently distribute, share and work on their research materials. Furthermore, this platform is offered automatic music analysis capabilities through an external component, TimeSide that provide the computational analysis engine.
+The Telemeta open-source framework provides a unique and common platform to provide researchers in musicology a tools to efficiently distribute, share and work on their research materials. Furthermore, this platform is offered automatic music analysis capabilities through an external component, TimeSide that provides a flexible computational analysis engine together with web serialization and visualization capabilities.
 
 Further works on the user interface will enhance the visualization experience with time and frequency zooming capabilities and will thus improve the accuracy and the quality of time-segment base annotations.
 
