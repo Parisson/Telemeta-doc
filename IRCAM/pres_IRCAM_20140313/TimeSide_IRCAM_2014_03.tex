@@ -32,7 +32,7 @@
 \definecolor{links}{HTML}{2A1B81}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
-\usetheme{Warsaw}
+\usetheme{Madrid}
 \setbeamercovered{transparent}
 
 
@@ -40,6 +40,7 @@
 \definecolor{telemetaRed}{rgb}{0.41568, 0.01176, 0.02745}	% #6A0307
 \usecolortheme[rgb={0.41568, 0.01176, 0.02745}]{structure} 
 
+%\setbeamercolor{frametitle}{bg=telemetaRed}
 % Display a grid to help align images
 %\beamertemplategridbackground[1cm]
 
@@ -72,7 +73,7 @@
   LAM, Institut Jean Le Rond d'Alembert, UPMC Univ. Paris 06, UMR CNRS 7190, Paris, France\\
 \vskip1ex
  \begin{center}
-   \includegraphics[width=.5\linewidth]{img/parisson_logo_FINALE_com.pdf}
+   \includegraphics[width=.5\linewidth]{../../Common/img/parisson_logo_FINALE_com.pdf}
  \end{center}
 }
 \date{IRCAM - WAVE \\ 13/03/2014}        
@@ -83,47 +84,81 @@
 \end{frame}
 
 \begin{frame}
- \frametitle{TimeSide - Objectifs}\scriptsize
+ \frametitle{TimeSide - Goals}%\scriptsize
 % ==================================
 % --------- Résumé -----------------
 % ==================================
-\begin{block}{We just need a python library to:}
+\begin{block}{Server side - TimeSide Engine}
 
   \begin{itemize}
-
   \item \alert{Do} asynchronous and fast audio processing with Python,
   \item \alert{Decode} audio frames from ANY format into numpy arrays,
   \item \alert{Analyze} audio content with some state-of-the-art audio feature extraction libraries,
   \item  \alert{Organize}, serialize and save analysis metadata through various formats,
-  \item  \alert{Draw} various fancy waveforms, spectrograms and other cool graphers,
-  \item  \alert{Transcode} audio data in various media formats and stream them through web apps,
-  \item   \alert{Playback} and  \alert{interact} on demand through a smart high-level HTML5 extensible player,
-  \item   \alert{Index},  \alert{tag} and  \alert{organize semantic metadata} (see \href{http://telemeta.org/}{Telemeta} which embeds TimeSide).
   \end{itemize}
-  \begin{flushright}
-    \includegraphics[width=0.2\textwidth]{img/logo_telemeta_1-1.pdf}\\
-    \colorbox{yellow!50}{\textbf{\url{http://telemeta.org/}}}
-  \end{flushright}
+  \end{block}
+ \begin{block}{}
+    \begin{itemize}
+      \item  \alert{Draw} various fancy waveforms, spectrograms and other cool graphers,
+  \item  \alert{Transcode} audio data in various media formats and stream them through web apps,
+
+    \end{itemize}
+ 
+\end{block}
+\begin{block}{Client side - TimeSide UI}
+  \begin{itemize}
+  \item   \alert{Playback} and  \alert{interact} on demand through a smart high-level HTML5 extensible player,
+  \item   \alert{Index},  \alert{tag} and  \alert{organize semantic metadata} \\
+(see \href{http://telemeta.org/}{Telemeta} which embeds TimeSide).
+ % \begin{flushright}
+ %   \includegraphics[width=0.2\textwidth]{../../Common/img/logo_telemeta_1-1.pdf}\\
+ %   \colorbox{yellow!50}{\textbf{\url{http://telemeta.org/}}}
+  %\end{flushright}
+  \end{itemize}
 \end{block}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Architecture du moteur TimeSide}
+  \frametitle{TimeSide Engine Architecture}
   \begin{center}
-    \includegraphics[width=\textwidth]{img/timeside_schema.png}
+    \includegraphics[width=0.8\textwidth]{../../Common/img/timeside_schema_v3.pdf}
   \end{center}
 \end{frame}
-\begin{frame}\tiny
-  \frametitle{Processeurs}
-  \begin{minipage}{0.45\linewidth}
+\begin{frame}
+  \frametitle{Processors}
+  \begin{block}{4 types of processors}
+    \begin{itemize}
+    \item Decoder
+    \item Analyzer
+    \item Encoder
+    \item Grapher
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}%\tiny
+  \frametitle{Processors - Decoders \& Encoders}
+  \begin{block}<1->{IDecoder}
+    \begin{itemize}
+    \item FileDecoder: Decode audio from \textrm{uri} throught Gstreamer 
+    \item \alert{ArrayDecoder}
+    \item \alert{LiveDecoder}
+    \end{itemize}
+  \end{block}
+  \begin{block}<2>{IEncoder}
+    \begin{itemize}
+    \item VorbisEncoder \texttt{[gst\_vorbis\_enc]}
+    \item WavEncoder \texttt{[gst\_wav\_enc]}
+    \item Mp3Encoder \texttt{[gst\_mp3\_enc]}
+    \item FlacEncoder \texttt{ [gst\_flac\_enc]}
+    \item AacEncoder \texttt{[gst\_aac\_enc]}
+    \item WebMEncoder \texttt{[gst\_webm\_enc]}
+    \end{itemize}
+  \end{block}
+\end{frame}
 
-   \begin{block}{IDecoder}
-      \begin{itemize}
-      \item FileDecoder \texttt{[gst\_dec]}
-      \item \alert{ArrayDecoder} \texttt{[array\_dec]}
-      \end{itemize}
-    \end{block}
-    \begin{block}{IAnalyzer}
+\begin{frame}
+  \frametitle{Processors - Analyzers}
+    \begin{block}<2>{IAnalyzer}
       \begin{itemize}
       \item Level \texttt{[level]}
       \item MeanDCShift \texttt{[mean\_dc\_shift]}
@@ -141,19 +176,10 @@
       \item \alert{OnsetDetectionFunction} \texttt{[odf]}
       \end{itemize}
     \end{block}
-   \end{minipage} \hfill
-   \begin{minipage}{0.5\linewidth}
-      \begin{block}{IEncoder}
-      \begin{itemize}
-      \item VorbisEncoder \texttt{[gst\_vorbis\_enc]}
-      \item WavEncoder \texttt{[gst\_wav\_enc]}
-      \item Mp3Encoder \texttt{[gst\_mp3\_enc]}
-      \item FlacEncoder \texttt{ [gst\_flac\_enc]}
-      \item AacEncoder \texttt{[gst\_aac\_enc]}
-      \item WebMEncoder \texttt{[gst\_webm\_enc]}
-      \end{itemize}
-    \end{block}
-  \begin{block}{IGrapher}
+  \end{frame}
+\begin{frame}%\tiny
+  \frametitle{Processors - Graphers}
+    \begin{block}{IGrapher}
       \begin{itemize}
       \item Waveform \texttt{[waveform\_simple]}
       \item WaveformCentroid \texttt{[waveform\_centroid]}
@@ -164,9 +190,7 @@
       \item \alert{SpectrogramLinear} \texttt{[spectrogram\_linear]}
       \end{itemize}
     \end{block}
-   \end{minipage}
-
-\end{frame}
+  \end{frame}
 \begin{frame}
   \frametitle{Principales nouveautés}
   \begin{block}{}
@@ -321,6 +345,23 @@ Level Analyzer RMS:[-9.856]
 \includegraphics[width=1.1\linewidth]{img/aubio_pitch_beat.png}\\
 \href{sounds/CNRSMH_E_1985_001_001_001_04.mp3}{CNRSMH\_E\_1985\_001\_001\_001\_04}
 \end{center}
+\end{frame}
+\begin{frame}\frametitle{Telemeta Player Mark}
+  \vspace{-1cm}
+  \begin{center}
+    \includegraphics[width=12cm]{../../Common/img/shots/player_mark.png}
+  \end{center}
+
+\end{frame}
+\begin{frame}
+\frametitle{DIADEMS Project}
+  
+\end{frame}
+\begin{frame}
+\frametitle{Ethnomusicological metadata}
+\begin{block}{Thesaurus}
+  
+\end{block}
 \end{frame}
 \end{document}
 %%% Local Variables: 
