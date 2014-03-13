@@ -28,6 +28,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{multimedia} % For playing sound
+
+\usepackage{hyperref}
 % Define hyperlinks color
 \definecolor{links}{HTML}{2A1B81}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links}
@@ -78,6 +80,9 @@
 }
 \date{IRCAM - WAVE \\ 13/03/2014}        
 
+
+\newcommand{\pyfile}{$\vcenter{\hbox{\includegraphics[width=1cm]{img/python-file.png}}}$}
+\newcommand{\gstreamer}{\href{http://www.gstreamer.freedesktop.org}{$\vcenter{\hbox{\includegraphics[width=0.20\textwidth]{img/Gstreamer-logo.png}}}$}}
 \begin{document}
 \begin{frame}
   \maketitle
@@ -93,7 +98,7 @@
   \begin{itemize}
   \item \alert{Do} asynchronous and fast audio processing with Python,
   \item \alert{Decode} audio frames from ANY format into numpy arrays,
-  \item \alert{Analyze} audio content with some state-of-the-art audio feature extraction libraries,
+  \item \alert{Analyze} audio content with state-of-the-art audio feature extraction libraries,
   \item  \alert{Organize}, serialize and save analysis metadata through various formats,
   \end{itemize}
   \end{block}
@@ -109,7 +114,8 @@
   \begin{itemize}
   \item   \alert{Playback} and  \alert{interact} on demand through a smart high-level HTML5 extensible player,
   \item   \alert{Index},  \alert{tag} and  \alert{organize semantic metadata} \\
-(see \href{http://telemeta.org/}{Telemeta} which embeds TimeSide).
+(see \href{http://telemeta.org/}{Telemeta} which embeds TimeSide). 
+\hfill $\vcenter{\hbox{\includegraphics[width=0.2\textwidth]{../../Common/img/logo_telemeta_1-1.pdf}}}$
  % \begin{flushright}
  %   \includegraphics[width=0.2\textwidth]{../../Common/img/logo_telemeta_1-1.pdf}\\
  %   \colorbox{yellow!50}{\textbf{\url{http://telemeta.org/}}}
@@ -134,72 +140,87 @@
     \item Grapher
     \end{itemize}
   \end{block}
-Code : API, interface, core
+\pyfile : API, interface, core
 \end{frame}
-\begin{frame}%\tiny
-  \frametitle{Processors - Decoders \& Encoders}
-  \begin{block}<1->{IDecoder}
+
+\begin{frame}
+  \frametitle{Processors - Decoders}
+  \begin{block}{Decoders}
     \begin{itemize}
-    \item FileDecoder: Decode audio from \textrm{uri} throught Gstreamer 
-    \item \alert{ArrayDecoder}
-    \item \alert{LiveDecoder}
+    \item FileDecoder: Decode audio through Gstreamer \gstreamer
+      
+      \begin{itemize}
+      \item File source: an \texttt{uri}
+      \item A \alert{segment} of audio can be specified: \texttt{start, duration}
+      \end{itemize}
+
+    \item \alert{ArrayDecoder}: Use an Numpy array as source input
+    \item \alert{LiveDecoder}: Capture audio from an live input source
     \end{itemize}
   \end{block}
-Code : interface Gstreamer FileDecoder
-  \begin{block}<2>{IEncoder}
+\pyfile : interface Gstreamer FileDecoder
+\end{frame}
+
+\begin{frame}
+  \frametitle{Processors - Encoders}
+  \begin{block}{Encoders}
     \begin{itemize}
-    \item VorbisEncoder \texttt{[gst\_vorbis\_enc]}
-    \item WavEncoder \texttt{[gst\_wav\_enc]}
-    \item Mp3Encoder \texttt{[gst\_mp3\_enc]}
-    \item FlacEncoder \texttt{ [gst\_flac\_enc]}
-    \item AacEncoder \texttt{[gst\_aac\_enc]}
-    \item WebMEncoder \texttt{[gst\_webm\_enc]}
+    \item Support streaming to the server
+    \item Available formats (through Gstreamer) \gstreamer
+
+      \begin{itemize}
+      \item WavEncoder, FlacEncoder
+      \item AacEncoder, VorbisEncoder, Mp3Encoder
+      \item WebMEncoder, \alert{OpusEncoder}
+      \item LiveEncoder : Send sound to soundcard
+      \end{itemize}
     \end{itemize}
+
   \end{block}
-Code : interface Gstreamer FileEncoder
+\pyfile : interface Gstreamer FileEncoder
 \end{frame}
 
 \begin{frame}
   \frametitle{Processors - Analyzers}
-    \begin{block}<2>{IAnalyzer}
+    \begin{block}{Analyzers}
       \begin{itemize}
-      \item Level \texttt{[level]}
-      \item MeanDCShift \texttt{[mean\_dc\_shift]}
-      \item AubioTemporal \texttt{[aubio\_temporal]}
-      \item AubioPitch \texttt{[aubio\_pitch]}
-      \item AubioMfcc \texttt{[aubio\_mfcc]}
-        \item AubioMelEnergy \texttt{[aubio\_melenergy]}
-      \item AubioSpecdesc \texttt{[aubio\_specdesc]}
-      \item \alert{Yaafe} \texttt{[yaafe]}
-      \item \alert{Spectrogram} \texttt{[spectrogram\_analyzer]}
-      \item \alert{Waveform} \texttt{[waveform\_analyzer]}
-      \item \alert{VampSimpleHost} \texttt{[vamp\_simple\_host]}
-      \item \alert{IRITSpeechEntropy} \texttt{[irit\_speech\_entropy]}
-      \item \alert{IRITSpeech4Hz} \texttt{[irit\_speech\_4hz]}
-      \item \alert{OnsetDetectionFunction} \texttt{[odf]}
+      \item Value Analyzers: Level, MeanDCShift
+      \item \alert{Wrapping of \emph{state-of-the-art} audio features library}:
+\begin{itemize}
+\item Aubio: \colorbox{yellow!50}{\hskip1ex  \url{http://aubio.org} \hskip1ex }\\
+AubioTemporal, AubioPitch, AubioMfcc, AubioMelEnergy, AubioSpecdesc
+\item Yaafe: \colorbox{yellow!50}{\hskip1ex \url{http://yaafe.sourceforge.net}\hskip1ex }
+\item Vamp plugins: \colorbox{yellow!50}{\hskip1ex \url{http://www.vamp-plugins.org}\hskip1ex } VampSimpleHost
+\end{itemize}
+        \item \alert{Waveform}, \alert{Spectrogram}
+      \item Speech Activity Detection: \alert{IRITSpeechEntropy}, \alert{IRITSpeech4Hz}, LimsiSad
+      \item \alert{OnsetDetectionFunction}
       \end{itemize}
     \end{block}
-code: principe , parent, conteneur
+    \alert{$\rightarrow$ An analyzer can declare other analyzers as \emph{parents}}
+    
+\pyfile : principe , parent, conteneur
   \end{frame}
-\begin{frame}%\tiny
+\begin{frame}
   \frametitle{Processors - Graphers}
-    \begin{block}{IGrapher}
+    \begin{block}{Graphers}
       \begin{itemize}
-      \item Waveform \texttt{[waveform\_simple]}
-      \item WaveformCentroid \texttt{[waveform\_centroid]}
-      \item \alert{WaveformTransparent} \texttt{[waveform\_transparent]}
-      \item WaveformContourBlack \texttt{[waveform\_contour\_black]}
-      \item WaveformContourWhite \texttt{[waveform\_contour\_white]}
-      \item SpectrogramLog \texttt{[spectrogram\_log]}
-      \item \alert{SpectrogramLinear} \texttt{[spectrogram\_linear]}
+      \item Waveform
+      \item WaveformCentroid 
+      \item \alert{WaveformTransparent}
+      \item WaveformContourBlack
+      \item WaveformContourWhite
+      \item SpectrogramLog
+      \item \alert{SpectrogramLinear} 
       \end{itemize}
     \end{block}
+ \alert{$\rightarrow$ Possibility to define grapher from analyzer}
   \end{frame}
 \begin{frame}
   \frametitle{Principales nouveautés}
   \begin{block}{}
     \begin{itemize}
-    \item Version 0.5.2
+    \item Version 0.5.4 
     \item Mise en place d'une documentation :
       \url{http://files.parisson.com/timeside/doc/}
    
@@ -221,27 +242,9 @@ code: principe , parent, conteneur
   \end{block}
 \end{frame}
 
-\begin{frame}{Extraction de descripteurs audio}
-  
- \begin{block}{Extraction de descripteurs audio}
-TimeSide incorpore des bibliothèques d'extraction de descripteurs audio de référence :
-\vspace{-0.1cm}
-\begin{itemize} \tiny
-\item \textbf{Aubio:
-    \colorbox{yellow!50}{\hskip1ex  \url{http://aubio.org} \hskip1ex }}
-\vspace{-0.1cm}
-\item \textbf{Yaafe:
-    \colorbox{yellow!50}{\hskip1ex \url{http://yaafe.sourceforge.net}\hskip1ex }}
-\vspace{-0.1cm}
-\item \textbf{Vamp plugins:  
-    \colorbox{yellow!50}{\hskip1ex \url{http://www.vamp-plugins.org}\hskip1ex }} 
-\end{itemize}
-\alert{A partir de ses descripteurs, les analyses automatiques pour chaque item d'une collection peuvent être mises en place}\\
-$\longrightarrow$ Intégration des premiers analyseurs ``DIADEMS'' : Détecteurs de segments de paroles (IRIT) 
-
-\end{block}
+\begin{frame}{Analyzer results container}
 \begin{block}{}
-  Formalisation de différents types de résultats :
+  Standardization of 8 different types of results:
   \begin{itemize}
   \item time\_mode : \texttt{global, event, segment, framewise}
   \item data\_mode : \texttt{value, label}
@@ -250,23 +253,21 @@ $\longrightarrow$ Intégration des premiers analyseurs ``DIADEMS'' : Détecteurs
 \end{frame}
 
 \begin{frame}[fragile]
-  \begin{block}{TimeSide - Dépôt Github}
+  \begin{block}{TimeSide - Github repository}
     \begin{center}\scriptsize
       \colorbox{yellow!50}{\bf \hskip3ex
         \url{https://github.com/yomguy/TimeSide/} \hskip3ex }
     \end{center}
-3 branches principales :
+
   \begin{itemize}
-  \item master (0.5.2)
-  \item dev
-  \item \alert{diadems} $\longleftarrow$ \emph{vos précieuses contributions}
+  \item 3 main branches: master (0.5.2), dev, diadems  \item diadems
   \end{itemize}
   \end{block}
   \begin{block}{Installation}
 \url{https://github.com/yomguy/TimeSide\#install}
     \begin{itemize}
     \item Installation des dépendances :
-\begin{lstlisting}[language=bash, basicstyle=\TINY]
+\begin{lstlisting}[language=bash, basicstyle=\tiny]
 $ echo "deb http://debian.parisson.com/debian/ stable main" |
 $ sudo tee -a /etc/apt/sources.list 
 $ echo "deb-src http://debian.parisson.com/debian/ stable main" | sudo tee -a /etc/apt/sources.list 
@@ -276,7 +277,7 @@ $ sudo apt-get build-dep python-timeside
 \end{lstlisting}
 
     \item Installation depuis le dépôt \emph{Github} :
-\begin{lstlisting}[language=bash, basicstyle=\TINY]
+\begin{lstlisting}[language=bash, basicstyle=\tiny]
 $ git clone https://github.com/yomguy/TimeSide.git 
 $ cd TimeSide 
 $ git checkout dev 
@@ -287,55 +288,6 @@ $ python tests/run_all_tests
 \end{block}
 \end{frame}
 
-\begin{frame}[fragile]
-  \begin{block}{Exemple de code (Python)}
-    \vskip1ex
-     \begin{minipage}{0.6\linewidth}
-       \begin{lstlisting}
-import timeside
-
-# Define some processors:
-
-# Decoder
-decoder = timeside.decoder.FileDecoder('sweep.wav')
-
-# Analyzers
-analyzer = timeside.analyzer.Level()
-irit4hz = timeside.analyzer.IRITSpeech4Hz()
-
-# Grapher and Encoder
-grapher = timeside.grapher.Spectrogram()
-encoder = timeside.encoder.VorbisEncoder('sweep.ogg')
-
-# Then, the magic pipeline:
-(decoder | analyzer | irit4hz | grapher | encoder).run()
-
-# Get the results:
-grapher.render(output='image.png')
-for key in analyzer.results.keys():
-    print '%s in %s : %s'% (analyzer.results[key].name,
-                            analyzer.results[key].unit,
-                            analyzer.results[key].data)
- \end{lstlisting}
-     \end{minipage}
-    \hskip2ex
-    \begin{minipage}{0.32\linewidth}
-      \begin{center}
-        \textbf{Results}
-        \begin{figure}
-          \centering
-          \includegraphics[width=\linewidth]{img/spectrogram.png}
-          \caption{Spectrogram (sweep signal)}
-        \end{figure}
-      \end{center} 
-      \vskip5ex
-      \begin{lstlisting}
-Level Analyzer Max:[-6.021] 
-Level Analyzer RMS:[-9.856]
-      \end{lstlisting}
- \end{minipage}
-  \end{block}
-\end{frame}
 
 \begin{frame}
 \frametitle{Détecteur de parole IRIT (4Hz modulation)}
