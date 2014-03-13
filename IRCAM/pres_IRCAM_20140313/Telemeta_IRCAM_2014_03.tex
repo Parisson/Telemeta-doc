@@ -1,0 +1,320 @@
+\documentclass[10pt, final, hyperref, table]{beamer}
+\mode<presentation>
+
+
+ %\usepackage[english]{babel} % "babel.sty"
+% \usepackage{french}                  % "french.sty"
+%  \usepackage{franglais}               % "franglais.sty" (a defaut)
+  \usepackage{times}            % ajout times le 30 mai 2003
+ 
+%% --------------------------------------------------------------
+%% CODAGE DE POLICES ?
+%% Si votre moteur Latex est francise, il est conseille
+%% d'utiliser le codage de police T1 pour faciliter la césure,
+%% si vous disposez de ces polices (DC/EC)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+
+
+%% ==============================================================
+%\usepackage{graphicx}
+\usepackage{amsmath,amsfonts}
+%\usepackage[table]{xcolor}
+\usepackage{subfigure}
+\usepackage{fancybox}
+
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{multimedia} % For playing sound
+
+\usepackage{hyperref}
+% Define hyperlinks color
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\usetheme{Madrid}
+\setbeamercovered{transparent}
+
+
+% telemeta red
+\definecolor{telemetaRed}{rgb}{0.41568, 0.01176, 0.02745}   % #6A0307
+\usecolortheme[rgb={0.41568, 0.01176, 0.02745}]{structure} 
+
+%\setbeamercolor{frametitle}{bg=telemetaRed}
+% Display a grid to help align images
+%\beamertemplategridbackground[1cm]
+
+%We will get the normal bibliography style (number or text instead of icon) by including the following code
+\setbeamertemplate{bibliography item}[text]
+\setbeamerfont{caption}{size=\footnotesize}
+% listings settings
+\definecolor{lstComments}{rgb}{0,0.6,0}
+\definecolor{lstBkgrd}{rgb}{0.95,0.95,1}
+\lstset{%
+  language=Python, % the language of the code
+  frame=single,  % adds a frame around the code
+  frameround=tttt,
+  commentstyle=\color{lstComments},% comment style
+  backgroundcolor=\color{lstBkgrd},   % choose the background color
+  basicstyle=\tiny,       % the size of the fonts that are used for the code
+  stringstyle=\ttfamily,  % typewriter type for strings
+  keywordstyle=\color{blue},      % keyword style
+  showstringspaces=false,          % underline spaces within strings only
+}
+
+
+\definecolor{rouge}{rgb}{0.7,0.1,0.1}
+\newcommand{\chref}[2]{
+    \href{#1}{\color{rouge}\underline{#2}}
+}
+\newcommand{\dchref}[1]{
+    \href{#1}{\color{rouge}\underline{#1}}
+}
+\newcommand{\curl}[1]{
+    \color{rouge}\underline{\url{#1}}
+}
+\title[TimeSide]{Telemeta\\ open web audio content management system}
+
+\author{Guillaume Pellerin\inst{1}, Thomas Fillon \inst{1,2}}
+
+
+\institute[Parisson]{
+  \inst{1}%
+  Parisson, Paris, France\\
+  \inst{2}%
+  LAM, Institut Jean Le Rond d'Alembert, UPMC Univ. Paris 06, UMR CNRS 7190, Paris, France\\
+\vskip1ex
+ \begin{center}
+   \includegraphics[width=.3\linewidth]{img/parisson_logo_FINALE_com.pdf}
+ \end{center}
+}
+\date{IRCAM - WAVE \\ 13/03/2014}        
+
+\begin{document}
+\frame{\titlepage}
+
+
+\section[Table of contents]{}
+\frame{\frametitle{Table of contents}
+\tableofcontents
+}
+
+\section{Goals}
+\frame{\frametitle{Main goals}
+\begin{itemize}
+  \item Save and sustain big music data corpus and all related metadata
+  \item Play audio and read metadata at the same time, synchronously
+  \item Index and share music data through a collaborative web app
+  \item Link music data to various ontologies and external services
+  \item Manage access rules and copyrights easily through time
+  \item Process audio on demand through a modular architecture
+\end{itemize}
+}
+
+\section{History of the project}
+\frame{\frametitle{History of the project}
+\begin{itemize}
+  \item 2006 : definition of the goals (open source web audio collaborative platform)
+  \item 2007 : first partner : CREM
+  \item 2007 - 2009 : technical specifications, definition of the DB migrator
+  \item 2008 : prototype development
+  \item 2008 - 2010 : workflow and format specifications 
+  \item 2011 : development, final migration and release of Telemeta 1.0 to the CREM for production : \dchref{http://archives.crem-cnrs.fr}
+  \item 2011 - 2014 : collaborative indexing, more development, massive data imports...
+\end{itemize}
+}
+
+\section{Technologies}
+\frame{\frametitle{Technologies}
+\textbf{100\% 0pen Source}
+\begin{itemize}
+ \item \chref{http://python.org}{Python} : smart object oriented language \\
+ \item \chref{http://djangoproject.com}{Django} : high-level web MVC framework \\
+ \item \chref{https://github.com/yomguy/TimeSide}{TimeSide} : open web audio processing framework 
+ \item GStreamer : open multimedia framework
+ \item MySQL, PostGreSQL : relational databases \\
+ \item GNU / Linux : server app and library suite and kernel \\
+\end{itemize}
+}
+
+\section{Key features}
+%\frame{\tableofcontents[currentsection]}
+\frame{\frametitle{Features}
+      \begin{itemize}
+      \item \alert{Pure HTML5} web user interface including dynamical forms
+        and smart workflows
+      \item \alert{On the fly} audio analyzing, transcoding and \alert{metadata}
+        embedding in various formats
+      \item Social editing with \alert{semantic ontologies}, smart workflows,
+        realtime tools, human or automatic \alert{annotations and
+        segmentations}
+      \item User management with individual desk, playlists, profiles
+        and access rights
+      \item High level geo-located search engine
+      \item DublinCore, OAI-PMH, RSS, XML and JSON \alert{data providers}
+      \item Multi-language support (now english and french)
+      \end{itemize}
+}
+
+
+\section{Data model}
+%\frame{\tableofcontents[currentsection]}
+\frame{\frametitle{Data model}
+\begin{itemize}
+ \item Main objects (hierarchy)
+    \begin{center}
+    \pgfimage[width=10cm]{img/TM_model}
+    \end{center}
+ \item Complete model : \chref{http://telemeta.org/export/cb1fc9ad29e2cb0122fde9dd76c5275ba5dc7d14/doc/devel/telemeta-all.pdf}{view PDF}
+\end{itemize}
+
+}
+
+
+% \subsection{Démonstration}
+% \frame{\tableofcontents[currentsubsection]}
+
+\section{Related projects}
+\frame{\frametitle{Related projects}
+\begin{itemize}
+\item \chref{https://github.com/yomguy/TimeSide}{TimeSide} : open web audio processing framework
+      \begin{itemize}
+      \item Easy plugin architecture (full \alert{Python})
+      \item Asynchronous and fast audio processing
+      \item \alert{Feature extraction} (Aubio, Yaafe, Vamp plugins)
+      \item Smart, fancy and dynamical \alert{HTML5 web audio player}
+      \end{itemize}
+\vspace{0.5cm}
+\item \chref{http://www.irit.fr/recherches/SAMOVA/DIADEMS/fr/welcome/&cultureKey=en}{DIADEMS} : Description, Indexation, Access to Sound and Ethnomusicological Documents
+    \begin{itemize}
+    \item sponsored by ANR : french national research agency
+    \item 3 years, 7 partners, 850 k\euro
+    \item new collaboration between human and computer science laboratories (not so easy!)
+    \item apply MIR algorithms on large scale ethnomusicological data
+    \item define some high level interfaces to find musical informations in complex corpus
+    \item \dchref{http://diadems.telemeta.org}
+    \end{itemize}
+\end{itemize}
+}
+
+\section{Development}
+%\frame{\tableofcontents[currentsection]}
+\frame{\frametitle{Development}
+\begin{itemize}
+ \item Links
+    \begin{itemize}
+    \item \dchref{http://telemeta.org}
+    \item \dchref{https://github.com/yomguy/Telemeta/}
+    \item \dchref{https://github.com/yomguy/TimeSide/}
+    \end{itemize}
+ \item Team
+    \begin{itemize}
+     \item Guillaume Pellerin
+     \item Thomas Fillon
+     \item Paul Brossier
+     \item Riccardo Zaccarelli
+     \item Maxime Lecoz
+     \item David Doukan
+    \end{itemize}
+ \item Licence : CeCILL v2 (GPL v2 compatible)
+\end{itemize}
+}
+
+
+\frame{\frametitle{Partners}
+\begin{itemize}
+\item Sponsors:
+\begin{itemize}
+ \item CNRS
+ \item Huma-Num (ex TGE Adonis)
+ \item ANR
+ \item CREM
+ \item UPMC
+ \item Parisson
+\end{itemize}
+
+\item Partners :
+\begin{itemize}
+\item IRIT (université Paul Sabatier, Toulouse 3)
+\item LIMSI (universités Pierre et Marie Curie (UPMC, Paris 6) et Paris-Sud)
+\item LAM (institut Jean Le Rond d'Alembert, UPMC)
+\item LABRI (université de Bordeaux)
+\item CREM (université Paris Ouest Nanterre La Défense)
+\item LESC (université Paris Ouest Nanterre La Défense)
+\item Museum d'Histoire Naturelle de Paris
+\item Musée du Quai Branly
+\end{itemize}
+
+\end{itemize}
+
+\begin{center}
+\begin{columns}[c]
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=1cm]{img/logo-CNRS}\end{center}
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/Logo-CREM-La.jpg}
+\end{center}
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/parisson_logo_200}\end{center}
+\column{2cm}
+\begin{center}
+\pgfimage[width=1.2cm]{img/logo-mnhn}\end{center}
+\end{columns}
+\end{center}
+
+}
+
+
+\section{DIADEMS}
+\frame{\frametitle{DIADEMS : roadmap}
+\begin{center}
+\pgfimage[width=12cm]{img/TM_Roadmap}
+\end{center}
+}
+
+\frame{\frametitle{DIADEMS : ToDo list}
+\begin{itemize}
+ \item TimeSide
+    \begin{itemize}
+    \item web server (django)
+    \item process task manager
+    \item full HTML5 zooming player (+ annotations, segmentations, etc..)
+    \item analyzer parameters (+ interface)
+    \item \dchref{https://github.com/yomguy/TimeSide/issues}
+    \end{itemize}
+ \vspace{0.5cm}
+ \item Telemeta
+    \begin{itemize}
+    \item class based views
+    \item rewrite geolocation services
+    \item public user playlists
+    \item smart breadcrumbs 
+    \item interactions with TimeSide
+    \item \dchref{http://telemeta.org/report/1}
+    \end{itemize}
+
+\end{itemize}
+
+}
+
+
+\section{Conclusion et perspectives}
+\frame{\frametitle{Conclusion et perspectives}
+
+}
+
+\frame{\frametitle{The end}
+ \begin{center}
+   \large{Thanks !} \\
+   \vspace{0.5cm}
+    \chref{http://telemeta.org}{telemeta.org}
+  \end{center}
+}
+
+\end{document}
