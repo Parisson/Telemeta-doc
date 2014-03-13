@@ -140,7 +140,7 @@
     \item Grapher
     \end{itemize}
   \end{block}
-\pyfile : API, interface, core
+\pyfile : \texttt{timeside/api.py}, \texttt{timeside/core.py}
 \end{frame}
 
 \begin{frame}
@@ -158,7 +158,7 @@
     \item \alert{LiveDecoder}: Capture audio from an live input source
     \end{itemize}
   \end{block}
-\pyfile : interface Gstreamer FileDecoder
+\pyfile : \texttt{timeside/decoder/core.py}, \texttt{timeside/decoder/file.py} 
 \end{frame}
 
 \begin{frame}
@@ -177,7 +177,7 @@
     \end{itemize}
 
   \end{block}
-\pyfile : interface Gstreamer FileEncoder
+\pyfile : \texttt{timeside/encoder/core.py}, \texttt{timeside/encoder/mp3.py} 
 \end{frame}
 
 \begin{frame}
@@ -199,7 +199,7 @@ AubioTemporal, AubioPitch, AubioMfcc, AubioMelEnergy, AubioSpecdesc
     \end{block}
     \alert{$\rightarrow$ An analyzer can declare other analyzers as \emph{parents}}
     
-\pyfile : principe , parent, conteneur
+\pyfile :  \texttt{timeside/analyzer/core.py}, \texttt{timeside/analyzer/odf.py} 
   \end{frame}
 \begin{frame}
   \frametitle{Processors - Graphers}
@@ -243,13 +243,28 @@ AubioTemporal, AubioPitch, AubioMfcc, AubioMelEnergy, AubioSpecdesc
 \end{frame}
 
 \begin{frame}{Analyzer results container}
-\begin{block}{}
+\begin{block}{Results types}
   Standardization of 8 different types of results:
   \begin{itemize}
   \item time\_mode : \texttt{global, event, segment, framewise}
   \item data\_mode : \texttt{value, label}
   \end{itemize}
 \end{block}
+\begin{block}{Metadata \& Data fields}
+  \begin{itemize}
+  \item Metadata:
+    \begin{itemize}
+    \item \texttt{id\_metadata}
+    \item \texttt{audio\_metadata}
+    \item \texttt{label\_metadata}
+    \item \texttt{frame\_metadata}
+    \item \texttt{parameters}
+    \end{itemize}
+    \item Data: \texttt{data\_object}
+  \end{itemize}
+
+\end{block}
+
 \end{frame}
 
 \begin{frame}[fragile]
@@ -260,7 +275,7 @@ AubioTemporal, AubioPitch, AubioMfcc, AubioMelEnergy, AubioSpecdesc
     \end{center}
 
   \begin{itemize}
-  \item 3 main branches: master (0.5.2), dev, diadems  \item diadems
+  \item 3 main branches: master (0.5.2), dev, diadems 
   \end{itemize}
   \end{block}
   \begin{block}{Installation}
@@ -311,13 +326,48 @@ $ python tests/run_all_tests
 \end{frame}
 \begin{frame}
 \frametitle{DIADEMS Project}
-  
+\begin{itemize}
+\item ANR project: \emph{Description, Indexation, Accès aux Documents EthnoMusicologiques et Sonores} \\
+(Description, Indexation, Access to Sound and Ethnomusicological Documents)\\
+\url{http://www.irit.fr/recherches/SAMOVA/DIADEMS}
+\item Partners:
+  \begin{itemize}
+  \item Ethnomusicology:
+    \begin{itemize}
+    \item CREM (Centre de Recherche en EthnoMusicologie),
+      Univ. Nanterre
+    \item MNHM (Museum National d'Histoire Naturelle)
+    \end{itemize}
+  \item Computer science, Music Informationa Retrieval, Speech Processing:
+    \begin{itemize}
+    \item IRIT, Toulouse
+    \item LAM, Paris 6
+    \item LIMSI, Orsay
+    \item LABRI, Bordeaux
+    \end{itemize}
+
+  \end{itemize}
+
+\end{itemize}
 \end{frame}
 \begin{frame}
-\frametitle{Ethnomusicological metadata}
-\begin{block}{Thesaurus}
-  
-\end{block}
+\frametitle{Goals}
+%\begin{block}{Thesaurus}
+\begin{itemize}
+\item Improvment of Telemeta User Interface
+\item Enhance annotation interface and management
+\item Introduce automatic description, indexation, segmentation with music information retrieval, audio signal and speech processing technologies $\rightarrow$ \emph{TimeSide} 
+\item Ethnomusicological metadata: \href{Thesaurus.html}{Thesaurus
+    Map}
+\end{itemize}
+
+%\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{The End}
+\begin{center}
+  \LARGE Merci !
+\end{center}
 \end{frame}
 \end{document}
 %%% Local Variables: 
