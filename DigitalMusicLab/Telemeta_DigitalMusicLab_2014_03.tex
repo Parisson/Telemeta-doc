@@ -100,26 +100,27 @@
 \tableofcontents
 }
 
-\section{Goals}
+\section{Overview}
+\subsection{Goals}
 \frame{\frametitle{Main goals}
 \vspace{-1cm}
 \center{\includegraphics[width=4cm]{img/logo_telemeta_1-1.pdf}}
 \vspace{0.5cm}
 \begin{itemize}
-  \item \alert{Save}, \alert{scale} and \alert{sustain} big music data and related metadata
+  \item \alert{Archive}, \alert{preserve} and \alert{scale} big music data and related metadata
   \item \alert{Play} audio and read metadata \alert{synchronously}
   \item \alert{Index} and \alert{share} music data through a \alert{collaborative} web app
   \item \alert{Link} music data to various \alert{ontologies} and \alert{external services}
   \item \alert{Manage} \alert{workflow} rules (access, copyrights) easily through time
-  \item \alert{Process} audio \alert{on demand} through a \alert{modular architecture}
+  \item \alert{On demand audio processing} through a \alert{modular architecture}
 \end{itemize}
 }
 
-\section{History}
+\subsection{History}
 \frame{\frametitle{History of the project}
 \begin{itemize}
   \item \alert{2006} : definition of the goals (open source web audio collaborative platform)
-  \item \alert{2007} : first partner : CREM
+  \item \alert{2007} : first partner : french Center of Research on EthnoMusicology
   \item \alert{2007 - 2009} : technical specifications, definition of the DB migrator
   \item \alert{2008} : prototype development
   \item \alert{2008 - 2010} : workflow and format specifications 
@@ -128,7 +129,7 @@
 \end{itemize}
 }
 
-\section{Technologies}
+\subsection{Technologies}
 \frame{\frametitle{Technologies}
 \begin{center}
 \large{\alert{100\% 0pen Source!}}
@@ -144,7 +145,7 @@
 \end{itemize}
 }
 
-\section{Features}
+\subsection{Features}
 %\frame{\tableofcontents[currentsection]}
 \frame{\frametitle{Key features}
       \begin{itemize}
@@ -164,38 +165,54 @@
 }
 
 
-\section{Architecture}
+\section{Framework}
+
+\subsection{Architecture}
 \frame{\frametitle{Architecture}
     \begin{center}
     \pgfimage[width=8cm]{img/TM_arch}
     \end{center}
 }
 
-\section{Data model}
+\subsection{Data model}
 %\frame{\tableofcontents[currentsection]}
 \frame{\frametitle{Data model}
-\begin{itemize}
- \item Main resource objects
+
+\begin{block}{Main resource objects}
     \begin{center}
     \pgfimage[width=10cm]{img/TM_model}
     \end{center}
- \item Complete model : \chref{http://telemeta.org/export/cb1fc9ad29e2cb0122fde9dd76c5275ba5dc7d14/doc/devel/telemeta-all.pdf}{view PDF}
+\end{block}
+
+\begin{block}{Other objects}
+\begin{itemize}
+ \item Instrument, InstrumentAlias, InstrumentRelation, InstrumentAliasRelation, Performance
+ \item Location, LocationAlias, LocationRelation, LocationAliasRelation
+ \item EthnicGroup, Format, PhysicalFormat, Publisher and various other Enumarations (1D lists)
+ \item Language (ISO 639-3)
+ \item Revision, PlayList, Profile, etc...
 \end{itemize}
+\end{block}
+
+\begin{block}{All objects}
+ \chref{http://telemeta.org/export/cb1fc9ad29e2cb0122fde9dd76c5275ba5dc7d14/doc/devel/telemeta-all.pdf}{view online PDF}
+\end{block}
 }
 
 
-\section{Workflow}
+\subsection{Workflow}
 \frame{\frametitle{Workflow}
+    Example: CREM audio archive access rules vs. resource status
     \begin{center}
     \pgfimage[width=12cm]{img/TM_workflow}
     \end{center}
 }
 
-\section{Web interface}
-\begin{frame}\frametitle{Web interface}
+\section{Web User Interface}
+\begin{frame}\frametitle{Web User Interface}
   \vspace{-0.25cm}
   \begin{center}
-    \includegraphics[width=12cm]{img/shots/player_mark.png}
+    \includegraphics[width=12cm]{img/shots/telemeta_eng.png}
   \end{center}
   \tiny{\url{http://archives.crem-cnrs.fr/archives/items/CNRSMH_I_1976_011_003_08/}}
 \end{frame}
@@ -206,20 +223,15 @@
 
 \begin{frame}
  \frametitle{TimeSide : open web audio processing framework}%\scriptsize
-% ==================================
-% --------- Résumé -----------------
-% ==================================
 \begin{block}{Server side - TimeSide Engine}
-
   \begin{itemize}
   \item \alert{Do} asynchronous and fast audio processing with Python,
   \item \alert{Decode} audio frames from ANY format into numpy arrays,
-  \item \alert{Analyze} audio content with state-of-the-art audio feature extraction libraries,
+  \item \alert{Analyze} audio content with state-of-the-art audio feature extraction libraries (Aubio, Yaafe, Vamp (experimental),
   \item  \alert{Organize}, serialize and save analysis metadata through various formats,
   \item  \alert{Draw} various fancy waveforms, spectrograms and other cool graphers,
   \item  \alert{Transcode} audio data in various media formats and stream them through web apps,
-
-    \end{itemize}
+  \end{itemize}
  
 \end{block}
 \begin{block}{Client side - TimeSide UI}
@@ -244,16 +256,15 @@
 \end{frame}
 
 
-
-\frame{\frametitle{DIADEMS}
+\frame{\frametitle{The DIADEMS project}
 \begin{itemize}
     \item \chref{http://www.irit.fr/recherches/SAMOVA/DIADEMS/fr/welcome/&cultureKey=en}{DIADEMS} : Description, Indexation, Access to Sound and Ethnomusicological Documents
-    \item granted by ANR : french national research agency (ANR-12-CORD-0022)     
+    \item Granted by ANR : french national research agency (ANR-12-CORD-0022)     
     \item 3 years, 8 partners, 850 k\euro
-    \item new collaboration between human and computer science laboratories (not so easy!)
-    \item apply and test MIR algorithms on large scale ethnomusicological data
-    \item define some high level interfaces to find musical informations in complex corpus
-    \item define some \chref{http://files.parisson.com/telemeta/telemeta-doc/DIADEMS/thesaurus/Thesaurus/Thesaurus.html}{thesauri} describing ethnomusicilogy events
+    \item Apply and test MIR algorithms on large scale ethnomusicological data
+    \item Define some high level interfaces to find new ways of explorations in large complex musical corpus
+    \item New modes of collaboration between human science and computer science laboratories and researchers
+    \item Define the \chref{http://files.parisson.com/telemeta/telemeta-doc/DIADEMS/thesaurus/Thesaurus/Thesaurus.html}{vocabulary} describing musical events in the usecase of ethnomusicilogy vs. signal processing
     \item \dchref{http://www.irit.fr/recherches/SAMOVA/DIADEMS/fr/welcome/}
     \item \dchref{http://diadems.telemeta.org}
 \end{itemize}
@@ -308,37 +319,51 @@
 }
 
 
-\frame{\frametitle{DIADEMS - Roadmap}
-\begin{center}
-\pgfimage[width=12cm]{img/TM_Roadmap}
-\end{center}
+\frame{\frametitle{Lessons}
+TODO
 }
 
 \frame{\frametitle{TODO list}
 \begin{block}{TimeSide}
     \begin{itemize}
-    \item web server (django)
-    \item process task manager
-    \item full HTML5 zooming player (+ annotations, segmentations, etc..)
-    \item analyzer parameters (+ interface)
-    \item more filtering (FIR, IIR, phase vocoder)
+    \item Tiny web server (django)
+    \item Process task manager
+    \item Full HTML5 zooming player (+ annotations, segmentations, etc..)
+    \item Analyzer parameters (+ interface)
+    \item Improve Vamp plugins support (Vamp python host ?)
+    \item Add more automatic segmentation and classification tools to support various semantic ontologies (cf. thesaurus)
+    \item Add more music analysis tools to support Ethnomusicological research
+    \item Add automatic similarity analysis tools (inside a song or between sound items)
+    \item Enhance analysis result displays to send to Telemeta
     \item \dchref{https://github.com/yomguy/TimeSide/issues}
     \end{itemize}
 \end{block}
+}
+
+
+\frame{\frametitle{TODO list}
 \begin{block}{Telemeta}
     \begin{itemize}
-    \item class based views
-    \item rewrite geolocation services
-    \item public and enhanced user playlists
-    \item smart breadcrumbs 
-    \item better interactions with TimeSide
+    \item Update code to support Django new Class based views
+    \item Rewrite geolocation services
+    \item Public and enhanced user playlists
+    \item Smart breadcrumbs 
+    \item Better interactions with TimeSide
+    \item Enhance user interface (full HTML 5 + web audio API)
+        \begin{itemize}
+            \item For annotations and segmentations in a collaborative manner
+            \item Provide import capabilities and feedback loop between manual and automatic annotations
+            \item Fancy displays of automatic analysis results (zoomable + synchronized with audio)
+            \item Add a User interface to control and tune the analysis parameters
+        \end{itemize}
     \item \dchref{http://telemeta.org/report/1}
     \end{itemize}
 \end{block}
 }
 
-\section{Development}
+\section{Development and contact informations}
 %\frame{\tableofcontents[currentsection]}
+
 \frame{\frametitle{Development}
 \begin{block}{Links}
     \begin{itemize}
@@ -373,7 +398,7 @@
         \item \chref{https://twitter.com/telemeta/}{@telemeta}
     \end{itemize}
     \end{block}
-    \begin{block}{Me}
+    \begin{block}{Contact}
     \begin{itemize}
     \item \chref{mailto:guillaume@parisson.com}{guillaume@parisson.com}
     \item \chref{https://twitter.com/yomguy/}{@yomguy}
@@ -384,5 +409,44 @@
      \end{block}
   \end{center}
 }
+
+% BONUS
+
+\begin{frame}[fragile]
+  \begin{block}{TimeSide - Github repository}
+    \begin{center}\scriptsize
+      \colorbox{yellow!50}{\bf \hskip3ex
+        \url{https://github.com/yomguy/TimeSide/} \hskip3ex }
+    \end{center}
+
+  \begin{itemize}
+  \item 3 main branches: master, dev, diadems 
+  \end{itemize}
+  \end{block}
+  \begin{block}{Installation}
+\url{https://github.com/yomguy/TimeSide\#install}
+    \begin{itemize}
+    \item Installation des dépendances :
+\begin{lstlisting}[language=bash, basicstyle=\tiny]
+$ echo "deb http://debian.parisson.com/debian/ stable main" |
+$ sudo tee -a /etc/apt/sources.list 
+$ echo "deb-src http://debian.parisson.com/debian/ stable main" | sudo tee -a /etc/apt/sources.list 
+$ sudo apt-get update 
+$ sudo apt-get install git 
+$ sudo apt-get build-dep python-timeside
+\end{lstlisting}
+
+    \item Installation depuis le dépôt \emph{Github} :
+\begin{lstlisting}[language=bash, basicstyle=\tiny]
+$ git clone https://github.com/yomguy/TimeSide.git 
+$ cd TimeSide 
+$ git checkout dev 
+$ export PYTHONPATH=$PYTHONPATH:`pwd` 
+$ python tests/run_all_tests
+\end{lstlisting}
+\end{itemize}
+\end{block}
+\end{frame}
+
 
 \end{document}
