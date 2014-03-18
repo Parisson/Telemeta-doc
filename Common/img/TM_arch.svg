@@ -36,7 +36,7 @@
     <path style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #000000" d="M 340,310 A 10,10 0 0 0 350,320"/>
     <path style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #000000" d="M 550,320 A 10,10 0 0 0 560,310"/>
     <text font-size="12.8" style="fill: #ffffff;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="450" y="293.9">
-      <tspan x="450" y="293.9">Database (SQL, Oracle, etc..)</tspan>
+      <tspan x="450" y="293.9">Database</tspan>
     </text>
   </g>
   <g>
