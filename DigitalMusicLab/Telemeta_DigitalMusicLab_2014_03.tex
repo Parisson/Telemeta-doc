@@ -119,20 +119,30 @@
 \subsection{History}
 \frame{\frametitle{History of the project}
 \begin{itemize}
-  \item \alert{2006} : definition of the goals (open source web audio collaborative platform)
-  \item \alert{2007} : first partner : french Center of Research on EthnoMusicology
-  \item \alert{2007 - 2009} : technical specifications, definition of the DB migrator
-  \item \alert{2008} : prototype development
-  \item \alert{2008 - 2010} : workflow and format specifications 
-  \item \alert{2011} : development, final migration and release of \alert{Telemeta 1.0} to the CREM for production : \dchref{http://archives.crem-cnrs.fr}
-  \item \alert{2011 - 2014} : collaborative indexing, more development, massive data imports...
+  \item \alert{2006}: definition of the goals (open source web audio collaborative platform)
+  \item \alert{2007}: first partner: french Research Center of Ethnomusicology (CREM)
+  \item \alert{2007 - 2009}: technical specifications, definition of the DB migrator
+  \item \alert{2008}: prototype development
+  \item \alert{2008 - 2010}: workflow and format specifications 
+  \item \alert{2011}: development, final migration and release of \alert{Telemeta 1.0} to the CREM for production : \dchref{http://archives.crem-cnrs.fr}
+  \item \alert{2011 - 2014}: collaborative indexing, more development, massive data imports...
 \end{itemize}
 }
 
+
+\begin{frame}
+  \frametitle{CREM items}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/crem_items.png}
+  \end{center}
+\end{frame}
+
+
 \subsection{Technologies}
 \frame{\frametitle{Technologies}
+
 \begin{center}
-\large{\alert{100\% 0pen Source!}}
+\large{100\% 0pen Source!}
 \end{center}
 
 \begin{itemize}
@@ -143,6 +153,7 @@
  \item MySQL, PostgreSQL, others : relational databases \\
  \item GNU / Linux : applications, libraries and kernel \\
 \end{itemize}
+
 }
 
 \subsection{Features}
@@ -319,48 +330,6 @@
 }
 
 
-\frame{\frametitle{Lessons}
-TODO
-}
-
-\frame{\frametitle{TODO list}
-\begin{block}{TimeSide}
-    \begin{itemize}
-    \item Tiny web server (django)
-    \item Process task manager
-    \item Full HTML5 zooming player (+ annotations, segmentations, etc..)
-    \item Analyzer parameters (+ interface)
-    \item Improve Vamp plugins support (Vamp python host ?)
-    \item Add more automatic segmentation and classification tools to support various semantic ontologies (cf. thesaurus)
-    \item Add more music analysis tools to support Ethnomusicological research
-    \item Add automatic similarity analysis tools (inside a song or between sound items)
-    \item Enhance analysis result displays to send to Telemeta
-    \item \dchref{https://github.com/yomguy/TimeSide/issues}
-    \end{itemize}
-\end{block}
-}
-
-
-\frame{\frametitle{TODO list}
-\begin{block}{Telemeta}
-    \begin{itemize}
-    \item Update code to support Django new Class based views
-    \item Rewrite geolocation services
-    \item Public and enhanced user playlists
-    \item Smart breadcrumbs 
-    \item Better interactions with TimeSide
-    \item Enhance user interface (full HTML 5 + web audio API)
-        \begin{itemize}
-            \item For annotations and segmentations in a collaborative manner
-            \item Provide import capabilities and feedback loop between manual and automatic annotations
-            \item Fancy displays of automatic analysis results (zoomable + synchronized with audio)
-            \item Add a User interface to control and tune the analysis parameters
-        \end{itemize}
-    \item \dchref{http://telemeta.org/report/1}
-    \end{itemize}
-\end{block}
-}
-
 \section{Development and contact informations}
 %\frame{\tableofcontents[currentsection]}
 
@@ -386,6 +355,58 @@ TODO
 \chref{http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html}{CeCILL v2.1} (GPL v2 compatible) 
 \end{block}
 }
+
+
+\frame{\frametitle{Development - L  essons from a 7 year old project}
+\begin{itemize}
+\item Simplicity is better than complexity (a Python developer rule)
+\item Modularity is accessible with a flexible language
+\item Models and objects are more important than technologies
+\item A good workflow is defined by the users themselves through feedbacks and revisions
+\item Prototyping is a crucial part of the development process
+\item A good platform should rely on standards, not on formats
+\item The Open Source ecosystem gives some tremendous possibilities to scale a platform project
+\end{itemize}
+}
+
+\frame{\frametitle{Development - TODO list}
+\begin{block}{TimeSide}
+    \begin{itemize}
+    \item Tiny web server (django)
+    \item Process task manager
+    \item Full HTML5 zooming player (+ annotations, segmentations, etc..)
+    \item Analyzer parameters (+ interface)
+    \item Improve Vamp plugins support (Vamp python host ?)
+    \item Add more automatic segmentation and classification tools to support various semantic ontologies (cf. thesaurus)
+    \item Add more music analysis tools to support Ethnomusicological research
+    \item Add automatic similarity analysis tools (inside a song or between sound items)
+    \item Enhance analysis result displays to send to Telemeta
+    \item \dchref{https://github.com/yomguy/TimeSide/issues}
+    \end{itemize}
+\end{block}
+}
+
+
+\frame{\frametitle{Development - TODO list}
+\begin{block}{Telemeta}
+    \begin{itemize}
+    \item Update code to support Django new Class based views
+    \item Rewrite geolocation services
+    \item Public and enhanced user playlists
+    \item Smart breadcrumbs 
+    \item Better interactions with TimeSide
+    \item Enhance user interface (full HTML 5 + web audio API)
+        \begin{itemize}
+            \item For annotations and segmentations in a collaborative manner
+            \item Provide import capabilities and feedback loop between manual and automatic annotations
+            \item Fancy displays of automatic analysis results (zoomable + synchronized with audio)
+            \item Add a User interface to control and tune the analysis parameters
+        \end{itemize}
+    \item \dchref{http://telemeta.org/report/1}
+    \end{itemize}
+\end{block}
+}
+
 
 
 \frame{\frametitle{The End}
@@ -446,6 +467,13 @@ $ python tests/run_all_tests
 \end{lstlisting}
 \end{itemize}
 \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Statistics - CREM revisions}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/telemeta-revisions.png}
+  \end{center}
 \end{frame}
 
 
