@@ -1,7 +1,7 @@
 \documentclass{paper}
 %\hyphenation{Post-Script}
 \usepackage[authoryear]{natbib}
-
+%\bibliographystyle{plainnat}
 \usepackage{fma2014}
 
 \usepackage{graphicx}
@@ -115,9 +115,9 @@ Institut Jean Le Rond d'Alembert, \\
   In the context of ethnomusicological research, the Research Center on Ethnomusicology (CREM) and Parisson, a company specialized in the management of audio databases, have been developing an innovative, collaborative and interdisciplinary open-source web-based multimedia platform since 2007. 
 This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists and researchers in ethnomusicology. The first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, http://archives.crem-cnrs.fr} since 2008 and is now fully operational and used on a daily basis for ethnomusicological studies.
 
-The positive impact of this platform on ethnomusicological research has been describe in several publications \citep{Simmonot_IASA_2011, Julien_IASA_2011, Simonnot_ICTM_2014}.
+The benefit of this platform for ethnomusicological research has been describe in several publications \citep{Simmonot_IASA_2011, Julien_IASA_2011, Simonnot_ICTM_2014}.
 
-Recently, an open-source audio analysis framework, \emph{Timeside}, has been developed to bring automatic music analysis capabilities to the web platform and thus have turned Telemeta into a unique resource for \emph{Computational Ethnomusicology} \citep{Tzanetakis_2007_JIMS, Gomez_JNMR_2013}
+Recently, an open-source audio analysis framework, \emph{Timeside}, has been developed to bring automatic music analysis capabilities to the web platform and thus have turned Telemeta into a complete resource for \emph{Computational Ethnomusicology} \citep{Tzanetakis_2007_JIMS, Gomez_JNMR_2013}
 
  \section{The Telemeta platform}\label{sec:Telemeta}
  \subsection{Web audio content management features and architecture}
@@ -141,7 +141,7 @@ The time-based nature of such audio-visual materials and some associated metadat
   \caption{Telemeta architecture}\label{fig:TM_arch}
 \end{figure*}
 
-Telemeta is ideal for professionals who wants to easily organize, backup, archive and publish documented sound collections of audio files, CDs, digitalized vinyls and magnetic tapes over a strong database, in accordance with open web standards. 
+Telemeta has been designed for professionals who wants to easily organize, backup, archive and publish documented sound collections of audio files, CDs, digitalized vinyls and magnetic tapes over a strong database, in accordance with open web standards. 
 \emph{Telemeta} architecture is flexible and can easily be adapted to particular database organization of a given sound archives. 
 
 The main features of \emph{Telemeta} are:
@@ -168,8 +168,11 @@ Metadata provide two different kinds of information about the audio item: contex
 In ethnomusicology, contextual information could be geographic, cultural and musical. It could also store archive related information and include related materials in any multimedia format.
 
 \subsubsection{Annotations and segmentation}
-Metadata also consist in temporal information such as a list of \emph{time-coded markers} associated with annotations and a list of of \emph{time-segments} associated with labels. The ontology for those labels is relevant for ethnomusicology (e.g. speech versus singing voice segment, chorus, ...).
-It should be noted that annotations and segmentation can be done either by a human expert or by some automatic signal processing analysis (see Section~\ref{sec:Timeside}).
+Metadata also consist in temporally-indexed information such as a list of \emph{time-coded markers} associated with annotations and a list of of \emph{time-segments} associated with labels. The ontology for those labels is relevant for ethnomusicology (e.g. speech versus singing voice segment, chorus, ...).
+
+Ethnomusicological researchers and archivists can produce their own annotations and share them with colleagues. These annotations are accessible from the sound archive item web page and are indexed through the database.
+
+It should be noted that annotations and segmentation can also be produce by some automatic signal processing analysis (see Section~\ref{sec:Timeside}).
 
 \section{TimeSide, an audio analysis framework}\label{sec:Timeside}
 One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}\footnote{\url{https://github.com/yomguy/TimeSide}}, that offers audio player web integration together with audio signal processing analysis capabilities. 
@@ -214,7 +217,7 @@ In the context of this project, both researchers from Ethnomusicological, Speech
 
 \section{Conclusion}
 
-The Telemeta open-source framework provides a unique and common platform to provide researchers in musicology a tools to efficiently distribute, share and work on their research materials. Furthermore, this platform is offered automatic music analysis capabilities through an external component, TimeSide that provides a flexible computational analysis engine together with web serialization and visualization capabilities.
+The Telemeta open-source framework provides a platform to provide researchers in musicology a tools to efficiently distribute, share and work on their research materials. Furthermore, this platform is offered automatic music analysis capabilities through an external component, TimeSide that provides a flexible computational analysis engine together with web serialization and visualization capabilities.
 
 Further works on the user interface will enhance the visualization experience with time and frequency zooming capabilities and will thus improve the accuracy and the quality of time-segment base annotations.
 
