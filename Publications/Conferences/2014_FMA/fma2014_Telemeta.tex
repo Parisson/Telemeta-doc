@@ -54,7 +54,7 @@ Institut Jean Le Rond d'Alembert, \\
 \maketitle
 %
 \begin{abstract}
-Since 2007, ethnomusicologist and engineers have joint their effort to develop a collaborative web platform for management of and access to digital sound archives. This platform has been deployed since 2010 and hold the archives of the \emph{Center for Research in Ethnomusicology}, which is the most important collection in Europe.
+Since 2007, ethnomusicologist and engineers have joint their effort to develop a collaborative web platform for management of and access to digital sound archives. This platform has been deployed since 2011 and hold the archives of the \emph{Center for Research in Ethnomusicology}, which is the most important collection in Europe.
 This web platform is based on Telemeta, an open-source web audio framework dedicated to digital sound archives secure storing, indexing and publishing. It focuses on the enhanced and collaborative user-experience in accessing audio items and their associated metadata and on the possibility for the expert users to further enrich those metadata.
 
  Telemeta architecture relies on \emph{TimeSide}, an open audio processing framework written in Python which provides decoding,  encoding and streaming methods for various formats together with a smart embeddable HTML audio player. TimeSide also includes a set of audio analysis plugins and additionally wraps several audio features extraction libraries to provide automatic annotation, segmentation and musicological analysis.
@@ -63,15 +63,16 @@ This web platform is based on Telemeta, an open-source web audio framework dedic
 
 \section{Introduction}\label{sec:intro}
 
- % In social sciences like anthropology and linguistics, researchers have to work on multiple types of multimedia documents such as photos, videos, sound recordings or databases. The need to easily access, visualize and annotate such materials can be problematic given their diverse formats, sources and given their chronological nature.
+ In social sciences like anthropology and linguistics, researchers have to work on multiple types of multimedia documents such as photos, videos, sound recordings or databases. The need to easily access, visualize and annotate such materials can be problematic given their diverse formats, sources and given their chronological nature.
   %With this in mind, some laboratories\footnote{The Research Center on Ethnomusicology (CREM), the Musical Acoustics Laboratory (LAM, UMR 7190) and the sound archives of the Mediterranean House of Human Sciences (MMHS)} involved in ethnomusicological research have been working together on that issue.
 
   In the context of ethnomusicological research, the Research Center on Ethnomusicology (CREM) and Parisson, a company specialized in the management of audio databases, have been developing an innovative, collaborative and interdisciplinary open-source web-based multimedia platform since 2007. 
-This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists and researchers in ethnomusicology. The first prototype of this platform has been online\footnote{Archives sonores du CNRS, Musée de l'Homme, http://archives.crem-cnrs.fr} since 2008 and is now fully operational and used on a daily basis for ethnomusicological studies.
+This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists and researchers in ethnomusicology. The first prototype of this platform has been online since 2011 and is now fully operational and used on a daily basis for ethnomusicological studies. A description of theses archives and some use cases are given in Section~\ref{sec:archives-CREM}.
 
-The benefit of this platform for ethnomusicological research has been describe in several publications \citep{Simmonot_IASA_2011, Julien_IASA_2011, Simonnot_ICTM_2014}.
+The benefit of this collaborative platform for ethnomusicological research has been described in several publications \citep{Simmonot_IASA_2011, Julien_IASA_2011, Simonnot_ICTM_2014}.
 
-Recently, an open-source audio analysis framework, \emph{Timeside}, has been developed to bring automatic music analysis capabilities to the web platform and thus have turned Telemeta into a complete resource for \emph{Computational Ethnomusicology} \citep{Tzanetakis_2007_JIMS, Gomez_JNMR_2013}
+Recently, an open-source audio analysis framework, \emph{Timeside}, has been developed to bring automatic music analysis capabilities to the web platform and thus have turned Telemeta into a complete resource for \emph{Computational Ethnomusicology} \citep{Tzanetakis_2007_JIMS, Gomez_JNMR_2013}.
+%Section~\ref{sec:Timeside} 
 
  \section{The Telemeta platform}\label{sec:Telemeta}
  \subsection{Web audio content management features and architecture}
@@ -128,16 +129,19 @@ Ethnomusicological researchers and archivists can produce their own annotations 
 
 It should be noted that annotations and segmentation can also be produce by some automatic signal processing analysis (see Section~\ref{sec:Timeside}).
 
+
+
+
 \section{TimeSide, an audio analysis framework}\label{sec:Timeside}
 One specificity of the Telemeta architecture is to rely on an external component, \emph{TimeSide}\footnote{\url{https://github.com/yomguy/TimeSide}}, that offers audio player web integration together with audio signal processing analysis capabilities. 
 
 \emph{TimeSide} is an audio analysis and visualization framework based on both python and javascript languages to provide state-of-the-art signal processing and machine learning algorithms together with web audio capabilities for display and streaming.
-Figure~\ref{fig:TimeSide_Archi} illustrates the overall architecture of \emph{TimeSide}.
+Figure~\ref{fig:TimeSide_Archi} illustrates the overall architecture of \emph{TimeSide} together with the data flow between \emph{TimeSide} and the \emph{Telemeta} web-server.
 
 \begin{figure*}[htbp]
   \centering
   \includegraphics[width=0.7\linewidth]{img/timeside_schema_v3.pdf}
-  \caption{TimeSide architecture}\label{fig:TimeSide_Archi}
+  \caption{TimeSide engine architecture and data flow with Telemeta web-server}\label{fig:TimeSide_Archi}
 \end{figure*}
 
 
@@ -168,6 +172,34 @@ Besides music analysis, such automatic tools also deal with speech and noises cl
 
 In the context of this project, both researchers from Ethnomusicological, Speech and Music Information Retrieval communities are working together to specified the tasks to be addressed by automatic analysis tools.
 
+\section{Sound archives of the CNRS - Musée de l'Homme}\label{sec:archives-CREM}
+Since June 2011, the Telemeta platform has been deployed to hold the \emph{Sound archives of the CNRS - Musée de l'Homme}\footnote{\url{http://archives.crem-cnrs.fr}} and is managed by the CREM (Center for Research in Ethnomusicology).
+The platform aims to make these archives available to researchers and to the extent possible, the public, in compliance with the intellectual and moral rights of musicians and collectors.
+
+\subsection{Archiving research materials}
+The archives of CREM, the most important in Europe, are distinguished by their wealth:
+\begin{itemize}
+\item Nearly 3,500 hours of recordings of unpublished field.
+\item Approximately 3700 hours of material published (more than 5000 discs, many of which are very rare).
+\end{itemize}
+The collection is sustained by the field missions of researchers on all continents. 
+
+Through this platform, archivists can properly ensure the long-term preservation of data and continuously maintain and enrich the associated metadata.
+
+Accessing the collections aid laboratory research, diachronic and synchronic comparisons, the preparation of new fieldwork and the training of PhD students.
+
+Publishing collections also helps researchers making their work more visible. Besides making available and listenable the related corpora, researchers can also append related academic publications and provide temporal annotations to further illustrate their work.
+
+
+\subsection{A collaborative platform}
+Given the collaborative nature of the platform, both research and archivist can cooperate with colleagues to continuously enrich metadata associated to a sound item or a collection.  
+
+Collaborative tools like markers and comments enable researchers from different institutions to work together on some common audio materials.
+It also allows researchers to exchange data online with communities producing their music in their home countries.
+
+
+
+
 
 \section{Conclusion}
 
@@ -176,8 +208,6 @@ The Telemeta open-source framework provides a platform to provide researchers in
 Further works on the user interface will enhance the visualization experience with time and frequency zooming capabilities and will thus improve the accuracy and the quality of time-segment base annotations.
 
 
-
-\pagebreak
 
 \section*{Acknowledgments} 
 {\small The authors would like to thank all the people that have been involved in \emph{Telemeta} specification and development or have provide useful input and feedback. 
