@@ -54,7 +54,7 @@ Institut Jean Le Rond d'Alembert, \\
 \maketitle
 %
 \begin{abstract}
-Since 2007, ethnomusicologist and engineers have joint their effort to develop a collaborative web platform for management of and access to digital sound archives. This platform has been deployed since 2011 and hold the archives of the \emph{Center for Research in Ethnomusicology}, which is the most important collection in Europe.
+Since 2007, ethnomusicologist and engineers have joint their effort to develop a scalable and collaborative web platform for management and access to large digital sound archives. This platform has been deployed since 2011 and hold the archives of the \emph{Center for Research in Ethnomusicology}, which is the most important collection in Europe.
 This web platform is based on Telemeta, an open-source web audio framework dedicated to digital sound archives secure storing, indexing and publishing. It focuses on the enhanced and collaborative user-experience in accessing audio items and their associated metadata and on the possibility for the expert users to further enrich those metadata.
 
  Telemeta architecture relies on \emph{TimeSide}, an open audio processing framework written in Python which provides decoding,  encoding and streaming methods for various formats together with a smart embeddable HTML audio player. TimeSide also includes a set of audio analysis plugins and additionally wraps several audio features extraction libraries to provide automatic annotation, segmentation and musicological analysis.
@@ -66,8 +66,9 @@ This web platform is based on Telemeta, an open-source web audio framework dedic
  In social sciences like anthropology and linguistics, researchers have to work on multiple types of multimedia documents such as photos, videos, sound recordings or databases. The need to easily access, visualize and annotate such materials can be problematic given their diverse formats, sources and given their chronological nature.
   %With this in mind, some laboratories\footnote{The Research Center on Ethnomusicology (CREM), the Musical Acoustics Laboratory (LAM, UMR 7190) and the sound archives of the Mediterranean House of Human Sciences (MMHS)} involved in ethnomusicological research have been working together on that issue.
 
-  In the context of ethnomusicological research, the Research Center on Ethnomusicology (CREM) and Parisson, a company specialized in the management of audio databases, have been developing an innovative, collaborative and interdisciplinary open-source web-based multimedia platform since 2007. 
-This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists and researchers in ethnomusicology. The first prototype of this platform has been online since 2011 and is now fully operational and used on a daily basis for ethnomusicological studies. A description of theses archives and some use cases are given in Section~\ref{sec:archives-CREM}.
+  In the context of ethnomusicological research, the Research Center on Ethnomusicology (CREM) and Parisson, a company specialized in the management of large audio databases, have been developing an innovative, collaborative and interdisciplinary open-source web-based multimedia platform since 2007. 
+
+  This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists, researchers and musicians to work together on big music data. The first prototype of this platform has been online since 2010 and is now fully operational and used on a daily basis for ethnomusicological studies since 2011. A description of theses archives and some use cases are given in Section~\ref{sec:archives-CREM}.
 
 The benefit of this collaborative platform for ethnomusicological research has been described in several publications \citep{Simmonot_IASA_2011, Julien_IASA_2011, Simonnot_ICTM_2014}.
 
@@ -76,14 +77,29 @@ Recently, an open-source audio analysis framework, \emph{Timeside}, has been dev
 
  \section{The Telemeta platform}\label{sec:Telemeta}
  \subsection{Web audio content management features and architecture}
-The primary purpose of Telemeta was to provided ethnomusicological community with a platform to access, preserve and distribute audio research materials together with their associated metadata, as these data provide key information on the context and significance of the recording.
+The primary purpose of the project is to provide the ethnomusicological communities with a scalable system to access, preserve and share audio research materials together with their associated metadata, as these data provide key information on the context and significance of the recording. Telemeta\footnote{http://telemeta.org}, as a free and open source\footnote{Telemeta code is available under the CeCILL Free Software License Agreement \texttt{http://cecill.info/licences/Licence\_CeCILL\_V2-en.html}}, is a unique scalable web audio platform for backuping, indexing, transcoding, analyzing, sharing and visualizing any digital audio or video file in accordance with open web standards.
 
- Telemeta\footnote{http://telemeta.org} is a free and open source\footnote{Telemeta code is available under the CeCILL Free Software License Agreement \texttt{http://cecill.info/licences/Licence\_CeCILL\_V2-en.html}} web audio platform which introduces efficient and secure methods for back-uping, indexing, transcoding, analyzing, publishing and visualizing any digitized audio or video file with its metadata.
+The time-based nature of such audio-visual materials and some associated metadata as annotations raises issues of access and visualization at a large scales. Easy and on demand access to these data, as you listen to the recording, represents a significant improvement.
 
-The time-based nature of such audio-visual materials and some associated metadata as annotations raises issues of access and visualization. Easy access to these data, as you listen to the recording, represents a significant improvement.
+The main features of \emph{Telemeta} are:
 
- An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta} and Telemeta architecture is represented in Figure~\ref{fig:TM_arch}
- \begin{figure}
+      \begin{itemize}
+      \item Pure HTML5 web user interface including dynamical forms
+      \item On the fly audio analyzing, transcoding and metadata
+        embedding in various formats
+      \item Social editing with semantic ontologies, smart workflows,
+        realtime tools, human or automatic annotations and
+        segmentations
+      \item User management with individual desk, playlists, profiles
+        and group access rights
+      \item High level search engine (geolocation, instruments, ethnic groups, etc...)
+      \item Data providers : DublinCore, OAI-PMH, RSS, XML, JSON and other 
+      \item Multi-language support (now english and french)
+      \end{itemize}
+
+An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}. Its flexible and streaming safe   architecture is represented in Figure~\ref{fig:TM_arch}.
+
+\begin{figure}
    \centering
    \fbox{\includegraphics[width=0.97\linewidth]{img/telemeta_screenshot_en.png}}
    \caption[1]{Screenshot excerpt of the \emph{Telemeta} web interface}
@@ -96,20 +112,10 @@ The time-based nature of such audio-visual materials and some associated metadat
   \caption{Telemeta architecture}\label{fig:TM_arch}
 \end{figure*}
 
-Telemeta has been designed for professionals who wants to easily organize, backup, archive and publish documented sound collections of audio files, CDs, digitalized vinyls and magnetic tapes over a strong database, in accordance with open web standards. 
-\emph{Telemeta} architecture is flexible and can easily be adapted to particular database organization of a given sound archives. 
-
-The main features of \emph{Telemeta} are:
-\begin{itemize}
-\item \emph{Pure HTML} web user interface including high level \emph{search engine}
-\item Smart \emph{workflow management} with contextual user lists, profiles and rights
-\item RSS and JSON feed generators
-\item XML serialized backup
-\item Strong Structured Query Language (SQL) or Oracle backend
-\item Model-View-Controller (MVC) architecture 
-\end{itemize}
+      
 Beside database management, the audio support is mainly provided through an external component, TimeSide, which is described in Section~\ref{sec:Timeside}.
 \defcitealias{DublinCore}{Papier I}
+
 \subsection{Metadata}\label{sec:metadata}
 In addition to the audio data, an efficient and dynamic management of the associated metadata is also required. Consulting metadata provide both an exhaustive access to valuable information about the source of the data and to the related work of peer researchers. 
 Dynamically handling metadata in a collaborative manner optimises the continuous process of knowledge gathering and enrichment of the materials in the database.  
