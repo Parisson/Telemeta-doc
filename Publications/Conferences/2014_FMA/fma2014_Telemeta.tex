@@ -81,15 +81,14 @@ The primary purpose of the project is to provide the ethnomusicological communit
 
 The time-based nature of such audio-visual materials and some associated metadata as annotations raises issues of access and visualization at a large scales. Easy and on demand access to these data, as you listen to the recording, represents a significant improvement.
 
-An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}. Its flexible and streaming safe   architecture is represented in Figure~\ref{fig:TM_arch}.
-
+An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}.
 \begin{figure}
    \centering
    \fbox{\includegraphics[width=0.97\linewidth]{img/telemeta_screenshot_en.png}}
    \caption[1]{Screenshot excerpt of the Telemeta web interface}
     \label{fig:Telemeta}
  \end{figure}
-
+Its flexible and streaming safe architecture is represented in Figure~\ref{fig:TM_arch}.
 \begin{figure*}[htbp]
   \centering
   \includegraphics[width=0.5\linewidth]{img/TM_arch.pdf}
@@ -163,7 +162,7 @@ TimeSide provides the following main features:
 \subsection{Audio features extraction}
 In order to provide Music Information Retrieval analysis methods to be implemented over a large corpus for ethnomusicological studies, TimeSide incorporates some state-of-the-art audio feature extraction libraries such as Aubio\footnote{\url{http://aubio.org/}} \citep{brossierPhD}, Yaafe\footnote{\url{https://github.com/Yaafe/Yaafe}} \citep{yaafe_ISMIR2010} and Vamp plugins\footnote{ \url{http://www.vamp-plugins.org}}.
 
-As a open-source framework and given its architecture and the flexibility provided by Python, the implementation of any audio and music analysis algorithm can be consider and makes it a very convenient framework.
+As a open-source framework and given its architecture and the flexibility provided by Python, the implementation of any audio and music analysis algorithm can be consider. Thus, it makes it a very convenient framework for researchers in computational ethnomusicology to develop and evaluate their algorithms.
 
 Given the extracted features, every sound item in a given collection can be automatically analyze. The results of this analysis can be stored in a scientific file format like Numpy and HDF5 and serialized to the web browser through common markup languages: XML, JSON and YAML.
 
@@ -203,10 +202,12 @@ It also allows researchers to exchange data online with communities producing th
 
 \section{Conclusion}
 
-The Telemeta open-source framework provides the researchers in musicology with a new platform to efficiently distribute, share and work on their research materials. Furthermore, this platform is offered automatic music analysis capabilities through an external component, TimeSide that provides a flexible computational analysis engine together with web serialization and visualization capabilities.
+The Telemeta open-source framework provides the researchers in musicology with a new platform to efficiently distribute, share and work on their research materials.
+The platform has been deployed since 2011 to manage the \emph{Sound archives of the CNRS - Musée de l'Homme} which is the most important european collection of ethnomusicocological resources.
+
+Furthermore, this platform is offered automatic music analysis capabilities through an external component, TimeSide that provides a flexible computational analysis engine together with web serialization and visualization capabilities. As an open-source framework TimeSide could be an appropriate platform for researchers in computational ethnomusicology to develop and evaluate their algorithms
 
 Further works on the user interface will enhance the visualization experience with time and frequency zooming capabilities and will thus improve the accuracy and the quality of time-segment base annotations.
-
 
 
 \section*{Acknowledgments} 
