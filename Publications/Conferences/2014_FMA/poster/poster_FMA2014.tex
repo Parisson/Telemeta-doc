@@ -200,7 +200,7 @@
         Metadata also consist in temporal information such as:
         \begin{itemize}
         \item a list of \alert{time-coded markers} associated with annotations
-        \item a list of of \alert{time-segments} associated with labels.
+        \item a list of of \alert{time-segments} associated with labels (\emph{in development}) .
         \end{itemize}
         The ontology for those labels is relevant for ethnomusicology (e.g. speech versus singing voice segment, chorus, ...).
         It should be noted that annotations and segmentation can be done either by a human expert or by some automatic signal processing analysis.
@@ -216,12 +216,11 @@
             \item Approximately 3700 hours of material published (more than
               5000 discs, many of which are very rare).
             \end{itemize}
-            Usage of the archives:
-            \begin{itemize}
-            \item Research
-            \item Teaching (lessons, academic works, exams)
-            \item Museology
-            \end{itemize}
+            
+            The platform allows researchers to publish the ressources they have collected together with they research work. It also allows to exchange data online with other researchers or communities producing their music in their home countries through collaborative tools like markers and comments.
+            
+            Telemeta is also used as a support for teachers in anthropology or ethnomusicology as it provides the students an access to ressources for lessons, academic works and exams.
+
           %\end{column}
           %\begin{column}{0.7\linewidth}
             %\centering
@@ -249,7 +248,7 @@
 \end{center}
 \begin{columns}[T]
   %\begin{minipage}{0.34\linewidth}
-  \begin{column}{.35\linewidth}
+  \begin{column}{.36\linewidth}
     \begin{beamerboxesrounded}[shadow=true]{Functionality}
        \begin{itemize}
        \item \alert{Do} asynchronous and fast audio processing with
@@ -340,23 +339,18 @@
   \end{block}
 
   \begin{block}{Ongoing developments}
-    \begin{columns}
-      \begin{column}{0.47\linewidth}
-        Regarding Telemeta, the main goal is to turn it into a fully operational platform with a modern web interface for:
+\vspace{-1cm}
+    \begin{multicols}{2}[]
         \begin{itemize}
-        \item \alert{Annotating} multimedia items
-        \item Efficiently \alert{visualizing} results from analysis from various data types together with X-Y zoom capability and audio synchronization
-        \end{itemize}
-      \end{column}
-      \begin{column}{0.47\linewidth}
-        \begin{itemize}
-        \item Designing, managing and running analysis on large audio corpus and serializing the results through a REST web API with a TimeSide server
-        \item Increasing the analysis functionality with various automatic analysis and annotation tools for speech, audio, Music Information Retrieval and ethnomusicology (DIADEMS project).
+        \item \alert{Annotate} multimedia items by time segments supporting both free annotations and ontology-based annotations
+        \item Efficiently \alert{visualize} results from analysis from various data types together with X-Y zoom capability and audio synchronization
+        \item Design, manage and run analysis on large audio corpus and serialize the results through a REST web API with the TimeSide server
+        \item Increase the analysis functionality with various automatic analysis and annotation tools for speech, audio, Music Information Retrieval and ethnomusicology (DIADEMS project).
+
 \end{itemize}
-      \end{column}
-    \end{columns}
-    
-  \end{block}
+\end{multicols}
+\end{block}
+
 \begin{block}{Références}\tiny
 \bibliographystyle{plain}
 %\label{sec:ref}
