@@ -78,40 +78,50 @@
 % ==================================
 % --------- Résumé -----------------
 % ==================================
-  \begin{block}{Abstract}\small
-
-    \begin{minipage}{0.73\linewidth}
-      \begin{itemize}
-      \item Since 2007, ethnomusicologists and engineers have joint their effort to develop \emph{Telemeta}, a scalable and collaborative\textbf{ \emph{open-source} web platform} for management of and access to \textbf{digital sound archives}.
-      \item  This platform has been deployed since 2011 and hold the archives of the \emph{Center for Research in \textbf{Ethnomusicology}}
-      \item The design of Telemeta  focuses on the enhanced and collaborative
-        user-experience in accessing audio items and their associated
-        \textbf{metadata} and on the possibility for the expert user to further
-        enrich those metadata.
-      \item  Telemeta architecture relies on \emph{TimeSide}, an open \textbf{audio processing framework} written in Python which: 
+  \begin{block}{Introduction}\small
+    \begin{columns}
+      \begin{column}{0.72\linewidth}
         \begin{itemize}
-        \item Provides \textbf{decoding, encoding and streaming} methods for various
-          formats together with a smart embeddable \textbf{HTML audio
-          player}.
-        \item Includes a set of audio analysis
-          plugins and additionally wraps several \textbf{audio features
-          extraction} libraries to provide \textbf{automatic annotation,
-          segmentation and musicological analysis}
+        \item Since 2007, ethnomusicologists from the \emph{Center for Research in
+            \alert{Ethnomusicology}} (CREM) and engineers from Parisson have joint
+          their effort to develop \emph{Telemeta}, a scalable and
+          collaborative\alert{ \emph{open-source} web platform} for
+          management of and access to \alert{digital sound archives}.
+        \item A fully operational deployment of this platform is online since 2011 :
+          \textbf{\og Sound archives of the CNRS - Musée de l'Homme\fg}: 
+          \colorbox{yellow!50}
+          {\normalsize \hskip1ex \textbf{\url{http://archives.crem-cnrs.fr} \hskip1ex }}
+        \item The design of Telemeta focuses on the enhanced and
+          collaborative user-experience in accessing audio items and
+          their associated \alert{metadata} and on the possibility
+          for the expert user to further enrich those metadata.
+        \item It fits the professional requirements from both
+          \alert{sound archivists and researchers} in \alert{ethnomusicology}.
+   
         \end{itemize}
-
-      \end{itemize}
-    \end{minipage}
-    \begin{minipage}{0.24\linewidth}
-      \begin{center}
-        \includegraphics[scale=0.9]{img/logo_telemeta_1-1.pdf}\\
-        \colorbox{yellow!50}{\Large \textbf{\url{http://telemeta.org/}}}
-        \vskip1ex
-        \colorbox{yellow!50}
-        { Contact :
-          \href{mailto:guillaume@parisson.com}{\{guillaume,thomas\}@parisson.com}
-        }
-      \end{center}
-    \end{minipage}
+      \end{column}
+      \begin{column}{0.26\linewidth}
+        \begin{center}
+          \includegraphics[scale=0.9]{img/logo_telemeta_1-1.pdf}\\
+          \colorbox{yellow!50}{\Large
+            \textbf{\url{http://telemeta.org/}}} \vskip1ex
+          \colorbox{yellow!50} { Contact :
+            \href{mailto:guillaume@parisson.com}{\{guillaume,thomas\}@parisson.com}}
+        \end{center}
+      \end{column}
+    \end{columns}
+    \vskip1ex
+    Telemeta architecture relies on \emph{TimeSide}, an open
+    \alert{audio processing framework} written in Python which:
+    \begin{itemize}
+    \item Provides \alert{decoding, encoding and streaming}
+      methods for various formats together with a smart
+      embeddable \alert{HTML audio player}.
+    \item Includes a set of audio analysis plugins and
+      additionally wraps several \alert{audio features
+        extraction} libraries to provide \alert{automatic
+        annotation, segmentation and musicological analysis}
+    \end{itemize}
     % \colorbox{red!20}{\textbf{KEYWORDS : Sound archives, Metadata, Ethnomusicology, Database, Audio labelling, Web platform}}
   \end{block}
  
@@ -124,32 +134,22 @@
     % --------- Colonne gauche ---------
     % ==================================
     \begin{column}[T]{.49\linewidth}
-      \begin{block}{Introduction}
-        \vspace{-0.5cm}
-        \textbf{Needs}\\
-        \begin{itemize}
-        \item In social sciences like anthropology and linguistics,
-          researchers have to work on multiple types of multimedia
-          documents such as photos, videos, sound recordings or
-          databases.
-        \item The need to easily access, visualize and annotate
-          such materials can be problematic given their diverse formats,
-          sources and given their chronological nature.
-        \end{itemize}
+      % \begin{block}{Introduction}
+      %   \vspace{-0.5cm}
+      %   \textbf{Needs}\\
+      %   \begin{itemize}
+      %   \item In social sciences like anthropology and linguistics,
+      %     researchers have to work on multiple types of multimedia
+      %     documents such as photos, videos, sound recordings or
+      %     databases.
+      %   \item The need to easily access, visualize and annotate
+      %     such materials can be problematic given their diverse formats,
+      %     sources and given their chronological nature.
+      %   \end{itemize}
         
-        \textbf{The \emph{Telemeta} project}\\
-        \begin{itemize}
-        \item The CREM laboratory and Parisson have been developing an innovative,
-          collaborative and interdisciplinary open-source web-based multimedia
-          platform since 2007.
-        \item Goal : fit the professional requirements from both \alert{sound archivists and researchers} in \alert{ethnomusicology}.
-        \item Official Platform online since 2011 : \emph{Archives sonores du CNRS, Musée de l'Homme}: 
-        \end{itemize}
-        \begin{center}
-          \colorbox{yellow!50} {\normalsize \hskip3ex \bf \url{http://archives.crem-cnrs.fr} \hskip3ex }
-        \end{center}
-        \vspace{-0.5cm}
-      \end{block}
+ 
+      %   \vspace{-0.5cm}
+      % \end{block}
 
       \begin{block}{Web audio content management features and architecture}
         \vspace{-0.5cm}  
@@ -208,8 +208,8 @@
       
       \begin{block}{Sound archives of the CNRS - Musée de l'Homme}
         The ressources are available to researchers and to the extent possible, the public, in compliance with the intellectual and moral rights of musicians and collectors.
-        \begin{columns}[T]
-          \begin{column}{0.27\linewidth}
+        %\begin{columns}[T]
+         % \begin{column}{0.27\linewidth}
             Theses archives are the most important in Europe:
             \begin{itemize}
             \item Nearly 3,500 hours of recordings of unpublished field.
@@ -221,12 +221,15 @@
             \item Research
             \item Teaching (lessons, academic works, exams)
             \end{itemize}
-          \end{column}
-          \begin{column}{0.7\linewidth}
-            \centering
-            \fbox{\includegraphics[width=\linewidth]{../img/telemeta_screenshot_en_2.png}}
-          \end{column}
-        \end{columns}
+          %\end{column}
+          %\begin{column}{0.7\linewidth}
+            %\centering
+            \begin{center}
+              \fbox{\includegraphics[width=0.8\linewidth]{../img/telemeta_screenshot_en_2.png}}
+            \end{center}
+
+          %\end{column}
+        %\end{columns}
 
       \end{block}
       
