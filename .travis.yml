@@ -1,0 +1,9 @@
+install:
+  - sudo apt-get install texlive texlive-latex-recommended texlive-latex-extra
+  - sudo apt-get install texlive-fonts-extra texlive-bibtex-extra
+  - sudo apt-get install texlive-pstricks texlive-science
+  - sudo apt-get install texlive-lang-french
+
+script:
+  - source ./make_all.sh
+
