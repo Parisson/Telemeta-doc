@@ -76,9 +76,9 @@
 \newcommand{\curl}[1]{
     \color{rouge}\underline{\url{#1}}
 }
-\title[Telemeta]{
+\title[Telemeta, open web audio platform]{
     Telemeta\\ 
-    Open and collaborative web audio platform for digital sound archives management
+    Open and collaborative web audio platform for digital sound archive management
     }
 
 \author{Guillaume Pellerin\inst{1}}
@@ -122,7 +122,7 @@
   \item \alert{Process} audio data \alert{on demand} through a \alert{modular architecture}
   \item \alert{Play} audio data and \alert{read} metadata \alert{synchronously}
   \item \alert{Index} and \alert{share} music data through a \alert{collaborative} web app
-  \item \alert{Link} audio data to various \alert{ontologies} and \alert{external services}
+  \item \alert{Link} audio data to various \alert{ontologies}, external \alert{services} and related \alert{medias} (photos, videos, etc)
   \item \alert{Manage} users, share and access rules, copyrights easily through time
 \end{itemize}
 }
@@ -140,32 +140,74 @@
 \end{itemize}
 }
 
-\subsection{CREM's Telemeta platform}
+\subsection{Sound archives of the CREM / CNRS}
 \begin{frame}
-  \frametitle{CREM's Telemeta platform}
+  \frametitle{CREM's platform}
   \begin{center}
     \includegraphics[width=\textwidth]{img/shots/CREM_2014_1.png}
   \end{center}
 \end{frame}
 
+\begin{frame}
+  \frametitle{CREM's Geo-navigator}
+  \begin{center}
+    \includegraphics[width=\textwidth]{img/shots/geo.png}
+  \end{center}
+\end{frame}
+
+
+\subsection{Usecases}
+%\frame{\tableofcontents[currentsection]}
+\frame{\frametitle{Extend the usecases}
+       
+    \begin{block}{Usages}
+        \begin{itemize}
+        \item \alert{Research} and \alert{share} audio data and collaborate online and with other researchers or communities.
+        \item \alert{Teach} with music and audio materials for lessons, academic works and exams.
+       \item \alert{Publish} documented audio ressources from interactive kiosks (full access given to IP ranges)
+       \end{itemize}
+    \end{block}
+    
+    \begin{block}{Domains}
+         \begin{itemize}
+            \item Musicology
+            \item Anthropology
+            \item Museology
+            \item Computer science
+            \item Biology
+            \item Ecology
+         \end{itemize}
+    \end{block}
+}
+
+
+\section{Framework}
+\frame{\tableofcontents[currentsection]}
 
 \subsection{Technologies}
 \frame{\frametitle{Technologies}
 
-\begin{center}
-\large{100\% 0pen Source!}
-\end{center}
+\vspace{-1cm}
 
+\begin{block}{\large{100\% 0pen Source!}}
 \begin{itemize}
- \item \chref{http://python.org}{Python} : smart object oriented language \\
+ \item \chref{http://python.org}{Python} : cool and smart object oriented language \\
  \item \chref{http://djangoproject.com}{Django} : high-level web MVC framework \\
  \item \chref{http://gstreamer.freedesktop.org/}{GStreamer} : open source multimedia framework
  \item \chref{https://github.com/yomguy/TimeSide}{TimeSide} : open web audio processing framework 
  \item MySQL, PostgreSQL, others : relational databases \\
  \item GNU / Linux : applications, libraries and kernel \\
 \end{itemize}
-
+\end{block}
 }
+
+\subsection{Architecture}
+\frame{\frametitle{Architecture}
+    \begin{center}
+    \pgfimage[width=8cm]{img/TM_arch}
+    \end{center}
+}
+
 
 \subsection{Features}
 %\frame{\tableofcontents[currentsection]}
@@ -186,44 +228,14 @@
       \end{itemize}
 }
 
-
-
-\subsection{Usecases}
-%\frame{\tableofcontents[currentsection]}
-\frame{\frametitle{Usecases}
-      \begin{itemize}
-      \item Musicology
-      \item 
-      \item \alert{Social editing} with \alert{semantic ontologies}, smart workflows,
-        realtime tools, human or automatic \alert{annotations and
-        segmentations}
-      \item \alert{User management} with individual desk, playlists, profiles
-        and access rights
-      \item \alert{High level search engine} (geolocation, instruments, ethnic groups, etc...)
-      \item \alert{Data providers} : DublinCore, OAI-PMH, RSS, XML, JSON and other 
-      \item \alert{Multi-language} support (now english and french)
-      \end{itemize}
-}
-
-
-\section{Framework}
-
-\subsection{Architecture}
-\frame{\frametitle{Architecture}
-    \begin{center}
-    \pgfimage[width=8cm]{img/TM_arch}
-    \end{center}
-}
-
 \subsection{Data model}
 %\frame{\tableofcontents[currentsection]}
 \frame{\frametitle{Data model}
 
-\begin{block}{Main resource objects}
     \begin{center}
     \pgfimage[width=10cm]{img/TM_model}
     \end{center}
-\end{block}
+
 
 \begin{block}{Other objects}
 \begin{itemize}
@@ -241,15 +253,7 @@
 }
 
 
-\subsection{Workflow}
-\frame{\frametitle{Workflow}
-    Example: CREM audio archive access rules vs. resource status
-    \begin{center}
-    \pgfimage[width=12cm]{img/TM_workflow}
-    \end{center}
-}
-
-\subsection{Web User Interface}
+\subsection{User Interfaces}
 \begin{frame}\frametitle{Web User Interface}
   \vspace{-0.25cm}
   \begin{center}
@@ -296,6 +300,47 @@
     \includegraphics[width=0.8\textwidth]{img/timeside_schema_v3.pdf}
   \end{center}
 \end{frame}
+
+
+\subsection{SABIOD}
+\begin{frame}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_1}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_2}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_5}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_3}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_4}
+  \end{center}
+\end{frame}
+
 
 \subsection{DIADEMS}
 \frame{\frametitle{The DIADEMS project}
@@ -361,15 +406,16 @@
 }
 
 
-\section{Future developments}
-%\frame{\tableofcontents[currentsection]}
+\section{Development}
+\frame{\tableofcontents[currentsection]}
 
-\frame{\frametitle{Development}
+\frame{\frametitle{Development board}
 \begin{block}{Links}
     \begin{itemize}
     \item \dchref{http://telemeta.org}
     \item \dchref{https://github.com/yomguy/Telemeta/}
     \item \dchref{https://github.com/yomguy/TimeSide/}
+    \item \dchref{https://github.com/Parisson/Telemeta-doc/}
     \end{itemize}
 \end{block}
 \begin{block}{Team}
@@ -382,38 +428,21 @@
      \item David Doukan
     \end{itemize}
 \end{block}
-\begin{block}{Licence}
-\chref{http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html}{CeCILL v2.1} (GPL v2 compatible) 
-\end{block}
+
 }
 
 
-\frame{\frametitle{Development - Lessons from a 7 year old project}
+\frame{\frametitle{Development - Lessons}
+\begin{block}{Lessons from a 7 year old project}
 \begin{itemize}
-\item Simplicity is better than complexity (a Python developer rule)
-\item Modularity is only accessible with a flexible language
-\item Models and objects are more important than technologies
-\item A good workflow is defined by the users themselves through feedback and revisions
+\item Simplicity is better than complexity (KISS)
+\item Modularity is only accessible with a flexible language (thanks Python!)
+\item Models and Objects are more important than Technologies
+\item A good workflow is defined by the users themselves through feedback and constant revisions
 \item Prototyping is a crucial part of the development process
-\item A good platform should rely on standards, not on formats
-\item The Open Source ecosystem gives some tremendous possibilities to scale a platform project
+\item A good platform relies on standards, not on formats
+\item The Open Source ecosystem gives some \textbf{tremendous} possibilities to develop, deploy and scale any platform project
 \end{itemize}
-}
-
-\frame{\frametitle{Development - TODO list}
-\begin{block}{TimeSide}
-    \begin{itemize}
-    \item Tiny web server (django)
-    \item Process task manager
-    \item Full HTML5 zooming player (+ annotations, segmentations, etc..)
-    \item Analyzer parameters (+ interface)
-    \item Improve Vamp plugins support (Vamp python host ?)
-    \item Add more automatic segmentation and classification tools to support various semantic ontologies (cf. thesaurus)
-    \item Add more music analysis tools to support Ethnomusicological research
-    \item Add automatic similarity analysis tools (inside a song or between sound items)
-    \item Enhance analysis result displays to send to Telemeta
-    \item \dchref{https://github.com/yomguy/TimeSide/issues}
-    \end{itemize}
 \end{block}
 }
 
@@ -440,10 +469,41 @@
 }
 
 
+\frame{\frametitle{Development - TODO list}
+\begin{block}{TimeSide}
+    \begin{itemize}
+    \item Tiny web server based on Django (done)
+    \item Process task manager (done)
+    \item Full HTML5 zooming player (+ annotations, segmentations, etc..)
+    \item Analyzer parameters (+ interface)
+    \item Improve Vamp plugins support (Vamp python host ?)
+    \item Add more automatic segmentation and classification tools to support various semantic ontologies (cf. thesaurus)
+    \item Add more music analysis tools to support Ethnomusicological research
+    \item Add automatic similarity analysis tools (inside a song or between sound items)
+    \item Enhance analysis result displays to send to Telemeta
+    \item \dchref{https://github.com/yomguy/TimeSide/issues}
+    \end{itemize}
+\end{block}
+}
+
+\frame{\frametitle{Development - TODO list}
+\begin{block}{SABIOD}
+    \begin{itemize}
+    \item Automatic synchronization from hardware audio source 
+    \item Add bioacoustic detection models to TimeSide (bats, dolphins, whales, etc...)
+    \item Add various bio taxonomies to Telemeta
+    \item Extend audio sampling frequencies
+    \end{itemize}
+\end{block}
+}
+
+
+
 
 \frame{\frametitle{The End}
  \begin{center}
-   \large{Thank you!}
+   \large{Thank you!}\\
+   \large{We are looking for new collaborations\\ in ecology and bioacoustic fields. Let's keep in touch!}
    \vspace{0.25cm}
     \begin{block}{Links}
      \begin{itemize}
@@ -451,7 +511,7 @@
         \item \chref{https://twitter.com/telemeta/}{@telemeta}
     \end{itemize}
     \end{block}
-    \begin{block}{Contact}
+    \begin{block}{Contact me}
     \begin{itemize}
     \item \chref{mailto:guillaume@parisson.com}{guillaume@parisson.com}
     \item \chref{https://twitter.com/yomguy/}{@yomguy}
@@ -518,6 +578,14 @@ $ python tests/run_all_tests
   \item \alert{2011}: development, final migration and release of \alert{Telemeta 1.0} to the CREM for production : \dchref{http://archives.crem-cnrs.fr}
   \item \alert{2011 - 2014}: collaborative indexing, more development, massive data imports...
 \end{itemize}
+}
+
+\subsection*{Workflow}
+\frame{\frametitle{Workflow}
+    Example: CREM audio archive access rules vs. resource status
+    \begin{center}
+    \pgfimage[width=12cm]{img/TM_workflow}
+    \end{center}
 }
 
 
