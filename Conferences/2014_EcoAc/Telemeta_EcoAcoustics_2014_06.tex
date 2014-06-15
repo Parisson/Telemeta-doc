@@ -277,73 +277,76 @@
 
 \subsection{SABIOD}
 \begin{frame}
-  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype) - Home Page}
   \begin{center}
     \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_1}
   \end{center}
 \end{frame}
 
 \begin{frame}
-  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype) - User Interface}
   \begin{center}
     \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_2}
   \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
-  \begin{center}
-    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_5}
-  \end{center}
-\end{frame}
 
-
-\begin{frame}
-  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
-  \begin{center}
-    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_3}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
-  \begin{center}
-    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_4}
-  \end{center}
-\end{frame}
-
-
-
-\section{Development}
+\section{Conclusion}
 \frame{\tableofcontents[currentsection]}
 
-\frame{\frametitle{Development board}
-\begin{block}{Links}
+\subsection{Current development}
+\frame{\frametitle{Current development}
+\footnotesize
+\begin{block}{Telemeta}
     \begin{itemize}
-    \item \dchref{http://telemeta.org}
-    \item \dchref{https://github.com/yomguy/Telemeta/}
-    \item \dchref{https://github.com/yomguy/TimeSide/}
-    \item \dchref{https://github.com/Parisson/Telemeta-doc/}
-    \end{itemize}
-\end{block}
-\begin{block}{Team}
-    \begin{itemize}
-     \item Guillaume Pellerin
-     \item Thomas Fillon
-     \item Paul Brossier
-     \item Riccardo Zaccarelli
-     \item Maxime Lecoz
-     \item David Doukan
+    %\item Update code to support Django new Class based views
+    \item Update web framework (DJANGO) and geolocation services
+        %\item Smart breadcrumbs 
+    %\item Better interactions with TimeSide
+    \item Enhance user interface (full HTML 5 + web audio API)
+        \begin{itemize}\footnotesize
+            \item For annotations and segmentations in a collaborative manner
+            \item Provide import capabilities and feedback loop between manual and automatic annotations
+            \item Fancy displays of automatic analysis results (zoomable + synchronized with audio)
+            \item Add a User interface to control and tune the analysis parameters
+            \item Add public and enhanced user playlists
+        \end{itemize}
+    \item More documentation
     \end{itemize}
 \end{block}
 
+\begin{block}<2>{TimeSide}
+    \begin{itemize}
+    \item Tiny web server based on Django (done)
+    \item Process task manager (done)
+    %\item Full HTML5 zooming player (+ annotations, segmentations, etc..)
+    %\item Analyzer parameters (+ interface)
+    %\item Improve Vamp plugins support (Vamp python host ?)
+    \item Add more audio \& acoustic analysis tools for automatic analysis
+    \item Add more automatic segmentation and classification tools to support various semantic ontologies (cf. thesaurus)
+
+    %\item Add automatic similarity analysis tools (inside a song or between sound items)
+    %\item Enhance analysis result displays to send to Telemeta
+    %\item \dchref{https://github.com/yomguy/TimeSide/issues}
+    \end{itemize}
+\end{block}
 }
 
+\frame{\frametitle{Current development - The SABIOD project}
+\begin{block}{Bioacoustics - SABIOD}
+    \begin{itemize}
+    \item Automatic synchronization from hardware audio source 
+    \item Add bioacoustic detection models to TimeSide (bats, dolphins, whales, etc...)
+    \item Add support for phylogeny and various bio taxonomies to Telemeta
+    \item Extend audio sampling frequencies
+    \end{itemize}
+\end{block}
+}
 
-\frame{\frametitle{Development - Lessons}
-\begin{block}{Lessons from a 7 year old project}
+\subsection{Lessons learned}
+\frame{\frametitle{Lessons learned}
+\begin{block}{Lessons learned from a 7 years old project}
 \begin{itemize}
 \item Simplicity is better than complexity (KISS)
 \item Modularity is only accessible with a flexible language (thanks Python!)
@@ -355,58 +358,6 @@
 \end{itemize}
 \end{block}
 }
-
-
-\frame{\frametitle{Development - TODO list}
-\begin{block}{Telemeta}
-    \begin{itemize}
-    \item Update code to support Django new Class based views
-    \item Rewrite geolocation services
-    \item Public and enhanced user playlists
-    \item Smart breadcrumbs 
-    \item Better interactions with TimeSide
-    \item Enhance user interface (full HTML 5 + web audio API)
-        \begin{itemize}
-            \item For annotations and segmentations in a collaborative manner
-            \item Provide import capabilities and feedback loop between manual and automatic annotations
-            \item Fancy displays of automatic analysis results (zoomable + synchronized with audio)
-            \item Add a User interface to control and tune the analysis parameters
-        \end{itemize}
-    \item More documentation
-    \item \dchref{http://telemeta.org/report/1}
-    \end{itemize}
-\end{block}
-}
-
-
-\frame{\frametitle{Development - TODO list}
-\begin{block}{TimeSide}
-    \begin{itemize}
-    \item Tiny web server based on Django (done)
-    \item Process task manager (done)
-    \item Full HTML5 zooming player (+ annotations, segmentations, etc..)
-    \item Analyzer parameters (+ interface)
-    \item Improve Vamp plugins support (Vamp python host ?)
-    \item Add more automatic segmentation and classification tools to support various semantic ontologies (cf. thesaurus)
-    \item Add more music analysis tools to support Ethnomusicological research
-    \item Add automatic similarity analysis tools (inside a song or between sound items)
-    \item Enhance analysis result displays to send to Telemeta
-    \item \dchref{https://github.com/yomguy/TimeSide/issues}
-    \end{itemize}
-\end{block}
-}
-
-\frame{\frametitle{Development - TODO list}
-\begin{block}{SABIOD}
-    \begin{itemize}
-    \item Automatic synchronization from hardware audio source 
-    \item Add bioacoustic detection models to TimeSide (bats, dolphins, whales, etc...)
-    \item Add various bio taxonomies to Telemeta
-    \item Extend audio sampling frequencies
-    \end{itemize}
-\end{block}
-}
-
 
 
 
@@ -613,5 +564,57 @@ $ python tests/run_all_tests
 \end{center}
 
 }
+
+
+\subsection*{Sabiod Phylogeny}
+\begin{frame}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_5}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_3}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{SABIOD: Scaled Acoustic Biodiversity (prototype)}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/shots/SABIOD_2014_4}
+  \end{center}
+\end{frame}
+
+\subsection*{Development board}
+\frame{\frametitle{Development board}
+\begin{block}{Links}
+    \begin{itemize}
+    \item \dchref{http://telemeta.org}
+    \item \dchref{https://github.com/yomguy/Telemeta/}
+    \item \dchref{https://github.com/yomguy/TimeSide/}
+    \item \dchref{https://github.com/Parisson/Telemeta-doc/}
+    \end{itemize}
+\end{block}
+\begin{block}{Team}
+    \begin{itemize}
+     \item Guillaume Pellerin
+     \item Thomas Fillon
+     \item Paul Brossier
+     \item Riccardo Zaccarelli
+     \item Maxime Lecoz
+     \item David Doukan
+    \end{itemize}
+\end{block}
+
+}
+
+
+
+
 \backupend
 \end{document}
