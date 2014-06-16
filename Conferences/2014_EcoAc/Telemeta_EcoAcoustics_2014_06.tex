@@ -135,7 +135,7 @@
       \item \alert{Play} audio data and \alert{read} metadata
         \alert{synchronously}
       \item \alert{Process} audio data \alert{on demand} through a
-        \alert{modular architecture}
+        \alert{modular architecture} (no pre-processing needed)
       \item \alert{Index} and \alert{share} audio data through a
         \alert{collaborative} web app
       \item \alert{Link} audio data to various \alert{ontologies},
@@ -202,6 +202,27 @@
 }
 
 
+
+\frame{\frametitle{Bioacoustic usecase}
+       
+    \begin{block}{Usages}
+        \begin{itemize}
+        \item Synchonize large bioacoustic audio datasets in to a robust and scalable platform
+        \item Share audio data and metadata with experts to make them collaborate in editing, processing and discovering
+        \item Build large statistical campaigns and vizualizations from taxonomies, geographic data and sounds
+        \item Scale the audio data through the web (URL indexes)
+       \end{itemize}
+    \end{block}
+    
+    \begin{block}<2>{Applications}
+         \begin{itemize}
+            \item Realtime bioacoustical monitoring system over internet (needs hardware)
+            \item Biodiversity studies
+            \item Development and test of new species detection algorithms on large and historical datasets
+         \end{itemize}
+    \end{block}
+}
+
 %\section{Framework}
 %\frame{\tableofcontents[currentsection]}
 
@@ -234,6 +255,14 @@
   \item \alert{Multi-language} support (now english and french)
   \end{itemize}
 \end{block}
+}
+
+
+\subsection*{Architecture}
+\frame{\frametitle{Architecture}
+    \begin{center}
+    \pgfimage[width=8cm]{img/TM_arch}
+    \end{center}
 }
 
 \section{Related projects}
@@ -296,6 +325,17 @@
 \frame{\tableofcontents[currentsection]}
 
 \subsection{Current development}
+\frame{\frametitle{Current development - The SABIOD project}
+\begin{block}{Bioacoustics - SABIOD}
+    \begin{itemize}
+    \item Add support for phylogeny and various bio taxonomies to Telemeta
+    \item Add bioacoustic detection models to TimeSide (bats, dolphins, whales, etc...)
+    \item Extend audio sampling frequencies
+    \item Automatic synchronization from hardware audio source 
+    \end{itemize}
+\end{block}
+}
+
 \frame{\frametitle{Current development}
 \footnotesize
 \begin{block}{Telemeta}
@@ -333,28 +373,17 @@
 \end{block}
 }
 
-\frame{\frametitle{Current development - The SABIOD project}
-\begin{block}{Bioacoustics - SABIOD}
-    \begin{itemize}
-    \item Automatic synchronization from hardware audio source 
-    \item Add bioacoustic detection models to TimeSide (bats, dolphins, whales, etc...)
-    \item Add support for phylogeny and various bio taxonomies to Telemeta
-    \item Extend audio sampling frequencies
-    \end{itemize}
-\end{block}
-}
-
 \subsection{Lessons learned}
 \frame{\frametitle{Lessons learned}
 \begin{block}{Lessons learned from a 7 years old project}
 \begin{itemize}
-\item Simplicity is better than complexity (KISS)
-\item Modularity is only accessible with a flexible language (thanks Python!)
-\item Models and Objects are more important than Technologies
-\item A good workflow is defined by the users themselves through feedback and constant revisions
-\item Prototyping is a crucial part of the development process
-\item A good platform relies on standards, not on formats
-\item The Open Source ecosystem gives some \textbf{tremendous} possibilities to develop, deploy and scale any platform project
+\item Simplicity is better than complexity (\alert{KISS})
+\item \alert{Modularity} is only accessible with a flexible language (thanks Python!)
+\item \alert{Models} and \alert{Objects} are more important than Technologies
+\item A good \alert{workflow} is defined by the users themselves through \alert{feedback} and constant revisions
+\item \alert{Prototyping} is a crucial part of the development process
+\item A good platform relies on \alert{standards}, not on formats
+\item The \alert{Open Source} ecosystem gives some \alert{tremendous} possibilities to develop, deploy and scale any platform project
 \end{itemize}
 \end{block}
 }
@@ -367,13 +396,13 @@
    \large{We are looking for new collaborations\\ in ecology and bioacoustic fields. Let's keep in touch!}
    \vspace{0.25cm}
     \begin{block}{Links}
-     \begin{itemize}
-        \item \chref{http://telemeta.org}{telemeta.org}
+     \begin{itemize}\small
+        \item \chref{http://telemeta.org}{telemeta.org}, \chref{http://sabiod.telemeta.org/}{sabiod.telemeta.org}
         \item \chref{https://twitter.com/telemeta/}{@telemeta}
     \end{itemize}
     \end{block}
     \begin{block}{Contact me}
-    \begin{itemize}
+    \begin{itemize}\small
     \item \chref{mailto:guillaume@parisson.com}{guillaume@parisson.com}
     \item \chref{https://twitter.com/yomguy/}{@yomguy}
     \item \chref{https://github.com/yomguy/}{github.com/yomguy/}
@@ -458,12 +487,6 @@ $ python tests/run_all_tests
 }
 
 
-\subsection*{Architecture}
-\frame{\frametitle{Architecture}
-    \begin{center}
-    \pgfimage[width=8cm]{img/TM_arch}
-    \end{center}
-}
 
 % Mis en backup car redondant avec l'interface SABIOD 
 \subsection*{User Interfaces}
