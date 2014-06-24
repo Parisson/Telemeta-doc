@@ -180,16 +180,7 @@ TimeSide provides the following main features:
 In order to provide Music Information Retrieval analysis methods to be implemented over a large corpus for ethnomusicological studies, TimeSide incorporates some state-of-the-art audio feature extraction libraries such as Aubio\footnote{\url{http://aubio.org/}} \cite{brossierPhD}, Yaafe\footnote{\url{https://github.com/Yaafe/Yaafe}} \cite{yaafe_ISMIR2010} and Vamp plugins\footnote{ \url{http://www.vamp-plugins.org}}.
 As a open-source framework and given its architecture and the flexibility provided by Python, the implementation of any audio and music analysis algorithm can be consider. Thus, it makes it a very convenient framework for researchers in computational ethnomusicology to develop and evaluate their algorithms.
 Given the extracted features, every sound item in a given collection can be automatically analyzed. The results of this analysis can be stored in a scientific file format like Numpy and HDF5, exported to sound visualization and annotation softwares like sonic visualizer \cite{cannam2006sonic},or serialized to the web browser through common markup languages: XML, JSON and YAML.
-%
-%
-%
-%@inproceedings{cannam2006sonic,
-%  title={The Sonic Visualiser: A Visualisation Platform for Semantic Descriptors from Musical Signals.},
-%  author={Cannam, Chris and Landone, Christian and Sandler, Mark B and Bello, Juan Pablo},
-%  booktitle={ISMIR},
-%  pages={324--327},
-%  year={2006}
-%}
+
 \subsection{Automatic Analysis of ethnomusicological sound archives}
 The goal of Diadems project (adresse web) is to develop computer tools to automatically index the recording content directly from the audio signal to improve the access and indexation of this vast ethnomusicological archive. The innovation of this project is to automatize the indexation of the audio recordings directly from their content, from the recorded sound itself.
 Ongoing works consist in implementing advanced classification, indexation, segmentation and similarity analysis methods dedicated to ethnomusicological sound archives.
@@ -200,17 +191,11 @@ Field recordings generally contain more sound sources, noise, and recording arte
 Automatic analysis of these recordings requires methods having a stronger robustness.
 Preliminary Implementations  of speech detection models, and speaker diarisation methods, based on  \cite{barras2006multistage} have been integrated to timeside. 
 While these models are well suited to radio-news recordings, the current developpement tasks consist to adapt these methods to the particular case of ethnographic archives.
-%@article{barras2006multistage,
-%  title={Multistage speaker diarization of broadcast news},
-%  author={Barras, Claude and Zhu, Xuan and Meignier, Sylvain and Gauvain, J},
-%  journal={Audio, Speech, and Language Processing, IEEE Transactions on},
-%  volume={14},
-%  number={5},
-%  pages={1505--1512},
-%  year={2006},
-%  publisher={IEEE}
-%}
+
 In the context of this project, both researchers from Ethnomusicological, Speech and Music Information Retrieval communities are working together to specify the tasks to be addressed by automatic analysis tools.
+
+
+
 \section{Sound archives of the CNRS - Musée de l'Homme}\label{sec:archives-CREM}
 Since June 2011, the Telemeta platform has been deployed to hold the \emph{Sound archives of the CNRS - Musée de l'Homme}\footnote{\url{http://archives.crem-cnrs.fr}} and is managed by the CREM (Center for Research in Ethnomusicology).
 The platform aims to make these archives available to researchers and to the extent possible, the public, in compliance with the intellectual and moral rights of musicians and collectors.
@@ -231,6 +216,26 @@ Thanks to this tool, the Archives on CNRS-Musée de l'Homme contribute to "Europ
 Given the collaborative nature of the platform, both research and archivist can cooperate with colleagues to continuously enrich metadata associated to a sound item or a collection.  
 Collaborative tools like markers and comments enable researchers from different institutions to work together on common audio materials.
 It also allows researchers to return data online to communities producing their music in their home countries and also share informations together.
+
+\section{The DIADEMS project}
+
+\subsection{Automatic segmentation}
+\begin{itemize} 
+
+\item Speech segmentation, with 2 features: 4 Hz modulation energy and entropy modulation. 
+Speech signal has a characteristic energy modulation peak around the 4 Hertz syllabic rate \cite{Houtgast1985}. In order to model this property, the signal is filtered with a FIR band pass filter, centred on 4 Hertz.
+Entropy modulation is dedicated to identify speech from music~\cite{Pinquier2003}. We first evaluate the signal entropy ($H=\sum_{i=1}^{k}-p_ilog_2p_i$, with $p_i=$proba. of event~$i$). This measure is used to compute the entropy modulation on one segment. Entropy modulation is higher for speech than for music.
+
+\item Music segmentation, with 2 features based in segmentation algorithm. 
+This segmentation is provided by the Forward-Backward Divergence algorithm, which is based on a statistical study of the acoustic signal \cite{Obrecht1988}. Assuming that speech signal is described by a string of quasi-stationary units, each one is characterized by an Auto Regressive (AR) Gaussian model. The method consists in performing a detection of changes in AR models. 
+The speech signal is composed of alternate periods of transient and steady parts (steady parts are mainly vowels). Meanwhile, music is more constant, that is to say the number of changes (segments) will be greater for speech than for music. To estimate this feature, we compute the number of segments on one second of signal. 
+The segments given by the segmentation algorithm are generally longer for music than for speech. We have decided to model the segment duration by a Gaussian Inverse law (Wald law).
+
+\item Monophony / Polyphony segmentation.
+A "monophonic" sound is defined as one note played at a time (either played by an instrument or sung by a singer), while a "polyphonic" sound is defined as several notes played simultaneously. The parameters extracted from the signal come from the YIN algorithm, a well known pitch estimator \cite{DeCheveigne2002}. This estimator gives a value which can be interpreted as the inverse of a confidence indicator: the lower the value is, the more reliable the estimated pitch is. Considering that when there is one note, the estimated pitch is reliable, and that when there is several notes, the estimated pitch is not, we take as parameters the short term mean and the short term variance of this "confidence indicator". The bivariate distribution of these two parameters is then modelled using Weibull bivariate distributions \cite{Lachambre2011}.
+
+\end{itemize} 
+
 \section{Conclusion}
 The Telemeta open-source framework provides the researchers in musicology with a new platform to efficiently distribute, share and work on their research materials.
 The platform has been deployed since 2011 to manage the \emph{Sound archives of the CNRS - Musée de l'Homme} which is the most important european collection of ethnomusicocological resources.
