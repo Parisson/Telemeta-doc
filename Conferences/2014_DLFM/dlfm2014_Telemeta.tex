@@ -2,17 +2,15 @@
 % 1st International Digital Libraries for Musicology workshop (DLfM 2014) 
 %               12th September 2014 (full day), London, UK 
 %   in conjunction with the ACM/IEEE Digital Libraries conference  2014 
-% http://www.transforming-musicology.org/events/dlfm/
+%http://www.transforming-musicology.org/events/dlfm/
 % Paper submission deadline: 27th June 2014 (23:59 UTC-11) 
 % Notification of acceptance: 30th July 2014 
 % Registration deadline for one author per paper: 11th August 2014  (14:00 UTC) 
 % Camera ready submission deadline: 11th August 2014 (14:00 UTC) 
 \documentclass{sig-alternate}
-
 %\hyphenation{Post-Script}
 %\usepackage[authoryear]{natbib}
 %\bibliographystyle{plainnat}
-
 \usepackage{graphicx}
 %\usepackage{amssymb}
 \usepackage{xcolor}
@@ -20,28 +18,21 @@
 \usepackage{url}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-
-
 \newcommand{\comment}[1]{\footnote{\color{red} \bf{{#1}}}} 
-
 %\usepackage{enumitem}
 %\setlist{nosep}
 %\setlength{\parskip}{0pt}
 %----------
 %  Header
 %----------
-
 \begin{document}
 \conferenceinfo{Digital Libraries for Musicology workshop (DLfM 2014)}{London, UK}
-
 \title{An open web audio platform for ethnomusicological sound archives management and automatic analysis%
 \titlenote{This work is partly supported by a grant from the french National Research Agency (ANR) with reference ANR-12-CORD-0022.}}
-
 \numberofauthors{8} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
-
 \author{
   % You can go ahead and credit any number of authors here,
   % e.g. one 'row of three' or two rows (consisting of one row of three
@@ -98,9 +89,7 @@
 %\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
 %email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 %(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
-
 % }\thanks{\vspace{0.7cm}}
-
 %
 \maketitle
 %
@@ -151,7 +140,6 @@ The main features of \emph{Telemeta} are:
       \item Multi-language support (now english and french)
       \end{itemize}
 Beside database management, the audio support is mainly provided through an external component, TimeSide, which is described in Section~\ref{sec:TimeSide}.
-
 \subsection{Metadata}\label{sec:metadata}
 In addition to the audio data, an efficient and dynamic management of the associated metadata is also required. Consulting metadata provide both an exhaustive access to valuable information about the source of the data and to the related work of peer researchers. 
 Dynamically handling metadata in a collaborative manner optimizes the continuous process of knowledge gathering and enrichment of the materials in the database.  
@@ -191,12 +179,37 @@ TimeSide provides the following main features:
 \subsection{Audio features extraction}
 In order to provide Music Information Retrieval analysis methods to be implemented over a large corpus for ethnomusicological studies, TimeSide incorporates some state-of-the-art audio feature extraction libraries such as Aubio\footnote{\url{http://aubio.org/}} \cite{brossierPhD}, Yaafe\footnote{\url{https://github.com/Yaafe/Yaafe}} \cite{yaafe_ISMIR2010} and Vamp plugins\footnote{ \url{http://www.vamp-plugins.org}}.
 As a open-source framework and given its architecture and the flexibility provided by Python, the implementation of any audio and music analysis algorithm can be consider. Thus, it makes it a very convenient framework for researchers in computational ethnomusicology to develop and evaluate their algorithms.
-Given the extracted features, every sound item in a given collection can be automatically analyzed. The results of this analysis can be stored in a scientific file format like Numpy and HDF5 and serialized to the web browser through common markup languages: XML, JSON and YAML.
+Given the extracted features, every sound item in a given collection can be automatically analyzed. The results of this analysis can be stored in a scientific file format like Numpy and HDF5, exported to sound visualization and annotation softwares like sonic visualizer \cite{cannam2006sonic},or serialized to the web browser through common markup languages: XML, JSON and YAML.
+%
+%
+%
+%@inproceedings{cannam2006sonic,
+%  title={The Sonic Visualiser: A Visualisation Platform for Semantic Descriptors from Musical Signals.},
+%  author={Cannam, Chris and Landone, Christian and Sandler, Mark B and Bello, Juan Pablo},
+%  booktitle={ISMIR},
+%  pages={324--327},
+%  year={2006}
+%}
 \subsection{Automatic Analysis of ethnomusicological sound archives}
 The goal of Diadems project (adresse web) is to develop computer tools to automatically index the recording content directly from the audio signal to improve the access and indexation of this vast ethnomusicological archive. The innovation of this project is to automatize the indexation of the audio recordings directly from their content, from the recorded sound itself.
 Ongoing works consist in implementing advanced classification, indexation, segmentation and similarity analysis methods dedicated to ethnomusicological sound archives.
 numerous ethnomusicological recordings contain speech and other types of sounds that we categorized as sounds from the environment (such as rain, insect or animal sounds, engine noise…) and sounds generated by the recording (such as sound produced by the wind in the microphone or sounds resulting from the defect of the recording medium).
 Besides music analysis, such automatic tools also deal with speech and other types of sounds classification and segmentation to enable a most exhaustive annotation of the audio materials.
+Automatic analysis of ethnomusicological sound archives is considered as a challeging task.
+Field recordings generally contain more sound sources, noise, and recording artefacts than those obtained in studio conditions.
+Automatic analysis of these recordings requires methods having a stronger robustness.
+Preliminary Implementations  of speech detection models, and speaker diarisation methods, based on  \cite{barras2006multistage} have been integrated to timeside. 
+While these models are well suited to radio-news recordings, the current developpement tasks consist to adapt these methods to the particular case of ethnographic archives.
+%@article{barras2006multistage,
+%  title={Multistage speaker diarization of broadcast news},
+%  author={Barras, Claude and Zhu, Xuan and Meignier, Sylvain and Gauvain, J},
+%  journal={Audio, Speech, and Language Processing, IEEE Transactions on},
+%  volume={14},
+%  number={5},
+%  pages={1505--1512},
+%  year={2006},
+%  publisher={IEEE}
+%}
 In the context of this project, both researchers from Ethnomusicological, Speech and Music Information Retrieval communities are working together to specify the tasks to be addressed by automatic analysis tools.
 \section{Sound archives of the CNRS - Musée de l'Homme}\label{sec:archives-CREM}
 Since June 2011, the Telemeta platform has been deployed to hold the \emph{Sound archives of the CNRS - Musée de l'Homme}\footnote{\url{http://archives.crem-cnrs.fr}} and is managed by the CREM (Center for Research in Ethnomusicology).
@@ -213,7 +226,7 @@ As a web platform, this tool is also a way to cross borders, to get local popula
 Through this platform, archivists can properly ensure the long-term preservation thanks to the interoperability of the metadata and the sound standards used.
 This platform provide new possibilities for the preparation of new fieldwork, for teaching and for research. The new tools developed allow diachronic and synchronic comparisons studies..
 Publishing collections also helps researchers making their work more visible. Besides making available and listenable the related sound item corpora\comment{[MM3] ???} , researchers can also provide related academic publications and temporary annotations to further illustrate their work.
-Thanks to this tool, the Archives on CNRS-Musée de l'Homme contribute to "Europeana sounds", a sound portal for the digital library on line "Europeana": www.europeanasounds.eu
+Thanks to this tool, the Archives on CNRS-Musée de l'Homme contribute to "Europeana sounds", a sound portal for the digital library on line "Europeana":www.europeanasounds.eu
 \subsection{A collaborative platform}
 Given the collaborative nature of the platform, both research and archivist can cooperate with colleagues to continuously enrich metadata associated to a sound item or a collection.  
 Collaborative tools like markers and comments enable researchers from different institutions to work together on common audio materials.
@@ -231,5 +244,4 @@ The project has been partially funded by the French National Centre for Scientif
 \bibliography{dlfm2014_Telemeta}
 \end{document}
  
-
  
