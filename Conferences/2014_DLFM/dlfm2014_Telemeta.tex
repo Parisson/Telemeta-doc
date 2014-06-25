@@ -16,6 +16,10 @@
 \usepackage{xcolor}
 %\usepackage{hyperref} % Apparemment pas compatible avec le style AES !!
 \usepackage{url}
+\usepackage{enumitem}
+%\setlist{nosep} % or 
+\setlist{noitemsep} %to leave space around whole list
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \newcommand{\comment}[1]{\footnote{\color{red} \bf{{#1}}}} 
@@ -154,18 +158,18 @@ The primary purpose of the project is to provide communities of researchers work
 Telemeta\footnote{http://telemeta.org}, as a free and open source software\footnote{Telemeta code is available under the CeCILL Free Software License Agreement}, is a unique scalable web audio platform for backuping, indexing, transcoding, analyzing, sharing and visualizing any digital audio or video file in accordance with open web standards.
 The time-based nature of such audio-visual materials and some associated metadata as annotations raises issues of access and visualization at a large scale. Easy and on demand access to these data, as you listen to the recording, represents a significant improvement.
 An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}.
-\begin{figure}
+\begin{figure*}[htb]
    \centering
    \fbox{\includegraphics[width=0.97\linewidth]{img/telemeta_screenshot_en_2.png}}
    \caption[1]{Screenshot excerpt of the Telemeta web interface}
     \label{fig:Telemeta}
- \end{figure}
+ \end{figure*}
 Its flexible and streaming safe architecture is represented in Figure~\ref{fig:TM_arch}.
-\begin{figure*}[htbp]
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.5\linewidth]{img/TM_arch.pdf}
+  \includegraphics[width=\linewidth]{img/TM_arch.pdf}
   \caption{Telemeta architecture}\label{fig:TM_arch}
-\end{figure*}
+\end{figure}
 The main features of \emph{Telemeta} are:
       \begin{itemize}
       \item Pure HTML5 web user interface including dynamical forms
@@ -246,7 +250,7 @@ When use for education, the platform provides a wide array of teaching material 
 
 The goals and expectations of the platform are of many kinds and expand through time, as users experience new ways to work with the archives database and request new tools to broaden the scope of their research activities linked to it. The reflexion collectively engaged by engineers and researchers on the use of the sound archives database led us  to set up a large scale project called DIADEMS (\emph{Description, Indexation, Access to Ethnomusicological and Sound Documents}). 
 %DIADEMS is a French national research program, started in January 2013, with three IT research labs (IRIT\footnote{Institut de Recherche en Informatique de Toulouse}, , , LIMSI\footnote{Laboratoire d’Informatique pour la Mécanique et les Sciences de l’Ingénieur}, LABRI\footnote{Laboratoire Bordelais de Recherche en Informatique})\comment{TF: + LAM + labo ethno + Parisson. Plutôt dire a collaboration between ethno + IT}
-Started in January 2013, the French national research program DIADEMS is a multi-disciplinary program whose consortium includes research laboratories from both\emph{ Science and Technology of Information and Communication}\footnote{IRIT(Institute of research in computing science of Toulouse), LABRI(Bordeaux laboratory of research in computer science), LIMSI(Laboratory of computing and mechanics for engineering sciences), LAM (String instruments - Acoustic - Music, Institute of Jean Le Rond d'Alembert)} domain and \emph{Musicology and Ethnomusicology}\footnote{LESC (Laboratory of Ethnology and Comparative Sociology), MNHM (National Museum of Natural History)} domain and Parisson, a company involved in the development of Telemeta..
+Started in January 2013, the French national research program DIADEMS is a multi-disciplinary program whose consortium includes research laboratories from both\emph{ Science and Technology of Information and Communication}\footnote{IRIT (Institute of research in computing science of Toulouse), LABRI (Bordeaux laboratory of research in computer science), LIMSI (Laboratory of computing and mechanics for engineering sciences), LAM (String instruments - Acoustic - Music, Institute of Jean Le Rond d'Alembert)} domain and \emph{Musicology and Ethnomusicology}\footnote{LESC (Laboratory of Ethnology and Comparative Sociology), MNHM (National Museum of Natural History)} domain and Parisson, a company involved in the development of Telemeta..
  
 The goal of Diadems project\footnote{\url{http://www.irit.fr/recherches/SAMOVA/DIADEMS/en/welcome/}} is to propose a set of tools for automatic analysis of audio documents which may contain fields recordings: speech, singing voice, instrumental music, technical noises, natural sounds, etc. The innovation is to automatize the indexation of  audio recordings directly from the audio signal itself, in order to improve the access and indexation of anthropological archives. Ongoing works consist in implementing advanced classification, segmentation and similarity analysis methods,  specially suitable to ethnomusicological sound archives. The aim is also to propose tools to analyse musical components and musical structure. 
 
@@ -301,10 +305,10 @@ At first, a primary component annotation in Speech, Music and Singing Voice is c
 \item Detection of other categories of speaking voice: recitation,
   told, psalmody, back channel…
 \end{itemize}
-
+See figure~\ref{fig:speech_detection}
 \begin{figure}
   \centering
-  
+ \includegraphics[draft]{img/irit_speech_4hz.png} 
   \caption{Detection of spoken voices in a song}
   \label{fig:speech_detection}
 \end{figure}
@@ -333,13 +337,13 @@ Some tools implemented are being evaluated by ethnomusicologist and ethnolinguis
 \item Singing voice recognition
 \end{itemize}
 
-
-
-
-
+See figure~\ref{fig:Monopoly}
 \begin{figure}
   \centering
-  \caption{Detection solo and duo parts}
+%\framebox[1.1\width]{Capture d'écran de IRIT Monopoly}
+\includegraphics[draft]{img/irit_monopoly.png} 
+ \caption{Detection solo and duo parts}
+  \label{fig:Monopoly}
 \end{figure}
 
 
@@ -354,20 +358,20 @@ The tools implemented not only detect the four musical instrument families (cord
 The robustness of all these processing are assessed using criteria defined by the final users: teachers, students, researchers or musicians. Annotation tools, as well as the provided annotations, will be integrated in the digitalized database. Results visualised thanks to the Telemeta platform will be evaluated by the humanities community involved, through a collaborative work on line. One of the issues is to develop tools to generate results on line with the server processor, according to the capacities of the internet navigators. An other challenge is to manage the workflow, according to the users' expectations about their annotations. The validated tools will be integrated with a new design in the platform Telemeta.
 
 \subsection{Automatic segmentation}
-\begin{itemize} 
-\item Speech segmentation, with 2 features: 4 Hz modulation energy and entropy modulation. 
+
+\paragraph{Speech segmentation, with 2 features: 4 Hz modulation energy and entropy modulation} 
 Speech signal has a characteristic energy modulation peak around the 4 Hertz syllabic rate \cite{Houtgast1985}. In order to model this property, the signal is filtered with a FIR band pass filter, centred on 4 Hertz.
 Entropy modulation is dedicated to identify speech from music~\cite{Pinquier2003}. We first evaluate the signal entropy ($H=\sum_{i=1}^{k}-p_ilog_2p_i$, with $p_i=$proba. of event~$i$). This measure is used to compute the entropy modulation on one segment. Entropy modulation is higher for speech than for music.
 
-\item Music segmentation, with 2 features based in segmentation algorithm. 
+\paragraph{Music segmentation, with 2 features based in segmentation algorithm} 
 This segmentation is provided by the Forward-Backward Divergence algorithm, which is based on a statistical study of the acoustic signal \cite{Obrecht1988}. Assuming that speech signal is described by a string of quasi-stationary units, each one is characterized by an Auto Regressive (AR) Gaussian model. The method consists in performing a detection of changes in AR models. 
 The speech signal is composed of alternate periods of transient and steady parts (steady parts are mainly vowels). Meanwhile, music is more constant, that is to say the number of changes (segments) will be greater for speech than for music. To estimate this feature, we compute the number of segments on one second of signal. 
 The segments given by the segmentation algorithm are generally longer for music than for speech. We have decided to model the segment duration by a Gaussian Inverse law (Wald law).
 
-\item Monophony / Polyphony segmentation.
+\paragraph{Monophony / Polyphony segmentation}
 A "monophonic" sound is defined as one note played at a time (either played by an instrument or sung by a singer), while a "polyphonic" sound is defined as several notes played simultaneously. The parameters extracted from the signal come from the YIN algorithm, a well known pitch estimator \cite{DeCheveigne2002}. This estimator gives a value which can be interpreted as the inverse of a confidence indicator: the lower the value is, the more reliable the estimated pitch is. Considering that when there is one note, the estimated pitch is reliable, and that when there is several notes, the estimated pitch is not, we take as parameters the short term mean and the short term variance of this "confidence indicator". The bivariate distribution of these two parameters is then modelled using Weibull bivariate distributions \cite{Lachambre2011}.
 
-\end{itemize} 
+
 
 \section{Conclusion}
 The Telemeta open-source framework provides the researchers in musicology with a new platform to efficiently distribute, share and work on their research materials.
