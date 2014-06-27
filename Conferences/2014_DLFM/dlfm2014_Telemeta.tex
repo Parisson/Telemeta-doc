@@ -140,17 +140,17 @@ Claude Barras (Université Paris-Sud / CNRS-LIMSI - Orsay, France - email: {\tex
 \maketitle
 %
 \begin{abstract}
-The \emph{CNRS-Musée de l’Homme}’s audio archives are among the most important collections of ethnomusicological recordings in Europe. Yet, as it continuously expands and as new audio technologies develop, questions linked to the preservation, the archiving and the availability of these audio materials have arisen. Since 2007, ethnomusicologists and engineers have thus joined their efforts to develop a scalable and collaborative web platform for managing and increasing access to digitalised sound archives. This web platform is based on \emph{Telemeta}, an open-source web audio framework dedicated to digital sound archives\deleted{and that secures their storing, indexing and publishing}. This framework focuses on the enhanced and collaborative user experience in accessing audio items and their associated metadata\deleted{, which can be further enriched by expert users}. The architecture of Telemeta relies on \emph{TimeSide}, an open-source audio processing framework written in Python and JavaScript languages, which provides decoding, encoding and streaming \replaced{capabilities}{methods for various formats} together with a smart embeddable HTML audio player. \replaced{TimeSide can also produces various automatic annotation, segmentation and musicological analysis as it includes a set of audio analysis plug-ins and wraps several audio feature extractions libraries}{TimeSide also includes a set of audio analysis plug-ins and additionally contains several audio feature extractions libraries to provide automatic annotation, segmentation and musicological analysis.} Since 2011, the Telemeta framework has been deployed to hold the platform of the CNRS-Musée de l’Homme’s audio archives, which are managed by the \emph{\CREM}. In this paper, we will introduce the Telemeta framework, and discuss how, experimenting with this advanced database for ethnomusicology through a project called DIADEMS, cutting-edge tools are being implemented to fit and encourage new ways to relate to sound libraries. 
+The \emph{CNRS-Musée de l’Homme}’s audio archives are among the most important collections of ethnomusicological recordings in Europe. Yet, as it continuously expands and as new audio technologies develop, questions linked to the preservation, the archiving and the availability of these audio materials have arisen. Since 2007, ethnomusicologists and engineers have thus joined their efforts to develop a scalable and collaborative web platform for managing and increasing access to digitalised sound archives. This web platform is based on \emph{Telemeta}, an open-source web audio framework dedicated to digital sound archives. Since 2011, the Telemeta framework has been deployed to hold the platform of the CNRS-Musée de l’Homme’s audio archives, which are managed by the \emph{\CREM}. This framework focuses on the enhanced and collaborative user experience in accessing audio items and their associated metadata. The architecture of Telemeta relies on \emph{TimeSide}, an open-source audio processing framework written in Python and JavaScript languages, which provides decoding, encoding and streaming capabilities together with a smart embeddable HTML audio player. TimeSide can also produces various automatic annotation, segmentation and musicological analysis as it includes a set of audio analysis plug-ins and wraps several audio feature extractions libraries that have been developed in the interdisciplinary research project called DIADEMS. In this paper, we will introduce the Telemeta framework, and discuss how, experimenting with this advanced database for ethnomusicology through the DIADEMS project, cutting-edge tools are being implemented to fit and encourage new ways to relate to sound libraries. 
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
-In social sciences, as very large scientific databases become available and rapidly increase by \added{both} numbers and volume, their management thus rises new fundamental questions as well as new research challenges. 
+In social sciences, as very large scientific databases become available and rapidly increase by both numbers and volume, their management thus rises new fundamental questions as well as new research challenges. 
 In anthropology, ethnomusicology and linguistics, researchers work on multiple kinds of multimedia documents such as photos, videos and sound recordings. The need to preserve and to easily access, visualize and annotate such materials is problematic given their diverse formats, sources and the increasing quantity of data.
   %With this in mind, several laboratories\footnote{The Research Center on Ethnomusicology (CREM), the Musical Acoustics Laboratory (LAM, UMR 7190) and the sound archives of the Mediterranean House of Human Sciences (MMHS)} involved in ethnomusicological research have been working together on that issue.
  In the context of ethnomusicological research, the \CREM (CREM) and Parisson, a company specialized in big music data projects, have been developing an innovative, collaborative and interdisciplinary open-source web-based multimedia platform since 2007. 
  This platform, \emph{Telemeta} is designed to fit the professional requirements from both sound archivists, researchers and musicians to work together on huge amounts of music data. The first prototype of this platform has been online since 2010 and is now fully operational and used on a daily basis for ethnomusicological studies since 2011. 
 
-Recently, an open-source audio analysis framework, TimeSide, has been developed to bring automatic music analysis capabilities to the web platform and thus have turned Telemeta into a complete resource for \emph{Computational Ethnomusicology} \cite{Tzanetakis_2007_JIMS, Gomez_JNMR_2013}. The section~\ref{sec:TimeSide} focuses on this framework.
+Recently, an open-source audio analysis framework, TimeSide, has been developed to bring automatic music analysis capabilities to the web platform and thus have turned Telemeta into a complete resource for \emph{Computational Ethnomusicology} \cite{Tzanetakis_2007_JIMS, Gomez_JNMR_2013}. The Section~\ref{sec:TimeSide} focuses on this framework.
 
 The benefits of this collaborative platform for humanities and social sciences research apply to numerous aspects of the field of ethnomusicology, ranging from musical analysis to comparative history and anthropology of music, as well as to the fields of anthropology, linguistics and acoustics. Some of these benefits have been mentionned in several ethnomusicological publications \cite{Simmonot_IASA_2011, Julien_IASA_2011, Simonnot_ICTM_2014}.
 The current and potential applications of such a platform thus raises the needs and the underlying challenges of implementing an online digital tool to support contemporary scientific research.
@@ -160,7 +160,7 @@ The current and potential applications of such a platform thus raises the needs 
  \subsection{Web audio content management features and architecture}
 The primary purpose of the project is to provide the communities of researchers working on audio materials with a scalable system to access, preserve and share sound items along with associated metadata that contains key information on the context and significance of the recording.
 Telemeta\footnote{\url{http://telemeta.org}}, as a free and open source software\footnote{Telemeta code is available under the CeCILL Free Software License Agreement}, is a unique scalable web audio platform for backuping, indexing, transcoding, analyzing, sharing and visualizing any digital audio or video file in accordance with open web standards.
-The time-based nature of such audio-visual materials and some associated metadata as annotations raises issues of access and visualization at a large scale. Easy and on-demand access to these data, \replaced{while listening}{as you listen} to the recording, represents a significant improvement.
+The time-based nature of such audio-visual materials and some associated metadata as annotations raises issues of access and visualization at a large scale. Easy and on-demand access to these data, while listening to the recording, represents a significant improvement.
 An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}.
 \begin{figure*}[htb]
    \centering
@@ -179,7 +179,7 @@ The main features of \emph{Telemeta} are:
       \begin{itemize}
       \item Pure HTML5 web user interface including dynamical forms
       \item On-the-fly audio analyzing, transcoding and metadata
-        embedding in various \added{multimedia} formats
+        embedding in various multimedia formats
       \item Social editing with semantic ontologies, smart workflows,
         realtime tools, human or automatic annotations and
         segmentations
@@ -198,12 +198,13 @@ The compatibility with other systems is facilitated by the integration of the me
 The metadata includes two different kinds of information about the audio item: contextual information and analytical information of the audio content.
 \subsubsection{Contextual Information}
 In an ethnomusicological framework, contextual information may include details about the location where the recording has been made, the instruments, the population, the title of the musical piece, the cultural elements related to the musical item, the depositor, the collector, the year of the recording and the year of the publication. 
-Through the platform, diverse materials related to the archives can be stored, such as iconographies (digitalized pictures, scans of booklet and field notes, and so on), hyperlinks and \deleted{collectors'} biographical information\added{ about the collector}. 
+Through the platform, diverse materials related to the archives can be stored, such as iconographies (digitalized pictures, scans of booklet and field notes, and so on), hyperlinks and biographical information about the collector. 
 
 \subsubsection{Descriptive and analytical information on the audio content}
-The second type of metadata \replaced{consists in}{includes} information about the audio content itself. \added{This metadata can relate to the global content of the audio item or provide temporally-indexed information. It should also be noted that such information can be produced either by a human expert or by an automatic computational audio analysis (see Section~\ref{sec:TimeSide} below).}
-\added{\paragraph{Visual representation and segmentation}
-As illustrated in Figure~\ref{fig:sound_representation}, the TimeSide audio player embedded in the Telemeta web page view of a sound item allows for a selection of various visual representations of the sound (e.g. waveform, spectrogram, etc., see section~\ref{sec:TimeSide} for details) together with some representation of computational analysis.}
+The second type of metadata consists in information about the audio content itself. This metadata can relate to the global content of the audio item or provide temporally-indexed information. It should also be noted that such information can be produced either by a human expert or by an automatic computational audio analysis (see Section~\ref{sec:TimeSide} below).
+
+\paragraph{Visual representation and segmentation}
+As illustrated in Figure~\ref{fig:sound_representation}, the TimeSide audio player embedded in the Telemeta web page view of a sound item allows for a selection of various visual representations of the sound (e.g. waveforms and spectrograms, see section~\ref{sec:TimeSide} for details) and some representations of computational analysis that can be combined with visual representations.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.5\linewidth]{img/sound_representation.png}
@@ -211,16 +212,19 @@ As illustrated in Figure~\ref{fig:sound_representation}, the TimeSide audio play
   \label{fig:sound_representation}
 \end{figure}
 Among those automatic analysis some can produce a list of of time-segments associated with labels.
-The ontology for those labels is relevant for ethnomusicology (e.g. detection of spoken voice versus sang one, chorus, musical instrument categories, and so on) \added{and has been specified by the different partners of the Diadems project (see Section~\ref{sec:Diadems}}.
+Those labels have been specified by the partners of the Diadems project (see Section~\ref{sec:Diadems} to be relevant for ethnomusicological studies (e.g. detection of spoken voice versus sang one, chorus, musical instrument categories, and so on).
 
-\added{\paragraph{Annotations}
+
+
+\paragraph{Annotations}
 As illustrated on Figure~\ref{fig:screenshot}, the embedded audio player also enables to annotate the audio content through time-coded markers.
-Such annotations consist in a title and a free text field associated with a given time position.}
-\deleted{This includes temporally-indexed information such as a list of time-coded markers associated with text annotations and a list of of time-segments associated with labels.}
+Such annotations consist in a title and a free text field associated with a given time position.
+
 Ethnomusicologists, archivists, as well as anthropologists, linguists and acousticians working on sound documents can create their own annotations and share them with colleagues. These annotations are accessible from the sound archive item web page and are indexed through the database.
 
-\added{It should be noted that the possibility for experts to annotate time-segments over a zoomable representation of the sound is currently under development.}
-\deleted{It should be noted that annotations and segmentations can also be produced by some automatic signal processing analysis (see Section~\ref{sec:TimeSide}).}
+It should be noted that the possibility for experts to annotate time-segments over a zoomable representation of the sound is currently under development in order to improve the accuracy and the quality of time-segment base annotations.
+
+
 \section{TimeSide, an audio analysis framework}\label{sec:TimeSide}
 One specificity of the Telemeta architecture is to rely on an external component, TimeSide\footnote{\url{https://github.com/yomguy/TimeSide}}, that offers audio player web integration together with audio signal processing analysis capabilities. 
 TimeSide is an audio analysis and visualization framework based on both python and javascript languages to provide state-of-the-art signal processing and machine learning algorithms together with web audio capabilities for display and streaming.
@@ -252,7 +256,7 @@ Given the extracted features, every sound item in a given collection can be auto
 \section{Sound archives of the \\CNRS - Musée de l'Homme}\label{sec:archives-CREM}
 Since June 2011, the Telemeta platform is used by the  \emph{Sound archives of the CNRS - Musée de l'Homme}\footnote{\url{http://archives.crem-cnrs.fr}} and managed by the CREM (\CREM). According to the CREM specific aims, the Telemeta platform makes these archives available for researchers, students and, when copyright allows it, to a broader audience. Through this platform, these archives can be shared, discussed and worked on.
 
-\added{The Telemeta platform have also been deployed for the sound archives of the \emph{String instruments - Acoustic - Music} team of the ``Jean Le Rond d'Alembert Institute''\footnote{\added{\url{http://telemeta.lam-ida.upmc.fr/}. Online since 2012, these archives consist in recordings of a wide range of musical instruments, mostly including solo recording of traditional instruments and illustrating various playing techniques and are used as materials for research in acoustics.}}.}
+The Telemeta platform have also been deployed for the sound archives of the \emph{String instruments - Acoustic - Music} team of the ``Jean Le Rond d'Alembert Institute''\footnote{\url{http://telemeta.lam-ida.upmc.fr/}. Online since 2012, these archives consist in recordings of a wide range of musical instruments, mostly including solo recording of traditional instruments and illustrating various playing techniques and are used as materials for research in acoustics.}.
 
 
 
@@ -277,7 +281,7 @@ The goals and expectations of the platform are of many kinds and expand through 
 %DIADEMS is a French national research program, started in January 2013, with three IT research labs (IRIT\footnote{Institut de Recherche en Informatique de Toulouse}, , , LIMSI\footnote{Laboratoire d’Informatique pour la Mécanique et les Sciences de l’Ingénieur}, LABRI\footnote{Laboratoire Bordelais de Recherche en Informatique})\comment{TF: + LAM + labo ethno + Parisson. Plutôt dire a collaboration between ethno + IT}
 Started in January 2013, the French national research program DIADEMS is a multi-disciplinary program whose consortium includes research laboratories from both\emph{ Science and Technology of Information and Communication}\footnote{IRIT (Institute of research in computing science of Toulouse), LABRI (Bordeaux laboratory of research in computer science), LIMSI (Laboratory of computing and mechanics for engineering sciences), LAM (String instruments - Acoustic - Music, Jean Le Rond d'Alembert Institute)} domain and \emph{Musicology and Ethnomusicology}\footnote{LESC (Laboratory of Ethnology and Comparative Sociology), MNHN (National Museum of Natural History)} domain and Parisson, a company involved in the development of Telemeta.
  
-The goal of Diadems project is to develop computer tools to automatically index the recording content directly from the audio signal to improve the access and indexation of this vast ethnomusicological archive. Numerous ethnomusicological recordings contain speech and other types of sounds that we categorized as sounds from the environment (such as rain, insect or animal sounds, engine noise, ...) and sounds generated by the recording (such as sound produced by the wind in the microphone or sounds resulting from the defect of the recording medium). The innovation of this project is to automatize the indexation of the audio recordings directly from their content, from the recorded sound itself. Ongoing works consist in implementing advanced classification, indexation, segmentation and similarity analysis methods dedicated to ethnomusicological sound archives.  Besides music analysis, such automatic tools also deal with speech and other types of sounds classification and segmentation to enable a most exhaustive annotation of the audio materials.
+The goal of Diadems project is to develop computer tools to automatically index the recording content directly from the audio signal to improve the access and indexation of this vast ethnomusicological archive. Numerous ethnomusicological recordings contain speech and other types of sounds that we categorized as sounds from the environment (such as rain, insect or animal sounds, engine noise and so on) and sounds generated by the recording (such as sound produced by the wind in the microphone or sounds resulting from the defect of the recording medium). The innovation of this project is to automatize the indexation of the audio recordings directly from their content, from the recorded sound itself. Ongoing works consist in implementing advanced classification, indexation, segmentation and similarity analysis methods dedicated to ethnomusicological sound archives.  Besides music analysis, such automatic tools also deal with speech and other types of sounds classification and segmentation to enable a most exhaustive annotation of the audio materials.
 
 %The goal of Diadems project is to propose a set of tools for automatic analysis of audio documents which may contain fields recordings: speech, singing voice, instrumental music, technical noises, natural sounds, etc. The innovation is to automatize the indexation of  audio recordings directly from the audio signal itself, in order to improve the access and indexation of anthropological archives. Ongoing works consist in implementing advanced classification, segmentation and similarity analysis methods,  specially suitable to ethnomusicological sound archives. The aim is also to propose tools to analyse musical components and musical structure. 
 Automatic analysis of ethnomusicological sound archives is considered as a challenging task.
@@ -291,8 +295,10 @@ In the context of this project, both researchers from Ethnomusicological, Speech
 
 \subsection{The method of a new interdisciplinary research}
 
-In this research program, groups from different backgrounds are working together to specify the automatic analysis tools :  IT developers, humanities researchers (anthropologists, ethnomusicologists, ethnolinguists) , and specialists on speech and Music Information Retrieval (MIR) . The first challenge was to initiate a common interest and a mutual understanding. In this process, DIADEMS gave us the opportunity  to improve our understanding on the link between the semantics and acoustics of voice production. As a prelimirary work we attempted to define vocal categories with a particular interest for liminal oral productions. At the border between speech and song, utterances such as psalmody or recitation are at the center of an old debate in ethnomusicology\footnote{A colloquium on liminal utterances between speech and song will be organised by the International Council for Traditional Music (ICTM) in May 2015 and hosted by the Centre of research in Ethnomusicology (CREM). A round table will be dedicated to the presentation of the main results and findings of the ANR project Diadems}. Gathering specialists from various fields, Diadems project goes well beyond the usual disciplinary boundaries. Our aim, through the study of a large range of audio components (pitch range, syllabic flow, metric, polyphonic and so on) is to define and characterize the variability of vocal productions, keeping in mind the semantic acpects. By doing so, we wish to overcross the traditional separation in academic studies between sounds and semantics and to propose combined analytical tools for the study of vocal production\footnote{As an example, research will be conducted on the recognition of "icons of crying" 
+In this research program, groups from different backgrounds are working together to specify the automatic analysis tools :  IT developers, humanities researchers (anthropologists, ethnomusicologists, ethnolinguists), and specialists on speech and Music Information Retrieval (MIR). The first challenge was to initiate a common interest and a mutual understanding. In this process, DIADEMS gave us the opportunity  to improve our understanding on the link between the semantics and acoustics of voice production. As a prelimirary work we attempted to first define vocal categories with a particular interest for liminal oral productions. At the border between speech and song, utterances such as psalmody or recitation are at the center of an old debate in ethnomusicology\footnote{A colloquium on liminal utterances between speech and song will be organised by the International Council for Traditional Music (ICTM) in May 2015 and hosted by the Centre of research in Ethnomusicology (CREM). A round table will be dedicated to the presentation of the main results and findings of the ANR project Diadems}. Gathering specialists from various fields, Diadems project goes well beyond the usual disciplinary boundaries. Our aim, through the study of a large range of audio components (pitch range, syllabic flow, metric, polyphonic and so on) is to define and characterize the variability of vocal productions, keeping in mind the semantic aspects. By doing so, we wish to reduce the traditional gap in academic studies between sounds and semantics and to propose combined analytical tools for the study of vocal production\footnote{As an example, research will be conducted on the recognition of "icons of crying" 
 in lamented utterances. As defined by Urban in \cite{Urban88}, "icons of crying" include cry break, voice inhalation, creaky voice and falsetto vowels.}. 
+
+One of the goals of the DIADEMS project is also to provide also useful tools for musical analysis such as tools for detection of musical instrument families, analysis of musical content (tonal, metric and rythmic features), musical similarities and structure (chorus localisation, musical pattern replication).
 
 The study follow three steps : 
 \begin{enumerate}
@@ -354,13 +360,13 @@ Entropy modulation is dedicated to identify speech from music~\cite{Pinquier2003
 DIADEMS wishes to provide useful tools for musical analysis musicologists and music teachers:
 \begin{itemize}
 \item Detection of instrumental music
+\item Musical instrument family recognition
 \item Analysis of musical information (tonal, metric and rhythmic
   features)
 \item Musical excerpts characterisation using similarity measures
   (melody, harmony, rhythm,)
 \item Navigation inside a document using a structural analysis (chorus
   localisation, musical pattern replications)
-\item Musical instrument family recognition
 \end{itemize}
 
 \paragraph{Music segmentation, with 2 features based in segmentation algorithm} 
@@ -382,11 +388,9 @@ See figure~\ref{fig:Monopoly}
 
 
 \paragraph{Automatic instrument classification}
+For the detection of musical instrument, we choose to follow the Hornbostel–Sachs system of musical instrument classification as first published in \cite{taxonomy_sachs2} and later translated in \cite{taxonomy_sachs}. This system is the most widely used system for classifying musical instruments by ethnomusicologists and organologists. together with more recent systems like the one proposed by Geneviève Dournon in \cite{Dournon92} and the \emph{RAMEAU} reference from the French national library (BnF)\footnote{\url{http://catalogue.bnf.fr/ark:/12148/cb119367821/PUBLIC}}.
 
-The tools implemented not only detect the four musical instrument families (cordophones, aerophones, idiophones, membranophones), but also refine subdivisions related to the playing techniques, identifying whether each instrument is blowed, bowed, plucked, struck or clincked.
-
-The classification results follow the Hornbostel–Sachs system of musical instrument classification as first published in \cite{taxonomy_sachs2} and translated in \cite{taxonomy_sachs}. This system is the most widely used system for classifying musical instruments by ethnomusicologists and organologists.
-\added{Ajouté Dournon + RAMEAU ?}
+We choose to develop tools to detect the four musical instrument families (cordophones, aerophones, idiophones, membranophones), but also refine subdivisions related to the playing techniques, identifying whether each instrument is blowed, bowed, plucked, struck or clincked.
 
 \begin{figure}[htb]
   \centering
@@ -416,6 +420,16 @@ Each class is simply modeled into the classification space by its centroid (mean
 Thus, the classification task consists in projecting each tested sound described by a vector of descriptors
 to the classification space and to select the closer class (in term of Euclidean distance to the class centroid). 
 
+
+\subsection{Preliminary results and evaluation protocol}
+{\color{red}  --> Thomas :
+Comme on a pas de résultats quantitatif à montrer il faut peut-être revoir l'intitulé de cette sous-section}\\
+
+At the end of the first step of the project, interesting preliminary results have been obtained regarding sessions recordings, speech recognition, singing voice recognition and also musical instrument family classification.
+
+The robustness of all these processing are assessed using criteria defined by the final users: teachers, students, researchers or musicians. Annotation tools, as well as the provided annotations, will be integrated in the digitalized database. Results visualised thanks to the Telemeta platform will be evaluated by the humanities community involved, through a collaborative work on line. One of the issues is to develop tools to generate results on line with the server processor, according to the capacities of the internet navigators. An other challenge is to manage the workflow, according to the users' expectations about their annotations. The validated tools will be integrated with a new design in the platform Telemeta.
+
+\paragraph{Automatic instrument classification}
 As shown in Figure \ref{fig:inst_classif_result}, this simple and computationally efficient method obtains about 75\% of accuracy 
 using the 20 most relevant descriptors projected on a 8-dimensions discriminative space. In a more detailed study~\cite{ismir14_dfourer},
 this promising result was shown comparable with state-of-the art methods applied for the classification of western instruments recorded in studio condition.
@@ -427,25 +441,13 @@ this promising result was shown comparable with state-of-the art methods applied
 \end{figure}
 
 
-\subsection{\replaced{Preliminary}{First} results and evaluation protocol}
-{\color{red}  --> Thomas :
-Comme on a pas de résultats quantitatif à montrer il faut peut-être revoir l'intitulé de cette sous-section}\\
-Some tools implemented are being evaluated by ethnomusicologist and ethnolinguists and we have already interesting results:
-
-\begin{itemize}
-\item Sessions recordings
-\item Speech recognition
-\item Singing voice recognition
-\end{itemize}
-
-The robustness of all these processing are assessed using criteria defined by the final users: teachers, students, researchers or musicians. Annotation tools, as well as the provided annotations, will be integrated in the digitalized database. Results visualised thanks to the Telemeta platform will be evaluated by the humanities community involved, through a collaborative work on line. One of the issues is to develop tools to generate results on line with the server processor, according to the capacities of the internet navigators. An other challenge is to manage the workflow, according to the users' expectations about their annotations. The validated tools will be integrated with a new design in the platform Telemeta.
-
 
 \section{Conclusion}
 The Telemeta open-source framework provides the researchers in musicology with a new platform to efficiently distribute, share and work on their research materials.
 The platform has been deployed since 2011 to manage the \emph{Sound archives of the CNRS - Musée de l'Homme} which is the most important european collection of ethnomusicocological resources.
-Furthermore, this platform is offered automatic music analysis capabilities through an external component, TimeSide that provides a flexible computational analysis engine together with web serialization and visualization capabilities. As an open-source framework TimeSide could be an appropriate platform for researchers in computational ethnomusicology to develop and evaluate their algorithms
-Further works on the user interface will enhance the visualization experience with time and frequency zooming capabilities and will thus improve the accuracy and the quality of time-segment base annotations.
+Furthermore, this platform is offered automatic music analysis capabilities through an external component, TimeSide that provides a flexible computational analysis engine together with web serialization and visualization capabilities. As an open-source framework TimeSide could be an appropriate platform for researchers in computational ethnomusicology to develop and evaluate their algorithms.
+The benefits of this collaborative platform for the field of ethnomusicology apply to numerous aspects, ranging from musical analysis in a diachronic and synchronic comparative perspective, as well as long-term preservation of sound archives and support teaching material for education. Thanks to the collaborative nature of the platform, users can cooperate to continuously enrich metadata asso-ciated to sound archives.
+
 \section{Acknowledgments}
 The authors would like to thank all the people that have been involved in Telemeta specification and development or have provide useful input and feedback. 
 The project has been partially funded by the French National Centre for Scientific Research (CNRS), the French Ministry of Culture and Communication, the TGE Adonis Consortium, and the Centre of Research in Ethnomusicology (CREM).
