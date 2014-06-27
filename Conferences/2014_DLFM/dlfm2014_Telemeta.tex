@@ -11,6 +11,7 @@
 %\hyphenation{Post-Script}
 %\usepackage[authoryear]{natbib}
 %\bibliographystyle{plainnat}
+\usepackage{fixltx2e}
 \usepackage{graphicx}
 %\usepackage{amssymb}
 \usepackage{xcolor}
@@ -34,6 +35,7 @@
   \affaddr{Nanterre, France}\\
 }
 
+\newcommand{\squeezeup}{\vspace{-2.5mm}}
 
 %\usepackage{enumitem}
 %\setlist{nosep}
@@ -164,14 +166,14 @@ The time-based nature of such audio-visual materials and some associated metadat
 An overview of the Telemeta's web interface is illustrated in Figure~\ref{fig:Telemeta}.
 \begin{figure*}[htb]
    \centering
-   \fbox{\includegraphics[width=0.7\linewidth]{img/telemeta_screenshot_en_2.png}}
+   \fbox{\includegraphics[width=0.6\linewidth]{img/telemeta_screenshot_en_2.png}}
    \caption[1]{Screenshot excerpt of the Telemeta web interface}
     \label{fig:Telemeta}
  \end{figure*}
 Its flexible and streaming safe architecture is represented in Figure~\ref{fig:TM_arch}.
-\begin{figure}[htbp]
+\begin{figure}[htb]
   \centering
-  \includegraphics[width=\linewidth]{img/TM_arch.pdf}
+  \includegraphics[width=0.9\linewidth]{img/TM_arch.pdf}
   \caption{Telemeta architecture}\label{fig:TM_arch}
   \label{fig:screenshot}
 \end{figure}
@@ -203,7 +205,7 @@ Moreover, through the platform, diverse materials related to the archives can be
 \subsubsection{Descriptive and analytical information on the audio content}
 The second type of metadata consists in information about the audio content itself. This metadata can relate to the global content of the audio item or provide temporally-indexed information. It should also be noted that such information can be produced either by a human expert or by an automatic computational audio analysis (see Section~\ref{sec:TimeSide} below).
 
-\paragraph{Visual representation and segmentation}
+\squeezeup\paragraph{Visual representation and segmentation}
 As illustrated in Figure~\ref{fig:sound_representation}, the TimeSide audio player embedded in the Telemeta web page view of a sound item allows for a selection of various visual representations of the sound (e.g. waveforms and spectrograms, see section~\ref{sec:TimeSide} for details) and some representations of computational analysis that can be combined with visual representations.
 \begin{figure}[htb]
   \centering
@@ -214,9 +216,7 @@ As illustrated in Figure~\ref{fig:sound_representation}, the TimeSide audio play
 Among those automatic analysis some can produce a list of of time-segments associated with labels.
 Those labels have been specified by the partners of the Diadems project (see Section~\ref{sec:Diadems} to be relevant for ethnomusicological studies (e.g. detection of spoken voice versus sang one, chorus, musical instrument categories, and so on).
 
-
-
-\paragraph{Annotations}
+\squeezeup\paragraph{Annotations}
 As illustrated on Figure~\ref{fig:screenshot}, the embedded audio player also enables to annotate the audio content through time-coded markers.
 Such annotations consist in a title and a free text field associated with a given time position.
 
@@ -318,58 +318,66 @@ Beyond the implementation of tools detecting the start and stop sound signatures
 
 
 \subsubsection{Analysis of recordings sessions}
-\begin{itemize}
-\item Detection of start and stop of the magnetic recorder
-\item Detection of start and stop of the mecanic recorder
-\item Detection of start and stop of the digital recorder
-\end{itemize}
-{\color{red}  --> IRIT : Insérer Description de ``irit-noise-startSilences'' ?}
+A primary concern of people dealing with audio materials coming from field recordings is to quickly and automatically identify the position of the start and stop time of the recording session.
+
+In the case of digital recorder, the proposed system for localizing the start of recording sessions is based on the observation that on such recorders, the powering of the recorder implies a characteristic perturbation of the signal visible in Figure~\ref{plop}. This perturbation can be modeled by using the two different shapes of the temporal energy as references as the phenomenon appears to be quite reproducible over multiple recordings. On the analyzed recordings, the evolution of temporal energy of low energy segments is then compared to the models by an euclidean distance using the best alignment of the energy shape.
+
+\begin{figure}[htb]
+ \centering
+    \includegraphics[width=0.8\linewidth]{img/plop.png}
+    \caption{Typical perturbation produced by the recorder powering, used to recognise session start.}
+    \label{plop}
+\end{figure}
+
 
 \subsubsection{Analysis of speech and singing voice segments}
 Quick identification and localisation of spoken sections, particularly in rather long recordings, are relevant for all the disciplines involved in the project. The difficulties inherent in the sound materials led to the development of tools to automatically detect the occurrences of speech when performed simultaneously or alternatively with music; when numerous speakers interact and/or overlap with each others, with or without additional music or noises; and when voices modulate from speech to song, using a wide range of vocal techniques (recitation, narration, psalmody, back channel, and so on). The algorithms developed also allow for the analysis of the syllabic flow and the prosody of the speech. 
 Figure~\ref{fig:speech_detection} shows a visual example of how speech segmentation is rendered.
 
+%Source : CNRSMH_I_2013_201_001_01/
 \begin{figure}[htb]
   \centering
- \includegraphics[width=\linewidth]{img/IRIT_Speech4Hz.pdf} 
+ \includegraphics[width=\linewidth]{img/IRIT_Speech4Hz.png} 
   \caption{Detection of spoken voices in a song}
   \label{fig:speech_detection}
 \end{figure}
 
-\paragraph{Speech segmentation, with 2 features: 4 Hz modulation energy and entropy modulation} 
+\squeezeup\paragraph{Speech segmentation, with 2 features: 4 Hz modulation energy and entropy modulation} 
 Speech signal has a characteristic energy modulation peak around the 4 Hertz syllabic rate \cite{Houtgast1985}. In order to model this property, the signal is filtered with a FIR band pass filter, centered on 4 Hertz.
 Entropy modulation is dedicated to discriminate between speech and music~\cite{Pinquier2003}. We first evaluate the signal entropy ($H=\sum_{i=1}^{k}-p_ilog_2p_i$, with $p_i=$proba. of event~$i$). Entropy modulation values are usually larger for speech than for music. This measure is used to compute the entropy modulation on each segment. 
 
-\paragraph{speech activity detection based on GMM models}
-{\color{red}  --> LIMSI : Insérer Description de ``LIMSI SAD'' ?}
+\squeezeup\paragraph{Speech activity detection based on GMM models}
 
+The proposed method performs frame level speech activity detection based on a Gaussian Mixture Model (GMM). For each frame of the signal, the log likelihood difference between a speech model and a non speech model is computed.
+The highest is the estimate, the largest is the probability that the frame corresponds to speech. 
+
+For this task, a first reference model has been trained on data distributed during the ETAPE campaign\footnote{http://www.afcp-parole.org/etape.html}. A preliminary evaluation on a corpus collected by the French center of Research and teaching on Amerindian Ethnology (EREA) has been done and has demonstrated that this model was not appropriate for such a corpus containing a lot of background noise and Mayan language.
+A second model have thus been trained on a this corpus and have provided better results.
 
 \subsubsection{Analysis of music segments}
 The DIADEMS project aims to provide useful tools for musical analysis in both research and teaching frameworks. To do so, it is also necessary to detect segments of instrumental music along with the recognition of the different musical instrument categories. Pushing the detection further into details, the tools implemented provide musicological information to support sound analysis (such as tonal, metric and rhythmic features) and allow for the detection of similarities in melody, harmony and rhythm as well as musical pattern replications.
 
-
-\paragraph{Music segmentation, with 2 features based on a segmentation algorithm} 
+\squeezeup\paragraph{Music segmentation, with 2 features based on a segmentation algorithm} 
 This segmentation is provided by the Forward-Backward Divergence algorithm, which is based on a statistical study of the acoustic signal \cite{Obrecht1988}. The speech signal is assumed to be composed by a string of quasi-stationary units that can be seen as alternate periods of transient and steady parts (steady parts are mainly vowels). We characterize  each of these unites by an Auto Regressive (AR) Gaussian model. The method consists in performing a detection of changes in AR models. Indeed, music is usually much more constant than speech, that is to say the number of changes (segments) will be smaller for music than for speech. To estimate this, we count the number of segments per second of signal. The number of segments is the first discriminative feature for music segmentation.
 The segments obtained with our segmentation algorithm  are generally longer for music than for speech. We chose to model the segment duration by a Gaussian Inverse law (Wald law) which is indeed our second feature providing a music segmentation.
 
 
-\paragraph{Monophony / Polyphony segmentation}
+\squeezeup\paragraph{Monophony / Polyphony segmentation}
 A "monophonic" sound is defined as one note played at a time (either played by an instrument or sung by a singer), while a "polyphonic" sound is defined as several notes played simultaneously. The parameters extracted from the signal come from the YIN algorithm, a well known pitch estimator \cite{DeCheveigne2002}. Besides F0, this estimator provides an additional numerical value that can be interpreted as the inverse of a confidence indicator: the lower the value is, the more reliable the estimated pitch. Considering that when there is a single note the estimated pitch is fairly reliable, and that when there are several simultaneous notes, the estimated pitch is not reliable, we take the short term mean and variance of this "confidence indicator" as parameters for the monophony / polyphony segmentation. The bivariate distribution of these two parameters is modelled using Weibull bivariate distributions \cite{Lachambre2011}.
-
-See figure~\ref{fig:Monopoly}
+An example of the segmentation produced by this method is illustrated in Figure~\ref{fig:Monopoly}
+% Source : CNRSMH_I_2000_008_001_04
 \begin{figure}[htb]
   \centering
 %\framebox[1.1\width]{Capture d'écran de IRIT Monopoly}
-\includegraphics[width=0.7\linewidth]{img/SOLO_DUOdetection.pdf} 
+\includegraphics[width=0.95\linewidth]{img/SOLO_DUOdetection.png} 
  \caption{Detection solo and duo parts}
   \label{fig:Monopoly}
 \end{figure}
 
-
-\paragraph{Automatic instrument classification}
+\squeezeup\paragraph{Automatic instrument classification}
 For the detection of musical instrument, we choose to follow the Hornbostel–Sachs system of musical instrument classification as first published in \cite{taxonomy_sachs2} and later translated in \cite{taxonomy_sachs}. This system is the most widely used system for classifying musical instruments by ethnomusicologists and organologists. together with more recent systems like the one proposed by Geneviève Dournon in \cite{Dournon92} and the \emph{RAMEAU} reference from the French national library (BnF)\footnote{\url{http://catalogue.bnf.fr/ark:/12148/cb119367821/PUBLIC}}.
 
-We choose to develop tools to detect the four musical instrument families (cordophones, aerophones, idiophones, membranophones), but also refine subdivisions related to the playing techniques, identifying whether each instrument is blowed, bowed, plucked, struck or clincked.
+We choose to develop tools to detect the four musical instrument families (cordophones, aerophones, idiophones, membranophones), but also refine subdivisions related to the playing techniques, identifying whether each instrument is blowed, bowed, plucked, struck or clincked by focusing on the 8 classes of instrument shown in Figure~\ref{fig:instruments}.
 
 \begin{figure}[htb]
   \centering
@@ -378,15 +386,14 @@ We choose to develop tools to detect the four musical instrument families (cordo
   \label{fig:instruments}
 \end{figure}
 
-%\section{Automatic instrument classification}
-
 The proposed method is based on the supervised learning approach and uses a set of 164 acoustic descriptors 
 proposed by Peeters \textit{et al.} in \cite{timbre_toolbox}.
 This system (see Figure~\ref{fig:inst_classif_method}) applies the Inertia Ratio Maximization Features Space (IRMFSP) algorihtm~\cite{aes_irmfsp} 
 on annotated samples at the training step to reduce the number of features (to avoid overfitting) while selecting the most discriminative ones. %% see Figure 6
 
 \begin{figure}[htb]
- \centering\includegraphics[width=0.9\linewidth]{img/method}
+ \centering
+ \includegraphics[width=0.9\linewidth]{img/method}
  \caption{Training step of the proposed classification method.}
  \label{fig:inst_classif_method}
 \end{figure}
@@ -399,15 +406,16 @@ Each class is simply modeled into the classification space by its centroid (mean
 Thus, the classification task consists in projecting each tested sound described by a vector of descriptors
 to the classification space and to select the closer class (in term of Euclidean distance to the class centroid). 
 
-As shown in Figure \ref{fig:inst_classif_result}, this simple and computationally efficient method obtains about 75\% of accuracy 
+This simple and computationally efficient method obtains about 75\% of accuracy 
 using the 20 most relevant descriptors projected on a 8-dimensions discriminative space. In a more detailed study~\cite{ismir14_dfourer},
 this promising result was shown comparable with state-of-the art methods applied for the classification of western instruments recorded in studio condition.
 
-\begin{figure}[!ht]
- \centering\includegraphics[width=0.7\linewidth]{img/crem_results}
- \caption{3-fold cross-validation classification accuracy as a function of the number of optimally selected descriptors.}
- \label{fig:inst_classif_result}
-\end{figure}
+% \begin{figure}[!ht]
+%  \centering
+% \includegraphics[width=0.7\linewidth]{img/crem_results}
+%  \caption{3-fold cross-validation classification accuracy as a function of the number of optimally selected descriptors.}
+%  \label{fig:inst_classif_result}
+% \end{figure}
 
 
 \subsection{Evaluation and sought improvements}
@@ -431,7 +439,6 @@ Thanks to the collaborative nature of the platform, users can continuously enric
 
 The benefits of this collaborative platform for the field of ethnomusicology apply to numerous aspects of research, ranging from musical analysis in a diachronic and synchronic comparative perspective, as well as the long-term preservation of sound archives and the support of teaching material for education. 
 
- 
 
 \section{Acknowledgments}
 The authors would like to thank all the people that have been involved in Telemeta specification and development or have provide useful input and feedback. 
