@@ -348,8 +348,8 @@ See figure~\ref{fig:speech_detection}
 \end{figure}
 
 \paragraph{Speech segmentation, with 2 features: 4 Hz modulation energy and entropy modulation} 
-Speech signal has a characteristic energy modulation peak around the 4 Hertz syllabic rate \cite{Houtgast1985}. In order to model this property, the signal is filtered with a FIR band pass filter, centred on 4 Hertz.
-Entropy modulation is dedicated to identify speech from music~\cite{Pinquier2003}. We first evaluate the signal entropy ($H=\sum_{i=1}^{k}-p_ilog_2p_i$, with $p_i=$proba. of event~$i$). This measure is used to compute the entropy modulation on one segment. Entropy modulation is higher for speech than for music.
+Speech signal has a characteristic energy modulation peak around the 4 Hertz syllabic rate \cite{Houtgast1985}. In order to model this property, the signal is filtered with a FIR band pass filter, centered on 4 Hertz.
+Entropy modulation is dedicated to discriminate between speech and music~\cite{Pinquier2003}. We first evaluate the signal entropy ($H=\sum_{i=1}^{k}-p_ilog_2p_i$, with $p_i=$proba. of event~$i$). Entropy modulation values are usually larger for speech than for music. This measure is used to compute the entropy modulation on each segment. 
 
 \paragraph{speech activity detection based on GMM models}
 {\color{red}  --> LIMSI : Insérer Description de ``LIMSI SAD'' ?}
@@ -369,13 +369,18 @@ DIADEMS wishes to provide useful tools for musical analysis musicologists and mu
   localisation, musical pattern replications)
 \end{itemize}
 
-\paragraph{Music segmentation, with 2 features based in segmentation algorithm} 
-This segmentation is provided by the Forward-Backward Divergence algorithm, which is based on a statistical study of the acoustic signal \cite{Obrecht1988}. Assuming that speech signal is described by a string of quasi-stationary units, each one is characterized by an Auto Regressive (AR) Gaussian model. The method consists in performing a detection of changes in AR models. 
-The speech signal is composed of alternate periods of transient and steady parts (steady parts are mainly vowels). Meanwhile, music is more constant, that is to say the number of changes (segments) will be greater for speech than for music. To estimate this feature, we compute the number of segments on one second of signal. 
-The segments given by the segmentation algorithm are generally longer for music than for speech. We have decided to model the segment duration by a Gaussian Inverse law (Wald law).
+
+
+
+
+
+\paragraph{Music segmentation, with 2 features based on a segmentation algorithm} 
+This segmentation is provided by the Forward-Backward Divergence algorithm, which is based on a statistical study of the acoustic signal \cite{Obrecht1988}. The speech signal is assumed to be composed by a string of quasi-stationary units that can be seen as alternate periods of transient and steady parts (steady parts are mainly vowels). We characterize  each of these unites by an Auto Regressive (AR) Gaussian model. The method consists in performing a detection of changes in AR models. Indeed, music is usually much more constant than speech, that is to say the number of changes (segments) will be smaller for music than for speech. To estimate this, we count the number of segments per second of signal. The number of segments is the first discriminative feature for music segmentation.
+The segments obtained with our segmentation algorithm  are generally longer for music than for speech. We chose to model the segment duration by a Gaussian Inverse law (Wald law) which is indeed our second feature providing a music segmentation.
+
 
 \paragraph{Monophony / Polyphony segmentation}
-A "monophonic" sound is defined as one note played at a time (either played by an instrument or sung by a singer), while a "polyphonic" sound is defined as several notes played simultaneously. The parameters extracted from the signal come from the YIN algorithm, a well known pitch estimator \cite{DeCheveigne2002}. This estimator gives a value which can be interpreted as the inverse of a confidence indicator: the lower the value is, the more reliable the estimated pitch is. Considering that when there is one note, the estimated pitch is reliable, and that when there is several notes, the estimated pitch is not, we take as parameters the short term mean and the short term variance of this "confidence indicator". The bivariate distribution of these two parameters is then modelled using Weibull bivariate distributions \cite{Lachambre2011}.
+A "monophonic" sound is defined as one note played at a time (either played by an instrument or sung by a singer), while a "polyphonic" sound is defined as several notes played simultaneously. The parameters extracted from the signal come from the YIN algorithm, a well known pitch estimator \cite{DeCheveigne2002}. Besides F0, this estimator provides an additional numerical value that can be interpreted as the inverse of a confidence indicator: the lower the value is, the more reliable the estimated pitch. Considering that when there is a single note the estimated pitch is fairly reliable, and that when there are several simultaneous notes, the estimated pitch is not reliable, we take the short term mean and variance of this "confidence indicator" as parameters for the monophony / polyphony segmentation. The bivariate distribution of these two parameters is modelled using Weibull bivariate distributions \cite{Lachambre2011}.
 
 See figure~\ref{fig:Monopoly}
 \begin{figure}[htb]
