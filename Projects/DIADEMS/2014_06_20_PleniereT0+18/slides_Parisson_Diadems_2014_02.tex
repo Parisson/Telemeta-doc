@@ -1,0 +1,425 @@
+\documentclass[10pt, final, hyperref, table]{beamer}
+\mode<presentation>
+
+
+ %\usepackage[english]{babel} % "babel.sty"
+% \usepackage{french}                  % "french.sty"
+%  \usepackage{franglais}               % "franglais.sty" (a defaut)
+  \usepackage{times}			% ajout times le 30 mai 2003
+ 
+%% --------------------------------------------------------------
+%% CODAGE DE POLICES ?
+%% Si votre moteur Latex est francise, il est conseille
+%% d'utiliser le codage de police T1 pour faciliter la césure,
+%% si vous disposez de ces polices (DC/EC)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+%% ==============================================================
+%\usepackage{graphicx}
+\usepackage{amsmath,amsfonts}
+%\usepackage[table]{xcolor}
+\usepackage{subfigure}
+\usepackage{fancybox}
+
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{multimedia} % For playing sound
+% Define hyperlinks color
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\usetheme{Warsaw}
+\setbeamercovered{transparent}
+
+
+% telemeta red
+\definecolor{telemetaRed}{rgb}{0.41568, 0.01176, 0.02745}	% #6A0307
+\usecolortheme[rgb={0.41568, 0.01176, 0.02745}]{structure} 
+
+% Display a grid to help align images
+%\beamertemplategridbackground[1cm]
+
+%We will get the normal bibliography style (number or text instead of icon) by including the following code
+\setbeamertemplate{bibliography item}[text]
+\setbeamerfont{caption}{size=\footnotesize}
+% listings settings
+\definecolor{lstComments}{rgb}{0,0.6,0}
+\definecolor{lstBkgrd}{rgb}{0.95,0.95,1}
+\lstset{%
+  language=Python, % the language of the code
+  frame=single,  % adds a frame around the code
+  frameround=tttt,
+  commentstyle=\color{lstComments},% comment style
+  backgroundcolor=\color{lstBkgrd},   % choose the background color
+  basicstyle=\tiny,       % the size of the fonts that are used for the code
+  stringstyle=\ttfamily,  % typewriter type for strings
+  keywordstyle=\color{blue},      % keyword style
+  showstringspaces=false,          % underline spaces within strings only
+}
+\title[Plénière DIADEMS 2014]{DIADEMS – Réunion plénière T0+18}
+
+\author{Thomas Fillon \inst{1,2}, Guillaume Pellerin\inst{1}}
+
+\institute[Parisson]{
+  \inst{1}%
+  Parisson, Paris, France\\
+  \inst{2}%
+  LAM, Institut Jean Le Rond d'Alembert, UPMC Univ. Paris 06, UMR CNRS 7190, Paris, France\\
+\vskip1ex
+ \begin{center}
+   \includegraphics[width=.5\linewidth]{img/parisson_logo_FINALE_com.pdf}
+ \end{center}
+}
+
+\date{IRIT, Toulouse - 20 juin 2014}        
+
+\begin{document}
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\begin{frame}
+ \frametitle{TimeSide}\footnotesize %scriptsize
+% ==================================
+% --------- Résumé -----------------
+% ==================================
+\begin{block}{Avancement : Versions 0.4.3 $\rightarrow$ 0.5.3}
+  \begin{itemize}
+  \item Python 2.7 
+  \item Intégration de librairies d'extraction de descripteurs audio : Aubio, Yaafe, Vamp (expérimental)
+  
+  \item Installation par paquet Debian
+  \item Documentation :  \url{http://files.parisson.com/timeside/doc/} + doctest
+  \item Amélioration du code des grapheurs
+  \item Amélioration du code et des fonctionnalités des décodeurs : support de segment d'audio, mise en mémoire de l'audio pour le rejouer \emph{hors-ligne}
+  \item Amélioration du code et des fonctionnalités des analyseurs
+    \begin{itemize}\footnotesize
+      \item Mise en place d'un conteneur pour stocker et sérialiser (\emph{hdf5, yaml, json, xml}) les résultats des analyses et les annotations
+      \item Support de différents modes temporels et différents types de résultats
+      \item Ajout de la notion d'analyseurs \emph{Parents}
+      \item Ajout de méthodes pour générer les graphiques automatiquement (via \emph{matplotlib})
+    \end{itemize}
+  \item Mise en place d'un outil en ligne de commande : \texttt{timeside-launch}
+  \item Décodeur + Encodeur \emph{live} 
+  \end{itemize}
+
+\end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{Intégration des développements DIADEMS}
+  \begin{block}{IRIT}
+    \begin{itemize}
+    \item Détection de parole
+    \item Détection de musique 
+    \item Segmentation monophonique/polyphonique 
+    \end{itemize}
+  \end{block}
+  \begin{block}{LIMSI}
+    \begin{itemize}
+    \item Détecteur d'activité vocale , modèles ``Etape'' + ``Maya''
+    \end{itemize}
+  \end{block}
+  \begin{block}{Perspectives}
+    \begin{itemize}
+    \item Mise en place d'une architecture permettant une plus grande complexité des algorithmes (partage de ressources, forward-backward, modèles d'apprentissage, ...)
+    \item API REST pour la gestion et le lancement d'analyses paramétrables
+    % \item Ajout de quelques outils d'analyse (Parisson) :
+    %   \begin{itemize}
+    %   \item Détection de percussions,
+    %   \item Séparation de sources aveugle : percussion / mélodie
+    %   \item Estimation du tempo, estimation des temps
+    %   \item Nouvelles représentation Temps-Fréquences 
+    %   \end{itemize}
+
+    \end{itemize}
+    
+  \end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Communications}
+\begin{block}{Conférences - Démonstration de Telemeta-Timeside}
+  \begin{itemize}
+  \item Conférence \emph{Computer Music Multidisciplinary Research} - CMMR 2013 - Marseilles
+  \item Conférence \emph{Audio Engineering Society} AES-53, "Semantic Audio", 2014 - Londres 
+\item 4th International Workshop on Folk Music Analysis :\\ 
+\url{http://www.cmpe.boun.edu.tr/fma2014/}
+  \end{itemize}
+\end{block}
+\begin{block}{A venir -> cf prochain transparent}
+  \begin{itemize}
+  \item Digital Libraries for Musicology workshop (DLfM 2014) 12th
+    September 2014, London, UK\\
+
+\alert{Paper submission deadline: 27th June 2014}
+\begin{quotation}
+  DLfM will focus on the implications of music on Digital Libraries
+  and Digital Libraries research when pushing the boundaries of
+  contemporary musicology, including the application of techniques as
+  reported in more technologically oriented fora such as ISMIR and ICMC.
+\end{quotation}
+
+  \end{itemize}
+
+\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Papier(s) DLFM}
+  \begin{block}{Contraintes}\footnotesize
+    \begin{itemize}
+    \item full papers (up to 8 pages) or 
+    \item position papers (up to 3 pages)
+    \item \alert{Paper submission deadline: 27th June 2014 !!!!!}
+    \end{itemize}
+
+  \end{block}
+  \begin{block}{Article(s) Diadems :  Que fait-on ? Qui ?}
+          \begin{itemize}
+      \item 1 papier ``Telemeta'' sur la base de publications précédentes (Full papers ?)
+        \begin{itemize}\footnotesize
+        \item Description du projet Telemeta
+        \item Outil collaboratif, apport pour les chercheurs, documentaliste en ethnomusicologie, valorisation des archives
+        \item Outil collaboratif pour l'annotation et le travail en commun + ``retour au pays''
+        \end{itemize}
+
+      \item ? +1 papier ``Diadems'' (full paper ou position paper ?)
+        \begin{itemize}\footnotesize
+        \item Orientation Diadems collaboration ethno <-> ``Informaticien``
+        \item Apport de l'approche ``computationnelle'' pour l'ethnomusicologie
+        \item Définition d'un langage commun et de problématiques pertinentes
+        \item thesaurus, évaluation des résultats pour un outil d'aide aux sciences humaines
+        \item TimeSide
+        \end{itemize}
+      \end{itemize}
+
+  \end{block}
+
+  
+\end{frame}
+
+\begin{frame}\frametitle{Collaboration}
+\begin{block}{Contact - Collaborations extérieures}
+  \begin{itemize}
+  \item IRCAM : Projet Wave, \emph{Web Audio Visualisation/Edition} : \url{http://wave.ircam.fr/}
+  \item Londres : Queen Mary University, BBC R\&D
+  \item Barcelone : UPF (Xavier Serra) :  Projet CompMusic, \emph{Computational models for the discovery of the World’s Music}
+  \item Musée royal de l'Afrique centrale (Belgique)
+  \item Bioacoustique :
+    \begin{itemize}
+    \item Univ. Toulon Sud (Hervé Glotin), MNHM (Jérôme Sueur), LAM
+      (Olivier Adam) : Projet SABIOD,
+      \url{http://sabiod.telemeta.org/}
+    \item Cyberio (Grenoble)
+    \item UCL (Londres) : Centre for Biodiversity and Environment Research
+    \end{itemize}
+
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Telemeta}
+    \begin{flushleft}
+    \includegraphics[width=0.2\textwidth]{img/logo_telemeta_1-1.pdf} \hfill
+    \colorbox{yellow!50}{\textbf{\url{http://telemeta.org/}}}
+  \end{flushleft}
+  \begin{block}{Développement en cours}
+    \begin{itemize}
+    \item Annotation par segments
+    \item Importation d'annotations externes (Elan, transcriber)
+    \item Zoom en temps
+    \item Lecteur :
+      \begin{itemize}
+      \item Support de Web Audio API, HTML5
+      \item Synchronisation lecteur - annotation - analyses
+      \end{itemize}
+    \item Visualisation des analyses et segmentations issues de Timeside 
+    \end{itemize}
+  \end{block}
+  \begin{block}{Perspectives}
+    \begin{itemize}
+    \item Extraire une partie des outils web de Telemeta vers Timeside
+    \item Zoom en fréquence
+    \item Annotation Temps-Fréquence
+    \item Utilisation de \emph{Pyannote} (Hervé bredin, LIMSI)
+    \end{itemize}
+  \end{block}
+\end{frame}
+\part{Annexe}
+\begin{frame}
+  \frametitle{Annexe}
+
+\end{frame}
+
+
+
+\begin{frame}\tiny
+  \frametitle{Processeurs}
+  \begin{minipage}{0.45\linewidth}
+
+   \begin{block}{IDecoder}
+      \begin{itemize}
+      \item FileDecoder \texttt{[gst\_dec]}
+      \item \alert{ArrayDecoder} \texttt{[array\_dec]}
+      \end{itemize}
+    \end{block}
+    \begin{block}{IAnalyzer}
+      \begin{itemize}
+      \item Level \texttt{[level]}
+      \item MeanDCShift \texttt{[mean\_dc\_shift]}
+      \item AubioTemporal \texttt{[aubio\_temporal]}
+      \item AubioPitch \texttt{[aubio\_pitch]}
+      \item AubioMfcc \texttt{[aubio\_mfcc]}
+        \item AubioMelEnergy \texttt{[aubio\_melenergy]}
+      \item AubioSpecdesc \texttt{[aubio\_specdesc]}
+      \item \alert{Yaafe} \texttt{[yaafe]}
+      \item \alert{Spectrogram} \texttt{[spectrogram\_analyzer]}
+      \item \alert{Waveform} \texttt{[waveform\_analyzer]}
+      \item \alert{VampSimpleHost} \texttt{[vamp\_simple\_host]}
+      \item \alert{IRITSpeechEntropy} \texttt{[irit\_speech\_entropy]}
+      \item \alert{IRITSpeech4Hz} \texttt{[irit\_speech\_4hz]}
+      \item \alert{OnsetDetectionFunction} \texttt{[odf]}
+      \end{itemize}
+    \end{block}
+   \end{minipage} \hfill
+   \begin{minipage}{0.5\linewidth}
+      \begin{block}{IEncoder}
+      \begin{itemize}
+      \item VorbisEncoder \texttt{[gst\_vorbis\_enc]}
+      \item WavEncoder \texttt{[gst\_wav\_enc]}
+      \item Mp3Encoder \texttt{[gst\_mp3\_enc]}
+      \item FlacEncoder \texttt{ [gst\_flac\_enc]}
+      \item AacEncoder \texttt{[gst\_aac\_enc]}
+      \item WebMEncoder \texttt{[gst\_webm\_enc]}
+      \end{itemize}
+    \end{block}
+  \begin{block}{IGrapher}
+      \begin{itemize}
+      \item Waveform \texttt{[waveform\_simple]}
+      \item WaveformCentroid \texttt{[waveform\_centroid]}
+      \item \alert{WaveformTransparent} \texttt{[waveform\_transparent]}
+      \item WaveformContourBlack \texttt{[waveform\_contour\_black]}
+      \item WaveformContourWhite \texttt{[waveform\_contour\_white]}
+      \item SpectrogramLog \texttt{[spectrogram\_log]}
+      \item \alert{SpectrogramLinear} \texttt{[spectrogram\_linear]}
+      \end{itemize}
+    \end{block}
+   \end{minipage}
+
+\end{frame}
+\begin{frame}
+
+
+  \frametitle{Principales nouveautés}
+  \begin{block}{}
+    \begin{itemize}
+    \item Version 0.5.2
+    \item Mise en place d'une documentation :
+      \url{http://files.parisson.com/timeside/doc/}
+   
+    \item Installation par paquets Debian (Timeside + Aubio + Yaafe)
+      pour Debian Stable 7.0 Wheezy
+      \url{https://github.com/yomguy/TimeSide\#install}
+    \item Outil en \emph{ligne de commande} : \texttt{timeside-launch}
+    \item Décodeur : possibilité de lire un \alert{segment} de fichier audio
+    \end{itemize}
+  \end{block}
+  \begin{block}{Analyseurs - Sauvegarde des résultats}
+    \begin{itemize}
+    \item Amélioration de la sérialisation des resultats (xml, json,
+      yaml, \alert{numpy}, \alert{hdf5})
+    \item  Ajout de fonctionnalités et \emph{Réusinage} de code en prévision de l'intégration de méthodes d'analyse automatique
+    \item Notion d'analyseur " \emph{parent} "
+    \end{itemize}
+    
+  \end{block}
+\end{frame}
+
+\begin{frame}{Extraction de descripteurs audio}
+  
+ \begin{block}{Extraction de descripteurs audio}
+TimeSide incorpore des bibliothèques d'extraction de descripteurs audio de référence :
+\vspace{-0.1cm}
+\begin{itemize} \tiny
+\item \textbf{Aubio:
+    \colorbox{yellow!50}{\hskip1ex  \url{http://aubio.org} \hskip1ex }}
+\vspace{-0.1cm}
+\item \textbf{Yaafe:
+    \colorbox{yellow!50}{\hskip1ex \url{http://yaafe.sourceforge.net}\hskip1ex }}
+\vspace{-0.1cm}
+\item \textbf{Vamp plugins:  
+    \colorbox{yellow!50}{\hskip1ex \url{http://www.vamp-plugins.org}\hskip1ex }} 
+\end{itemize}
+\alert{A partir de ses descripteurs, les analyses automatiques pour chaque item d'une collection peuvent être mises en place}\\
+$\longrightarrow$ Intégration des premiers analyseurs ``DIADEMS'' : Détecteurs de segments de paroles (IRIT) 
+
+\end{block}
+\begin{block}{}
+  Formalisation de différents types de résultats :
+  \begin{itemize}
+  \item time\_mode : \texttt{global, event, segment, framewise}
+  \item data\_mode : \texttt{value, label}
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \begin{block}{TimeSide - Dépôt Github}
+    \begin{center}\scriptsize
+      \colorbox{yellow!50}{\bf \hskip3ex
+        \url{https://github.com/yomguy/TimeSide/} \hskip3ex }
+    \end{center}
+3 branches principales :
+  \begin{itemize}
+  \item master (0.5.2)
+  \item dev
+  \item \alert{diadems} $\longleftarrow$ \emph{vos précieuses contributions}
+  \end{itemize}
+  \end{block}
+  \begin{block}{Installation}
+\url{https://github.com/yomguy/TimeSide\#install}
+    \begin{itemize}
+    \item Installation des dépendances :
+\begin{lstlisting}[language=bash, basicstyle=\TINY]
+$ echo "deb http://debian.parisson.com/debian/ stable main" |
+$ sudo tee -a /etc/apt/sources.list 
+$ echo "deb-src http://debian.parisson.com/debian/ stable main" | sudo tee -a /etc/apt/sources.list 
+$ sudo apt-get update 
+$ sudo apt-get install git 
+$ sudo apt-get build-dep python-timeside
+\end{lstlisting}
+
+    \item Installation depuis le dépôt \emph{Github} :
+\begin{lstlisting}[language=bash, basicstyle=\TINY]
+$ git clone https://github.com/yomguy/TimeSide.git 
+$ cd TimeSide 
+$ git checkout dev 
+$ export PYTHONPATH=$PYTHONPATH:`pwd` 
+$ python tests/run_all_tests
+\end{lstlisting}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Détecteur de parole IRIT (4Hz modulation)}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{img/irit_speech4hz}\\
+\href{sounds/CNRSMH_I_2013_202_001_06.mp3}{CNRSMH\_I\_2013\_202\_001\_06}
+\end{center}
+\end{frame}
+\begin{frame}\frametitle{Aubio Pitch + Aubio Beat}
+  \begin{center}
+\includegraphics[width=1.1\linewidth]{img/aubio_pitch_beat.png}\\
+\href{sounds/CNRSMH_E_1985_001_001_001_04.mp3}{CNRSMH\_E\_1985\_001\_001\_001\_04}
+\end{center}
+\end{frame}
+
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
