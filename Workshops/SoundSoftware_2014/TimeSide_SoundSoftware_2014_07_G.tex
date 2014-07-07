@@ -83,7 +83,7 @@
 
 %\author{Guillaume Pellerin\inst{1}}
 
-\author{
+\author[G. Pellerin, T. Fillon, P. Brossier]{
   Guillaume Pellerin\inst{1},
   Thomas Fillon\inst{1,2},
   Paul Brossier\inst{1},
@@ -428,6 +428,64 @@
     \end{block}
 }
 
+\subsection{Analyzer Result}
+\begin{frame}
+  \frametitle{Analyzer Result}
+     \begin{block}{Result types: \\\emph{time mode} x \emph{data mode}}
+       \begin{columns}
+         \begin{column}{0.35\linewidth}
+           \begin{itemize}
+           \item Data modes:
+             \begin{itemize}
+             \item \alert<2-5>{Label}
+             \item \alert<6-9>{Value}
+             \end{itemize}
+           \item Time modes:
+             \begin{itemize}
+             \item \alert<2,6>{Global}
+             \item \alert<3,7>{Event}
+             \item \alert<4,8>{Segment}
+             \item \alert<5,9>{Framewise}
+             \end{itemize}
+           \end{itemize}
+         \end{column}
+         \begin{column}{0.50\linewidth}\footnotesize
+           \begin{exampleblock}<2->{\footnotesize Result Container}\scriptsize
+             \begin{itemize}
+             \item ID Metadata
+             \item Audio Metadata
+             \item Parameters
+             \item Data object
+               \begin{itemize}\scriptsize
+               \item<2-5> Label
+               \item<2-5> Label Metadata ({\tiny label, label\_id, ...})
+               \item<6-9> Value
+               \item<3-4,7-8> Time
+               \item<4,8> Duration
+               \item<5,9> Frame Metadata ({\tiny sample rate, blocksize,
+                 stepsize})
+               \end{itemize}
+           
+             \end{itemize}
+           \end{exampleblock}
+
+         \end{column}
+       \end{columns}
+      
+  \end{block}   
+ \begin{block}<10>{Export}
+         \begin{itemize}
+         \item Serialization: HDF5, JSON, YAML, XML
+         \item Display: \emph{Ad hoc} rendering methods (depending on time and data modes)
+         \end{itemize}
+       \end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Analyzer result examples}
+\includegraphics<1>[width=\linewidth]{img/results/IRIT_Speech4Hz.png}
+\includegraphics<2>[width=\linewidth]{img/results/SOLO_DUOdetection.png}
+
+\end{frame}
 \section{Demos}
 
 \frame{\frametitle{Documentation and demos}

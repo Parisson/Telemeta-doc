@@ -1,4 +1,4 @@
-MAIN_FILE = TimeSide_SoundSoftware_2014_07
+MAIN_FILE = TimeSide_SoundSoftware_2014_07# _G
 
 pdf:
 	echo ${MAIN_FILE}.tex
