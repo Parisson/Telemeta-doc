@@ -261,8 +261,8 @@
         \item Analyze and annotate large music audio datasets with a robust and flexible framework (plugin style architecture)
         \item Export audio data and metadata with experts to make them collaborate for processing and annotating
         \item Build large statistical campaigns and vizualizations from metadata and sounds
-        \item Scale the audio data through the web
-        \item Give a smart audio engine to your application
+        \item Scale audio data through the web
+        \item Give a smart audio engine to your python application
        \end{itemize}
     \end{block}
     
@@ -274,7 +274,6 @@
          \end{itemize}
     \end{block}
 }
-
 
 
 \subsection{The DIADEMS project}
@@ -532,14 +531,7 @@
     \item Upgrade against the web framework (Django 1.7) and geolocation services
         %\item Smart breadcrumbs 
     %\item Better interactions with TimeSide
-    \item Enhance user interface (full HTML 5 + web audio API)
-        \begin{itemize}\footnotesize
-            \item For annotations and segmentations in a collaborative manner
-            \item Provide import capabilities and feedback loop between manual and automatic annotations
-            \item Fancy displays of automatic analysis results (zoomable + synchronized with audio)
-            \item Add a User interface to control and tune the analysis parameters
-            \item Add public and enhanced user playlists
-        \end{itemize}
+    \item Easier resource right access management and playlists sharing
     \item More documentation!
     \end{itemize}
 \end{block}
@@ -557,6 +549,13 @@
     %\item Add automatic similarity analysis tools (inside a song or between sound items)
     %\item Enhance analysis result displays to send to Telemeta
     %\item \dchref{https://github.com/yomguy/TimeSide/issues}
+    \item Enhanced UI
+        \begin{itemize}\footnotesize
+            \item Better Web Audio API support (now using SoundManager2)
+            \item Provide import capabilities and feedback loop between manual and automatic annotations
+            \item Fancy displays of automatic analysis results (zoomable + synchronized with audio)
+            \item Add a UI to control and tune the analysis parameters
+        \end{itemize}
     \end{itemize}
 \end{block}
 }
@@ -566,13 +565,13 @@
 \frame{\frametitle{Lessons}
 \begin{block}{Lessons learned from a 7 years old project}
 \begin{itemize}
-\item Simplicity is better than complexity (\alert{KISS})
+\item \alert{Simplicity} is better than complexity (\alert{KISS} principle)
 \item \alert{Modularity} is only accessible with a flexible language (thanks Python!)
-\item \alert{Models} and \alert{Objects} are more important than Technologies
-\item A good \alert{workflow} is defined by the users themselves through \alert{feedback} and constant revisions
-\item \alert{Prototyping} is a crucial part of the development process
+\item \alert{Models} and \alert{objects} are more important than technologies
+\item A good \alert{workflow} is defined by the users themselves through \alert{feedback} and constant \alert{revisions}
+\item \alert{Prototyping} and \alert{unit testing} are some crucial parts of the development process
 \item A good platform relies on \alert{standards}, not on formats
-\item The \alert{Open Source} ecosystem provides some \alert{tremendous} possibilities to develop, deploy and scale a platform project
+\item The \alert{Open Source} ecosystem provides some tremendous possibilities to develop, deploy and scale a platform project
 \end{itemize}
 \end{block}
 }
