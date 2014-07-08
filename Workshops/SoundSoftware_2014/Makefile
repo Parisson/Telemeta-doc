@@ -7,4 +7,4 @@ pdf:
 
 clean:
 
-	rm -f *.aux *.bbl *.blg *.bst *.dvi *.idx *.lof *.log *.toc *.out  *.ind *.ilg *~
+	rm -f *.aux *.bbl *.blg *.bst *.dvi *.idx *.lof *.log *.toc *.out  *.ind *.ilg *.nav *.snm *.vrb *~
