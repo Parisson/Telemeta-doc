@@ -186,8 +186,8 @@
 \begin{block}{Technologies  \alert{$\longrightarrow$ 100\% 0pen Source!}}
  \begin{itemize}
  \item GNU / Linux : applications, libraries and kernel 
- \item \chref{http://python.org}{Python} (cool and smart object oriented language with web and scientific libraries), \chref{http://djangoproject.com}{Django} (web platform, \chref{http://gstreamer.freedesktop.org/}{GStreamer} (multimedia framework)
- \item MySQL, PostgreSQL, others : relational databases
+ \item \chref{http://python.org}{Python} (cool and smart object oriented language with web and scientific libraries), \chref{http://djangoproject.com}{Django} (python web framework), \chref{http://gstreamer.freedesktop.org/}{GStreamer} (multimedia framework)
+ \item MySQL, PostgreSQL, etc : relational databases
  \item \chref{https://github.com/yomguy/TimeSide}{TimeSide} : open web audio processing framework 
 \end{itemize}
 \end{block}
@@ -258,18 +258,19 @@
 
     \begin{block}{Usages}
         \begin{itemize}
-        \item Analyze large music audio datasets on demand over a robust and scalable platform
-        \item Share audio data and metadata with experts to make them collaborate in editing, processing and discovering
-        \item Build large statistical campaigns and vizualizations from ontologies, geographic data and sounds
-        \item Scale the audio data through the web (URL indexes)
+        \item Analyze and annotate large music audio datasets with a robust and flexible framework (plugin style architecture)
+        \item Export audio data and metadata with experts to make them collaborate for processing and annotating
+        \item Build large statistical campaigns and vizualizations from metadata and sounds
+        \item Scale the audio data through the web
+        \item Give a smart audio engine to your application
        \end{itemize}
     \end{block}
     
-    \begin{block}<2>{Applications}
+    \begin{block}<2>{Domains}
          \begin{itemize}
-            \item Realtime bioacoustical monitoring system over internet (needs hardware)
-            \item Biodiversity studies
-            \item Development and test of new species detection algorithms on large and historical datasets
+            \item Musicology, Anthropology, Museology
+            \item Computer science, Web development
+            \item Biology, Ecology
          \end{itemize}
     \end{block}
 }
@@ -279,11 +280,11 @@
 \subsection{The DIADEMS project}
 \frame{\frametitle{The DIADEMS project}
 \begin{itemize}
-    \item \chref{http://www.irit.fr/recherches/SAMOVA/DIADEMS/fr/welcome/&cultureKey=en}{DIADEMS} : Description, Indexation, Access to Sound and Ethnomusicological Documents
+    \item \chref{http://www.irit.fr/recherches/SAMOVA/DIADEMS/fr/welcome/&cultureKey=en}{DIADEMS} = Description, Indexation and Access to Sound and Ethno-Musicological Documents
     \item Granted by ANR : french national research agency (ANR-12-CORD-0022)     
     \item 3 years, 8 partners, 850 k\euro
     \item Apply and test MIR algorithms on large scale ethnomusicological data
-    \item Define some high level interfaces to find new ways of explorations in large complex musical corpus
+    \item Define some high level interfaces to find new ways of explorations in large and complex music collections
     \item New modes of collaboration between human science and computer science laboratories and researchers
     \item Define the \chref{http://files.parisson.com/telemeta/telemeta-doc/DIADEMS/thesaurus/Thesaurus/Thesaurus.html}{vocabulary} describing musical events in the usecase of ethnomusicilogy vs. signal processing
     \item \dchref{http://www.irit.fr/recherches/SAMOVA/DIADEMS/fr/welcome/}
@@ -293,17 +294,6 @@
 
 \frame{\frametitle{DIADEMS - Partners}
 \begin{itemize}
-\item Sponsors:
-\begin{itemize}
- \item CNRS
- \item Huma-Num (ex TGE Adonis)
- \item ANR
- \item CREM
- \item UPMC
- \item Parisson
-\end{itemize}
-
-\vspace{0.25cm}
 
 \item Partners :
 \begin{itemize}
@@ -314,28 +304,56 @@
 \item CREM (université Paris Ouest Nanterre La Défense)
 \item LESC (université Paris Ouest Nanterre La Défense)
 \item Museum d'Histoire Naturelle de Paris
-\item Musée du Quai Branly
+\item Parisson
 \end{itemize}
 
-\end{itemize}
+\item Sponsors:
 
 \begin{center}
 \begin{columns}[c]
 \column{2.5cm}
 \begin{center}
-\pgfimage[width=1cm]{img/logo-CNRS}\end{center}
-\column{2.5cm}
-\begin{center}
-\pgfimage[width=2.5cm]{img/Logo-CREM-La.jpg}
+    \pgfimage[width=2cm]{img/logo-ANR}
 \end{center}
 \column{2.5cm}
 \begin{center}
-\pgfimage[width=2.5cm]{img/parisson_logo_200}\end{center}
+    \pgfimage[width=1.5cm]{img/logo-CNRS-big}
+\end{center}
+\column{2.5cm}
+\begin{center}
+    \pgfimage[width=2.5cm]{img/Logo_UPX_big}
+\end{center}
 \column{2cm}
 \begin{center}
-\pgfimage[width=1.2cm]{img/logo-mnhn}\end{center}
+    \pgfimage[width=2cm]{img/upmc}
+\end{center}
 \end{columns}
 \end{center}
+
+\begin{center}
+\begin{columns}[c]
+\column{2.5cm}
+\begin{center}
+    \pgfimage[width=2.5cm]{img/Europeana_sounds_landscape_2}
+\end{center}
+\column{2.5cm}
+\begin{center}
+    \pgfimage[width=1.5cm]{img/logo-MNHN-big}
+\end{center}
+\column{2.5cm}
+\begin{center}
+    \pgfimage[width=1.5cm]{img/logohumanum}
+\end{center}
+\column{2cm}
+\begin{center}
+    \pgfimage[width=2.5cm]{img/parisson_logo_200}
+\end{center}
+\end{columns}
+\end{center}
+
+
+\end{itemize}
+
 
 }
 
@@ -482,9 +500,12 @@
 \end{frame}
 \begin{frame}
 \frametitle{Analyzer result examples}
-\includegraphics<1>[width=\linewidth]{img/results/IRIT_Speech4Hz.png}
-\includegraphics<2>[width=\linewidth]{img/results/SOLO_DUOdetection.png}
-
+\begin{center}
+  \includegraphics<1>[width=\linewidth]{img/results/IRIT_Speech4Hz.png}
+  \includegraphics<2>[width=\linewidth]{img/results/SOLO_DUOdetection.png}\\
+  {\footnotesize \only<1>{\url{http://diadems.telemeta.org/archives/items/CNRSMH_I_2013_201_001_01/}}
+  \only<2>{\url{http://diadems.telemeta.org/archives/items/CNRSMH_I_2000_008_001_04/}}}
+\end{center}
 \end{frame}
 \section{Demos}
 
@@ -508,7 +529,7 @@
 \begin{block}{Telemeta}
     \begin{itemize}
     %\item Update code to support Django new Class based views
-    \item Update web framework (DJANGO) and geolocation services
+    \item Upgrade against the web framework (Django 1.7) and geolocation services
         %\item Smart breadcrumbs 
     %\item Better interactions with TimeSide
     \item Enhance user interface (full HTML 5 + web audio API)
@@ -519,7 +540,7 @@
             \item Add a User interface to control and tune the analysis parameters
             \item Add public and enhanced user playlists
         \end{itemize}
-    \item More documentation
+    \item More documentation!
     \end{itemize}
 \end{block}
 
@@ -542,7 +563,7 @@
 
 \section{Lessons}
 
-\frame{\frametitle{Lessons learned}
+\frame{\frametitle{Lessons}
 \begin{block}{Lessons learned from a 7 years old project}
 \begin{itemize}
 \item Simplicity is better than complexity (\alert{KISS})
@@ -551,7 +572,7 @@
 \item A good \alert{workflow} is defined by the users themselves through \alert{feedback} and constant revisions
 \item \alert{Prototyping} is a crucial part of the development process
 \item A good platform relies on \alert{standards}, not on formats
-\item The \alert{Open Source} ecosystem gives some \alert{tremendous} possibilities to develop, deploy and scale any platform project
+\item The \alert{Open Source} ecosystem provides some \alert{tremendous} possibilities to develop, deploy and scale a platform project
 \end{itemize}
 \end{block}
 }
@@ -560,11 +581,12 @@
 \frame{\frametitle{The End}
  \begin{center}
    \large{Thank you!}\\
-   \large{We are looking for new collaborations\\ for large scale audio processing use cases. Let's keep in touch!}
-   \vspace{0.25cm}
+   \large{We are looking for new collaborations in various use cases...\\ Let's keep in touch!}
+   
     \begin{block}{Links}
      \begin{itemize}\small
         \item \chref{http://github.com/yomguy/TimeSide}{github.com/yomguy/TimeSide}
+        \item \chref{https://github.com/Parisson/Telemeta-doc}{github.com/Parisson/Telemeta-doc}
         \item \chref{http://telemeta.org}{telemeta.org}
         \item \chref{https://twitter.com/telemeta/}{@telemeta}
     \end{itemize}
@@ -581,5 +603,26 @@
   \end{center}
 }
 
+\begin{frame}
+  \frametitle{Web Audio Conference Announcement}
 
+  \begin{center}
+    WAC\\
+ 1st Web Audio Conference\\
+
+    January 26-27, 2015 - IRCAM \& Mozilla Paris, France\\
+    \textbf{\url{http://wac.ircam.fr/}}
+  \end{center}
+
+\emph{WAC is the first international conference on web audio technologies and applications.}
+
+The conference welcomes web R\&D developers, audio processing scientists, application designers and people involved in web standards.
+
+The conference addresses research, development, design, and standards concerned with emerging audio-related web technologies such as Web Audio API, Web RTC, Web Sockets, and Javascript. 
+
+\begin{center}
+  \emph{Deadline for submission: October 10, 2014}
+\end{center}
+
+\end{frame}
 \end{document}
