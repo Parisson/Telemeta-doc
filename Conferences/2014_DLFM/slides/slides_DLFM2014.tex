@@ -119,62 +119,84 @@
 \end{frame}
 
 
-\section*{Introduction}
+\section{Introduction}
 
-\begin{frame}\frametitle{Introduction}\tiny
+\begin{frame}\frametitle{Introduction}
  \begin{block}{Context}
-  \begin{itemize}
-  \item The Research Center for Ethnomusicology (CREM) and Parisson have been developing an innovative,
-    collaborative and interdisciplinary open-source web-based multimedia platform since 2007.
-  \item Goals:
-    \begin{itemize}\tiny%
-\setbeamertemplate{itemize subitem}[triangle]
-      %\renewcommand{\labelitemi}{$\Rightarrow$}
-    \item Preserve and easily access, visualize and annotate sound archives materials and metadata
-    \item Fit the professional requirements from both sound archivists
-      and researchers in ethnomusicology.
-    \item Provide a collaborative platform for research and education on ethnomusicology
-    \end{itemize}
+   \begin{itemize}
+   \item Since 2007, the Research Center for Ethnomusicology (CREM) and Parisson
+     have been developing an innovative, collaborative and
+     open-source web-based multimedia platform for humanities and social sciences research.
+   % \item Main goals:
+   %   \begin{itemize}\scriptsize
+   %     \setbeamertemplate{itemize subitem}[triangle]
+   %   \item Preserve and easily access, visualize and annotate sound
+   %     archives materials and metadata
+   %   \item Fit the professional requirements from both sound
+   %     archivists and researchers in ethnomusicology.
+   %   \end{itemize} 
 
-  \item Official platform online since 2010 : \emph{Sound archives of the CNRS - Musée de l'Homme}:
-  \begin{center}
-    \colorbox{yellow!50} { \hskip3ex \bf \url{http://archives.crem-cnrs.fr} \hskip3ex }
-  \end{center}
-\item This collaborative platform for humanities and social sciences research support numerous aspects of the field of ethnomusicology, ranging from musical analysis to comparative history and the anthropology of music. The platform also provides a useful resources for the fields of anthropology, linguistics and acoustics.
- \end{itemize}
+   \item Official platform online since 2010 : 
+     \vspace{-0.1cm}\begin{center}
+\emph{Sound archives of the CNRS - Musée de l'Homme}
+       \colorbox{yellow!40} {\bf \url{http://archives.crem-cnrs.fr}}
+     \end{center}
+   \item This collaborative platform support numerous aspects of the field of
+     ethnomusicology, ranging from musical analysis to comparative
+     history and the anthropology of music. The platform also provides
+     a useful resources for the fields of anthropology, linguistics
+     and acoustics.
+   \end{itemize}
 \end{block}
+\end{frame}
+\begin{frame}\frametitle{Introduction}
+  
 
-\begin{block}{Towards automatic audio content analysis and multidisciplinary collaboration}
+\begin{block}{Towards automatic audio content analysis ...}
   \begin{itemize}
   \item Recently, an open-source audio analysis framework,
     TimeSide, has been developed to bring automatic audio content
-    analysis capabilities to the web platform.
-  \item Since 2013, as part of the DIADEMS project, researchers and engineers from the \emph{Science and Technology of Information and Communication} domain and researchers from the \emph{Musicology and Ethnomusicology} domain have been collaborating to develop computer tools to automatically index the recording content directly from the audio signal in order to improve access to and indexation of this vast ethnomusicological archive.
+    analysis capabilities to the Telemeta web platform.
   \end{itemize}
 
+\end{block}
+\begin{block}{... and interdisciplinary collaboration}
+  \begin{itemize}
+  \item Since 2013, as part of the DIADEMS project, researchers and engineers from the \emph{Science and Technology of Information and Communication} domain and researchers from the \emph{Musicology and Ethnomusicology} domain have been collaborating to develop computer tools to automatically index the recording content directly from the audio signal.% in order to improve access to and indexation of this vast ethnomusicological archive.
+  \end{itemize}
+  
 \end{block}
 
 \end{frame}
 \section[Telemeta]{The Telemeta platform}\label{sec:Telemeta}
 \begin{frame}
-\frametitle{The Telemeta platform}
-\begin{block}{The platform}
-  \begin{itemize}
-  \item The primary purpose of the project is to provide researchers working on audio materials with a scalable system to
-    \begin{itemize}\footnotesize
-    \item access, preserve and share \alert{sound items} and
-    \item access and enrich \alert{associated metadata} that contains
-      key information on the context and significance of the
-      recording.
+  \frametitle{The Telemeta platform}
+  \begin{block}{A web audio platform}
+    \begin{itemize}
+    \item The primary purpose of the project is to provide researchers
+      working on audio materials with a scalable system:
+      \begin{itemize}\footnotesize
+      \item to access, preserve and share \alert{sound items} and
+      \item to access and enrich \alert{associated metadata} that
+        contains key information on the context and significance of
+        the recording.
+      \end{itemize}
+    \item Given the temporal nature of such audio-visual materials and
+      some associated metadata as annotation, providing an easy and
+      on-demand access to these data, while listening to the
+      recording, represents a significant improvement for users.
     \end{itemize}
-
-  \item Telemeta, is a free and open source (\emph{GPL-like}) web audio platform for indexing, transcoding, analyzing, sharing and visualizing any digital audio or video file in accordance with open web standards.
-  \item Given the temporal nature of such audio-visual materials and some associated metadata as annotation, providing an easy and on-demand access to these data, while listening to the recording, represents a significant improvement for users.
-  \end{itemize}
-\vspace{-0.5cm}
+  \end{block}
+  \begin{block}{An open-source software}
+    \begin{itemize}
+    \item Telemeta, is a free and open source (\emph{GPL-like})
+      software in accordance with open web standards.
+    \end{itemize}
+    \vspace{-0.5cm}
     \begin{center}
-      \includegraphics[width=0.3\textwidth]{../img/logo_telemeta_800.png}\\
-      \colorbox{yellow!50}{\textbf{\url{http://telemeta.org/}}}
+      \raisebox{-0.4\height}{\includegraphics[width=0.3\textwidth]{../img/logo_telemeta_800.png}}
+\hspace{1cm}
+      \colorbox{yellow!40}{\textbf{\url{http://telemeta.org/}}}
     \end{center}
   \end{block}
 \end{frame}
@@ -191,7 +213,7 @@
   \begin{block}{Main features of Telemeta}
     \begin{itemize}
       \item \alert{Pure HTML5} web user interface including dynamic forms.
-      \item Strong Structured Query Language (\alert{SQL}) or Oracle backend.
+      \item Database management through Strong Structured Query Language (\alert{SQL}) or Oracle backend.
       \item \alert{On-the-fly audio analyzing}, transcoding and metadata
         embedding in various multimedia formats, provided through an external component, \emph{TimeSide}.
       \item Social editing with semantic ontologies, smart workflows,
@@ -209,31 +231,30 @@
 
 \subsection{Metadata}\label{sec:metadata}
 \begin{frame}\frametitle{Metadata}
-
- In addition to the audio data, an efficient and dynamic
-    management of the associated metadata is also necessary.
-  \begin{itemize}
-   \item Metadata
-    provides valuable information about the \alert{source of the data} and to
-    the related \alert{work of peer researchers}.
-  \item Dynamically handling
-    metadata in a \alert{collaborative} manner optimizes the continuous
-    process of knowledge gathering and the \alert{enrichment} of the materials
-    in the database.
-  \item One of the major challenges is the
-    \alert{standardization} of audio and metadata formats with the aim of
-    long-term preservation and usage of the different materials.
-  \item The compatibility with other systems is facilitated by the integration
-    of the \alert{metadata standards protocols} \emph{Dublin Core} and
-    \emph{OAI-PMH} (Open Archives Initiative Protocol for Metadata
-    Harvesting).
-  \end{itemize}
-
-The metadata includes two different kinds of information about the audio item:
-\begin{itemize}
-\item contextual information and
-\item Descriptive and analytical information of the audio content
-\end{itemize}
+  \begin{block}{}
+    In addition to the audio data, an efficient and dynamic management
+    of the associated metadata is also necessary.
+    \begin{itemize}
+    \item Metadata provides valuable information about the
+      \alert{source of the data} and to the related \alert{work of
+        peer researchers}.
+    \item Dynamically handling metadata in a \alert{collaborative}
+      manner optimizes the continuous process of knowledge gathering
+      and the \alert{enrichment} of the materials in the database.
+    \item One of the major challenges is the \alert{standardization}
+      of audio and metadata formats with the aim of long-term
+      preservation and usage of the different materials.
+    \item The compatibility with other systems is facilitated by the
+      integration of the \alert{metadata standards protocols}
+      \emph{Dublin Core} and \emph{OAI-PMH} (Open Archives Initiative
+      Protocol for Metadata Harvesting).
+    \end{itemize}
+  \end{block}
+% The metadata includes two different kinds of information about the audio item:
+% \begin{itemize}
+% \item contextual information and
+% \item Descriptive and analytical information of the audio content
+% \end{itemize}
 \end{frame}
 
 
@@ -262,6 +283,7 @@ The metadata includes two different kinds of information about the audio item:
   \item biographical information about the collector.
   \end{itemize}
 \end{block}
+\hyperlink{metadata_example}{\beamerbutton{Examples}}
 \end{frame}
 
 
@@ -634,20 +656,21 @@ Thanks to the collaborative nature of the platform, users can continuously enric
 The benefits of this collaborative platform for the field of ethnomusicology apply to numerous aspects of research, ranging from musical analysis in diachronic and synchronic comparative perspectives, as well as the long-term preservation of sound archives and the support of teaching materials for education. 
 
 \end{frame}
+
 \begin{frame}{Conclusion - Draft}
-  \begin{enumerate}
-  \item Telemeta is a fully operational collaborative platform used
-    by numerous users in French ethno labs and around the world
-
-
+  \begin{itemize}[<+->]
+  \item Telemeta is a \alert{fully operational} collaborative web audio framework for managing a digital sound archives platform
+  \item It's an \alert{open-source} software (-> feel free to use, fork or contribute)
+  \item Through the Sound archives of the CNRS - Musée de
+l’Homme, it is now used by many ethnomusicologists around the world for research or education purposes.
   \item Ongoing developments will turn Telemeta into:
-    \begin{enumerate}
-    \item an efficient annotation platform (zoom + segment)
+    \begin{itemize}\scriptsize
+    \item an efficient annotation platform (with zoom and segment selection)
     \item an social and collaborative platform (user access managment and social stuff)
     \item a multi-disciplinary collaborative platform between IT and ethno with the joint develoment of automatic analysis and indexation tools
-    \end{enumerate}
-  \end{enumerate}
-
+    \end{itemize}
+  \end{itemize}
+\textcolor{green}{Interdisciplinary ou multidisciplinary ????????}
 \end{frame}
 \begin{frame}
   Thank You !\\
@@ -682,7 +705,7 @@ The benefits of this collaborative platform for the field of ethnomusicology app
 \appendix
 \section{Additional Materials}
 \subsection{Telemeta}
-\subsection{Telemeta Architecture}
+\subsubsection{Telemeta Architecture}
 \begin{frame}\frametitle{Telemeta architecture}
   \begin{center}
     \includegraphics[width=0.75\textwidth]{../img/TM_arch.pdf}
@@ -711,7 +734,7 @@ The benefits of this collaborative platform for the field of ethnomusicology app
 \hyperlink{telemeta_features}{\beamerbutton{back}}
 \end{frame}
 \subsubsection{Metadata}
-\begin{frame}{Contextual Information example: Collection}
+\begin{frame}[label=metadata_example]{Contextual Information example: Collection}
   \begin{center}
     \includegraphics[width=1.1\textwidth]{telemeta_metadata_collection.png}
   \end{center}
