@@ -56,7 +56,7 @@
   keywordstyle=\color{blue},      % keyword style
   showstringspaces=false,          % underline spaces within strings only
 }
-\title[TELEMETA: A web framework for ethnomusicological archives]{\includegraphics[width=0.4\textwidth]{../img/logo_telemeta_1-1.pdf}}
+\title[TELEMETA: A web framework for ethnomusicological archives]{}%\raisebox{2\height}{\includegraphics[width=0.4\textwidth]{../img/logo_telemeta_1-1.pdf}}
 \subtitle{An open-source web framework for ethnomusicological audio archives management and automatic analysis}
 \author[Fillon et al.]{\tiny \underline{Thomas Fillon}\inst{1,2}, Joséphine Simonnot\inst{3}, Marie-France Mifune\inst{4}, Stéphanie Khoury\inst{3}, Maxime Le Coz\inst{5}, Guillaume Pellerin\inst{1}, Estelle Amy de La Bretèque\inst{3}, David Doukhan\inst{7}, Dominique Fourer\inst{6}, Jean-Luc Rouas\inst{6}, Julien Pinquier\inst{5}, Julie Mauclair\inst{5}, Claude Barras \inst{7}}
 
@@ -86,7 +86,7 @@
 %    \includegraphics[width=.3\linewidth]{../img/parisson_logo_FINALE_com.pdf}\hfill
 %    \includegraphics[width=.18\linewidth]{../img/upmc.png}\hfill
 %  \end{center}
-\date{{\scriptsize 1st International Digital Libraries for Musicology workshop}
+\date{{\scriptsize 1st International Digital Libraries for Musicology workshop}  
 \raisebox{-0.5\height}{\includegraphics[width=0.2\textwidth]{dlfm.png}}\\
 \footnotesize 12th September 2014, London, UK}
         
@@ -109,8 +109,11 @@
 % \tableofcontents[currentsection]
 % \end{frame}
 % }
-\begin{document}\footnotesize
+\begin{document}%\footnotesize
 \begin{frame}[plain]
+  \begin{center}
+    \raisebox{-1cm}{\includegraphics[width=0.4\textwidth]{../img/logo_telemeta_1-1.pdf}}
+  \end{center}
   \maketitle
 \end{frame}
 
@@ -172,20 +175,17 @@
 \begin{frame}
   \frametitle{The Telemeta platform}
   \begin{block}{A web audio platform}
-    \begin{itemize}
-    \item The primary purpose of the project is to provide researchers
+    
+    The primary purpose of the project is to provide researchers
       working on audio materials with a scalable system:
-      \begin{itemize}\footnotesize
+      \begin{itemize}
       \item to access, preserve and share \alert{sound items} and
       \item to access and enrich \alert{associated metadata} that
         contains key information on the context and significance of
         the recording.
       \end{itemize}
-    \item Given the temporal nature of such audio-visual materials and
-      some associated metadata as annotation, providing an easy and
-      on-demand access to these data, while listening to the
-      recording, represents a significant improvement for users.
-    \end{itemize}
+   
+    
   \end{block}
   \begin{block}{An open-source software}
     \begin{itemize}
@@ -210,7 +210,7 @@
 
 \subsection{Web audio content management features and architecture}
 \begin{frame}[label=telemeta_features]{Web audio content management features and architecture}
-  \begin{block}{Main features of Telemeta}
+  \begin{block}{Main features of Telemeta}\footnotesize
     \begin{itemize}
       \item \alert{Pure HTML5} web user interface including dynamic forms.
       \item Database management through Strong Structured Query Language (\alert{SQL}) or Oracle backend.
@@ -373,7 +373,7 @@
 
 \section[TimeSide]{TimeSide, an audio analysis framework}\label{sec:TimeSide}
 \subsection{Audio management}
-\begin{frame}{TimeSide}\tiny
+\begin{frame}{TimeSide}\scriptsize
  \begin{block}{An open web audio processing framework}
    \begin{itemize}
    \item One specificity of the \emph{Telemeta} architecture is to
@@ -385,9 +385,8 @@
      algorithms together with \alert{web audio} capabilities for displaying
      and streaming files.
    \end{itemize}
-
-\begin{center}
-  \colorbox{yellow!50}{\bf \hskip3ex \url{https://github.com/yomguy/TimeSide/} \hskip3ex  }
+\vspace{-0.5cm}\begin{center}
+  \colorbox{yellow!40}{\bf \url{https://github.com/yomguy/TimeSide/} }
 \end{center}
 \end{block}
 \begin{block}{Audio management}
@@ -398,8 +397,8 @@
   \item Smart dynamic audio player with enhanced visualization (e.g. waveform,
     spectrogram) that can be embedded into any html page through \emph{iframe} (live example: \href{http://yomix.org/category/projects.html}{Yomguy blog})
   \item Multi-format support: decodes the vast majority of audio and
-    video formats through Gstreamer and transcodes them with smart
-    streaming and caching methods.
+    video formats% through Gstreamer and transcodes them with smart
+    %streaming and caching methods.
   \item On-the-fly audio analysis, transcoding and metadata embedding
     based on an easy plugin architecture.
   \end{itemize}
@@ -452,84 +451,99 @@ The results of this
    
 \section{Sound archives of the CNRS - Musée de l'Homme}\label{sec:archives-CREM}
    \begin{frame}\frametitle{Sound archives of the CNRS - Musée de l'Homme}
-  Since June 2011, the Telemeta platform has been used by the  Sound archives of the CNRS - Musée de l'Homme\footnote{\url{http://archives.crem-cnrs.fr}} and managed by the CREM. According to the CREM specific aims, the Telemeta platform makes these archives available for researchers, students and (when copyright allows) to a broader audience. Through this platform, these archives can be shared, discussed and analyzed.
+     \begin{block}{}
+       \begin{itemize}
+       \item Since June 2011, the Telemeta platform has been used by
+         the Sound archives of the CNRS - Musée de
+         l'Homme\footnote{\url{http://archives.crem-cnrs.fr}} and
+         managed by the CREM.
+       \item According to the CREM specific aims, the Telemeta
+         platform makes these archives available for researchers,
+         students and (when copyright allows) to a broader audience.
+       \item The Sound archives of the \emph{CNRS - Musée de l'Homme} is one of
+    the most important in Europe and contains commercial and
+    unpublished recordings of music and oral traditions from around
+    the world
+\item Through this platform, these archives can be shared,
+         discussed and analyzed.
+       
+       
+       \end{itemize}
+     \end{block}
+
 
 \end{frame}
 
 \subsection{ Archiving research materials}
-\begin{frame}{ Archiving research materials}
-  \begin{itemize}
-  \item The Sound archives of the CNRS - Musée de l'Homme is one of
-    the most important in Europe and contains commercial and
-    unpublished recordings of music and oral traditions from around
-    the world, collected by researchers attached to numerous research
-    institutions across the world, including prominent figures of the
-    field of ethnomusicology (among which Brailoiu, Lomax, Shaeffner,
-    Rouget and Elkin).
+\begin{frame}{Archiving research materials}
+  \begin{block}{}%{Content}
+    \begin{itemize}
+    \item The Sound archives of the \emph{CNRS - Musée de l'Homme}
+      have been collected by researchers attached to numerous research
+      institutions across the world, including prominent figures of
+      the field of ethnomusicology (among which Brailoiu, Lomax,
+      Shaeffner, Rouget and Elkin).
+    \item Most of the recordings come from the fieldwork of
+      researchers in \alert{all continents} during the last \alert{110 years}.
+    
 
-
-  \item The platform offers access to record collections (nearly 3700
-    hours, e.g. more than 5000 discs, many of which are very rare) and
-    to 4000 hours of unpublished recordings, from early research
-    expeditions (e.g. Dakar-Djibouti (1932), Ogooué-Congo
-    (1946)).
-  \item Most of the recordings come from the fieldwork of
-    researchers in \alert{all continents}.
-  \item More than \alert{110 years} of the world's
-    oral culture are now available online, from the 1900 Universal
-    Exhibition of Paris to recent digital recordings.
-  \item The sharing of
-    data allows several people to collaborate on the enrichment of the
-    database.
-  \item Today, 47,200 items are in the database, and more than
-    26,000 sound files have been included (12,000 sounds on free
-    access since May 2014).
-  \item Recently, the CREM has decided to give
-    full access to the records published by the CNRS-Musée de l’Homme
-    (Chant du Monde/Harmonia
-    Mundi)\footnote{\url{http://archives.crem-cnrs.fr/archives/fonds/CNRSMH_Editions/}},
-    the distribution of which stopped ten years ago.
-  \item As a web
-    platform, this tool is also a way to cross borders, to get local
-    populations involved in their own cultural heritage and to offer
-    resources to researchers from all over the world.
-  \end{itemize}
+    \item Nearly \alert{3700 hours of record collections} 
+    e.g. more than 5000 discs, many of which are very
+      rare)
+    \item \alert{4000 hours of unpublished recordings}, from early
+      research expeditions (e.g. Dakar-Djibouti (1932), Ogooué-Congo
+      (1946)).
+    \item \alert{47,200 items} containing more than
+      \alert{26,000 sound files} (including 12,000 sounds on free
+      access since May 2014).
+   
+   
+    %\item Recently, the CREM has decided to give full access to the
+    %  records published by the CNRS-Musée de l’Homme (Chant du
+    %  Monde/Harmonia
+    %  Mundi)\footnote{\url{http://archives.crem-cnrs.fr/archives/fonds/CNRSMH_Editions/}},
+    %  the distribution of which stopped ten years ago.
+   
+    \end{itemize}
+  \end{block}
 
 \end{frame}
 
 \subsection{Uses and users of digital sound archives}
 \begin{frame}{Uses and users of digital sound archives}
-  \begin{itemize}
+   \begin{block}{}\normalsize
+\begin{itemize}
+      \item Three main activities: \alert{archiving,
+      research and education}
+  \item Three main disciplines: \alert{Ethnomusicology, Anthropology and Linguistic}
+    \item Primary users of the platform are archivists, researchers, students
+      and professors of these disciplines.
+    \item Nonetheless, a qualitative survey showed that other
+      disciplines (such as Art History) have used the platform.
+       \item When used for education, the platform provides a wide array
+      of teaching materials to illustrate the work of students as well
+      as support teaching curricula.
+    \end{itemize}
+  \end{block}
 
-  \item In the few years since the sound archive platform has been
-    released, it has supported three main activities: archiving,
-    research and education (both academic and non-academic).
-  \item Primary
-    users of the platform are archivists, researchers
-    (ethnomusicologists, anthropologists and linguists), students and
-    professors of these disciplines.
-  \item Nonetheless, a qualitative survey
-    showed that other disciplines (such as art history) have used the
-    platform to foster and/or deepen individual research.
-  \item The unexpectedly broad uses of the sound archives emphasize the
-    necessity and the benefits of such database.
-  \item From the standpoint
-    of archive development, the long-term preservation of the archives
-    is ensured while, thanks to the collaborative nature of the
-    platform, users can cooperate to continuously enrich metadata
-    associated with a sound document and submit their own archives to
-    protect them.
-  \item Furthermore, it facilitates the ethical task of
-    returning the recorded music to the communities who produced it.
+\end{frame}
+\begin{frame}{Uses and users of digital sound archives}
+  \begin{block}{A collaborative experience}
+    \begin{itemize}
+    \item The sharing of data offer resources to researchers from all over the world and allows several people to \alert{collaborate on the enrichment of the database}.
+     \item Researchers from different institutions can work together on
+      specific audio materials and conduct individual research from
+      both synchronic and diachronic perspectives on their own
+      material, the material of others, or both.
+    \item Users can submit their own archives to protect them.
 
-  \item Researchers from different institutions can work together on
-    specific audio materials and conduct individual research from both
-    synchronic and diachronic perspectives on their own material, the
-    material of others, or both.
-  \item When used for education, the
-    platform provides a wide array of teaching materials to illustrate
-    the work of students as well as support teaching curricula.
-  \end{itemize}
+    \item Furthermore, it facilitates the ethical task of \alert{returning
+      the recorded music to the communities who produced it} and to get local populations involved in their own cultural heritage.
+
+   
+    \end{itemize}
+  \end{block}
+
 \end{frame}
 \section[The DIADEMS project]{The DIADEMS project}\label{sec:Diadems}
 \subsection{Consortium and goals}
@@ -571,87 +585,134 @@ The results of this
     
     \end{columns}
     \begin{block}{Development}
-      \raisebox{-0.5\height}{\includegraphics[height=0.7cm]{diadems/Parisson_logo.png}}
+      \raisebox{-0.5\height}{\includegraphics[height=0.7cm]{../img/parisson_logo_FINALE_com.pdf}}
       \hspace{0.1cm} Parisson, the company involved in the development
       of Telemeta.
     \end{block}
  
   \end{block}
-
- 
-
-
 \end{frame}
 
 \begin{frame}{Goals of the DIADEMS project}
-\tiny  
  \begin{block}{Goals and on-going development}
     \begin{itemize}
     \item The goal of the DIADEMS project is to develop computer tools
       to \emph{automatically} index the recording content directly
-      from the audio signal in order to improve access to and
-      indexation of this vast ethnomusicological archive.
-
-    \end{itemize}
-
-    Numerous ethnomusicological recordings contain speech and other
-    types of sound that we categorized as sounds from the environment
-    (such as rain, biological sounds, engine noise and so on) and
-    sounds generated by the recording process (such as sound produced
-    by the wind on the microphone or sounds resulting from defects of
-    the recording medium). The innovation of this project is to
-    automatize the indexation of the audio recordings directly from
-    the recorded sound itself.  Ongoing work consists of implementing
+      from the audio signal.
+    \item  Ongoing work consists of implementing
     advanced classification, indexation, segmentation and similarity
-    analysis methods dedicated to ethnomusicological sound archives.
-    Besides music analysis, such automatic tools also deal with speech
+    analysis methods.
+  \item Besides music analysis, such automatic tools also deal with speech
     and other types of sounds classification and segmentation to
     enable a more exhaustive annotation of the audio materials.
+    \item Ethnomusicological recordings contain not only music but also speech, environmental noises and noises generated by the recording process that could also be indexed.
+    \end{itemize}
+
+   
   \end{block}
 \end{frame}
 
 \subsection{The method of a new interdisciplinary research}
+\begin{frame}{The method of a new interdisciplinary research}
+  \begin{block}{}
+    \begin{itemize}
+    \item In this research program, groups from different backgrounds
+      are working together.
+    \item The first challenge was to initiate a common interest and a
+      mutual understanding.
+    \item In this process, DIADEMS gave us the opportunity to improve
+      our understanding on the link between the semantics and
+      acoustics of voice production.
+    \end{itemize}
+\end{block}
+    % In preliminary work, we attempted to first define vocal
+    % categories with a particular interest for liminal oral
+    % productions. At the border between speech and song, utterances
+    % such as psalmody or recitation are at the center of an old
+    % debate in ethnomusicology\footnote{A colloquium on liminal
+    % utterances between speech and song will be organized by the
+    % International Council for Traditional Music (ICTM) in May 2015
+    % and hosted by the Centre of research in Ethnomusicology
+    % (CREM). A round table will be dedicated to the presentation of
+    % the main results and findings of the ANR project
+    % DIADEMS}. Gathering specialists from various fields, the DIADEMS
+    % project goes well beyond the usual disciplinary boundaries. Our
+    % aim, through the study of a large range of audio components
+    % (pitch range, syllabic flow, metric, polyphonic and so on) is to
+    % define and characterize the variability of vocal productions,
+    % keeping in mind the semantic aspects. By doing so, we wish to
+    % reduce the traditional gap in academic studies between sounds
+    % and semantics and to develop combined analytical tools for the
+    % study of vocal production\footnote{As an example, research will
+    % be conducted on the recognition of "icons of crying" in lamented
+    % utterances. As defined by Urban in \cite{Urban88}, "icons of
+    % crying" include cry break, voice inhalation, creaky voice and
+    % falsetto vowels.}.
+
+    % One of the goals of the DIADEMS project is also to provide
+    % useful tools for musical analysis such as the detection of
+    % musical instrument families, analysis of musical content (tonal,
+    % metric and rhythmic features), musical similarities and
+    % structure (chorus localisation, musical pattern replication).
+
+
+\end{frame}
+
+
 \subsection{Automatic tools for assisting indexation and annotation of audio documents}
 \begin{frame}{Automatic tools for assisting indexation and annotation of audio documents}
-  \begin{itemize}
-  \item Analysis of recording sessions
-  \item Analysis of speech and singing voice segments
+  \begin{block}{On-going development}
     \begin{itemize}
-    \item Speech segmentation with 2 features: 4 Hz modulation energy and entropy modulation
-    \item Speech activity detection based on GMM models
+    \item Analysis of recording sessions
+    \item Analysis of speech and singing voice segments through speech
+      activity detection
+    \item Analysis of music segments
+      \begin{itemize}
+      \item Music / Speech segmentation
+      \item Monophony / Polyphony segmentation
+      \item Automatic instrument classification
+      \end{itemize}
     \end{itemize}
-  \item Analysis of music segments
-    \begin{itemize}
-    \item Music segmentation with 2 features based on a segmentation algorithm
-    \item Monophony / Polyphony segmentation
-    \item Automatic instrument classification
+  \end{block}
 
-    \end{itemize}
-  \end{itemize}
 \end{frame}
 \subsection{Evaluation and future improvements}
-\begin{frame}{Evaluation and future improvements}
-  At the end of the first step of the project, interesting preliminary
-  results have been obtained regarding the detection of start times of
-  recording sessions, speech recognition, singing voice recognition
-  and musical instrument family classification.
+\begin{frame}{Evaluation and Future improvements}
+  \begin{block}{Development and Evaluations}
+    \begin{itemize}
+    \item At the end of the first step of the project, interesting
+      preliminary results have been obtained regarding the detection
+      of start times of recording sessions, speech recognition,
+      singing voice recognition and musical instrument family
+      classification.
 
-  Through collaborative work, ethnomusicologists, ethnolinguists and
-  engineers are currently evaluating, correcting and refining the
-  implemented tools, with the expectation that these new tools will be
-  integrated into the Telemeta platform.
 
-  The robustness of these processing is assessed using criteria
-  defined by the final users: teachers, students, researchers and
-  musicians. Annotation tools, as well as the provided annotations,
-  will be integrated in the digitalized database.
+    \item Through collaborative work, ethnomusicologists, ethnolinguists
+      and engineers are currently evaluating, correcting and refining
+      the implemented tools, with the expectation that these new tools
+      will be integrated into the Telemeta platform.
 
-  Further work on the user interface will enhance the visualization
-  experience with time and frequency zooming capabilities, in the hope
-  that it will improve the accuracy and the quality of time-segment
-  based annotation. One of the remaining goals is to develop tools to
-  generate results online and to make use of the capabilities of
-  Internet browsers while managing the workflow.
+
+    \item The robustness of these processing is assessed using criteria
+      defined by the final users: teachers, students, researchers and
+      musicians. Annotation tools, as well as the provided
+      annotations, will be integrated in the digitalized database.
+    \end{itemize}
+  \end{block}
+  
+    
+  \end{frame}
+  \begin{frame}
+    \begin{block}{}
+      Further work on the user interface will enhance the
+      visualization experience with time and frequency zooming
+      capabilities, in the hope that it will improve the accuracy and
+      the quality of time-segment based annotation. One of the
+      remaining goals is to develop tools to generate results online
+      and to make use of the capabilities of Internet browsers while
+      managing the workflow.
+    \end{block}
+
 \end{frame}
 
 \section{Conclusion}
