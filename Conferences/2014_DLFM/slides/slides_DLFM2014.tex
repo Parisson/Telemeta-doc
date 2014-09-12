@@ -147,7 +147,7 @@
    \item This \alert{collaborative} platform support numerous aspects of the field of
      \alert{ethnomusicology}, ranging from musical analysis to comparative
      history and the anthropology of music. The platform also provides
-     a useful resources for the fields of anthropology, linguistics
+     many useful resources for the fields of anthropology, linguistics
      and acoustics.
    \end{itemize}
 \end{block}
@@ -177,10 +177,10 @@
   \begin{block}{A web audio platform}
     
     The primary purpose of the project is to provide researchers
-      working on audio materials with a scalable system:
+      working on audio materials with a scalable system to:
       \begin{itemize}
-      \item to access, preserve and share \alert{sound items} and
-      \item to access and enrich \alert{associated metadata} that
+      \item access, preserve and share \alert{sound items} and
+      \item access and enrich \alert{associated metadata} that
         contains key information on the context and significance of
         the recording.
       \end{itemize}
@@ -189,8 +189,8 @@
   \end{block}
   \begin{block}{An open-source software}
     \begin{itemize}
-    \item Telemeta, is a free and open source software (\emph{GPL-like} licence)
-       in accordance with open web standards.
+    \item Telemeta, is a \alert{free and open source software} (\emph{GPL-like} licence)
+       in accordance with \alert{open web standards}.
     \end{itemize}
     \vspace{-0.5cm}
     \begin{center}
@@ -208,7 +208,7 @@
 
 \end{frame}
 
-\subsection{Web audio content management features and architecture}
+\subsection{Web audio content management features}
 \begin{frame}[label=telemeta_features]{Web audio content management features and architecture}
   \begin{block}{Main features of Telemeta}\footnotesize
     \begin{itemize}
@@ -232,7 +232,7 @@
     In addition to the audio data, an efficient and dynamic management
     of the associated metadata is also offered.
     \begin{itemize}
-    \item Metadata provides valuable information about the
+    \item Metadata provides valuable informations about the
       \alert{source of the data} and to the related \alert{work of
         peer researchers}.
     \item Dynamically handling metadata in a \alert{collaborative}
@@ -306,7 +306,7 @@
 \begin{columns}[T]
     \begin{column}{0.6\textwidth}
       \begin{block}{Visual representation of the sound}
-       The embedded TimeSide audio player allows for a selection
+       The embedded \alert{TimeSide} audio player allows for a selection
         of various visual representations of the sound (e.g. \alert{waveforms
         and spectrograms}) and some representations of computational
         \alert{analysis}.
@@ -369,11 +369,10 @@
 \begin{frame}{TimeSide}\scriptsize
  \begin{block}{An open web audio processing framework}
    \begin{itemize}
-   \item One specificity of the \emph{Telemeta} architecture is to
-     rely on an external component, \emph{TimeSide}.
+   \item TimeSide is the \alert{signal processing engine} of Telemeta developed and published as a separate project.
    \item TimeSide is an
      \emph{open-source} \alert{audio analysis and visualization framework} based on
-     both \alert{Python and JavaScript} languages that provides
+     both \alert{Python} and \alert{JavaScript} languages that provides
      state-of-the-art signal processing and machine learning
      algorithms together with \alert{web audio} capabilities for displaying
      and streaming files.
@@ -386,11 +385,11 @@
   TimeSide provides the following main features:
   \begin{itemize}
    \item Smart dynamic audio player with enhanced visualization (e.g. waveform,
-    spectrogram) that can be embedded into any html page through \emph{iframe} (live example: \href{http://yomix.org/category/projects.html}{Yomguy blog})
+    spectrogram) that can be embedded into any html page through \emph{iframe} (live example: \href{http://yomix.org/telemeta-1-embedded-timeside-player.html}{Yomguy blog})
   \item Multi-format support: decodes the vast majority of audio and
     video formats% through Gstreamer and transcodes them with smart
     %streaming and caching methods.
-  \item On-the-fly audio analysis, transcoding and metadata embedding
+  \item On-the-fly audio analysis, transcoding, streaming and metadata embedding
     based on an easy plugin architecture.
   \end{itemize}
 \end{block}
@@ -407,7 +406,7 @@ TimeSide incorporates some state-of-the-art \alert{audio feature extraction libr
 \vspace{-0.1cm}
 \begin{itemize}
 \item Aubio:
-    \colorbox{yellow!30}{ \scriptsize \url{http://aubio.org}}
+    \colorbox{yellow!30}{\scriptsize \url{http://aubio.org}}
 \vspace{-0.1cm}
 \item Yaafe:
     \colorbox{yellow!30}{\scriptsize \url{http://yaafe.sourceforge.net}}
@@ -706,7 +705,7 @@ The results of this
 
 \begin{frame}{Conclusion}
   \begin{itemize}[<+->]
-  \item Telemeta is a \alert{fully operational} web audio framework for managing a digital sound archives
+  \item Telemeta is a \alert{fully operational} web audio framework for managing digital sound archives
   \item It's an \alert{open-source} software (-> feel free to use, fork or contribute)
   \item Through the Sound archives of the CNRS - Musée de
 l’Homme, it is now used by many ethnomusicologists around the world for research or education purposes.
@@ -720,8 +719,8 @@ l’Homme, it is now used by many ethnomusicologists around the world for resear
   \end{itemize}
 
 \end{frame}
-\begin{frame}
-  Thank You !\\
+
+\begin{frame}{Thank You !}\\
   \begin{itemize}
   \item Contact: \url{thomas@parisson.com}
   \item Telemeta:
@@ -747,6 +746,9 @@ l’Homme, it is now used by many ethnomusicologists around the world for resear
         \url{http://www.irit.fr/recherches/SAMOVA/DIADEMS/}}
     \end{center}
 
+    \begin{center}
+    \includegraphics[width=0.4\textwidth]{../img/logo_telemeta_1-1.pdf}
+    \end{center}
   \end{itemize}
 
 \end{frame}
