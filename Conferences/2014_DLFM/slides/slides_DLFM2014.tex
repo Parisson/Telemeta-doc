@@ -129,7 +129,7 @@
    \begin{itemize}
    \item Since 2007, the Research Center for Ethnomusicology (CREM) and Parisson
      have been developing an innovative, collaborative and
-     open-source web-based multimedia platform for humanities and social sciences research.
+     open-source \alert{web-based multimedia platform} for \alert{humanities and social sciences research}.
    % \item Main goals:
    %   \begin{itemize}\scriptsize
    %     \setbeamertemplate{itemize subitem}[triangle]
@@ -144,8 +144,8 @@
 \emph{Sound archives of the CNRS - Musée de l'Homme}
        \colorbox{yellow!40} {\bf \url{http://archives.crem-cnrs.fr}}
      \end{center}
-   \item This collaborative platform support numerous aspects of the field of
-     ethnomusicology, ranging from musical analysis to comparative
+   \item This \alert{collaborative} platform support numerous aspects of the field of
+     \alert{ethnomusicology}, ranging from musical analysis to comparative
      history and the anthropology of music. The platform also provides
      a useful resources for the fields of anthropology, linguistics
      and acoustics.
@@ -157,7 +157,7 @@
 
 \begin{block}{Towards automatic audio content analysis ...}
   \begin{itemize}
-  \item Recently, an open-source audio analysis framework,
+  \item Recently, an open-source \alert{audio analysis framework},
     TimeSide, has been developed to bring automatic audio content
     analysis capabilities to the Telemeta web platform.
   \end{itemize}
@@ -189,8 +189,8 @@
   \end{block}
   \begin{block}{An open-source software}
     \begin{itemize}
-    \item Telemeta, is a free and open source (\emph{GPL-like})
-      software in accordance with open web standards.
+    \item Telemeta, is a free and open source software (\emph{GPL-like} licence)
+       in accordance with open web standards.
     \end{itemize}
     \vspace{-0.5cm}
     \begin{center}
@@ -216,13 +216,10 @@
       \item Database management through Strong Structured Query Language (\alert{SQL}) or Oracle backend.
       \item \alert{On-the-fly audio analyzing}, transcoding and metadata
         embedding in various multimedia formats, provided through an external component, \emph{TimeSide}.
-      \item Social editing with semantic ontologies, smart workflows,
-        realtime tools, human or automatic annotations and
-        segmentations.
+      \item Social editing with semantic ontologies, smart workflows, human or automatic annotations and segmentations.
       \item \alert{User management} with individual desk, playlists, profiles
         and group access rights.
       \item High level \alert{search engine} \hyperlink{geonavigator}{geolocation}, instruments, ethnic groups, etc...).
-      \item Data providers : DublinCore, OAI-PMH, RSS, XML, JSON and other.
       \item \hyperlink{telemeta_languages}{Multi-language support (currently english, german, french and chinese).}
       \end{itemize}
   \end{block}
@@ -233,7 +230,7 @@
 \begin{frame}\frametitle{Metadata}
   \begin{block}{}
     In addition to the audio data, an efficient and dynamic management
-    of the associated metadata is also necessary.
+    of the associated metadata is also offered.
     \begin{itemize}
     \item Metadata provides valuable information about the
       \alert{source of the data} and to the related \alert{work of
@@ -339,27 +336,23 @@
 
   
 \end{frame}
-\begin{frame}{Descriptive and analytical information on the audio content}{Annotations}\scriptsize
+\begin{frame}{Descriptive and analytical information on the audio content}{Annotations}%\scriptsize
   \begin{columns}[T]
     \begin{column}{0.6\textwidth}
       \begin{block}{Markers}%\tiny
         \begin{itemize}
         \item The embedded audio player also enables annotation of the
-          audio content through time-coded markers.
-             \item These annotations are accessible from the sound archive
-          item web page and are indexed through the database.
+          audio content through \alert{time-coded markers}.
+        \item These annotations are \alert{indexed through the database}.
 
-\item Such annotations consist of a title and a free text
-          field associated with a given time position.
+        \item Users can create their own annotations and \alert{share} them with colleagues.
    
-     \item Ethnomusicologists, archivists, anthropologists,
-          linguists and acousticians working on sound documents can
-          create their own annotations and share them with colleagues.
-   
-        %\item \emph{The possibility for experts to annotate time-segments
-        %  over a zoomable representation of the sound is currently
-        %  under development in order to improve the accuracy and the
-       %   quality of time-segment-based annotations.}
+          % \item \emph{The possibility for experts to annotate
+          %   time-segments
+          %   over a zoomable representation of the sound is currently
+          %   under development in order to improve the accuracy and
+          %   the
+          %   quality of time-segment-based annotations.}
         \end{itemize}
 
       \end{block}
@@ -380,7 +373,7 @@
      rely on an external component, \emph{TimeSide}.
    \item TimeSide is an
      \emph{open-source} \alert{audio analysis and visualization framework} based on
-     both Python and JavaScript languages that provides
+     both \alert{Python and JavaScript} languages that provides
      state-of-the-art signal processing and machine learning
      algorithms together with \alert{web audio} capabilities for displaying
      and streaming files.
@@ -392,9 +385,7 @@
 \begin{block}{Audio management}
   TimeSide provides the following main features:
   \begin{itemize}
-  \item Secure archiving, editing and publishing of audio files over
-    the internet.
-  \item Smart dynamic audio player with enhanced visualization (e.g. waveform,
+   \item Smart dynamic audio player with enhanced visualization (e.g. waveform,
     spectrogram) that can be embedded into any html page through \emph{iframe} (live example: \href{http://yomix.org/category/projects.html}{Yomguy blog})
   \item Multi-format support: decodes the vast majority of audio and
     video formats% through Gstreamer and transcodes them with smart
@@ -412,7 +403,7 @@
 \subsection{Audio features extraction}
 \begin{frame}{Audio features extraction}
 \begin{block}{Audio features extraction}
-TimeSide incorporates some state-of-the-art audio feature extraction libraries such as:
+TimeSide incorporates some state-of-the-art \alert{audio feature extraction libraries} such as:
 \vspace{-0.1cm}
 \begin{itemize}
 \item Aubio:
@@ -429,13 +420,14 @@ Given the extracted features, every sound item in a given
   collection can be automatically analyzed.\\
 The results of this
   analysis can be:
-  \begin{itemize}\scriptsize
+  \begin{itemize}\footnotesize
+ \item Serialized to the web browser through common markup languages:
+    XML, JSON and YAML
   \item Stored in a scientific file format (e.g. NumPy format or
     HDF5)
   \item Exported to sound visualization and annotation software
     (e.g. Sonic Visualizer)
-  \item Serialized to the web browser through common markup languages:
-    XML, JSON and YAML
+ 
   \end{itemize}
 \end{block}
 
@@ -454,17 +446,13 @@ The results of this
      \begin{block}{}
        \begin{itemize}
        \item Since June 2011, the Telemeta platform has been used by
-         the Sound archives of the CNRS - Musée de
-         l'Homme\footnote{\url{http://archives.crem-cnrs.fr}} and
+         the \alert{Sound archives of the CNRS - Musée de
+         l'Homme}\footnote{\url{http://archives.crem-cnrs.fr}} and
          managed by the CREM.
-       \item According to the CREM specific aims, the Telemeta
-         platform makes these archives available for researchers,
+       \item These archives available for researchers,
          students and (when copyright allows) to a broader audience.
-       \item The Sound archives of the \emph{CNRS - Musée de l'Homme} is one of
-    the most important in Europe and contains commercial and
-    unpublished recordings of music and oral traditions from around
-    the world
-\item Through this platform, these archives can be shared,
+       \item It is one of the most important Sound archives librairy in Europe
+       \item Through this platform, these archives can be shared,
          discussed and analyzed.
        
        
@@ -480,9 +468,9 @@ The results of this
     \begin{itemize}
     \item The Sound archives of the \emph{CNRS - Musée de l'Homme}
       have been collected by researchers attached to numerous research
-      institutions across the world, including prominent figures of
-      the field of ethnomusicology (among which Brailoiu, Lomax,
-      Shaeffner, Rouget and Elkin).
+      institutions across the world. %, including prominent figures of
+      %the field of ethnomusicology (among which Brailoiu, Lomax,
+      %Shaeffner, Rouget and Elkin).
     \item Most of the recordings come from the fieldwork of
       researchers in \alert{all continents} during the last \alert{110 years}.
     
@@ -548,11 +536,11 @@ The results of this
 \section[The DIADEMS project]{The DIADEMS project}\label{sec:Diadems}
 \subsection{Consortium and goals}
 \begin{frame}{The DIADEMS project}
-  \tiny
+  \scriptsize
 
   Started in January 2013, the French national research program
   DIADEMS is a multi-disciplinary project dedicated to the \alert{Description, Indexation, Access to Ethnomusicological and Sound Documents}.
-  \begin{block}{The consortium}
+  \begin{block}{The consortium}\tiny
     \begin{columns}[T]
       \begin{column}{.5\textwidth}
         \begin{block}{Science and Technology of Information and
@@ -597,15 +585,12 @@ The results of this
  \begin{block}{Goals and on-going development}
     \begin{itemize}
     \item The goal of the DIADEMS project is to develop computer tools
-      to \emph{automatically} index the recording content directly
-      from the audio signal.
+      to \alert{automatically index} or assist the indexation of the recording content from the audio signal.
     \item  Ongoing work consists of implementing
-    advanced classification, indexation, segmentation and similarity
-    analysis methods.
-  \item Besides music analysis, such automatic tools also deal with speech
-    and other types of sounds classification and segmentation to
-    enable a more exhaustive annotation of the audio materials.
-    \item Ethnomusicological recordings contain not only music but also speech, environmental noises and noises generated by the recording process that could also be indexed.
+    advanced \alert{classification, indexation, segmentation and similarity
+    analysis} methods.
+  \item \alert{Besides music analysis}, such automatic tools also deal with speech
+    and other types of sounds present ethnomusiclogical recordings like  \alert{speech, environmental noises and noises generated by the recording process}
     \end{itemize}
 
    
@@ -616,13 +601,13 @@ The results of this
 \begin{frame}{The method of a new interdisciplinary research}
   \begin{block}{}
     \begin{itemize}
-    \item In this research program, groups from different backgrounds
+    \item In this research program, groups from \alert{different backgrounds}
       are working together.
     \item The first challenge was to initiate a common interest and a
-      mutual understanding.
+      \alert{mutual understanding}.
     \item In this process, DIADEMS gave us the opportunity to improve
-      our understanding on the link between the semantics and
-      acoustics of voice production.
+      our understanding on the \alert{link between the semantics and
+      acoustics of voice production} in order to be able to specify the classification and indexation tasks.
     \end{itemize}
 \end{block}
     % In preliminary work, we attempted to first define vocal
@@ -659,28 +644,27 @@ The results of this
 \end{frame}
 
 
-\subsection{Automatic tools for assisting indexation and annotation of audio documents}
-\begin{frame}{Automatic tools for assisting indexation and annotation of audio documents}
-  \begin{block}{On-going development}
-    \begin{itemize}
-    \item Analysis of recording sessions
-    \item Analysis of speech and singing voice segments through speech
-      activity detection
-    \item Analysis of music segments
-      \begin{itemize}
-      \item Music / Speech segmentation
-      \item Monophony / Polyphony segmentation
-      \item Automatic instrument classification
-      \end{itemize}
-    \end{itemize}
-  \end{block}
-
-\end{frame}
+% \subsection{Automatic tools for assisting indexation and annotation of audio documents}
+% \begin{frame}{Automatic tools for assisting indexation and annotation of audio documents}
+%   \begin{block}{On-going developments}
+%     \begin{itemize}
+%     \item Analysis of recording sessions
+%     \item Analysis of speech and singing voice segments through speech
+%       activity detection
+%     \item Analysis of music segments
+%       \begin{itemize}
+%       \item Music / Speech segmentation
+%       \item Monophony / Polyphony segmentation
+%       \item Automatic instrument classification
+%       \end{itemize}
+%     \end{itemize}
+%   \end{block}
+%\end{frame}
 \subsection{Evaluation and future improvements}
 \begin{frame}{Evaluation and Future improvements}
   \begin{block}{Development and Evaluations}
     \begin{itemize}
-    \item At the end of the first step of the project, interesting
+    \item Interesting
       preliminary results have been obtained regarding the detection
       of start times of recording sessions, speech recognition,
       singing voice recognition and musical instrument family
@@ -689,8 +673,7 @@ The results of this
     \item The robustness of these processings is assessed using \alert{criteria
       defined by the final users}: teachers, students, researchers and
       musicians.
-    \item After validation, Analysis and Annotation tools, as well as the provided
-      annotations, will be integrated in the Telemeta platform.
+    \item \alert{After validation}, Analysis and Annotation tools, as well as the provided annotations, will be integrated in the Telemeta platform.
     \end{itemize}
   \end{block}
   
