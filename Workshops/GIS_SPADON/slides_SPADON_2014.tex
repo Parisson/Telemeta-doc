@@ -1,0 +1,907 @@
+\documentclass[final, hyperref, table]{beamer}
+\mode<presentation>
+
+
+ %\usepackage[english]{babel} % "babel.sty"
+% \usepackage{french}                  % "french.sty"
+%  \usepackage{franglais}               % "franglais.sty" (a defaut)
+  \usepackage{times}			% ajout times le 30 mai 2003
+ 
+%% --------------------------------------------------------------
+%% CODAGE DE POLICES ?
+%% Si votre moteur Latex est francise, il est conseille
+%% d'utiliser le codage de police T1 pour faciliter la césure,
+%% si vous disposez de ces polices (DC/EC)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+%% ==============================================================
+%\usepackage{graphicx}
+\usepackage{amsmath,amsfonts}
+%\usepackage[table]{xcolor}
+\usepackage{subfigure}
+\usepackage{fancybox}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{xcolor}
+
+%\usetheme{Warsaw}
+\usetheme{Frankfurt}
+%\usetheme{JuanLesPins}
+\setbeamercovered{transparent}
+
+
+% telemeta red
+\definecolor{telemetaRed}{rgb}{0.41568, 0.01176, 0.02745}	% #6A0307
+\usecolortheme[rgb={0.41568, 0.01176, 0.02745}]{structure} 
+
+\hypersetup{colorlinks, urlcolor=blue, linkcolor=}
+% Display a grid to help align images
+%\beamertemplategridbackground[1cm]
+
+%We will get the normal bibliography style (number or text instead of icon) by including the following code
+\setbeamertemplate{bibliography item}[text]
+\setbeamerfont{caption}{size=\footnotesize}
+% listings settings
+\definecolor{lstComments}{rgb}{0,0.6,0}
+\definecolor{lstBkgrd}{rgb}{1,1,0.8}
+\lstset{%
+  language=Python, % the language of the code
+  frame=single,  % adds a frame around the code
+  commentstyle=\color{lstComments},% comment style
+  backgroundcolor=\color{lstBkgrd},   % choose the background color
+  basicstyle=\scriptsize,       % the size of the fonts that are used for the code
+  keywordstyle=\color{blue},      % keyword style
+  showstringspaces=false,          % underline spaces within strings only
+}
+\title[Telemeta: A web framework for ethnomusicological archives]{}%\raisebox{2\height}{\includegraphics[width=0.4\textwidth]{img/logo_telemeta_1-1.pdf}}
+\subtitle{une solution ouverte d'archivage pérenne pour les données musicales de la recherche}
+\author[Guillaume et al.]{\tiny \underline{Guillaume Pellerin\inst{1}}, Thomas Fillon\inst{1,2}, Joséphine Simonnot\inst{3}, Marie-France Mifune\inst{4}, Stéphanie Khoury\inst{3}, Maxime Le Coz\inst{5}, Estelle Amy de La Bretèque\inst{3}, David Doukhan\inst{7}, Dominique Fourer\inst{6}, Jean-Luc Rouas\inst{6}, Julien Pinquier\inst{5}, Julie Mauclair\inst{5}, Claude Barras \inst{7}}
+
+
+\institute[Parisson]{\tiny
+  \inst{1}%
+  Parisson, Paris, France\\
+  \inst{2}%
+  LAM, Institut Jean Le Rond d'Alembert, UPMC Univ. Paris 06, UMR CNRS 7190, Paris, France\\
+  \inst{3}%
+  CREM, LESC, UMR CNRS 7186, MAE, Université Paris Ouest Nanterre La Défense, Nanterre, France\\
+  \inst{4}%
+  CNRS-MNHN-Université Paris Diderot-Sorbonne Cité, UMR 7206, Paris, France\\
+  \inst{5}%
+  IRIT - Université Toulouse 3 Paul Sabatier - Toulouse, France\\
+  \inst{6}%
+  LaBRI - CNRS UMR 5800, Université Bordeaux 1, Talence, France\\
+  \inst{7}%
+  Université Paris-Sud / CNRS-LIMSI - Orsay, France\\
+  %Thanks
+ {\tiny \textcolor{red}{\emph{This work was partially done inside the DIADEMS project\\ funded by the French National Research Agency ANR (CONTINT)}}}
+}
+% \begin{center}
+% \hfill
+%    \raisebox{-4ex}{\includegraphics[width=0.1\linewidth]{../poster/img/logo_CREM.png}} \hfill
+%   \includegraphics[width=0.15\linewidth]{img/logo_LESC.png}\hfill
+%    \includegraphics[width=.3\linewidth]{img/parisson_logo_FINALE_com.pdf}\hfill
+%    \includegraphics[width=.18\linewidth]{img/upmc.png}\hfill
+%  \end{center}
+\date{{\scriptsize GIS SPADON}  
+% \raisebox{-0.5\height}{\includegraphics[width=0.2\textwidth]{dlfm.png}}\\
+\footnotesize - 23 septembre 2014 - LAM, Paris}
+        
+
+\newcommand{\CREM}{Research Center for Ethnomusicology}
+\setbeamertemplate{section page}
+{
+    \begin{centering}
+    \begin{beamercolorbox}[sep=12pt,center,rounded=true, shadow=true]{part title}
+    \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+    \end{centering}
+\tableofcontents[currentsection, hideothersubsections]
+}
+\AtBeginSection[]{\frame{\sectionpage}}
+% \AtBeginSection[] % Do nothing for \section*
+% {
+% \begin{frame}
+% \frametitle{Outline}
+% \tableofcontents[currentsection]
+% \end{frame}
+% }
+\begin{document}%\footnotesize
+\begin{frame}[plain]
+  \begin{center}
+    \raisebox{-1cm}{\includegraphics[width=0.4\textwidth]{img/logo_telemeta_1-1.pdf}}
+  \end{center}
+  \maketitle
+\end{frame}
+
+% \begin{frame}\frametitle{Outline}
+%   \tableofcontents[hideallsubsections]
+% \end{frame}
+
+
+\section{Introduction}
+
+\begin{frame}\frametitle{Introduction}
+ \begin{block}{Context}
+   \begin{itemize}
+   \item Since 2007, the Research Center for Ethnomusicology (CREM) and Parisson
+     have been developing an innovative, collaborative and
+     open-source \alert{web-based multimedia platform} for \alert{humanities and social sciences research}.
+   % \item Main goals:
+   %   \begin{itemize}\scriptsize
+   %     \setbeamertemplate{itemize subitem}[triangle]
+   %   \item Preserve and easily access, visualize and annotate sound
+   %     archives materials and metadata
+   %   \item Fit the professional requirements from both sound
+   %     archivists and researchers in ethnomusicology.
+   %   \end{itemize} 
+
+   \item Official platform online since 2010 : 
+     \vspace{-0.1cm}\begin{center}
+\emph{Sound archives of the CNRS - Musée de l'Homme}
+       \colorbox{yellow!40} {\bf \url{http://archives.crem-cnrs.fr}}
+     \end{center}
+   \item This \alert{collaborative} platform support numerous aspects of the field of
+     \alert{ethnomusicology}, ranging from musical analysis to comparative
+     history and the anthropology of music. The platform also provides
+     many useful resources for the fields of anthropology, linguistics
+     and acoustics.
+   \end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}\frametitle{Introduction}
+  
+
+\begin{block}{Towards automatic audio content analysis ...}
+  \begin{itemize}
+  \item Recently, an open-source \alert{audio analysis framework},
+    TimeSide, has been developed to bring automatic audio content
+    analysis capabilities to the Telemeta web platform.
+  \end{itemize}
+
+\end{block}
+\begin{block}{... and interdisciplinary collaboration}
+  \begin{itemize}
+  \item Since 2013, as part of the DIADEMS project, academic researchers and engineers from the \emph{Science and Technology of Information and Communication} domain and researchers from the \emph{Musicology and Ethnomusicology} domain have been collaborating to develop new computer tools to \alert{automatically index} the recording contents.% content directly from the audio signal.% in order to improve access to and indexation of this vast ethnomusicological archive.
+  \end{itemize}
+  
+\end{block}
+
+\end{frame}
+\section[Telemeta]{The Telemeta platform}\label{sec:Telemeta}
+\begin{frame}
+  \frametitle{The Telemeta platform}
+  \begin{block}{A scalable web audio platform}
+      \begin{itemize}
+      \item \alert{access, preserve} and \alert{share} sound items
+      \item enrich associated \alert{metadata} that
+        contains key information on the context and significance of
+        the recording.
+      \end{itemize}
+   
+    
+  \end{block}
+  \begin{block}{An open-source software}
+    \begin{itemize}
+    \item Telemeta, is a \alert{free and open source software} (\emph{GPL-like} licence)
+       in accordance with \alert{open web standards}.
+    \end{itemize}
+    \vspace{-0.5cm}
+    \begin{center}
+      \raisebox{-0.4\height}{\includegraphics[width=0.3\textwidth]{img/logo_telemeta_800.png}}
+\hspace{1cm}
+      \colorbox{yellow!40}{\textbf{\url{http://telemeta.org/}}}
+    \end{center}
+  \end{block}
+\end{frame}
+
+\begin{frame}[plain]{Telemeta \emph{Item} page}
+  \begin{center}
+    \fbox{\includegraphics[width=\linewidth]{img/telemeta_screenshot_en_2.png}}
+  \end{center}
+
+\end{frame}
+
+\subsection{Features}
+\begin{frame}[label=telemeta_features]{Web audio content management features and architecture}
+  \begin{block}{Main features of Telemeta}\footnotesize
+    \begin{itemize}
+      \item \alert{Pure HTML5} web user interface including dynamic forms.
+      \item Database management through a Structured Query Language (\alert{SQL}) or Oracle backend.
+      \item \alert{On-the-fly audio analyzing}, transcoding and metadata
+        embedding in various multimedia formats, provided through an external component, \emph{TimeSide}.
+      \item Social editing with semantic ontologies, smart workflows, human or automatic annotations and segmentations.
+      \item \alert{User management} with individual desk, playlists, profiles
+        and group access rights.
+      \item High level \alert{search engine} \hyperlink{geonavigator}{geolocation}, instruments, ethnic groups, etc...).
+      \item \hyperlink{telemeta_languages}{Multi-language support (currently english, german, french and chinese).}
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\subsection{Metadata}\label{sec:metadata}
+\begin{frame}\frametitle{Metadata}
+  \begin{block}{}
+    In addition to the audio data, an efficient and dynamic management
+    of the associated metadata is also offered.
+    \begin{itemize}
+    \item Metadata provides valuable informations about the
+      \alert{source of the data} and to the related \alert{work of
+        peer researchers}.
+    \item Dynamically handling metadata in a \alert{collaborative}
+      manner optimizes the continuous process of knowledge gathering
+      and the \alert{enrichment} of the materials in the database.
+    \item One of the major challenges is the \alert{standardization}
+      of audio and metadata formats with the aim of long-term
+      preservation and usage of the different materials.
+    \item The compatibility with other systems is facilitated by the
+      integration of the \alert{metadata standards protocols}
+      \emph{Dublin Core} and \emph{OAI-PMH} (Open Archives Initiative
+      Protocol for Metadata Harvesting).
+    \end{itemize}
+  \end{block}
+% The metadata includes two different kinds of information about the audio item:
+% \begin{itemize}
+% \item contextual information and
+% \item Descriptive and analytical information of the audio content
+% \end{itemize}
+\end{frame}
+
+
+\begin{frame}[label=telemeta_metadata]{Metadata}{Contextual Information}
+\scriptsize
+\begin{block}{Contextual Information}
+  In an ethnomusicological framework, contextual information
+  may include:
+  \begin{itemize}
+  \item Geographic information
+  \item Cultural information ( population, related cultural elements, ...)
+  \item Musical information ( title, instruments, ...)
+  \item Archive or recording information (recording technical data, depositor, collector, year of the recording, year of publication of
+    papers describing the work, ...)
+  \end{itemize}
+  
+\end{block}
+
+\begin{block}{Additional materials}
+  Moreover, through the platform, diverse materials related to the
+  archives can be stored, such as:
+  \begin{itemize}
+  \item iconographies (digitalized pictures, scans of booklets and
+    field notes, and so on),
+  \item hyperlinks and
+  \item biographical information about the collector.
+  \end{itemize}
+\end{block}
+\hyperlink{metadata_example}{\beamerbutton{Examples}}
+\end{frame}
+
+
+% \begin{frame}{Metadata}{Descriptive and analytical information on the audio content}
+% The second type of metadata consists of information about the \alert{audio content} itself. This metadata can provide information about the global content of the audio item or provide \alert{temporally-indexed information}. 
+% Such information can be produced eithe
+% r:
+% \begin{itemize}
+% \item by a human expert or
+% \item by an automatic computational audio analysis.
+% \end{itemize}
+% And it can consist either in:
+% \begin{itemize}
+% \item Visual representation and segmentation or
+% \item Annotations
+% \end{itemize}
+
+\subsection{Architecture}
+\begin{frame}\frametitle{Telemeta architecture}
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{img/TM_arch.pdf}
+  \end{center}
+\end{frame}
+
+  
+% \end{frame}
+\begin{frame}{Descriptive and analytical information}
+{Visual representation and segmentation}
+\scriptsize
+\begin{columns}[T]
+    \begin{column}{0.6\textwidth}
+      \begin{block}{Visual representation of the sound}
+       The embedded \alert{TimeSide} audio player allows for a selection
+        of various visual representations of the sound (e.g. \alert{waveforms
+        and spectrograms}) and some representations of computational
+        \alert{analysis}.
+      \end{block}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \includegraphics[width=\linewidth]{img/sound_representation.png}
+    \end{column}
+  \end{columns}
+\vspace{-1.5cm}
+  \begin{columns}[T]
+    \begin{column}{0.6\textwidth}
+   \begin{block}<2>{Segmentation}
+        Automatic analysis can produce a list of \alert{time-segments}
+        associated with \alert{labels} (e.g. detection of spoken versus
+        singing voices, chorus, musical instrument categories, and so
+        on).
+\end{block}
+    \end{column}
+    \begin{column}{0.3\textwidth} 
+  %Detection of spoken voices in a song
+    \end{column}
+  \end{columns}
+  \begin{center}
+    \includegraphics<2>[width=0.65\linewidth]{img/IRIT_Speech4Hz.png}
+  \end{center}
+
+  
+\end{frame}
+\begin{frame}{Descriptive and analytical information on the audio content}{Annotations}%\scriptsize
+  \begin{columns}[T]
+    \begin{column}{0.6\textwidth}
+      \begin{block}{Markers}%\tiny
+        \begin{itemize}
+        \item The embedded audio player also enables annotation of the
+          audio content through \alert{time-coded markers}.
+        \item These annotations are \alert{indexed through the database}.
+
+        \item Users can create their own annotations and \alert{share} them with colleagues.
+   
+          % \item \emph{The possibility for experts to annotate
+          %   time-segments
+          %   over a zoomable representation of the sound is currently
+          %   under development in order to improve the accuracy and
+          %   the
+          %   quality of time-segment-based annotations.}
+        \end{itemize}
+
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.4\textwidth}
+      \includegraphics[width=\linewidth]{img/markers.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section[TimeSide]{TimeSide, an audio analysis framework}\label{sec:TimeSide}
+\subsection{Audio management}
+\begin{frame}{TimeSide}\scriptsize
+ \begin{block}{An open web audio processing framework}
+   \begin{itemize}
+   \item TimeSide is the \alert{signal processing engine} of Telemeta developed and published as a separate project.
+   \item TimeSide is an
+     \emph{open-source} \alert{audio analysis and visualization framework} based on
+     both \alert{Python} and \alert{JavaScript} languages that provides
+     state-of-the-art signal processing and machine learning
+     algorithms together with \alert{web audio} capabilities for displaying
+     and streaming files.
+   \end{itemize}
+\vspace{-0.5cm}\begin{center}
+  \colorbox{yellow!40}{\bf \url{https://github.com/yomguy/TimeSide/} }
+\end{center}
+\end{block}
+\begin{block}{Audio management}
+  TimeSide provides the following main features:
+  \begin{itemize}
+   \item Smart dynamic audio player with enhanced visualization (e.g. waveform,
+    spectrogram) that can be embedded into any html page through \emph{iframe} (live example: \href{http://yomix.org/telemeta-1-embedded-timeside-player.html}{Yomguy's blog})
+  \item Multi-format support: decodes the vast majority of audio and
+    video formats% through Gstreamer and transcodes them with smart
+    %streaming and caching methods.
+  \item On-the-fly audio analysis, transcoding, streaming and metadata embedding
+    based on an easy plugin architecture.
+  \end{itemize}
+\end{block}
+
+ 
+\end{frame} 
+
+
+
+\subsection{Audio features extraction}
+\begin{frame}{Audio features extraction}
+\begin{block}{Audio features extraction}
+TimeSide incorporates some state-of-the-art \alert{audio feature extraction libraries} such as:
+\vspace{-0.1cm}
+\begin{itemize}
+\item Aubio:
+    \colorbox{yellow!30}{\scriptsize \url{http://aubio.org}}
+\vspace{-0.1cm}
+\item Yaafe:
+    \colorbox{yellow!30}{\scriptsize \url{http://yaafe.sourceforge.net}}
+\vspace{-0.1cm}
+\item Vamp plugins:  
+    \colorbox{yellow!30}{\scriptsize \url{http://www.vamp-plugins.org}}
+\end{itemize}
+
+Given the extracted features, every sound item in a given
+  collection can be automatically analyzed.\\
+The results of this
+  analysis can be:
+  \begin{itemize}\footnotesize
+ \item Serialized to the web browser through common markup languages:
+    XML, JSON and YAML
+  \item Stored in a scientific file format (e.g. NumPy format or
+    HDF5)
+  \item Exported to sound visualization and annotation software
+    (e.g. Sonic Visualizer)
+ 
+  \end{itemize}
+\end{block}
+
+\end{frame}
+\begin{frame}{TimeSide engine architecture}
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{img/timeside_schema_v3.pdf}
+  \caption{TimeSide engine architecture and data flow with Telemeta web-server}\label{fig:TimeSide_Archi}
+\end{figure}
+\end{frame}
+  
+\begin{frame}
+  \frametitle{TimeSide engine architecture}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{img/TimeSide_pipe.pdf}
+  \end{center}
+  \begin{block}{Process Pipe}
+    \begin{itemize}
+    \item On-the-fly audio processing by simultaneous processors (decoder, encoders, analyzers, graphers)
+    \item Use of \emph{Gstreamer} for audio decoding and encoding    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\section[CREM archives]{Sound archives of the CNRS - Musée de l'Homme}\label{sec:archives-CREM}
+   \begin{frame}\frametitle{Sound archives of the CNRS - Musée de l'Homme}
+     \begin{block}{}
+       \begin{itemize}
+       \item Since June 2011, the Telemeta platform has been used by
+         the \alert{Sound archives of the CNRS - Musée de
+         l'Homme}\footnote{\url{http://archives.crem-cnrs.fr}} and
+         managed by the CREM.
+       \item These archives available for researchers,
+         students and (when copyright allows) to a broader audience.
+       \item It is one of the most important Sound archives librairy in Europe
+       \item Through this platform, these archives can be shared,
+         discussed and analyzed.
+       
+       
+       \end{itemize}
+     \end{block}
+
+
+\end{frame}
+
+\subsection{Archiving research materials}
+\begin{frame}{Archiving research materials}
+  \begin{block}{}%{Content}
+    \begin{itemize}
+    \item The Sound archives of the \emph{CNRS - Musée de l'Homme}
+      have been collected by researchers attached to numerous research
+      institutions across the world. %, including prominent figures of
+      %the field of ethnomusicology (among which Brailoiu, Lomax,
+      %Shaeffner, Rouget and Elkin).
+    \item Most of the recordings come from the fieldwork of
+      researchers in \alert{all continents} during the last \alert{110 years}.
+    
+
+    \item Nearly \alert{3700 hours of record collections} 
+    e.g. more than 5000 discs, many of which are very
+      rare)
+    \item \alert{4000 hours of unpublished recordings}, from early
+      research expeditions (e.g. Dakar-Djibouti (1932), Ogooué-Congo
+      (1946)).
+    \item \alert{47,200 items} containing more than
+      \alert{26,000 sound files} (including 12,000 sounds on free
+      access since May 2014).
+   
+   
+    %\item Recently, the CREM has decided to give full access to the
+    %  records published by the CNRS-Musée de l’Homme (Chant du
+    %  Monde/Harmonia
+    %  Mundi)\footnote{\url{http://archives.crem-cnrs.fr/archives/fonds/CNRSMH_Editions/}},
+    %  the distribution of which stopped ten years ago.
+   
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\subsection{Uses and users of digital sound archives}
+\begin{frame}{Uses and users of digital sound archives}
+   \begin{block}{}\normalsize
+\begin{itemize}
+      \item Three main activities: \alert{archiving,
+      research and education}
+  \item Three main disciplines: \alert{Ethnomusicology, Anthropology and Linguistic}
+    \item Primary users of the platform are archivists, researchers, students
+      and professors of these disciplines.
+    \item Nonetheless, a qualitative survey showed that other
+      disciplines (such as Art History) have used the platform.
+       \item When used for education, the platform provides a wide array
+      of teaching materials to illustrate the work of students as well
+      as support teaching curricula.
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+\begin{frame}{Uses and users of digital sound archives}
+  \begin{block}{A collaborative experience}
+    \begin{itemize}
+    \item The sharing of data offer resources to researchers from all over the world and allows several people to \alert{collaborate on the enrichment of the database}.
+     \item Researchers from different institutions can work together on
+      specific audio materials and conduct individual research from
+      both synchronic and diachronic perspectives on their own
+      material, the material of others, or both.
+    \item Users can submit their own archives to protect them.
+
+    \item Furthermore, it facilitates the ethical task of \alert{returning
+      the recorded music to the communities who produced it} and to get local populations involved in their own cultural heritage.
+
+   
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+\section[The DIADEMS project]{The DIADEMS project}\label{sec:Diadems}
+\subsection{Consortium and goals}
+\begin{frame}{The DIADEMS project}
+  \scriptsize
+
+  Started in January 2013, the French national research program
+  DIADEMS is a multi-disciplinary project dedicated to the \alert{Description, Indexation, Access to Ethnomusicological and Sound Documents}.
+  \begin{block}{The consortium}\tiny
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        \begin{block}{Science and Technology of Information and
+            Communication domain}
+          \begin{tabular}{p{0.27\textwidth} p{0.5\textwidth}}
+            \raisebox{-0.5\height}{\includegraphics[width=1.7cm]{img/IRIT.jpeg}} 
+            &  Institute of research in computing science of Toulouse \\%[1pt]
+            \raisebox{-0.7\height}{\includegraphics[height=0.75cm]{img/LIMSI.png}} 
+            & Laboratory of computing and mechanics for engineering sciences \\%[3pt]
+            \raisebox{-0.6\height}{\includegraphics[height=0.75cm]{img/LaBRI.jpeg}}
+            & Bordeaux Computer Science Research Laboratory\\[5pt]
+            \raisebox{-0.7\height}{\includegraphics[height=0.65cm]{img/LAM.png}} 
+            & Laboratory of Musical Acoustic, Jean Le Rond d'Alembert Institute
+          \end{tabular}
+        \end{block}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{block}{Musicology and Ethnomusicology domain}
+          \begin{tabular}{p{0.15\textwidth} p{0.75\textwidth}}
+            \raisebox{-0.5\height}{\includegraphics[width=1.2cm]{img/LESC.png}}
+            & Laboratory of Ethnology and Comparative Sociology\\[6pt]
+            \raisebox{-0.5\height}{\includegraphics[height=0.9cm]{img/logo_CREM.png}} 
+            & Research Center for Ethno\-musi\-co\-logy\\[14pt]
+            \raisebox{-0.5\height}{\includegraphics[height=1.2cm]{img/MNHN.jpeg}}
+            & National Museum of Natural History
+          \end{tabular}
+        \end{block}
+
+      \end{column}
+    
+    \end{columns}
+    \begin{block}{Development}
+      \raisebox{-0.5\height}{\includegraphics[height=0.7cm]{img/parisson_logo_FINALE_com.pdf}}
+      \hspace{0.1cm} Parisson, the company involved in the development
+      of Telemeta.
+    \end{block}
+ 
+  \end{block}
+\end{frame}
+
+\begin{frame}{Goals of the DIADEMS project}
+ \begin{block}{Goals and on-going development}
+    \begin{itemize}
+    \item The goal of the DIADEMS project is to develop computer tools
+      to \alert{automatically index} or assist the indexation of the recording content from the audio signal.
+    \item  Ongoing work consists of implementing
+    advanced \alert{classification, indexation, segmentation and similarity
+    analysis} methods.
+  \item \alert{Besides music analysis}, such automatic tools also deal with speech
+    and other types of sounds present ethnomusiclogical recordings like  \alert{speech, environmental noises and noises generated by the recording process}
+    \end{itemize}
+
+   
+  \end{block}
+\end{frame}
+
+\subsection{The method of a new interdisciplinary research}
+\begin{frame}{The method of a new interdisciplinary research}
+  \begin{block}{}
+    \begin{itemize}
+    \item In this research program, groups from \alert{different backgrounds}
+      are working together.
+    \item The first challenge was to initiate a common interest and a
+      \alert{mutual understanding}.
+    \item In this process, DIADEMS gave us the opportunity to improve
+      our understanding on the \alert{link between the semantics and
+      acoustics of voice production} in order to be able to specify the classification and indexation tasks.
+    \end{itemize}
+\end{block}
+    % In preliminary work, we attempted to first define vocal
+    % categories with a particular interest for liminal oral
+    % productions. At the border between speech and song, utterances
+    % such as psalmody or recitation are at the center of an old
+    % debate in ethnomusicology\footnote{A colloquium on liminal
+    % utterances between speech and song will be organized by the
+    % International Council for Traditional Music (ICTM) in May 2015
+    % and hosted by the Centre of research in Ethnomusicology
+    % (CREM). A round table will be dedicated to the presentation of
+    % the main results and findings of the ANR project
+    % DIADEMS}. Gathering specialists from various fields, the DIADEMS
+    % project goes well beyond the usual disciplinary boundaries. Our
+    % aim, through the study of a large range of audio components
+    % (pitch range, syllabic flow, metric, polyphonic and so on) is to
+    % define and characterize the variability of vocal productions,
+    % keeping in mind the semantic aspects. By doing so, we wish to
+    % reduce the traditional gap in academic studies between sounds
+    % and semantics and to develop combined analytical tools for the
+    % study of vocal production\footnote{As an example, research will
+    % be conducted on the recognition of "icons of crying" in lamented
+    % utterances. As defined by Urban in \cite{Urban88}, "icons of
+    % crying" include cry break, voice inhalation, creaky voice and
+    % falsetto vowels.}.
+
+    % One of the goals of the DIADEMS project is also to provide
+    % useful tools for musical analysis such as the detection of
+    % musical instrument families, analysis of musical content (tonal,
+    % metric and rhythmic features), musical similarities and
+    % structure (chorus localisation, musical pattern replication).
+
+
+\end{frame}
+
+
+% \subsection{Automatic tools for assisting indexation and annotation of audio documents}
+% \begin{frame}{Automatic tools for assisting indexation and annotation of audio documents}
+%   \begin{block}{On-going developments}
+%     \begin{itemize}
+%     \item Analysis of recording sessions
+%     \item Analysis of speech and singing voice segments through speech
+%       activity detection
+%     \item Analysis of music segments
+%       \begin{itemize}
+%       \item Music / Speech segmentation
+%       \item Monophony / Polyphony segmentation
+%       \item Automatic instrument classification
+%       \end{itemize}
+%     \end{itemize}
+%   \end{block}
+%\end{frame}
+\subsection{Evaluation and future improvements}
+\begin{frame}{Evaluation and Future improvements}
+  \begin{block}{Development and Evaluations}
+    \begin{itemize}
+    \item Interesting
+      preliminary results have been obtained regarding the detection
+      of start times of recording sessions, speech recognition,
+      singing voice recognition and musical instrument family
+      classification.
+
+    \item The robustness of these processings is assessed using \alert{criteria
+      defined by the final users}: teachers, students, researchers and
+      musicians.
+    \item \alert{After validation}, Analysis and Annotation tools, as well as the provided annotations, will be integrated in the Telemeta platform.
+    \end{itemize}
+  \end{block}
+  \end{frame}
+%   \begin{frame}
+%     \begin{block}{}
+%       Further work on the user interface will enhance the
+%       visualization experience with time and frequency zooming
+%       capabilities, in the hope that it will improve the accuracy and
+%       the quality of time-segment based annotation. One of the
+%       remaining goals is to develop tools to generate results online
+%       and to make use of the capabilities of Internet browsers while
+%       managing the workflow.
+%     \end{block}
+
+% \end{frame}
+
+
+\section{Archivage pérenne}
+
+\subsubsection{Stategie}
+\begin{frame}{Stratégie}
+
+  \begin{block}{Problématiques}%{Content}
+    \begin{itemize}
+    \item comment archiver des données évolutives ?
+    \item comment sauvegarder l'information audio et les metadonnées
+    \item comment sauvegarder le système qui les lit/lie ?
+    \item quels supports physiques choisir ?
+    \item quel protocole ?
+    \item quelle architecture ?
+    \item comment éviter la sur-consommation des fermes de serveurs ?
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Stratégie}
+  \begin{block}{Solutions}%{Content}
+    \begin{itemize}
+    \item OS libres et systèmes de fichiers ouverts
+    \item formats de données standards et normalisés
+    \item environnements logiciels virtualisés
+    \item versionnement des logiciels et des données
+    \item migrations des modèles de données (MVC)
+    \item moissonage des données au fil de l'eau (OAI-PMH, API)
+    \item architecture distribuée et sécurisée
+    \item synchronisation hebdomadaire des OS, bases de données ET logiciels sur fermes de serveurs (IN2P3 / CINES)
+    \item synchronisation mensuelle sur NAS dédiés et "réveillés" uniquement pour la sauvegarde
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\subsubsection{Standards et outils}
+\begin{frame}{Standards et outils}
+  \begin{block}{Langages, technologies et formats ouverts}
+    \begin{itemize}
+    \item WAV, FLAC, OGG, Opus
+    \item HTML, CSS, JavaScript, JSON,  RDF
+    \item Django, TimeSide
+    \item Python, C, C++
+    \item MySQL, PostgreSQL, MongoDB
+    \item Ext4, Btr
+    \item GNU, Linux, Docker, Git
+    \end{itemize}
+    \end{block}
+
+  \begin{block}{Backup / synchro}%{Content}
+    \begin{itemize}
+    \item Django (manage.py backup)
+    \item Rsync + SSH
+    \item IRODS
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\subsubsection{Supports physiques}
+\begin{frame}{Supports physiques}
+  \begin{block}{Etude IBM 2012}
+    \begin{itemize}
+    \item Tape
+    \item HDD
+    \item NAND
+    \end{itemize}
+    \end{block}
+
+\href{http://www.digitalpreservation.gov/meetings/documents/storage12/5-Fontana-StorageMediaDenstiyfoRNANDTAPE.pdf}{\beamerbutton{PDF link}}
+
+\begin{block}{Cas d'usage}
+    \begin{itemize}
+    \item Edition (temps réel) : NAND + HDD 
+    \item Sauvegarde (moyen terme) : HDD (+ NAS)
+    \item Conservation (long terme) : Tape
+    \end{itemize}
+    \end{block}
+\end{frame}
+
+
+
+\section{Conclusion}
+% \begin{frame}\frametitle{Conclusion}
+%   The Telemeta open-source framework provides a new platform for researchers in humanities and social sciences to efficiently distribute, share and work on their research on musical and sound materials. 
+% This platform offers automatic music analysis capabilities through the external component, TimeSide, which provides a flexible computational analysis engine together with web serialization and visualization options. 
+% The Telemeta platform provides an appropriate processing framework for researchers in computational ethnomusicology to develop and evaluate their algorithms. 
+% Deployed to manage the CNRS - Musée de l’Homme sound archives, the Telemeta platform has been conceived and adapted to generate tools in line with the needs of users. 
+
+% Thanks to the collaborative nature of the platform, users can continuously enrich metadata associated with sound archives. 
+% The benefits of this collaborative platform for the field of ethnomusicology apply to numerous aspects of research, ranging from musical analysis in diachronic and synchronic comparative perspectives, as well as the long-term preservation of sound archives and the support of teaching materials for education. 
+
+% \end{frame}
+
+\begin{frame}{Conclusion}
+  \begin{block}{}
+    \begin{itemize}[<+->]
+    \item Telemeta is a \alert{fully operational} web audio framework
+      for managing digital sound archives
+    \item It's an \alert{open-source} software (-> feel free to use,
+      fork or contribute)
+    \item Through the Sound archives of the CNRS - Musée de l’Homme,
+      it is now used by many ethnomusicologists around the world for
+      research or education purposes.
+    \item Its collaborative nature enable a \alert{continuous
+        enrichment} of the audio content, the metadata and the
+      analysis tools.
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}{Conclusion}
+  \begin{block}{Future developments}
+Future developments will turn Telemeta into:
+    \begin{itemize}
+    \item an efficient \alert{annotation platform} (with zoom and segment selection)
+    \item an \alert{social and collaborative platform} (user access managment and social stuff)
+    \item an \alert{interdisciplinary} collaborative platform between IT and ethno with the joint develoment of automatic analysis and indexation tools
+    \end{itemize}
+
+Regarding TimeSide, a Web-API is being developed to provide audio analysis services over the web. 
+  \end{block}
+\end{frame}
+\begin{frame}{Thank You !}
+  \begin{itemize}
+  \item Contact: \url{guillaume.pellerin@parisson.com}
+  \item Telemeta:
+    \begin{center}
+    \includegraphics[width=0.4\textwidth]{img/logo_telemeta_1-1.pdf}\\
+      \colorbox{yellow!40}{\textbf{\url{http://telemeta.org}}}\\
+      \colorbox{yellow!40}{\href{https://twitter.com/telemeta/}{@telemeta}}
+    \end{center}
+
+  \item TimeSide:
+    \begin{center}
+      \colorbox{yellow!40}{\bf
+        \url{https://github.com/yomguy/TimeSide/}}
+    \end{center}
+
+  \item Sound archives of the CNRS - Musée de l’Homme:
+    \begin{center}
+      \colorbox{yellow!40}{\bf\url{http://archives.crem-cnrs.fr}}
+    \end{center}
+
+  \item The DIADEMS project:
+    \begin{center}
+      \colorbox{yellow!40}{\bf\url{http://www.irit.fr/recherches/SAMOVA/DIADEMS/}}
+    \end{center}
+
+  \end{itemize}
+\end{frame}
+
+\appendix
+\section{Additional Materials}
+
+\subsubsection{Telemeta - Geographic Navigator}
+\begin{frame}[plain, label=geonavigator]{Telemeta - Geographic Navigator}
+  \begin{center}
+    \fbox{\includegraphics[width=\linewidth]{telemeta_geo.png}}
+  \end{center}
+\hyperlink{telemeta_features}{\beamerbutton{back}}
+\end{frame}
+\subsubsection{Multi language support}
+\begin{frame}[label=telemeta_languages]{Telemeta - Multi language support}
+\only<1>{\framesubtitle{English}}
+\only<2>{\framesubtitle{French}}
+\only<3>{\framesubtitle{German}}
+\only<4>{\framesubtitle{Chinese}}
+
+  \begin{center}
+    \includegraphics<1>[width=1.1\textwidth]{telemeta_english.png}
+    \includegraphics<2>[width=1.1\textwidth]{telemeta_french.png}
+    \includegraphics<3>[width=1.1\textwidth]{telemeta_german.png}
+    \includegraphics<4>[width=1.1\textwidth]{telemeta_chinese.png}
+  \end{center}
+\hyperlink{telemeta_features}{\beamerbutton{back}}
+\end{frame}
+\subsubsection{Metadata}
+\begin{frame}[label=metadata_example]{Contextual Information example: Collection}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{telemeta_metadata_collection.png}
+  \end{center}
+\href{http://archives.crem-cnrs.fr/archives/collections/CNRSMH_E_1998_017_001/}{\beamerbutton{Online}}
+ \href{./captures/Collection.html}{\beamerbutton{Offline}}
+\hyperlink{telemeta_metadata}{\beamerbutton{back}}
+\end{frame}
+\begin{frame}{Contextual Information example: Item}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{telemeta_metadata_item.png}
+  \end{center}
+  \href{http://archives.crem-cnrs.fr/archives/items/CNRSMH_E_1998_017_001_001_01/}{\beamerbutton{Online}}
+ \href{./captures/Item.html}{\beamerbutton{Offline}}
+\hyperlink{telemeta_metadata}{\beamerbutton{back}}
+\end{frame}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+\end{document}
