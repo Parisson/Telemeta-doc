@@ -1,0 +1,367 @@
+\documentclass[mathserif]{beamer}
+
+% FOR BEAMER SLIDES
+%\usepackage{palatino}
+%\usepackage{helvet}
+%\usepackage{eulervm}
+\usepackage{mathpazo}
+%\documentclass[sans,mathserif]{beamer}
+%\usepackage{kerkis}
+%\usepackage{kmath}
+\usepackage{beamerthemeCambridgeUS}
+%\usepackage{beamerthemeBoadilla}
+%\usepackage{beamerthemeDarmstadt}
+%\usepackage{beamerthemeGoettingen}
+\usepackage[utf8]{inputenc}
+\usepackage[]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{colortbl}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage{newlfont}
+\usepackage{url}
+\urlstyle{footnotesize}
+\columnsep 1cm
+\definecolor{rouge}{rgb}{0.7,0.1,0.1}
+\newcommand{\chref}[2]{
+    \href{#1}{\color{rouge}\underline{#2}}
+}
+\newcommand{\dchref}[1]{
+    \href{#1}{\color{rouge}\underline{#1}}
+}
+\newcommand{\curl}[1]{
+    \color{rouge}\underline{\url{#1}}
+}
+\setbeamertemplate{blocks}[center=true]
+
+\usepackage{texments}
+
+\title{\textbf{Projet Telemeta}}
+\institute{Guillaume Pellerin (Parisson)}
+\date{23/04/2012 - CMTRA - RIZE}
+
+\begin{document}
+\frame{\titlepage
+\vspace{-1cm}
+\begin{center}
+\pgfimage[width=3cm]{img/logo_telemeta_800}
+ \end{center}
+}
+
+\section[Plan]{}
+\frame{\tableofcontents}
+
+\section{Introduction}
+
+\subsection{Présentations}
+\frame{\tableofcontents[currentsubsection]}
+
+\subsubsection*{Parisson}
+\frame{\frametitle{Parisson : solutions média sur-mesure}
+Les domaines de recherche et développement :
+\begin{itemize}
+	\item \textbf{Captation et enregistrement} : captation multi-canal audio et vidéo, enregistrements et
+	diffusions automatisés (projet TeleCaster)
+	\item \textbf{Traitement des signaux} : analyse multi-dimensionnelle de signaux musicaux et vocaux,
+	indexation semi-automatique (projets TimeSide, GStreamer)
+	\item \textbf{Architectures, réseaux et base de données} : gestion des archives numériques et des
+	métadonnées structurées, flux de métadonnées, streaming en temps-réel (Projets Telemeta,
+	DeeFuzzer)
+	\item \textbf{Interfaces} : définition et production des outils de navigation dans les flux de données
+	(Technologies AJAX, JSON, CSS3, HTML5)\\
+\end{itemize}
+}
+\frame{\frametitle{Parisson : solutions média sur-mesure}
+\textbf{Les domaines d'application :}
+\begin{itemize}
+	\item chaînes de production multimédia
+	\item télé-conférence, e-leaning
+	\item archivage pérenne sémantique
+	\item indexation collaborative
+	\item gestion et hébergement de fonds (laboratoires, web radios, services audio)
+\end{itemize}
+\vspace{0.3cm}
+\textbf{Clients :} Laboratoires, musées, mediathèques, centres de formation, industrie musicale\\
+\vspace{0.3cm}
+\textbf{Mots clés :} audio, vidéo, métadonnées, acoustique, enregistrement, transcodage, diffusion, indexation, analyse audio, archivage pérenne, broadcast, streaming, e-learning, réseaux sociaux.\\
+\vspace{0.3cm}
+\textbf{Contexte de développement} : 100$\%$ open source, logiciels libres, Linux, Python, Debian.
+}
+
+
+\subsection{Objectifs du projet Telemeta}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{Telemeta : open web audio CMS}
+Objectifs du projet :
+\begin{itemize}
+ \item \textbf{Pérenniser} les archives audionumériques (logiciels et formats)
+ \item \textbf{Valoriser} le patrimoine culturel par la consultation légale
+ \item Faciliter et \textbf{optimiser} la transmission des méta-données
+ \item Augmenter les capacités de recherche et de travail collaboratif (saisie en ligne, \textbf{géo-localisation}, \textbf{web sémantique}, \textbf{interopérabilité}, croisement de données)
+ \item Définir une ergonomie d'indexation et de \textbf{publication collaborative}, un principe de sauvegarde des oeuvres musicales
+\end{itemize}
+\vspace{3mm}
+}
+
+\subsection{Historique}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{Historique}
+\begin{itemize}
+\item 2007 : rencontre entre le Centre de Recherche en Ethnomusicologie, Parisson et le LAM, contour des besoins mutuels, soutiens du projet Anthroponet
+\item 2008 : définition du cahier des charges, choix du framework, modélisation, migrateur 4D $>$ MySQL
+\item 2009 : prototypage (v0.5), recherche de partenaires
+\item 2010 : corrections, développement agile (v0.9), soutien du TGE Adonis
+\item 2011 : migration définitive, v1.0 déployée sur serveur, mise en production au CREM
+\item 2012 : développement de fonctions utilisateurs, avancées, médias associés, passage à la vidéo \\
+\end{itemize}
+
+\begin{center}
+\begin{columns}[c]
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2cm]{img/tge_logo}\end{center}
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/Logo-CREM-La.jpg}
+\end{center}
+\column{2.5cm}
+\begin{center}
+\pgfimage[width=2.5cm]{img/parisson_logo_200}\end{center}
+\column{2cm}
+\begin{center}
+\pgfimage[width=1.2cm]{img/logo-mnhn}\end{center}
+\end{columns}
+\end{center}
+}
+
+
+\frame{\frametitle{Le Centre de Recherche en Ethnomusicologie}
+Un fond ethnomusicologique unique :
+\begin{itemize}
+ \item 4291 collections (inédit et édité)
+ \item Actuellement 22101 fiches documentaires comportant 50 champs en moyenne (60000 environ à terme)
+ \item 3250 heures de sons inédits soit 4 To environ + montages et copies diverses
+ \item 3500 heures de sons édités soit 4,5 To environ
+ \item 300 heures environ de video ($\approx$ 4 To)
+\end{itemize}
+\vspace{0.5cm}
+Depuis Telemeta 1.0 : plus de 52000 révisions, 1 To environ importés.\\
+\begin{center}
+\dchref{http://archives.crem-cnrs.fr}
+\end{center}
+}
+
+
+\frame{\frametitle{Partenariats}
+Partenaires participants :
+\begin{itemize}
+ \item Centre de Recherche en Ethnomusicologie (\textbf{CREM}) du Laboratoire d'Ethnologie et de Sociologie Comparée (\textbf{LESC}), UMR 7186
+ \item Equipe Lutheries, Acoustique et Musique (\textbf{LAM}) de l'Institut Jean le Rond d'Alembert (\textbf{IJLRA}), UMR 7190
+ \item Médiathèque Eric-de-Dampierre de la \textbf{MAE}, Nanterre
+ \item Museum National d'Histoire Naturelle (\textbf{MNHN})
+ \item Institut de Recherche et d'Innovation (\textbf{IRI})
+ \item Musée des Civilisations de l'Europe de la Méditerranée (\textbf{MuCEM})
+ \item Phonothèque de la Maison Méditerranéenne des Sciences de l'Homme (\textbf{MMSH})
+\end{itemize}
+}
+
+\section{Présentation du logiciel}
+
+\subsection{Technologies et communautés}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{Telemeta : un projet libre et ouvert}
+\textbf{Les fondamentaux du logiciel libre :}
+\begin{itemize}
+  \item Pérenniser les ressources informatiques
+  \item Dynamiser le développement (partage, communautés internationales)
+  \item Limiter les coûts de déploiement à grande échelle
+  \item Se conformer aux standards ouverts d'Internet
+\end{itemize}
+\vspace{3mm}
+\textbf{Briques libres de Telemeta :}
+\begin{itemize}
+ \item \chref{http://python.org}{Python} et \chref{http://djangoproject.com}{Django} : langage côté serveur et framework web \\
+ \item \chref{http://code.google.com/p/timeside}{TimeSide} : traitement des signaux audio, lecteur audio HTML5 dynamique
+ \item \chref{http://mysql.com}{MySQL} : base de données relationnelle \\
+ \item \chref{http://linux.com}{Linux} : noyau serveur \\
+ \item \chref{http://www.cecill.info}{CeCILL} : licence libre conforme au droit français (CNRS, INRIA, CEA)
+\end{itemize}
+}
+
+
+\frame{\frametitle{L'architecture de Telemeta}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=11cm]{img/architecture_fr}
+  \end{center}
+}
+
+\subsection{Modèle de données}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{Modèle de données du CREM}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=12cm]{img/data_model2}
+  \end{center}
+}
+
+\subsection{Interface web}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{Démonstration !}
+\dchref{http://demo.telemeta.org}
+}
+
+\subsection{Droits d'accès}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{Droits d'accès}
+\begin{itemize}
+ \item \textbf{Utilisateurs} : profils, droits, gestion des mots de passe
+ \item \textbf{Groupes} : administrateur, documentaliste, chercheur, membre, anonyme
+ \item \textbf{Droits} : ajouter, supprimer ou modifier les objets selon les règles
+ \item Pour tous les utilisateurs : \textbf{listes de lecture} personnelle, ajout de \textbf{marqueurs temporels}
+ \item \textbf{Droits particuliers} pour la lecture audio (date glissante de 50 ans, paramètre ``public access'')
+\end{itemize}
+}
+
+\frame{\frametitle{Détail des droits des groupes}
+\begin{itemize}
+ \item \textbf{Anonyme} : parcours du site, lecture selon les autorisations de chaque objet
+ \item \textbf{Membre} : ajout de listes de lectures personnelles, ajout de marqueurs
+ \item \textbf{Chercheur} : ajout et edition des fiches documentaires
+ \item \textbf{Documentaliste} : suppression d'objets, tous droits sur la base de données (hors utilisateurs), lecture audio de tous les items
+ \item \textbf{Administrateur} : ajouter des utilisateurs
+\end{itemize}
+\vspace{5mm}
++ droits spéciaux au cas par cas :
+\begin{itemize}
+ \item Lecture audio de tous les items
+ \item Téléchargement de tous les items
+\end{itemize}
+
+}
+
+\subsection{Traitement et lecture audio}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{TimeSide : Web Audio Components}
+  \begin{center}
+   \vspace{-0.2cm}
+   \pgfimage[width=9.5cm]{img/timeside_schema}
+  \end{center}
+}
+
+\frame{\frametitle{TimeSide UI : lecteur audio HTML dynamique}
+\begin{itemize}
+\item Lecture audio
+\item Analyse du signal
+\item Indexation temporelle
+\item Portabilité
+\item \chref{http://code.google.com/p/timeside/wiki/UiGuide}{code.google.com/p/timeside/wiki/UiGuide}
+\end{itemize}
+
+\begin{center}
+\pgfimage[width=5cm]{img/player_01}
+\end{center}
+
+}
+
+\subsection{Moissonnage et sauvegarde}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{Moissonnage et sauvegarde}
+\begin{itemize}
+\item mapping Dublin Core
+\item serveur OAI-PMH intégré
+\item flux RSS (revisions)
+\item sauvegarde sérialisée : XML + WAV
+\item upload accumulatif
+\end{itemize}
+}
+
+\subsection{Roadmap}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{Roadmap}
+Objectifs pour Telemeta 1.x:
+\begin{itemize}
+ \item \textbf{Compatibilté HTML5} totale du lecteur audio
+ \item \textbf{Accès spéciaux} par adresses IP
+ \item Intégration et MAJ des \textbf{ontologies} (langues, géographie)
+\end{itemize}
+\vspace{0.3cm}
+Objectifs pour Telemeta 2.x:
+\begin{itemize}
+ \item \textbf{Modèle générique de ressources} de données
+ \item \textbf{Fonctions d'analyse} augmentée (reconnaissance, recoupement statistique) : ANR CONTINT 2011 \textbf{DIADEMS} et ANR CORPUS 2011 \textbf{DicA3Ref}
+ \item \textbf{Déploiement mutualisé} avec l'IN2P3 (CNRS)
+ \item Définition d'une \textbf{API} cliente accessible au format JSON pour toutes les méta-données
+\end{itemize}
+}
+
+
+\section{Conclusion et perspectives}
+\frame{\tableofcontents[currentsubsection]}
+
+\frame{\frametitle{Conclusion et perspectives}
+\begin{itemize}
+ \item Technologie et ergonomie prometteuse pour la \textbf{sauvegarde et la valorisation} du patrimoine musical
+ \item \textbf{Déploiement} et \textbf{pérennité} optimisés avec les briques open source
+ \item \textbf{Intégration souple} de données métiers hétérogènes (sciences humaines et sciences informatiques)
+ \item \textbf{Plateforme collaborative} à un niveau international
+ \item Plateforme sociale d'indexation : (au CREM, par ex, plus de \textbf{450} fiches en moyenne éditées par semaines !)
+ \item Plateforme de \textbf{développement} ouverte
+\end{itemize}
+}
+
+
+
+\frame{\frametitle{Merci !}
+ \begin{center}
+   \vspace{-0.2cm}
+    \pgfimage[width=4cm]{img/logo_telemeta_800}\\
+    \dchref{http://telemeta.org}\\
+   \vspace{1cm}
+  \pgfimage[width=4cm]{img/parisson_logo_200}\\
+  guillaume.pellerin@parisson.com\\
+  @parisson\_studio\\
+    \vspace{10mm}
+    \tiny{Ce document est mise à disposition selon un \chref{http://creativecommons.org/licenses/by-nc-sa/2.0/fr/}{contrat Creative Commons}}
+  \end{center}
+}
+
+\frame{\frametitle{Les standards et normes utilisés par Telemeta}
+\begin{itemize}
+ \item Web :
+    \begin{itemize}
+     \item \chref{http://www.w3schools.com/html/}{HTML5} : langage hypertextuel avec balises $<$audio$>$ $<$video$>$
+     \item \chref{http://www.w3.org/Style/CSS/}{CSS} : styles
+     \item \chref{http://fr.wikipedia.org/wiki/JavaScript}{JavaScript} : langage côté navigateur (interfaces et lecteur dynamiques)
+    \end{itemize}
+ \item Audio :
+    \begin{itemize}
+    \item \chref{http://fr.wikipedia.org/wiki/WAVEform_audio_format}{WAV} : archivage audio brut
+    \item \chref{http://fr.wikipedia.org/wiki/MP3}{MP3, MP4} : compression avec pertes, largement utilisé, encapsulation partielle
+    \item \chref{http://www.vorbis.com}{OGG Vorbis} : compression avec pertes, open source, encapsulation totale
+    \item \chref{http://fr.wikipedia.org/wiki/FLAC}{FLAC} : compression sans pertes, multi-pistes, open source, encapsulation totale
+    \end{itemize}
+ \item Métadonnées :
+    \begin{itemize}
+     \item \chref{http://en.wikipedia.org/wiki/XML}{XML} (W3C)
+     \item \chref{http://dublincore.org/}{DublinCore} (OAI-PMH)
+     \item \chref{http://fr.wikipedia.org/wiki/Structured_Query_Language}{SQL} : base de données
+ %    \item \chref{http://www.w3.org/TR/owl-features/}{OWL} : Web Ontology Language
+    \end{itemize}
+\end{itemize}
+}
+
+
+
+\end{document}
