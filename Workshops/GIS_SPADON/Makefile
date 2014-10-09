@@ -1,4 +1,4 @@
-MAIN_FILE = slides_SPADON_2014.tex
+MAIN_FILE = slides_SPADON_2014
 
 pdf:
 	echo ${MAIN_FILE}.tex
