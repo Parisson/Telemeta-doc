@@ -11,7 +11,9 @@ Publications, slides and manuals for [Telemeta](http://telemeta.org)
   - FMA 2014  
     *"An open web audio platform for ethnomusicological sound archives management and automatic analysis"*,  
     Thomas Fillon, Guillaume Pellerin, Paul Brossier and Joséphine Simonnot,  
-    in the proceeding of the 4th International Workshop on Folk Music Analysis,  June 12-13, 2014, Istanbul, Turkey.
+    in the proceeding of the 4th International Workshop on Folk Music Analysis,  June 12-13, 2014, Istanbul, Turkey.  
+    [Article](https://github.com/Parisson/Telemeta-doc/raw/master/Conferences/2014_FMA/fma2014_Telemeta.pdf) ; 
+    [Poster](https://github.com/Parisson/Telemeta-doc/raw/master/Conferences/2014_FMA/poster/poster_FMA2014.pdf)
 
   - EcoAcoustics 2014  
     *"Telemeta, an open and collaborative web audio platform for digital sound archives management"*,  
@@ -25,15 +27,17 @@ Publications, slides and manuals for [Telemeta](http://telemeta.org)
     In the proceeding of the the 1st International Digital Libraries for Musicology workshop (DLfM 2014)
 
 - Demonstrations:
-  - Demonstration at CMMR 2013 - Marseilles  
+  - CMMR 2013 - Marseilles  
     *"TELEMETA, audio web Content Management System for ethnomusicological sound archives"*,  
     Thomas Fillon, Guillaume Pellerin, Paul Brossier et Joséphine Simonnot,  
-    In Proc. of the 10th International Symposium on Computer Music Multidisciplinary Research, Marseille, France, October 15-18, 2013
+    In Proc. of the 10th International Symposium on Computer Music Multidisciplinary Research, Marseille, France, October 15-18, 2013  
+    [Poster](https://github.com/Parisson/Telemeta-doc/raw/master/Conferences/2013_CMMR/poster/poster_cmmr2013.pdf)
 
   - AES 2014 - London  
     *"Telemeta: Open Web Audio Platform for Sound Archives in the Use Case of Ethnomusicology"*,  
     Thomas Fillon, Guillaume Pellerin, Paul Brossier et Joséphine Simonnot,  
-    Presented at the Audio Engineering Society 53rd conference on Semantic Audio London, UK, January 27-29, 2014
+    Presented at the Audio Engineering Society 53rd conference on Semantic Audio London, UK, January 27-29, 2014  
+    [Poster](https://github.com/Parisson/Telemeta-doc/raw/master/Conferences/2014_AES/poster/poster_aes53.pdf)
 
 - Communications:
 
