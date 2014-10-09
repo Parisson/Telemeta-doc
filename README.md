@@ -1,11 +1,10 @@
 Telemeta-doc
 ============
 
-Publications, slides and manuals for Telemeta
+Publications, slides and manuals for [Telemeta](http://telemeta.org)
 
 
 [![Build Status](https://travis-ci.org/Parisson/Telemeta-doc.svg?branch=dev)](https://travis-ci.org/Parisson/Telemeta-doc)
-
 
 * Conférences
 
@@ -57,5 +56,4 @@ Présentation du projet Telemeta lors du Conseil scientifique du 24 septembre 20
 Presenté lors de la 2ème rencontre sur les bases de données et les ressources numériques : la visualisation des données numériques, 26 septembre 2014, Paris, France
 
 "Analyse et édition collaboratives des données multimedia" - Guillaume Pellerin
-
 
