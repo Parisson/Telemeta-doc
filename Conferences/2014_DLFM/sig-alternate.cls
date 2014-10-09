@@ -843,7 +843,7 @@
 \begin{center}
 \setlength{\unitlength}{1pc}
 \begin{picture}(20,6) %Space for copyright notice
-\put(0,-0.95){\crnotice{\@toappear}}
+\put(0,-1.5){\crnotice{\@toappear}}
 \end{picture}
 \end{center}
 \end@float}
