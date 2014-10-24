@@ -12,18 +12,18 @@ The Telemeta and TimeSide plateforms: Audio archives management and Automatic an
 ============
 Please select one or more topics for your talk
 
-[x]    Innovative audio and music based web applications (with social and user experience aspects)
-[]    Client-side audio processing (real-time or non real-time)
-[x]    Audio data and metadata formats and network delivery
-[x]    Server-side audio processing and client access
-[]    Client-side audio engine and rendering
-[]    Frameworks for audio manipulation
-[]    Web Audio API design and implementation
-[x]    Client-side audio visualization
-[x]    Multimedia integration
-[x]    Web standards and use of standards within audio based web projects
-[]    Hardware, tangible interface and use of Web Audio API
-[]    Other: 
+- [x]    Innovative audio and music based web applications (with social and user experience aspects)
+- [ ]    Client-side audio processing (real-time or non real-time)
+- [x]    Audio data and metadata formats and network delivery
+- [x]    Server-side audio processing and client access
+- [ ]    Client-side audio engine and rendering
+- [ ]    Frameworks for audio manipulation
+- [ ]    Web Audio API design and implementation
+- [x]    Client-side audio visualization
+- [x]    Multimedia integration
+- [x]    Web standards and use of standards within audio based web projects
+- [ ]    Hardware, tangible interface and use of Web Audio API
+- [ ]    Other: 
 
 =========
  Content
