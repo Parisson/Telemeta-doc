@@ -32,7 +32,7 @@
 \usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
 
 \usepackage{latex/tcolorbox}
-
+\tcbset{colback=red!30!white,colframe=red!70!black, leftrule=5mm, width=0.8\linewidth}
 
 
 % Display a grid to help align images
@@ -131,6 +131,7 @@
     % ==================================
     % --------- Colonne gauche ---------
     % ==================================
+\section{Telemeta}
     \begin{column}[T]{.49\linewidth}
       % \begin{block}{Introduction}
       %   \vspace{-0.5cm}
@@ -149,8 +150,14 @@
       %   \vspace{-0.5cm}
       % \end{block}
 
-      \begin{block}{Web audio content management features and architecture}
-        \vspace{-0.5cm}  
+      \begin{block}{{\Large Telemeta}\\Open web audio platform for digital sound archives}
+        \begin{center}
+  \begin{tcolorbox}[]\normalsize
+    \href{https://github.com/Parisson/Telemeta/}{\raisebox{-.2\height}{\includegraphics[width=1.5cm]{img/misc/GitHub-Mark-120px-plus.png}}\hskip2ex
+      \textbf{\texttt{https://github.com/Parisson/Telemeta/}}}
+  \end{tcolorbox}
+\end{center}
+
         \begin{itemize}
         \item \emph{Telemeta} is a free and open source ({\scriptsize CeCILL
             Free Software License Agreement}) web audio content management
@@ -261,9 +268,9 @@
 \section{TimeSide}
 \begin{column}[T]{.49\linewidth}
 \subsection{TimeSide architecture}
-  \begin{block}{TimeSide : open web audio processing framework}
+  \begin{block}{{\Large TimeSide}\\Open web audio processing framework}
 
-\tcbset{colback=red!30!white,colframe=red!70!black, leftrule=5mm, width=0.8\linewidth}
+
 \begin{center}
   \begin{tcolorbox}[]\normalsize
     \href{https://github.com/Parisson/TimeSide/}{\raisebox{-.2\height}{\includegraphics[width=1.5cm]{img/misc/GitHub-Mark-120px-plus.png}}\hskip2ex
@@ -346,8 +353,19 @@
 \end{block}
 \begin{block}{Automatic audio analysis}
   \begin{center}
-    \includegraphics[width=0.9\linewidth]{img/results/IRIT_Speech4Hz.png}\\
-    \includegraphics[width=0.9\linewidth]{img/results/SOLO_DUOdetection.png}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.75\linewidth]{img/results/IRIT_Speech4Hz.png}
+      \caption{Speech activity detection}
+  \label{fig:TS_SAD}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{img/results/SOLO_DUOdetection.png}
+  \caption{Monody / polyphony detection}
+\label{fig:TS_Monopoly}
+\end{figure}
+
   \end{center}
 \end{block}
 % \begin{block}{Code Example (Python)}
