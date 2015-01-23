@@ -157,7 +157,11 @@
             \href{https://github.com/Parisson/Telemeta/}{\raisebox{-.2\height}{\includegraphics[width=1.5cm]{img/misc/GitHub-Mark-120px-plus.png}}\hskip2ex
               \textbf{\texttt{https://github.com/Parisson/Telemeta/}}}
           \end{tcolorbox}
-        
+          \begin{center}
+            \includegraphics[height=3cm]{img/misc/python-logo-master-v3-TM.png}\hspace{3cm}
+            \includegraphics[height=3cm]{img/misc/django-logo-negative.png}
+          \end{center}
+
         \begin{minipage}[h]{0.97\linewidth}
           \begin{block}{Web audio content management}
             \begin{itemize}
@@ -167,21 +171,18 @@
               efficient and secure methods for \alert{backuping},
               \alert{indexing}, \alert{transcoding}, \alert{analysing}
               and \alert{publishing} any digitalized audio file with
-              its metadata.
-            \item \emph{Telemeta} is ideal for professional
-              collaborators who wants to easily organize, backup,
-              archive and publish documented sound collections of
-              audio files, CDs, digitalized vinyls and magnetic tapes
-              over a strong database in accordance with \alert{open
+              its metadata and in accordance with \alert{open
                 web standards}.
+           % \item \emph{Telemeta} is ideal for professional
+           %   collaborators who wants to easily organize, backup,
+           %   archive and publish documented sound collections of
+           %   audio files, CDs, digitalized vinyls and magnetic tapes
+           %   over a strong database in accordance with \alert{open
+           %     web standards}.
             \item \emph{Telemeta} architecture is \alert{flexible} and
               can easily be adapted to particular database
               organization of a given sound archives.
             \end{itemize}
-            \begin{center}
-              \includegraphics[height=3cm]{img/misc/python-logo-master-v3-TM.png}\hspace{3cm}
-              \includegraphics[height=3cm]{img/misc/django-logo-negative.png}
-            \end{center}
 
             The main features of \emph{Telemeta} are: \vspace{-0.5cm}
             \begin{multicols}{2}[]
@@ -200,7 +201,7 @@
             provided through an external component, \emph{TimeSide}.
         
           \end{block}
-          \begin{block}{Metadata}
+          \begin{block}{Metadata - Semantic Web}
             \vspace{-0.5cm}
             \begin{itemize}
             \item In addition to the audio data, dynamically handling
@@ -219,19 +220,18 @@
             archive related information and include related materials
             in any multimedia format.
         
-            \textbf{Annotations and segmentation}\\
-            Metadata also consist in temporal information such as:
+            \textbf{Annotations and segmentation (time-indexed information)}
             \begin{itemize}
             \item a list of \alert{time-coded markers} associated with
               annotations
             \item a list of of \alert{time-segments} associated with
               labels (\emph{in development}) .
             \end{itemize}
-            The ontology for those labels is relevant for
-            ethnomusicology (e.g. speech versus singing voice segment,
-            chorus, ...).  It should be noted that annotations and
-            segmentation can be done either by a human expert or by
-            some automatic signal processing analysis.
+            %The ontology for those labels is relevant for
+            %ethnomusicology (e.g. speech versus singing voice segment,
+            %chorus, ...).  It should be noted that annotations and
+            %segmentation can be done either by a human expert or by
+            %some automatic signal processing analysis.
           \end{block}
         \end{minipage}
 \end{center}
@@ -259,9 +259,8 @@
                   
                 \item \alert{Publish} collected ressources together with research
                   work.
-                \item \alert{Exchange} data online with other researchers or
-                  communities producing their music in their home countries
-                  through collaborative tools like markers and comments.
+                \item \alert{Exchange} data online and \alert{collaborate} with other researchers or
+                  communities producing their music in their home countries.
                 \end{itemize}
               \item \textbf{Teaching}: Ressources for teachers in \emph{anthropology} or
                 \emph{ethnomusicology} as it provides the students an access to
@@ -301,20 +300,15 @@
   \end{tcolorbox}
 \end{center}
 
-
-
 %\begin{columns}[T]
   %\begin{minipage}{0.34\linewidth}
  % \begin{column}{.36\linewidth}
 \hskip2ex
     \begin{beamerboxesrounded}[shadow=true, width=0.95\linewidth]{Functionality}
        \begin{itemize}
-       \item \alert{Do} asynchronous and fast audio processing with
-         Python.
-       \item \alert{Decode} ANY audio or video format into numpy arrays
-         thanks to Gstreamer.
-       \item \alert{Analyze} audio content with some external audio
-         feature extraction libraries.
+       \item \alert{Decode} ANY audio or video format into Python numpy arrays
+         with \raisebox{-.3\height}{\includegraphics[height=2cm]{img/misc/Gstreamer-logo.png}}.
+       \item \alert{Analyze} audio content through its own \alert{plugins API}%feature extraction libraries.
        \item \alert{Organize}, \alert{serialize} and \alert{save}
          analysis metadata through various formats.
        \item \alert{Draw} various waveforms, spectrograms and
@@ -381,13 +375,13 @@
       \begin{center}
         \begin{figure}[h]
           \centering
-          \includegraphics[width=0.75\linewidth]{img/results/IRIT_Speech4Hz.png}
+          \includegraphics[width=0.7\linewidth]{img/results/IRIT_Speech4Hz.png}
           \caption{Speech activity detection}
           \label{fig:TS_SAD}
         \end{figure}
         \begin{figure}[h]
           \centering
-          \includegraphics[width=0.75\linewidth]{img/results/SOLO_DUOdetection.png}
+          \includegraphics[width=0.7\linewidth]{img/results/SOLO_DUOdetection.png}
           \caption{Monody / polyphony detection}
           \label{fig:TS_Monopoly}
         \end{figure}
@@ -423,10 +417,16 @@
 \vspace{-1cm}
     \begin{multicols}{2}[]
         \begin{itemize}
-        \item \alert{Annotate} multimedia items by time segments supporting both free annotations and ontology-based annotations
-        \item Efficiently \alert{visualize} results from analysis from various data types together with X-Y zoom capability and audio synchronization by using state-of-the-art multimedia JavaScript libraries: \emph{D3.js}, JQueryUI and audio libraries from the Wave project (\url{http://wave.ircam.fr/})
-        \item Design, manage and run analyses on large audio corpus and serialize the results through a REST web API with the TimeSide server
-        \item Increase the analysis functionality with various automatic analysis and annotation tools for speech, audio, Music Information Retrieval and ethnomusicology (DIADEMS project).
+        \item Enhance the audio player (Web audio API) 
+        \item Provide a flexible user-interface with time-synchronized \alert{visualization} panels for \emph{audio, signal analysis and annotations}.
+         \item Enhance user interaction with \alert{X-Y zoom} and \alert{annotation} capabilities
+        %\item \alert{Annotate} multimedia items by time segments supporting both free annotations and ontology-based annotations
+        %\item Efficiently \alert{visualize} results from analysis from various data types together with X-Y zoom capability and audio synchronization by using state-of-the-art multimedia JavaScript libraries: \emph{D3.js}, JQueryUI and 
+          \item Integrates WAVES.JS JavaScript library from the Wave project (\url{http://wave.ircam.fr/})
+        \item Provide a REST web API (TimeSide server) to design, manage and run audio signal analysis on large audio corpus and serve the result over the web
+        \item Provide new audio analysis plugins
+          % \item Increase the analysis functionality with various automatic analysis and annotation tools for speech, audio, Music Information Retrieval and ethnomusicology (DIADEMS project).
+          \item Provide a collaborative workflow for users (define workgroups, share data and annotations, ...)
 
 \end{itemize}
 \end{multicols}
