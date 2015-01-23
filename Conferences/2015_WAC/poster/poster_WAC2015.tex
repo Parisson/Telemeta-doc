@@ -30,7 +30,11 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
-\usepackage{mdframed}
+
+\usepackage{latex/tcolorbox}
+
+
+
 % Display a grid to help align images
 %\beamertemplategridbackground[1cm]
 
@@ -162,7 +166,11 @@
           is \alert{flexible} and can easily be adapted to particular database
           organization of a given sound archives.
         \end{itemize}
-        
+        \begin{center}
+          \includegraphics[height=3cm]{img/misc/python-logo-master-v3-TM.png}\hspace{3cm}
+          \includegraphics[height=3cm]{img/misc/django-logo-negative.png}
+        \end{center}
+
         The main features of \emph{Telemeta} are:
 \vspace{-0.5cm}
 \begin{multicols}{2}[]
@@ -255,19 +263,21 @@
 \subsection{TimeSide architecture}
   \begin{block}{TimeSide : open web audio processing framework}
 
-\begin{beamerboxesrounded}%
-        [upper=red, shadow=true]%
-        {}
-  \url{https://github.com/Parisson/TimeSide/}
-   \end{beamerboxesrounded}
-
+\tcbset{colback=red!30!white,colframe=red!70!black, leftrule=5mm, width=0.8\linewidth}
 \begin{center}
-  \colorbox{red!30}{\includegraphics[width=1.5cm]{img/misc/GitHub-Mark-120px-plus.png} \bf \hskip3ex \url{https://github.com/Parisson/TimeSide/} \hskip3ex  }
+  \begin{tcolorbox}[]\normalsize
+    \href{https://github.com/Parisson/TimeSide/}{\raisebox{-.2\height}{\includegraphics[width=1.5cm]{img/misc/GitHub-Mark-120px-plus.png}}\hskip2ex
+      \textbf{\texttt{https://github.com/Parisson/TimeSide/}}}
+  \end{tcolorbox}
 \end{center}
-\begin{columns}[T]
+
+
+
+%\begin{columns}[T]
   %\begin{minipage}{0.34\linewidth}
-  \begin{column}{.36\linewidth}
-    \begin{beamerboxesrounded}[shadow=true]{Functionality}
+ % \begin{column}{.36\linewidth}
+\hskip2ex
+    \begin{beamerboxesrounded}[shadow=true, width=0.95\linewidth]{Functionality}
        \begin{itemize}
        \item \alert{Do} asynchronous and fast audio processing with
          Python.
@@ -287,20 +297,22 @@
       \end{itemize}
     \end{beamerboxesrounded}
 
-  \end{column}
+  %\end{column}
 
   %\end{minipage}
   %\begin{minipage}{0.65\linewidth}
-  \begin{column}[T]{0.6\linewidth}
-    \begin{beamerboxesrounded}[shadow=true]{TimeSide Architecture}
+  %\begin{column}[T]{0.6\linewidth}
+    \hskip2ex
+    \begin{beamerboxesrounded}[shadow=true, width=0.9\linewidth]{TimeSide \emph{processing pipe}}
        \centering
-        \includegraphics[width=\linewidth]{img/timeside_schema_v3.pdf}
+        %\includegraphics[width=\linewidth]{img/timeside_schema_v3.pdf}
+ \includegraphics[width=0.9\linewidth]{img/TimeSide_pipe.pdf}
       \end{beamerboxesrounded}
 
-  \end{column}
+  %\end{column}
 
   %\end{minipage}
-\end{columns}
+%\end{columns}
 
 \begin{beamerboxesrounded}%
        [shadow=true]%
@@ -332,29 +344,34 @@
 
 
 \end{block}
-
-\begin{block}{Code Example (Python)}
-\begin{columns}[T]
-  \begin{column}[T]{0.6\linewidth}
-    \lstinputlisting{code_example.py}
-  \end{column}
+\begin{block}{Automatic audio analysis}
+  \begin{center}
+    \includegraphics[width=0.9\linewidth]{img/results/IRIT_Speech4Hz.png}\\
+    \includegraphics[width=0.9\linewidth]{img/results/SOLO_DUOdetection.png}
+  \end{center}
+\end{block}
+% \begin{block}{Code Example (Python)}
+% \begin{columns}[T]
+%   \begin{column}[T]{0.6\linewidth}
+%     \lstinputlisting{code_example.py}
+%   \end{column}
  
-  \begin{column}[T]{0.35\linewidth}
-    \begin{beamerboxesrounded}[shadow=true]{Results}
-      \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{img/spectrogram.png}
-        \caption{Spectrogram (sweep signal)}
-      \end{figure}
-        \vskip5ex
-    \begin{lstlisting}
- Level Analyzer Max:[-6.021] 
- Level Analyzer RMS:[-9.856]
-    \end{lstlisting}
-\end{beamerboxesrounded}
-  \end{column}
-\end{columns}
-  \end{block}
+%   \begin{column}[T]{0.35\linewidth}
+%     \begin{beamerboxesrounded}[shadow=true]{Results}
+%       \begin{figure}
+%         \centering
+%         \includegraphics[width=\linewidth]{img/spectrogram.png}
+%         \caption{Spectrogram (sweep signal)}
+%       \end{figure}
+%         \vskip5ex
+%     \begin{lstlisting}
+%  Level Analyzer Max:[-6.021] 
+%  Level Analyzer RMS:[-9.856]
+%     \end{lstlisting}
+% \end{beamerboxesrounded}
+%   \end{column}
+% \end{columns}
+%   \end{block}
 
   \begin{block}{Ongoing developments}
 \vspace{-1cm}
