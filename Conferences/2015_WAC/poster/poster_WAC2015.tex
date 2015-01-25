@@ -32,7 +32,7 @@
 \usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
 
 \usepackage{latex/tcolorbox}
-\tcbset{colback=red!30!white,colframe=red!70!black, leftrule=5mm, width=0.8\linewidth}
+\tcbset{colback=yellow!50!white,colframe=red!70!black, leftrule=5mm, width=0.8\linewidth}
 
 
 % Display a grid to help align images
@@ -168,7 +168,7 @@
             \item \emph{Telemeta} is a free and open source
               ({\scriptsize CeCILL Free Software License Agreement})
               web audio content management system which introduces
-              efficient and secure methods for \alert{backuping},
+              \alert{flexible}, efficient and secure methods for \alert{backuping},
               \alert{indexing}, \alert{transcoding}, \alert{analysing}
               and \alert{publishing} any digitalized audio file with
               its metadata and in accordance with \alert{open
@@ -179,12 +179,9 @@
            %   audio files, CDs, digitalized vinyls and magnetic tapes
            %   over a strong database in accordance with \alert{open
            %     web standards}.
-            \item \emph{Telemeta} architecture is \alert{flexible} and
-              can easily be adapted to particular database
-              organization of a given sound archives.
             \end{itemize}
 
-            The main features of \emph{Telemeta} are: \vspace{-0.5cm}
+            Main features: \vspace{-0.5cm}
             \begin{multicols}{2}[]
         
               \begin{itemize}
@@ -197,9 +194,7 @@
                 Oracle backend
               \end{itemize}
             \end{multicols}
-            Beside database management, the audio support is mainly
-            provided through an external component, \emph{TimeSide}.
-        
+            
           \end{block}
           \begin{block}{Metadata - Semantic Web}
             \vspace{-0.5cm}
@@ -234,29 +229,14 @@
             %some automatic signal processing analysis.
           \end{block}
         \end{minipage}
-\end{center}
+    \end{center}
       \end{block}
-      
-      \begin{block}{Sound archives of the CNRS - Musée de l'Homme}
-        \begin{tcolorbox}[width=0.6\textwidth] {\hskip1ex \normalsize
-        \textbf{\url{http://archives.crem-cnrs.fr} }}
-    \end{tcolorbox}
-        The ressources are available to researchers and to the extent possible, the public, in compliance with the intellectual and moral rights of musicians and collectors.
-        %\begin{columns}[T]
-         % \begin{column}{0.27\linewidth}
-            These archives are the most important in Europe:
-            \begin{itemize}
-            \item Nearly 3,500 hours of recordings of unpublished field.
-            \item Approximately 3700 hours of material published (more than
-              5000 discs, many of which are very rare).
-            \end{itemize}
-            
-            \hskip2ex
-            \begin{beamerboxesrounded}[shadow=true, width=0.98\linewidth]{Usages}
+
+      \begin{block}{Usages}
+        \vspace{-0.5cm}
               \begin{itemize}
               \item \textbf{Research}:
                 \begin{itemize}\footnotesize
-                  
                 \item \alert{Publish} collected ressources together with research
                   work.
                 \item \alert{Exchange} data online and \alert{collaborate} with other researchers or
@@ -268,8 +248,18 @@
               \item \textbf{Museology}: Access through \emph{interactive kiosks} (full access given to IP ranges)
               \end{itemize}
        
-            \end{beamerboxesrounded}
+    \end{block}
 
+      \begin{block}{Sound archives of the CNRS - Musée de l'Homme}
+        \begin{tcolorbox}[width=0.6\textwidth] {\hskip1ex \normalsize
+        \textbf{\url{http://archives.crem-cnrs.fr} }}
+    \end{tcolorbox}
+        The ressources are available to researchers and to the extent possible, the public, in compliance with the intellectual and moral rights of musicians and collectors. These ethnomusicological archives are the most important in Europe (7200 hours of published or unpublished material in 60000 items)
+        %\begin{columns}[T]
+         % \begin{column}{0.27\linewidth}
+            
+            \hskip2ex
+       
           %\end{column}
           %\begin{column}{0.7\linewidth}
             %\centering
@@ -307,7 +297,7 @@
     \begin{beamerboxesrounded}[shadow=true, width=0.95\linewidth]{Functionality}
        \begin{itemize}
        \item \alert{Decode} ANY audio or video format into Python numpy arrays
-         with \raisebox{-.3\height}{\includegraphics[height=2cm]{img/misc/Gstreamer-logo.png}}.
+%          with \raisebox{-.3\height}{\includegraphics[height=2cm]{img/misc/Gstreamer-logo.png}}.
        \item \alert{Analyze} audio content through its own \alert{plugins API}%feature extraction libraries.
        \item \alert{Organize}, \alert{serialize} and \alert{save}
          analysis metadata through various formats.
@@ -327,12 +317,11 @@
   %\begin{minipage}{0.65\linewidth}
   %\begin{column}[T]{0.6\linewidth}
     \hskip2ex
-    \begin{beamerboxesrounded}[shadow=true, width=0.9\linewidth]{TimeSide \emph{processing pipe}}
+    
        \centering
         %\includegraphics[width=\linewidth]{img/timeside_schema_v3.pdf}
  \includegraphics[width=0.9\linewidth]{img/TimeSide_pipe.pdf}
-      \end{beamerboxesrounded}
-
+    
   %\end{column}
 
   %\end{minipage}
