@@ -5,7 +5,7 @@
  %\usepackage[english]{babel} % "babel.sty"
 % \usepackage{french}                  % "french.sty"
 %  \usepackage{franglais}               % "franglais.sty" (a defaut)
-  \usepackage{times}			% ajout times le 30 mai 2003
+  \usepackage{times}            % ajout times le 30 mai 2003
  
 %% --------------------------------------------------------------
 %% CODAGE DE POLICES ?
@@ -34,7 +34,7 @@
 
 
 % telemeta red
-\definecolor{telemetaRed}{rgb}{0.41568, 0.01176, 0.02745}	% #6A0307
+\definecolor{telemetaRed}{rgb}{0.41568, 0.01176, 0.02745}   % #6A0307
 \usecolortheme[rgb={0.41568, 0.01176, 0.02745}]{structure} 
 
 \hypersetup{colorlinks, urlcolor=blue, linkcolor=}
@@ -47,6 +47,17 @@
 % listings settings
 \definecolor{lstComments}{rgb}{0,0.6,0}
 \definecolor{lstBkgrd}{rgb}{1,1,0.8}
+\definecolor{rouge}{rgb}{1.0,0,0}
+\newcommand{\chref}[2]{
+    \href{#1}{\color{rouge}\underline{#2}}
+}
+\newcommand{\dchref}[1]{
+    \href{#1}{\color{rouge}\underline{#1}}
+}
+\newcommand{\curl}[1]{
+    \color{rouge}\underline{\url{#1}}
+}
+
 \lstset{%
   language=Python, % the language of the code
   frame=single,  % adds a frame around the code
@@ -114,7 +125,7 @@
    \begin{itemize}
     \item \alert{Digital age}: quantization, duplication > tons of data!
     \item \alert{Network age}: internet, social networks, mutualization of resources
-    \item \alert{Open and sutainable knowledge}: languages, formats, standards, licenses, open source
+    \item \alert{Open knowledge and technoogies}: languages, formats, standards, licenses, open source
    \end{itemize}
 \end{block}
 
@@ -122,7 +133,7 @@
    \begin{itemize}
     \item \alert{musicologists} need music, metadata and search engines
     \item \alert{computer scientists} need music and semantic datasets
-    \item How do we grow and scale the data and all the technologies over the web in a sustainable way?
+    \item How do we \alert{grow and scale} data and technologies in a \alert{sustainable way}?
    \end{itemize}
 \end{block}
 
@@ -164,9 +175,8 @@
       \item enrich associated \alert{metadata} that
         contains key information on the context and significance of
         the recording.
-      \item Telemeta = web + music + metadata
+      \item Telemeta = music + metadata + web
       \end{itemize}
-   
     
   \end{block}
   \begin{block}{An open-source software}
@@ -184,8 +194,8 @@
 \end{frame}
 
 \subsection{Features}
-\begin{frame}[label=telemeta_features]{Web audio content management features and architecture}
-  \begin{block}{Main features of Telemeta}\footnotesize
+\begin{frame}[label=telemeta_features]{Telemeta features}
+  \begin{block}{}
     \begin{itemize}
       \item \alert{Pure HTML5} web user interface including dynamic forms.
       \item \alert{On-the-fly audio analyzing}, transcoding and metadata
@@ -194,17 +204,9 @@
       \item \alert{User management} with individual desk, playlists, profiles
         and group access rights.
       \item \alert{High level search engine} (text, dates, locations, instruments, ethnic groups, etc...).
-      \item \hyperlink{telemeta_languages}{Multi-language support (currently english, german, french and chinese).}
+      \item \alert{Multi-language support} (currently english, german, arab, chinese and french).
       \end{itemize}
-  \end{block}
-\end{frame}
-
-
-\begin{frame}[plain]{Telemeta \emph{Item} page}
-  \begin{center}
-    \fbox{\includegraphics[width=\linewidth]{img/telemeta_screenshot_en_2.png}}
-  \end{center}
-
+    \end{block}
 \end{frame}
 
 
@@ -212,16 +214,13 @@
 \begin{frame}\frametitle{Metadata}
   \begin{block}{}
     \begin{itemize}
+    \item Everything describing the context of a music record
     \item Valuable informations about the \alert{source of the data} and to the related \alert{work of
         peer researchers}.
-    \item Dynamically handling metadata in a \alert{collaborative}
-      manner optimizes the continuous process of knowledge gathering
+    \item \alert{Collaborative editing} of metadata optimizes the continuous process of knowledge gathering
       and the \alert{enrichment} of the materials in the database.
-    \item \alert{Standardization}
-      of audio and metadata formats with the aim of long-term
-      preservation and usage of the different materials.
-    \item The compatibility with other systems is facilitated by the
-      integration of the \alert{metadata standards protocols}
+    \item \alert{Standardization} of audio and metadata formats of long-term preservation
+    \item \alert{Easy harvesting} with metadata standards protocols like
       \emph{Dublin Core} and \emph{OAI-PMH} (Open Archives Initiative
       Protocol for Metadata Harvesting).
     \end{itemize}
@@ -234,32 +233,25 @@
 \end{frame}
 
 
-\begin{frame}[label=telemeta_metadata]{Metadata}{Contextual Information}
-\scriptsize
-\begin{block}{Contextual Information}
-  In an ethnomusicological framework, contextual information
-  may include:
+\begin{frame}[label=telemeta_metadata]{Ethnomusicological metadata}
+\begin{block}{Contextual information}
   \begin{itemize}
   \item Geographic information
-  \item Cultural information ( population, related cultural elements, ...)
-  \item Musical information ( title, instruments, ...)
-  \item Archive or recording information (recording technical data, depositor, collector, year of the recording, year of publication of
-    papers describing the work, ...)
+  \item Cultural information (population, related cultural elements, etc)
+  \item Musical information (title, instruments, etc)
+  \item Technical information (recording technical data, depositor, collector, year of the recording, year of publication of papers describing the work, etc)
   \end{itemize}
-  
 \end{block}
 
 \begin{block}{Additional materials}
-  Moreover, through the platform, diverse materials related to the
-  archives can be stored, such as:
   \begin{itemize}
   \item iconographies (digitalized pictures, scans of booklets and
     field notes, and so on),
-  \item hyperlinks and
+  \item hyperlinks
   \item biographical information about the collector.
   \end{itemize}
 \end{block}
-\hyperlink{metadata_example}{\beamerbutton{Examples}}
+
 \end{frame}
 
 
@@ -282,6 +274,14 @@
   \begin{center}
     \includegraphics[width=0.75\textwidth]{img/TM_arch.pdf}
   \end{center}
+\end{frame}
+
+
+\begin{frame}[plain]{Telemeta UI (demo)}
+  \begin{center}
+    \fbox{\includegraphics[width=\linewidth]{img/telemeta_screenshot_en_2.png}}
+  \end{center}
+
 \end{frame}
 
   
@@ -539,6 +539,22 @@ The results of this
     \end{itemize}
   \end{block}
 \end{frame}
+
+\frame{\frametitle{Lessons}
+\begin{block}{Lessons learned from a 7 years old project}
+\begin{itemize}
+\item \alert{Simplicity} is better than complexity (\alert{KISS} principle)
+\item \alert{Modularity} is only accessible with a flexible language (thanks Python!)
+\item \alert{Models} and \alert{objects} are more important than technologies
+\item A good \alert{workflow} is defined by the users themselves through \alert{feedback} and constant \alert{revisions}
+\item \alert{Prototyping} and \alert{unit testing} are some crucial parts of the development process
+\item A good platform relies on \alert{standards}, not on formats
+\item The \alert{Open Source} ecosystem provides some tremendous possibilities to develop, deploy and scale a platform project
+\end{itemize}
+\end{block}
+}
+
+
 \begin{frame}{Conclusion}
   \begin{block}{Future developments}
 Future developments will turn Telemeta into:
@@ -551,77 +567,90 @@ Future developments will turn Telemeta into:
 Regarding TimeSide, a Web-API is being developed to provide audio analysis services over the web. 
   \end{block}
 \end{frame}
-\begin{frame}{Thank You !}
-  \begin{itemize}
-  \item Contact: \url{guillaume.pellerin@parisson.com}
-  \item Telemeta:
-    \begin{center}
-    \includegraphics[width=0.4\textwidth]{img/logo_telemeta_1-1.pdf}\\
-      \colorbox{yellow!40}{\textbf{\url{http://telemeta.org}}}\\
-      \colorbox{yellow!40}{\href{https://twitter.com/telemeta/}{@telemeta}}
-    \end{center}
 
-  \item TimeSide:
-    \begin{center}
-      \colorbox{yellow!40}{\bf
-        \url{https://github.com/yomguy/TimeSide/}}
-    \end{center}
 
-  \item Sound archives of the CNRS - Musée de l’Homme:
-    \begin{center}
-      \colorbox{yellow!40}{\bf\url{http://archives.crem-cnrs.fr}}
-    \end{center}
-
-  \item The DIADEMS project:
-    \begin{center}
-      \colorbox{yellow!40}{\bf\url{http://www.irit.fr/recherches/SAMOVA/DIADEMS/}}
-    \end{center}
-
-  \end{itemize}
+\begin{frame}{The End}
+ \begin{center}
+   \large{Thank you!}\\
+   \large{We are looking for new patners and projects...\\ let's keep in touch!}   
+    \begin{block}{Links}
+     \begin{itemize}\small
+        \item \chref{http://telemeta.org}{telemeta.org}
+        \item \chref{https://twitter.com/telemeta/}{@telemeta}
+        \item \chref{http://github.com/Parisson/}{github.com/Parisson/}
+    \end{itemize}
+    \end{block}
+    \begin{block}{Contact us}
+    \begin{itemize}\small
+    \item \chref{mailto:guillaume@parisson.com}{guillaume@parisson.com}, \chref{mailto:thomas@parisson.com}{thomas@parisson.com}
+    \item \chref{https://twitter.com/yomguy/}{@yomguy}
+    \item \chref{https://plus.google.com/u/0/+GuillaumePellerin/posts}{+GuillaumePellerin}
+    \item \chref{http://fr.linkedin.com/in/guillaumepellerin}{fr.linkedin.com/in/guillaumepellerin}
+    \end{itemize}
+     \end{block}
+  \end{center}
 \end{frame}
 
 \appendix
 \section{Additional Materials}
 
-\subsubsection{Telemeta - Geographic Navigator}
-\begin{frame}[plain, label=geonavigator]{Telemeta - Geographic Navigator}
-  \begin{center}
-    \fbox{\includegraphics[width=\linewidth]{img/telemeta_geo.png}}
-  \end{center}
-\hyperlink{telemeta_features}{\beamerbutton{back}}
-\end{frame}
-\subsubsection{Multi language support}
-\begin{frame}[label=telemeta_languages]{Telemeta - Multi language support}
-\only<1>{\framesubtitle{English}}
-\only<2>{\framesubtitle{French}}
-\only<3>{\framesubtitle{German}}
-\only<4>{\framesubtitle{Chinese}}
 
-  \begin{center}
-    \includegraphics<1>[width=1.1\textwidth]{img/telemeta_english.png}
-    \includegraphics<2>[width=1.1\textwidth]{img/telemeta_french.png}
-    \includegraphics<3>[width=1.1\textwidth]{img/telemeta_german.png}
-    \includegraphics<4>[width=1.1\textwidth]{img/telemeta_chinese.png}
-  \end{center}
-\hyperlink{telemeta_features}{\beamerbutton{back}}
-\end{frame}
-\subsubsection{Metadata}
-\begin{frame}[label=metadata_example]{Contextual Information example: Collection}
-  \begin{center}
-    \includegraphics[width=1\textwidth]{img/telemeta_metadata_collection.png}
-  \end{center}
-\href{http://archives.crem-cnrs.fr/archives/collections/CNRSMH_E_1998_017_001/}{\beamerbutton{Online}}
- \href{./captures/Collection.html}{\beamerbutton{Offline}}
-\hyperlink{telemeta_metadata}{\beamerbutton{back}}
-\end{frame}
-\begin{frame}{Contextual Information example: Item}
-  \begin{center}
-    \includegraphics[width=1\textwidth]{img/telemeta_metadata_item.png}
-  \end{center}
-  \href{http://archives.crem-cnrs.fr/archives/items/CNRSMH_E_1998_017_001_001_01/}{\beamerbutton{Online}}
- \href{./captures/Item.html}{\beamerbutton{Offline}}
-\hyperlink{telemeta_metadata}{\beamerbutton{back}}
-\end{frame}
+    \begin{frame}{Sponsors}
+
+
+        \begin{center}
+        \begin{columns}[c]
+        \column{2.5cm}
+        \begin{center}
+            \pgfimage[width=2cm]{img/logo-ANR}
+        \end{center}
+        \column{2.5cm}
+        \begin{center}
+            \pgfimage[width=1.5cm]{img/logo-CNRS-big}
+        \end{center}
+        \column{2.5cm}
+        \begin{center}
+            \pgfimage[width=2.5cm]{img/Logo_UPX_big}
+        \end{center}
+        \column{2cm}
+        \begin{center}
+            \pgfimage[width=2cm]{img/upmc}
+        \end{center}
+        \end{columns}
+        \end{center}
+
+        \begin{center}
+        \begin{columns}[c]
+        \column{2.5cm}
+        \begin{center}
+            \pgfimage[width=1.5cm]{img/logo_mcc_3}
+        \end{center}
+        \column{2.5cm}
+        \begin{center}
+            \pgfimage[width=1.5cm]{img/logo-MNHN-big}
+        \end{center}
+        \column{2.5cm}
+        \begin{center}
+            \pgfimage[width=1.5cm]{img/logohumanum-web-grand-rvb}
+        \end{center}
+        \column{2cm}
+        \begin{center}
+            \pgfimage[width=2.5cm]{img/parisson_logo_200}
+        \end{center}
+        \end{columns}
+        \end{center}
+
+        
+        \begin{center}
+            \pgfimage[width=4.5cm]{img/europeana-sounds_0}
+        \end{center}
+        
+    \end{frame}
+    
+    
+    
+
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: t
