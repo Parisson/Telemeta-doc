@@ -204,7 +204,7 @@
       \item \alert{User management} with individual desk, playlists, profiles
         and group access rights.
       \item \alert{High level search engine} (text, dates, locations, instruments, ethnic groups, etc...).
-      \item \alert{Multi-language support} (currently english, german, arab, chinese and french).
+      \item \hyperlink{telemeta_languages}{\alert{Multi-language support} support (currently english, german, french, chinese, arabic and portuguese).}
       \end{itemize}
     \end{block}
 \end{frame}
@@ -353,18 +353,14 @@
 \section[TimeSide]{TimeSide, an audio analysis framework}\label{sec:TimeSide}
 \subsection{Audio management}
 \begin{frame}{TimeSide}\scriptsize
- \begin{block}{An open web audio processing framework}
+ \begin{block}{An open source web audio processing framework}
    \begin{itemize}
-   \item TimeSide is the \alert{signal processing engine} of Telemeta developed and published as a separate project.
-   \item TimeSide is an
-     \emph{open-source} \alert{audio analysis and visualization framework} based on
-     both \alert{Python} and \alert{JavaScript} languages that provides
-     state-of-the-art signal processing and machine learning
-     algorithms together with \alert{web audio} capabilities for displaying
-     and streaming files.
+   \item TimeSide is the \alert{audio signal processing engine} of Telemeta developed and published as a separate project.
+   \item \textbf{TimeSide = \textsf{web audio + signal processing + audio visualization + MIR}}  
+   \item \alert{Python} and \alert{JavaScript}
    \end{itemize}
 \vspace{-0.5cm}\begin{center}
-  \colorbox{yellow!40}{\bf \url{https://github.com/yomguy/TimeSide/} }
+  \colorbox{yellow!40}{\bf \url{https://github.com/parisson/TimeSide/} }
 \end{center}
 \end{block}
 \begin{block}{Audio management}
@@ -492,19 +488,23 @@ The results of this
   \only<2>{\url{http://diadems.telemeta.org/archives/items/CNRSMH_I_2000_008_001_04/}}}
 \end{center}
 \end{frame}
-
+\subsection{Ongoing developments}
 \begin{frame}{Ongoing developments}
   \begin{block}{Data analysis for the web}
     \begin{itemize}
-    \item Advance data representations for the web: D3.js, WAVESUI.js (IRCAM)
+    \item New analyzers from Diadems project
+    \item Advance data representations for the web: D3.js, WAVES.js (IRCAM)
     \item Zoom capabilities 
-    \item Online computational tasks design and management 
+    \item Online computational tasks design and management
+    \item REST Web-API is being developed to provide
+audio analysis services over the web
     \end{itemize}
   \end{block}
     \begin{block}{Annotation functions}
       \begin{itemize}
-      \item Telemeta will turn into a collaborative annotation platform
-      \item Annotations should be partially manage by TimeSide (virtuous circle between automatic analysis and annotation)
+      \item TimeSide: online annotation tool 
+      \item Telemeta: collaborative annotation platform
+      \item Virtuous circle between automatic analysis and annotations
       \end{itemize}
       
     \end{block}
@@ -563,11 +563,27 @@ Future developments will turn Telemeta into:
     \item an \alert{social and collaborative platform} (user access managment and social stuff)
     \item an \alert{interdisciplinary} collaborative platform between IT and ethno with the joint develoment of automatic analysis and indexation tools
     \end{itemize}
-
-Regarding TimeSide, a Web-API is being developed to provide audio analysis services over the web. 
   \end{block}
 \end{frame}
 
+\begin{frame}{Thank You !}
+  \begin{itemize}
+  \item Contact: \url{guillaume.pellerin@parisson.com}
+  \item Telemeta:
+    \begin{center}
+    \includegraphics[width=0.4\textwidth]{img/logo_telemeta_1-1.pdf}\\
+      \colorbox{yellow!40}{\textbf{\url{http://telemeta.org}}}\\
+      \colorbox{yellow!40}{\href{https://twitter.com/telemeta/}{@telemeta}}
+    \end{center}
+
+  \item Github:
+    \begin{itemize}
+    \item \colorbox{yellow!40}{\bf
+        \url{https://github.com/parisson/TimeSide/}}
+    \item \colorbox{yellow!40}{\bf
+        \url{https://github.com/parisson/Telemeta/}}
+    \end{itemize}
+\end{frame}
 
 \begin{frame}{The End}
  \begin{center}
@@ -648,8 +664,50 @@ Regarding TimeSide, a Web-API is being developed to provide audio analysis servi
     \end{frame}
     
     
-    
+\subsubsection{Telemeta - Geographic Navigator}
+\begin{frame}[plain, label=geonavigator]{Telemeta - Geographic Navigator}
+  \begin{center}
+    \fbox{\includegraphics[width=\linewidth]{img/telemeta_geo.png}}
+  \end{center}
+\hyperlink{telemeta_features}{\beamerbutton{back}}
+\end{frame}
+\subsubsection{Multi language support}
+\begin{frame}[label=telemeta_languages]{Telemeta - Multi language support}
+\only<1>{\framesubtitle{English}}
+\only<2>{\framesubtitle{French}}
+\only<3>{\framesubtitle{German}}
+\only<4>{\framesubtitle{Chinese}}
+\only<5>{\framesubtitle{Arabic}}
+\only<5>{\framesubtitle{Portuguese}}
 
+  \begin{center}
+    \includegraphics<1>[width=1.1\textwidth]{img/telemeta_english.png}
+    \includegraphics<2>[width=1.1\textwidth]{img/telemeta_french.png}
+    \includegraphics<3>[width=1.1\textwidth]{img/telemeta_german.png}
+    \includegraphics<4>[width=1.1\textwidth]{img/telemeta_chinese.png}
+    \includegraphics<5>[width=1.1\textwidth]{img/telemeta_arabic.png}
+    \includegraphics<6>[width=1.1\textwidth]{img/telemeta_portuguese.png}
+
+  \end{center}
+\hyperlink{telemeta_features}{\beamerbutton{back}}
+\end{frame}
+\subsubsection{Metadata}
+\begin{frame}[label=metadata_example]{Contextual Information example: Collection}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/telemeta_metadata_collection.png}
+  \end{center}
+\href{http://archives.crem-cnrs.fr/archives/collections/CNRSMH_E_1998_017_001/}{\beamerbutton{Online}}
+ \href{./captures/Collection.html}{\beamerbutton{Offline}}
+\hyperlink{telemeta_metadata}{\beamerbutton{back}}
+\end{frame}
+\begin{frame}{Contextual Information example: Item}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{img/telemeta_metadata_item.png}
+  \end{center}
+  \href{http://archives.crem-cnrs.fr/archives/items/CNRSMH_E_1998_017_001_001_01/}{\beamerbutton{Online}}
+ \href{./captures/Item.html}{\beamerbutton{Offline}}
+\hyperlink{telemeta_metadata}{\beamerbutton{back}}
+\end{frame}
 
 %%% Local Variables: 
 %%% mode: latex
