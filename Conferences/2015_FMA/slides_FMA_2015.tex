@@ -56,30 +56,25 @@
   keywordstyle=\color{blue},      % keyword style
   showstringspaces=false,          % underline spaces within strings only
 }
-\title[Web analysis tools for ethnomusicology]{}%\raisebox{2\height}{\includegraphics[width=0.4\textwidth]{img/logo_telemeta_1-1.pdf}}
-\subtitle{Web analysis tools for ethnomusicology}
-\author[Guillaume et al.]{\tiny Guillaume Pellerin\inst{1}, Thomas Fillon\inst{1}, Joséphine Simonnot\inst{3}}
+\title[]{Web analysis tools for ethnomusicology}%\raisebox{2\height}{\includegraphics[width=0.4\textwidth]{img/logo_telemeta_1-1.pdf}}
+
+\author[Guillaume et al.]{\small Guillaume Pellerin\inst{1}, Thomas Fillon\inst{1}, Joséphine Simonnot\inst{2}}
 
 
-\institute[Parisson]{\tiny
+\institute[Parisson]{\scriptsize
   \inst{1}%
   Parisson, Paris, France\\
-  \inst{3}%
+  \inst{2}%
   CREM, LESC, UMR CNRS 7186, MAE, Université Paris Ouest Nanterre La Défense, Nanterre, France\\
   
  {\tiny \textcolor{red}{\emph{This work was partially done inside the DIADEMS project\\ funded by the French National Research Agency ANR (CONTINT)}}}
-}
-% \begin{center}
-% \hfill
-%    \raisebox{-4ex}{\includegraphics[width=0.1\linewidth]{../poster/img/logo_CREM.png}} \hfill
-%   \includegraphics[width=0.15\linewidth]{img/logo_LESC.png}\hfill
-%    \includegraphics[width=.3\linewidth]{img/parisson_logo_FINALE_com.pdf}\hfill
-%    \includegraphics[width=.18\linewidth]{img/upmc.png}\hfill
-%  \end{center}
-\date{{\scriptsize 5th FMA Workshop}  
-% \raisebox{-0.5\height}{\includegraphics[width=0.2\textwidth]{dlfm.png}}\\
-\footnotesize Jussieu, Paris}
-        
+
+ \includegraphics[width=.3\linewidth]{img/parisson_logo_FINALE_com.pdf}
+ \hfill
+ \raisebox{-2ex}{\includegraphics[width=0.1\linewidth]{img/logo_CREM.png}}}
+
+\date{FMA 2015 Workshop, Paris}
+
 
 \newcommand{\CREM}{Research Center for Ethnomusicology}
 \setbeamertemplate{section page}
@@ -386,6 +381,26 @@
  
 \end{frame} 
 
+\begin{frame}{TimeSide engine architecture}
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{img/timeside_schema_v3.pdf}
+  \caption{TimeSide engine architecture and data flow with Telemeta web-server}\label{fig:TimeSide_Archi}
+\end{figure}
+\end{frame}
+  
+\begin{frame}
+  \frametitle{TimeSide engine architecture}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{img/TimeSide_pipe.pdf}
+  \end{center}
+  \begin{block}{Process Pipe}
+    \begin{itemize}
+    \item On-the-fly audio processing by simultaneous processors (decoder, encoders, analyzers, graphers)
+    \item Use of \emph{Gstreamer} for audio decoding and encoding    \end{itemize}
+  \end{block}
+\end{frame}
+
 
 
 \subsection{Audio features extraction}
@@ -409,38 +424,91 @@ Given the extracted features, every sound item in a given
 The results of this
   analysis can be:
   \begin{itemize}\footnotesize
- \item Serialized to the web browser through common markup languages:
-    XML, JSON and YAML
-  \item Stored in a scientific file format (e.g. NumPy format or
-    HDF5)
+ \item Serialized to the web browser through common markup languages: JSON and YAML
+  \item Stored in a scientific file format (e.g. \emph{NumPy} format or \emph{HDF5})
   \item Exported to sound visualization and annotation software
-    (e.g. Sonic Visualizer)
+    (e.g. \emph{Sonic Visualizer, ELAN, transcriber})
  
   \end{itemize}
 \end{block}
 
 \end{frame}
-\begin{frame}{TimeSide engine architecture}
-  \begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\linewidth]{img/timeside_schema_v3.pdf}
-  \caption{TimeSide engine architecture and data flow with Telemeta web-server}\label{fig:TimeSide_Archi}
-\end{figure}
-\end{frame}
-  
+
+
+\subsection{Analyzer Result Format}
 \begin{frame}
-  \frametitle{TimeSide engine architecture}
-  \begin{center}
-    \includegraphics[width=0.95\textwidth]{img/TimeSide_pipe.pdf}
-  \end{center}
-  \begin{block}{Process Pipe}
-    \begin{itemize}
-    \item On-the-fly audio processing by simultaneous processors (decoder, encoders, analyzers, graphers)
-    \item Use of \emph{Gstreamer} for audio decoding and encoding    \end{itemize}
-  \end{block}
+  \frametitle{Analyzer Result (\emph{audio feature}) Format}
+     \begin{block}{Result types: \\\emph{time mode} $\times$ \emph{data mode}}
+       \begin{columns}
+         \begin{column}{0.35\linewidth}
+           \begin{itemize}
+           \item Data modes:
+             \begin{itemize}
+             \item \alert<2-5>{Label}
+             \item \alert<6-9>{Value}
+             \end{itemize}
+           \item Time modes:
+             \begin{itemize}
+             \item \alert<2,6>{Global}
+             \item \alert<3,7>{Event}
+             \item \alert<4,8>{Segment}
+             \item \alert<5,9>{Framewise}
+             \end{itemize}
+           \end{itemize}
+         \end{column}
+         \begin{column}{0.50\linewidth}\footnotesize
+           \begin{exampleblock}<2->{\footnotesize Result Container}\scriptsize
+             \begin{itemize}
+             \item ID Metadata
+             \item Audio Metadata
+             \item Parameters
+             \item Data object
+               \begin{itemize}\scriptsize
+               \item<2-5> Label
+               \item<2-5> Label Metadata ({\tiny label, label\_id, ...})
+               \item<6-9> Value
+               \item<3-4,7-8> Time
+               \item<4,8> Duration
+               \item<5,9> Frame Metadata ({\tiny sample rate, blocksize,
+                 stepsize})
+               \end{itemize}
+           
+             \end{itemize}
+           \end{exampleblock}
+
+         \end{column}
+       \end{columns}
+      
+  \end{block}   
+\end{frame}
+\begin{frame}
+\frametitle{Analyzer Result examples}
+\begin{center}
+  \includegraphics<1>[width=\linewidth]{img/results/IRIT_Speech4Hz.png}
+  \includegraphics<2>[width=\linewidth]{img/results/SOLO_DUOdetection.png}\\
+  {\footnotesize \only<1>{\url{http://diadems.telemeta.org/archives/items/CNRSMH_I_2013_201_001_01/}}
+  \only<2>{\url{http://diadems.telemeta.org/archives/items/CNRSMH_I_2000_008_001_04/}}}
+\end{center}
 \end{frame}
 
+\begin{frame}{Ongoing developments}
+  \begin{block}{Data analysis for the web}
+    \begin{itemize}
+    \item Advance data representations for the web: D3.js, WAVESUI.js (IRCAM)
+    \item Zoom capabilities 
+    \item Online computational tasks design and management 
+    \end{itemize}
+  \end{block}
+    \begin{block}{Annotation functions}
+      \begin{itemize}
+      \item Telemeta will turn into a collaborative annotation platform
+      \item Annotations should be partially manage by TimeSide (virtuous circle between automatic analysis and annotation)
+      \end{itemize}
+      
+    \end{block}
 
+  
+\end{frame}
 \section{Conclusion}
 % \begin{frame}\frametitle{Conclusion}
 %   The Telemeta open-source framework provides a new platform for researchers in humanities and social sciences to efficiently distribute, share and work on their research on musical and sound materials. 
