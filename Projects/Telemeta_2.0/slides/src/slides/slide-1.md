@@ -11,8 +11,14 @@ class: center, middle, telemeta
 
 - 10h - 10h45 : Objectifs / tour de table
 - 10h45 - 11h : Introduction (Guillaume et Joséphine)
-- 11h - 13h :  Identification des besoins des partenaires
+- 11h - 13h :  Identification des besoins des partenaires présents
+- 13h - 14h : déjeuner sur place
+- 14h - 15h30 : Activités en cours
+- 15h30 - 17h : Résumé, validation de la répartition de tâches, des financements et du calendrier
 
+# Notes
+
+https://pad.parisson.com/p/telemeta_2.0
 
 ---
 
@@ -61,25 +67,63 @@ class: tight
 - Sara Tandar (responsable technique projet SAWA, suivi Pan-E-Pedia)  
 - H. Chamoux (Phonobase)
 
---
+---
 
 # Introduction (Guillaume et Joséphine, 15mn)
 
 - Historique rapide du projet et investissements de base
 - Stratégie et mode de développement et d'investissement coopératif
-- Projets et études basés sur Telemeta y compris ceux des partenaires absents (INRIA-Kamoulox, NYU, etc)
 - Etat des lieux de la plateforme Telemeta actuelle (hébergement dev et prod, branches)
+- Projets et études basés sur Telemeta y compris ceux des partenaires absents (INRIA-Kamoulox, NYU, etc)
 - Pourquoi Telemeta 2.0 ?
 - Interfaces TimeSide et Telemeta en cours de définition / développement
 
 ---
 
+# Historique
+
+
+
+---
+
+# Modèle de données
+
+
+---
+
+# Fontionnalités et interfaces
+
+---
+
+# Modèle de développpement
+
+---
+
+# Etat des lieux (2017)
+
+---
+
+# Projets en cours
+
+- Documentation
+  - CREM
+  - MCM
+  - Univ Poitiers
+  - CMAM
+- Recherche
+  - DIADEMS
+  - DaCaRyH
+  - WASABI
+  - Kamoulox
+
+---
+
 # Identification des besoins des partenaires (2h)
 
-- Présentation du résultat du brainstorming de novembre 2016 (JS, AdCL, AG, GP, TF)
+- Présentation du résultat du brainstorming de novembre 2016 (JS, AdCL, AG, GP, TF) (30mn)
   https://github.com/Parisson/Telemeta/projects/1
 - Inventaire par partenaire (2 ou 3 points prioritaires maxi)
-- Maintenance/pérennité de la plateforme (1h)
+- Maintenance/pérennité de la plateforme (45mn)
     - introduction au web sémantique
     - mise à jour des langages et logiciels
     - modularisation et gestion des instances
@@ -94,7 +138,7 @@ class: tight
 
 # Identification des besoins des partenaires (2h)
 
-- Fonctions documentaires (1h)
+- Fonctions documentaires (45mn)
     - répétabilité des champs (ou champs multiples)
     - gestion des entités nommées et vocabulaires contrôlés (+ rôle/fonction, référentiels externes, accès/saisie/visualisation/annotation des listes/énumérations)
     - amélioration du moteur de recherche
@@ -110,7 +154,50 @@ class: tight
 ---
 class: center, middle, telemeta
 
-# Déjeuner !
+# Déjeuner ! (1h)
 <img src="img/icon.png" height="100px" />
 
 ---
+
+# Traitement du signal et annotation (TimeSide) (40 mn)
+
+- annotation
+- indexation manuelle et semi-automatique
+- nouvelle interface
+- affichage de plusieurs item/players sur une même page ?
+- pluginisation de TimeSide (pour OMEKA)
+- Import ELAN, etc
+
+---
+# Aspects collaboratifs (40 mn)
+
+- partage/statut des annotations et des listes
+- lecture et embarquement des listes
+- création/gestion de groupes d'utilisateurs
+- formulaire de demande/validation d’inscription des utilisateurs (bilingue)
+- outil PUNDIT, etc
+
+---
+
+# Divers (10 mn)
+
+- Design
+- MAJ des page(s) d’accueil
+- carrousel d’image (à partir des média associés de type image ?)
+
+---
+
+# Résumé et validation
+
+- répartition de tâches (création de groupes de travail ?)
+- sources de financement
+- calendrier
+
+---
+class: center, middle, telemeta
+
+# Merci !
+
+<img src="img/icon.png" height="100px" />
+
+http://telemeta.org
