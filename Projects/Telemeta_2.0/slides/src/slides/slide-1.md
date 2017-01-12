@@ -9,11 +9,12 @@ class: center, middle, telemeta
 
 # Ordre du jour
 
-- 10h - 10h45 : Objectifs / tour de table
-- 10h45 - 11h : Introduction (Guillaume et Joséphine)
-- 11h - 13h :  Identification des besoins des partenaires présents
-- 13h - 14h : déjeuner sur place
-- 14h - 15h30 : Activités en cours
+- 10h - 10h45 : Définitions des objectifs / tour de table
+- 10h45 - 11h15 : Introduction (Guillaume et Joséphine)
+- 11h15 - 12h30 :  Identification des besoins des partenaires présents
+- 12h30 - 13h30 : Déjeuner sur place
+- 13h30 - 14h : Traitement du signal et annotation collaborative
+- 14h - 15h30 : Identification des besoins documentaires
 - 15h30 - 17h : Résumé, validation de la répartition de tâches, des financements et du calendrier
 
 # Notes
@@ -32,6 +33,7 @@ https://pad.parisson.com/p/telemeta_2.0
 # Objectifs de la réunion (5mn)
 
 1. Faire un tour des projets en cours et / ou à venir basé sur Telemeta
+2. Détailler l'enjeu d'une version modulaire de Telemeta
 2. Passer en revue l'ensemble des besoins identifés à ce jour en précisant :
    - les points
    - les critiques
@@ -69,87 +71,102 @@ class: tight
 
 ---
 
-# Introduction (Guillaume et Joséphine, 15mn)
+# Introduction (Guillaume et Joséphine, 30mn)
 
 - Historique rapide du projet et investissements de base
 - Stratégie et mode de développement et d'investissement coopératif
 - Etat des lieux de la plateforme Telemeta actuelle (hébergement dev et prod, branches)
 - Projets et études basés sur Telemeta y compris ceux des partenaires absents (INRIA-Kamoulox, NYU, etc)
 - Pourquoi Telemeta 2.0 ?
-- Interfaces TimeSide et Telemeta en cours de définition / développement
+
+--
+
+# Etat des Lieux
+
+- Telemeta 1.6, TimeSide
+- Dépendances, branches, packaging
+- Hébergement mutualisé HumaNum
+
+---
+class: center
+
+# Vers un modèle modulaire (1.0)
+
+<img src="img/telemeta_model.svg" width="20%" />
+
+---
+class: center
+
+# Vers un modèle modulaire (1.5)
+
+<img src="img/telemeta_model_1.5.svg" width="20%" />
+
+---
+class: center
+
+# Vers un modèle modulaire (2.0)
+
+<img src="img/telemeta_model_2.svg" width="50%" />
 
 ---
 
-# Historique
+# Projets et activités en cours
 
+- Instances
+  - CREM http://archives.crem-cnrs.fr/
+  - LAM http://telemeta.lam.jussieu.fr/
+  - CMAM http://phonotheque.cmam.tn/
+  - MCM (en cours)
+  - Univ Poitiers (en cours)
+--
 
-
----
-
-# Modèle de données
-
-
----
-
-# Fontionnalités et interfaces
-
----
-
-# Modèle de développpement
-
----
-
-# Etat des lieux (2017)
+- R&D
+  - DIADEMS (ANR)
+  - DaCaRyH (ANR)
+  - WASABI (ANR)
+  - Kamoulox (ANR)
+  - TimeSide
 
 ---
 
-# Projets en cours
+# Pourquoi Telemeta-Core (2.0) ?
 
-- Documentation
-  - CREM
-  - MCM
-  - Univ Poitiers
-  - CMAM
-- Recherche
-  - DIADEMS
-  - DaCaRyH
-  - WASABI
-  - Kamoulox
+- faciliter le développpement de projets métiers
+- consolider le coeur commun (modèles de données et fonctions génériques)
+- favoriser les interactions entre les corpus
+- mieux informer les partenaires des développements et besoins mutualisés
 
 ---
 
-# Identification des besoins des partenaires (2h)
+# Besoins en fonctions collaboratives
 
-- Présentation du résultat du brainstorming de novembre 2016 (JS, AdCL, AG, GP, TF) (30mn)
+- Versionnement des données
+- partage/statut des annotations et des listes
+- lecture et embarquement des listes
+- création/gestion de groupes d'utilisateurs pour l'édition de corpus
+- formulaire de demande/validation d’inscription des utilisateurs (bilingue)
+- outil de prise de note (PUNDIT, etc)
+
+---
+
+# Identification des besoins des partenaires pour un Telemeta-Core (1h15)
+
+- Présentation du résultat du brainstorming de novembre 2016 (JS, AdCL, AG, GP, TF) (20mn)
   https://github.com/Parisson/Telemeta/projects/1
-- Inventaire par partenaire (2 ou 3 points prioritaires maxi)
-- Maintenance/pérennité de la plateforme (45mn)
-    - introduction au web sémantique
-    - mise à jour des langages et logiciels
+
+- Maintenance/pérennité de la plateforme
     - modularisation et gestion des instances
+    - mise à jour des langages et logiciels
     - Telemeta générique (couplage Nakala-Telemeta ?)
     - organisation générale de la gestion et des développements des outils Telemeta et TimeSide
     - documentation technique du projet
     - constitution d’un comité technique
     - relation avec Huma Num
+    - introduction au web sémantique
+    - documentation
     - identification d'éventuels partenaires
 
----
-
-# Identification des besoins des partenaires (2h)
-
-- Fonctions documentaires (45mn)
-    - répétabilité des champs (ou champs multiples)
-    - gestion des entités nommées et vocabulaires contrôlés (+ rôle/fonction, référentiels externes, accès/saisie/visualisation/annotation des listes/énumérations)
-    - amélioration du moteur de recherche
-    - gestion du multilinguisme
-    - gestion des dates (? joséphine)
-    - import en masse de métadonnées
-    - gestion des données d'exemplaires
-    - entrepôt OAI en DC et EDMS, RDF
-    - licences
-    - visualisation de l’arborescence
-    - etc...
+- Inventaire par partenaire (2 ou 3 points prioritaires maxi)
 
 ---
 class: center, middle, telemeta
@@ -158,28 +175,36 @@ class: center, middle, telemeta
 <img src="img/icon.png" height="100px" />
 
 ---
+# Traitement du signal et annotation (30 mn)
 
-# Traitement du signal et annotation (TimeSide) (40 mn)
-
-- annotation
 - indexation manuelle et semi-automatique
-- nouvelle interface
+- API : service d'analyse audio
+- annotation collaborative
+- nouvelle interface (zoom !)
 - affichage de plusieurs item/players sur une même page ?
 - pluginisation de TimeSide (pour OMEKA)
-- Import ELAN, etc
-
----
-# Aspects collaboratifs (40 mn)
-
-- partage/statut des annotations et des listes
-- lecture et embarquement des listes
-- création/gestion de groupes d'utilisateurs
-- formulaire de demande/validation d’inscription des utilisateurs (bilingue)
-- outil PUNDIT, etc
 
 ---
 
-# Divers (10 mn)
+# Identification des besoins documentaires (1h)
+
+- répétabilité des champs (ou champs multiples)
+- gestion des entités nommées et vocabulaires contrôlés (+ rôle/fonction, référentiels externes, accès/saisie/visualisation/annotation des listes/énumérations)
+- amélioration du moteur de recherche
+- gestion du multilinguisme
+- gestion des dates (? joséphine)
+- import en masse de métadonnées
+- gestion des données d'exemplaires
+- entrepôt OAI en DC et EDMS, RDF
+- licences
+- visualisation de l’arborescence
+- amélioration de la géolocalisation
+- documentation
+- etc...
+
+---
+
+# Besoins divers (15 mn)
 
 - Design
 - MAJ des page(s) d’accueil
@@ -187,16 +212,17 @@ class: center, middle, telemeta
 
 ---
 
-# Résumé et validation
+# Groupes de travail, résumé et validation (1h30)
 
-- répartition de tâches (création de groupes de travail ?)
-- sources de financement
+- définition sources de financement potentielles
+- répartition de tâches
+- création de groupes de travail
 - calendrier
 
 ---
 class: center, middle, telemeta
 
-# Merci !
+# Merci et à bientôt !
 
 <img src="img/icon.png" height="100px" />
 
