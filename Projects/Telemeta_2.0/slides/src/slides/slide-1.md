@@ -23,13 +23,6 @@ https://pad.parisson.com/p/telemeta_2.0
 
 ---
 
-# 10h - 10h45 : objectifs / tour de table
-
-- Rappel des objectifs de la réunion
-- Tour de table "express" (personnes et projets : 2mn/personne et /projet)
-
----
-
 # Objectifs de la réunion (5mn)
 
 1. Faire un tour des projets en cours et / ou à venir basé sur Telemeta
