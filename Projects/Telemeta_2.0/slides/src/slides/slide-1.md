@@ -17,9 +17,13 @@ class: center, middle, telemeta
 - 14h - 15h30 : Identification des besoins documentaires
 - 15h30 - 17h : Résumé, validation de la répartition de tâches, des financements et du calendrier
 
-# Notes
+## Notes
 
 https://pad.parisson.com/p/telemeta_2.0
+
+## Slides
+
+https://github.com/Parisson/Telemeta-doc/blob/master/Projects/Telemeta_2.0/slides/src/slides/slide-1.md
 
 ---
 
@@ -168,6 +172,7 @@ class: center, middle, telemeta
 <img src="img/icon.png" height="100px" />
 
 ---
+
 # Traitement du signal et annotation (30 mn)
 
 - indexation manuelle et semi-automatique
@@ -176,6 +181,7 @@ class: center, middle, telemeta
 - nouvelle interface (zoom !)
 - affichage de plusieurs item/players sur une même page ?
 - pluginisation de TimeSide (pour OMEKA)
+- Import ELAN, Transcriber, etc..
 
 ---
 
@@ -200,8 +206,8 @@ class: center, middle, telemeta
 # Besoins divers (15 mn)
 
 - Design
-- MAJ des page(s) d’accueil
-- carrousel d’image (à partir des média associés de type image ?)
+- MAJ des page(s) d’accueil (type CMS)
+- carrousel d’image (à partir des média associés de type image ?) et de sons provenant de diverses instances
 
 ---
 
