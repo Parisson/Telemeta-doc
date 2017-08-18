@@ -1,0 +1,159 @@
+% this style was created by Philippe Dreuw and Thomas Deselaers
+% and update by Thomas Fillon
+\ProvidesPackage{beamerthemeParisson} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{colorsParisson}
+\selectcolormodel{cmyk}
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{veryLightBlue}{rgb}{0.95,0.9,0.95}     % 
+\definecolor{lightBlue}{rgb}{0.8,0.8,1}     % dark blue
+\definecolor{darkBlue}{rgb}{0,0,0.7}     % dark blue
+\definecolor{textBG}{rgb}{0.95,0.95,1}     % dark blue
+
+
+\setbeamercolor{headline}{fg=black,bg=white}
+\setbeamercolor{footline}{fg=black, bg=white}
+\setbeamerfont{footline}{size=\large,series=\sf}
+\setbeamercolor{separation line}{bg=black}
+\setbeamercolor{title in headline}{fg=black, bg=}
+\setbeamercolor{author in headline}{fg=black, bg=}
+\setbeamercolor{institute in headline}{fg=black, bg=}
+
+\setbeamercolor{framesubtitle}{fg=ta3orange, bg=veryLightBlue}
+\setbeamercolor{author in head/foot}{fg=black, bg=white}
+\setbeamercolor{title in head/foot}{fg=black, bg=white}
+
+\setbeamercolor*{normal text}{fg=black, bg=veryLightBlue}
+
+\setbeamercolor*{block body}{bg=white,fg=black}
+\setbeamercolor*{block title}{bg=telemetaRed,fg=white}
+\setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamercolor{upper separation line head}{fg=red}
+
+\setbeamercolor*{example body}{fg=ta3aluminium,bg=white}
+\setbeamercolor*{example text}{fg=ta3aluminium,bg=white}
+\setbeamercolor*{example title}{bg=taorange,fg=ta2gray}
+
+\setbeamercolor{alerted text}{fg=red, bg=white}
+\setbeamercolor*{alerted body}{fg=ta3aluminium,bg=white}
+
+%\setbeamercolor{example text}{fg=taorange}
+\setbeamercolor{structure}{fg=ta3skyblue}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=true,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{headline}{  
+  \leavevmode
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      % -- Left Margin --
+      \begin{column}{.02\paperwidth}
+      \end{column}
+       % -- Left Column - Logo --
+      \begin{column}{.3\paperwidth}
+        \vskip1cm
+        \begin{center}
+          \vskip1ex
+          \includegraphics[width=\linewidth]{img/parisson_logo_FINALE_com.pdf}
+          \vfill
+        \end{center}
+        \vskip1.5cm
+      \end{column}
+      % -- Center column - Title --
+      \begin{column}{.65\paperwidth}
+        \vskip4ex \raggedleft
+        \usebeamercolor{title in
+          headline}{\color{fg}\textbf{{\LARGE \inserttitle}\\{\large \insertsubtitle}}\\[1ex]}
+        \usebeamercolor{author in
+          headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in
+          headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+      \end{column}   
+      % -- Right Margin --
+      \begin{column}{.02\paperwidth}
+      \end{column}
+    \end{columns}
+    \begin{columns}[]
+      % -- Left Margin --
+      \begin{column}{.02\paperwidth}
+      \end{column}
+   \begin{column}{.6\paperwidth}
+    % \includegraphics[width=0.5\paperwidth]{img/CMMR2013banner.png}
+%\raisebox{-.2\height}{
+\hskip2ex
+\includegraphics[height=4cm]{img/logo_mcc_3.png} \hskip7ex
+\includegraphics[height=3.5cm]{img/logo-CNRS-big.jpg}\hskip7ex
+\includegraphics[height=3cm]{img/logohumanum-web-grand-rvb.png}\hskip7ex
+\includegraphics[height=3cm]{img/logo-ANR-big.png}\hskip10ex
+\includegraphics[height=2.5cm]{img/upmc.png}\hskip7ex
+\includegraphics[height=3.5cm]{img/Logo_UPX_big.jpg}%}
+   \end{column}%
+   \begin{column}{.4\paperwidth} {\small \textcolor{red}{\emph{This work was
+           partially done inside the DIADEMS project\\ funded by the
+           French National Research Agency ANR (CONTINT)}}}
+     \end{column}
+\end{columns}\vskip1ex
+  \end{beamercolorbox}
+   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{}
+  %\leavevmode   
+%\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+%    \rule{0pt}{2pt}
+%  \end{beamercolorbox}
+% \begin{beamercolorbox}[wd=\paperwidth]{Footer}
+%
+%\end{beamercolorbox}
+%
+%}
+%   \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+%     \rule{0pt}{2pt}
+%   \end{beamercolorbox}
+%    \vskip1ex
+%   \leavevmode%
+%   \begin{beamercolorbox}[ht=5ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+%    %\includegraphics[width=5.5cm]{img/CMMR2013footer.png} \hskip2cm%
+% {\large \textbf{10th International Symposium on Computer Music Multidisciplinary Research (CMMR) Sound, Music and Motion , \hspace{1cm}   Marseilles , \hspace{1cm} 15-18 October 2013}}
+
+%     \vskip1ex
+%   \end{beamercolorbox}
+
+%   \vskip0pt%
+%   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+%     \rule{0pt}{2pt}\begin{picture}(0,0) \put(0,0){\includegraphics[width=\paperwidth]{img/CMMR2013footer_alpha.png}}\end{picture}
+%  \end{beamercolorbox}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+

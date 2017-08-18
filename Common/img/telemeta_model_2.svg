@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="17cm" height="12cm" viewBox="1039 -264 326 237" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="1196" y="-240" width="168" height="212"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1196" y="-240" width="168" height="212"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1040" y="-240" width="140" height="212"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1040" y="-240" width="140" height="212"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1060" y="-86" width="102" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x="1060" y="-86" width="102" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1111" y="-63.1">
+      <tspan x="1111" y="-63.1">Item</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1060" y="-150" width="102" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x="1060" y="-150" width="102" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1111" y="-127.1">
+      <tspan x="1111" y="-127.1">Collection</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1060" y="-208" width="102.2" height="37"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x="1060" y="-208" width="102.2" height="37"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1111.1" y="-185.6">
+      <tspan x="1111.1" y="-185.6">Ressource</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="1111" y1="-86" x2="1111" y2="-102.264"/>
+    <polygon style="fill: #000000" points="1111,-109.764 1116,-99.7639 1111,-102.264 1106,-99.7639 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1111,-109.764 1116,-99.7639 1111,-102.264 1106,-99.7639 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="1111.1" y1="-171" x2="1111.05" y2="-159.736"/>
+    <polygon style="fill: #000000" points="1111.01,-152.236 1106.06,-162.26 1111.05,-159.736 1116.06,-162.212 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1111.01,-152.236 1106.06,-162.26 1111.05,-159.736 1116.06,-162.212 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="1060" y1="-208" x2="1101.36" y2="-208"/>
+    <polygon style="fill: #000000" points="1108.86,-208 1098.86,-203 1101.36,-208 1098.86,-213 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1108.86,-208 1098.86,-203 1101.36,-208 1098.86,-213 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1207.03" y="-86.0548" width="102" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x="1207.03" y="-86.0548" width="102" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1258.03" y="-63.1548">
+      <tspan x="1258.03" y="-63.1548">Item Ethno</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1203.88" y="-149.945" width="125.55" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x="1203.88" y="-149.945" width="125.55" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1266.65" y="-127.045">
+      <tspan x="1266.65" y="-127.045">Collection Ethno</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1204" y="-208" width="127.6" height="37"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x="1204" y="-208" width="127.6" height="37"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1267.8" y="-185.6">
+      <tspan x="1267.8" y="-185.6">Ressource Ethno</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="1204" y1="-189.5" x2="1171.94" y2="-189.5"/>
+    <polygon style="fill: #000000" points="1164.44,-189.5 1174.44,-194.5 1171.94,-189.5 1174.44,-184.5 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1164.44,-189.5 1174.44,-194.5 1171.94,-189.5 1174.44,-184.5 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="1203.88" y1="-130.945" x2="1171.74" y2="-130.987"/>
+    <polygon style="fill: #000000" points="1164.24,-130.997 1174.24,-135.984 1171.74,-130.987 1174.23,-125.984 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1164.24,-130.997 1174.24,-135.984 1171.74,-130.987 1174.23,-125.984 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="1207.03" y1="-67.0548" x2="1171.74" y2="-67.0118"/>
+    <polygon style="fill: #000000" points="1164.24,-67.0027 1174.23,-72.0149 1171.74,-67.0118 1174.24,-62.0149 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1164.24,-67.0027 1174.23,-72.0149 1171.74,-67.0118 1174.24,-62.0149 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1060" y="-252">
+    <tspan x="1060" y="-252">Telemeta-Core</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1204" y="-252">
+    <tspan x="1204" y="-252">module Telemeta-Ethno</tspan>
+  </text>
+</svg>
