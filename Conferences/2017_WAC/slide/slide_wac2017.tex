@@ -1,0 +1,134 @@
+\documentclass[final, hyperref, table]{beamer} \mode<presentation>
+
+
+% \usepackage[english]{babel} % "babel.sty"
+% \usepackage{french} % "french.sty"
+% \usepackage{franglais} % "franglais.sty" (a defaut)
+\usepackage{times} % ajout times le 30 mai 2003
+ 
+%% --------------------------------------------------------------
+%% CODAGE DE POLICES ?  Si votre moteur Latex est francise, il est
+%% conseille d'utiliser le codage de police T1 pour faciliter la
+%% césure, si vous disposez de ces polices (DC/EC)
+\usepackage[utf8]{inputenc} \usepackage[T1]{fontenc}
+
+\usepackage{amsmath,amsfonts}
+\usepackage{xcolor}
+
+\usetheme{Boadilla}
+% \usetheme{JuanLesPins}
+\setbeamercovered{transparent}
+
+% gets rid of bottom navigation bars
+\setbeamertemplate{footline}[page number]{}
+
+% gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% \usecolortheme{beaver} telemeta red
+\definecolor{telemetaRed}{rgb}{0.41568, 0.01176, 0.02745} % #6A0307
+\usecolortheme[named=telemetaRed]{structure}
+\setbeamercolor{structure}{fg=telemetaRed, bg=white}
+% Display a grid to help align images
+% \beamertemplategridbackground[1cm]
+
+% We will get the normal bibliography style (number or text instead of
+% icon) by including the following code
+\setbeamertemplate{bibliography item}[text] 
+\setbeamerfont{block title}{size=\footnotesize}
+
+\title[TELEMETA, audio web CMS for Ethnomusicological
+archives]{Timeside\\Collaborative web platform for sound
+archives management and analysis}
+
+\author[Fillon, Pellerin, Brossier, Simonnot]{Thomas Fillon
+  \inst{1,2}, Guillaume Pellerin\inst{1}, Paul Brossier\inst{1},
+  Jos{\'e}phine Simonnot\inst{3}}
+        
+
+\begin{document}
+\setlength{\leftmargini}{10pt} \thispagestyle{empty}
+\begin{frame}\tiny
+  \frametitle{\textbf{Timeside} \\ Collaborative web platform for sound
+archives management and analysis %\includegraphics[width=0.3\linewidth]{logo_telemeta_alpha_black.png}
+    \hspace{.4\linewidth} 
+}
+  \framesubtitle{Thomas Fillon
+  Guillaume Pellerin \includegraphics[width=3cm]{../../../Common/img/parisson_logo_alpha.png}}
+  
+  \vspace{-0.2cm}
+  \begin{columns}
+
+    % ----------------- Colonne de gauche -----------------
+    \column[t]{5.3cm}
+
+    \begin{block}{The project {\tiny(started in 2007)}}
+      \begin{itemize}
+      \item The CREM laboratory and Parisson are developing an
+        innovative, collaborative and interdisciplinary
+        \alert{open-source web based multimedia platform} dedicated to
+        \alert{sound archivists} and \alert{researchers in
+          ethnomusicology}.
+      \item The platform is fully operational since 2011 :
+        \colorbox{yellow!50} {\bf \url{http://archives.crem-cnrs.fr}}
+      \end{itemize}
+    \end{block}
+    \vspace{-0.2cm}
+    \begin{block}{The framework}
+      TimeSide is an \alert{open web audio processing framework} written in
+      Python which is used to build the engine of Telemeta.
+      % \textbf{Goals}\\
+      \begin{itemize}
+      \item Easy plugin architecture (full \alert{Python})
+      \item Asynchronous and fast audio processing
+      \item \alert{Feature extraction} (Aubio, Yaafe, Vamp plugins)
+      \item Smart, fancy and dynamical \alert{HTML5 web audio player}
+      \end{itemize}
+      \vspace{-0.5cm}
+      \begin{center}
+        \colorbox{yellow!50}{\bf
+          \url{https://github.com/yomguy/TimeSide/}}
+      \end{center}
+
+    \end{block}
+
+
+    % ----------------- Colonne de droite -----------------
+    \column[t]{6cm}
+    \begin{block}{The platform (features)}
+      \begin{itemize}
+        \setlength{\itemsep}{1.5pt}
+      \item \alert{Pure HTML5} web user interface including dynamical forms
+        and smart workflows
+      \item \alert{On the fly} audio analyzing, transcoding and \alert{metadata}
+        embedding
+      \item Social editing with \alert{semantic ontologies}, smart workflows,
+        realtime tools, human or automatic \alert{annotations and
+        segmentations}
+      \item User management with individual desk, playlists, profiles
+        and access rights
+      \item High level geo-located search engine
+      \item DublinCore, OAI-PMH, RSS, XML and JSON \alert{data providers}
+      \item Multi-language support (now english and french)
+      \end{itemize}
+      \vspace{-0.6cm}
+      \begin{center}
+        \colorbox{yellow!50}{\textbf{\url{http://telemeta.org/}}}
+      \end{center}
+    \end{block}
+    \vspace{-0.2cm}
+    \begin{block}{Late-breaking Demos/poster session \#2
+        \texttt{\textbf{D2-4}}}
+      \begin{itemize}
+      \item Live demonstration of the \emph{Telemeta} web platform
+        with the CNRS \alert{ethnomusicological sound archives}
+      \item Live demonstration of \emph{Timeside}, the audio
+        processing framework (Python)
+      \end{itemize}
+    \end{block}
+
+  \end{columns}
+\end{frame}
+
+\end{document}
+
