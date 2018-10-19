@@ -10,3 +10,6 @@
 *.toc
 *.vrb
 *.loc
+*.zip
+.publish
+node_modules
